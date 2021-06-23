@@ -48,7 +48,7 @@ const BASE_URL = 'https://wq.jd.com/cubeactive/steprewardv3'
       '活动入口：京喜app-》我的-》京喜领88元红包\n' +
       '助力逻辑：先自己京东账号相互助力，如有剩余助力机会，则助力作者\n' +
       '温馨提示：如提示助力火爆，可尝试寻找京东客服')
-//let res = await getAuthorShareCode() || [];
+  let res = await getAuthorShareCode() || [];
   let res2 = await getAuthorShareCode('') || [];
   if (res && res.activeId) $.activeId = res.activeId;
   $.authorMyShareIds = [...((res && res.codes) || []), ...res2];
