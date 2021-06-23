@@ -5,11 +5,11 @@ author：tg@chenxing666
 ==============Quantumult X==============
 [task_local]
 #新潮品牌狂欢
-4 10 * * * jd_mcxhd.js, tag=新潮品牌狂欢, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+//4 10 * * * jd_mcxhd.js, tag=新潮品牌狂欢, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ==============Loon==============
 [Script]
-cron "4 10 * * *" script-path=jd_mcxhd.js,tag=新潮品牌狂欢
+//cron "4 10 * * *" script-path=jd_mcxhd.js,tag=新潮品牌狂欢
 
 ================Surge===============
 新潮品牌狂欢 = type=cron,cronexp="4 10 * * *",wake-system=1,timeout=3600,script-path=jd_mcxhd.js
