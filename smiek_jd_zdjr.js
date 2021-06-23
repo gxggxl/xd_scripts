@@ -14,6 +14,7 @@ mitm
 *-isv.isvjcloud.com
 
 */
+const $ = new Env("组队瓜分京豆");
 
 let jd_zdjr_activityId = ''// 活动ID
 let jd_zdjr_activityUrl = ''// 活动地址
