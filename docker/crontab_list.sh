@@ -114,7 +114,7 @@
 #家庭号(易黑号，默认注释)
 #10 6,7 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
 #京东直播（又回来了）
-10-50/5 12,23 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
+10-50/5 12,13,23 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 #京东健康社区
 13 1,6,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
 #京东健康社区收集健康能量
