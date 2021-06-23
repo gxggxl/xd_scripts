@@ -7,10 +7,10 @@
 ================QuantumultX==================
 [task_local]
 #跳跳乐瓜分京豆
-1 0,11,21 * * * jd_jump.js, tag=跳跳乐瓜分京豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+//1 0,11,21 * * * jd_jump.js, tag=跳跳乐瓜分京豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 ===================Loon==============
 [Script]
-cron "1 0,11,21 * * *" script-path=jd_jump.js, tag=跳跳乐瓜分京豆
+//cron "1 0,11,21 * * *" script-path=jd_jump.js, tag=跳跳乐瓜分京豆
 ===============Surge===============
 [Script]
 跳跳乐瓜分京豆 = type=cron,cronexp="1 0,11,21 * * *",wake-system=1,timeout=3600,script-path=jd_jump.js
