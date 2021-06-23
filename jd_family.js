@@ -10,11 +10,11 @@
 ============Quantumultx===============
 [task_local]
 #京东家庭号
-1 12,23 * * * jd_family.js, tag=京东家庭号, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_family.png, enabled=true
+//1 12,23 * * * jd_family.js, tag=京东家庭号, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_family.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "1 12,23 * * *" script-path=jd_family.js,tag=京东家庭号
+//cron "1 12,23 * * *" script-path=jd_family.js,tag=京东家庭号
 
 ===============Surge=================
 京东家庭号 = type=cron,cronexp="1 12,23 * * *",wake-system=1,timeout=3600,script-path=jd_family.js
