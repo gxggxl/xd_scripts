@@ -28,7 +28,7 @@ let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭�
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = false;
-const randomCount = $.isNode() ? 5 : 5;
+const randomCount = $.isNode() ? 0 : 5;
 let cash_exchange = false;//是否消耗2元红包兑换200京豆，默认否
 const inviteCodes = [
   `IRs2ajk74iqlabtjdw@9bavtFU4sE2_827Uwg@95CiuWMEsnSsKNt3yXMR1w`,
