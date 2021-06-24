@@ -1,5 +1,5 @@
 /*
-
+组队瓜分京豆
 一共有2个变量
 jd_zdjr_activityId  活动ID 必需
 jd_zdjr_activityUrl 活动地址 必需
@@ -14,7 +14,7 @@ mitm
 *-isv.isvjcloud.com
 
 */
-const $ = new Env("组队瓜分京豆")
+
 let jd_zdjr_activityId = ''// 活动ID
 let jd_zdjr_activityUrl = ''// 活动地址
 
