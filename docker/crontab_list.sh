@@ -38,7 +38,7 @@
 # 宠汪汪
 7 */2,23 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
 # 宠汪汪积分兑换京豆.
-0 */8 * * * node /scripts/jd_joy_reward_new.js >> /scripts/logs/jd_joy_reward_new.log 2>&1
+0 */8 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
 # 宠汪汪喂食，修复版已集成，建议注释，避免重复。
 #*/20 0-23 * * * node /scripts/jd_joy_feedPets.js >> /scripts/logs/jd_joy_feedPets.log 2>&1
 # 宠汪汪邀请助力，修复版已集成，建议注释，避免重复。
