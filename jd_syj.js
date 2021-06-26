@@ -26,7 +26,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 20 : 5;
+const randomCount = $.isNode() ? 0 : 5;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 $.tuanList = [];
@@ -739,7 +739,7 @@ async function getRandomCode() {
           })
         }
       } catch (e) {
-        console.log(`随机取【赚京豆-瓜分京豆】${randomCount}个邀请码异常:${e}`);
+       // console.log(`随机取【赚京豆-瓜分京豆】${randomCount}个邀请码异常:${e}`);
       }
     }
   }).catch((e) => console.log(`随机取【赚京豆-瓜分京豆】${randomCount}个邀请码异常:${e}`));
