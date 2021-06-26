@@ -725,7 +725,7 @@ function getAuthorShareCode(url) {
   })
 }
 async function getRandomCode() {
-  await $.http.get({url: `http://go.chiang.fun/read/zuan/${randomCount}`, timeout: 10000}).then(async (resp) => {
+  await $.http.get({url: `}`, timeout: 10000}).then(async (resp) => {
     if (resp.statusCode === 200) {
       try {
         let { body } = resp;
