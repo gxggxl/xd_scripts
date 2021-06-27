@@ -24,3 +24,7 @@
 # 京东手机狂欢城(已结束，注释)
 #0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 
+# 新潮品牌狂欢(已结束，注释)
+#20 1,21 * * * node /scripts/jd_mcxhd.js >> /scripts/logs/jd_mcxhd.log 2>&1
+
+
