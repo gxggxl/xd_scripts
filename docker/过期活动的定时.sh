@@ -33,8 +33,11 @@
 # 家电星推官好友互助(已结束)
 #0 0 * * * node /scripts/jd_xtg_help.js >> /scripts/logs/jd_xtg_help.log 2>&1
 
+# 618动物联萌(已结束)
+#36 0,6-23/2 * * * node /scripts/jd_zoo.js >> /scripts/logs/jd_zoo.log 2>&1
 
-
+# 618动物联萌收金币(已结束)
+#0-59/30 * * * * node /scripts/jd_zooCollect.js >> /scripts/logs/jd_zooCollect.log 2>&1
 
 
 
