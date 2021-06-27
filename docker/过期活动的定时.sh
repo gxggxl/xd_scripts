@@ -15,10 +15,12 @@
 # 宠汪汪邀请助力，修复版已集成，建议注释，避免重复。
 #10 6-20/2 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 
-# 宠汪汪强制为别人助力(旧版不可用)
+# 宠汪汪强制为别人助力(旧版.不可用)
 #15 10 * * * node /scripts/jd_joy_help.js >> /scripts/logs/jd_joy_help.log 2>&1
+
+# 宠汪汪偷好友积分与狗粮(旧版.不可用)
+#10 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
 
 # 京东手机狂欢城(已结束，注释)
 #0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-
 
