@@ -72,8 +72,6 @@
 16 0,10 * * * node /scripts/jd_small_home.js >> /scripts/logs/jd_small_home.log 2>&1
 # 东东工厂
 26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
-# 赚京豆组队(微信小程序)
-3 0 * * * python /jd/scripts/jd_zjd.py >> /jd/log/jd_zjd.log 2>&1
 # 赚京豆(微信小程序)
 25 0,9,18,23 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 京东快递签到
