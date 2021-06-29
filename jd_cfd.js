@@ -39,7 +39,7 @@ $.result = [];
 $.shareCodes = [];
 let cookiesArr = [], cookie = '', token;
 
-const randomCount = $.isNode() ? 3 : 3;
+const randomCount = $.isNode() ? 0 : 3;
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
