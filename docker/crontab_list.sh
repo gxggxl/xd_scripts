@@ -31,6 +31,8 @@
 ##############长期活动##############
 # 签到
 5 0,9 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+#东东乐园
+16 7 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 # 京东日资产变动通知
 5 9,19 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
 # 京东月资产变动通知
