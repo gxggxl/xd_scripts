@@ -2,7 +2,7 @@
 
 2、V4-bot安装：https://github.com/Annyoo2021/jd_v4_bot
 
-3、改jup换库提醒：改完记得scripts和log文件夹清空，再更新脚本。
+3、改jup换库提醒：改完记得scripts和log文件夹清空，再更新脚本(个别自用脚本记得备份)。
 
   
    安装我库宠汪汪的依赖命令如下：
