@@ -1,6 +1,6 @@
 
 /*
-东东乐园@wenmoux
+东东乐园@wenmoux 
 活动入口：东东农场->东东乐园(点大风车
 好像没啥用 就20💧
 更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_ddnc_farmpark.js
