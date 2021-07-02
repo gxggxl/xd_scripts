@@ -45,6 +45,7 @@ let cookiesArr = [], cookie = '', message = '', allMessage = '';
 const inviteCodes = [
   '0PbNMyCQ_Dpz_gkADOZlnA==',
   "wcEF7ysifWiPT_ozkpTsCQ==",
+  "HzBraHpFnKCWr6rvyZZkXQ==",
   '53gzd022_wSsWlN4OfOypA==',
   'RD9XNkB7AyRkEonwjIAMZQ=='
 ];
@@ -115,7 +116,7 @@ if ($.isNode()) {
           await $.wait(1000);
         }
       }
-      if ($.canHelp) await joinLeaderTuan();//参团
+   //  if ($.canHelp) await joinLeaderTuan();//参团
     }
   }
   if ($.isNode() && allMessage) {
@@ -1307,14 +1308,14 @@ async function showMsg() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://share.turinglabs.net/api/v3/jxfactory/query/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `/`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+      // console.log(`${JSON.stringify(err)}`)
+      // console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+      //  console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
