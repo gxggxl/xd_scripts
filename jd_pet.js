@@ -31,9 +31,9 @@ let cookiesArr = [], cookie = '', jdPetShareArr = [], isBox = false, notify, new
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'MTE1NDQ5MzYwMDAwMDAwNDM4MTM4MDU=@MTEzMzI0OTE0NTAwMDAwMDA0MzgxMzg2Mw==@MTEzMzI0OTE0NTAwMDAwMDA0Mzg2NTA5MQ==',
+  'MTE1NDQ5MzYwMDAwMDAwNDM4MTM4MDU=@MTEzMzI0OTE0NTAwMDAwMDA0MzgxMzg2Mw==@MTEyNjkzMjAwMDAwMDAwMDUwOTk5MTYz@MTEzMzI0OTE0NTAwMDAwMDA0Mzg2NTA5MQ==',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'MTE1NDQ5MzYwMDAwMDAwNDM4MTM4MDU=@MTEzMzI0OTE0NTAwMDAwMDA0MzgxMzg2Mw==@MTEzMzI0OTE0NTAwMDAwMDA0Mzg2NTA5MQ==',
+  'MTE1NDQ5MzYwMDAwMDAwNDM4MTM4MDU=@MTEzMzI0OTE0NTAwMDAwMDA0MzgxMzg2Mw==@MTEyNjkzMjAwMDAwMDAwMDUwOTk5MTYz@MTEzMzI0OTE0NTAwMDAwMDA0Mzg2NTA5MQ==',
 ]
 let message = '', subTitle = '', option = {};
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
@@ -452,14 +452,14 @@ async function showMsg() {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `http://share.turinglabs.net/api/v3/pet/query/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `/`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+      //  console.log(`${JSON.stringify(err)}`)
+      //  console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
+      //   console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
