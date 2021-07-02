@@ -30,9 +30,9 @@ let cookiesArr = [], cookie = '', jdFruitShareArr = [], isBox = false, notify, n
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // 这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '34de984b82f14cd5b9b3792d992530b7@8e32624bac424c89aa7b0bc69ddb607d@480098ed7ce24419a25b667d14c4968f@2fe5633277964301a28b843ce62f38d6@95ba7cf4e85845f297261ca0f07d6cfb',
+  '34de984b82f14cd5b9b3792d992530b7@8e32624bac424c89aa7b0bc69ddb607d@aa277837aeff4a728d38536fe462cfc3@480098ed7ce24419a25b667d14c4968f',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '34de984b82f14cd5b9b3792d992530b7@8e32624bac424c89aa7b0bc69ddb607d@480098ed7ce24419a25b667d14c4968f@2fe5633277964301a28b843ce62f38d6@95ba7cf4e85845f297261ca0f07d6cfb',
+  '34de984b82f14cd5b9b3792d992530b7@8e32624bac424c89aa7b0bc69ddb607d@aa277837aeff4a728d38536fe462cfc3@480098ed7ce24419a25b667d14c4968f',
 ]
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = 100;//保留水滴大于多少g,默认100g;
@@ -1258,7 +1258,7 @@ function readShareCode() {
         // console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
+       //   console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
