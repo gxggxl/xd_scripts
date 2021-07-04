@@ -94,7 +94,7 @@ $.shareuuid = "7d6b4dfb043a4ff28835daec3ee19a24"
                     for (k = 0; k < $.drawchance; k++) {
                         await draw()
                     }
-                    let exchanges =Math.floor($.foodNum/1000)
+                    let exchanges =Math.floor($.foodNum/3000)
                     console.log(`可兑换 ${exchanges} 次 50京🐶`)
                     for(q = 0;q<exchanges && Exchange;q++){
                     await exchange(14)   
