@@ -1,4 +1,4 @@
-1、lxk最终版及个人整理。
+1、lxk最终版、搬运、及个人整理，感谢所有原作者。
 
 2、V4-bot安装：https://github.com/Annyoo2021/jd_v4_bot
 
