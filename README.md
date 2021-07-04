@@ -18,4 +18,5 @@
     cd scripts
 
     npm install canvas --build-from-source
- 
+    
+ 4、吹水：https://t.me/joinchat/FLvDH5slJtNkNjNl
