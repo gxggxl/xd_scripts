@@ -40,6 +40,8 @@
 5 0,9 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 # 天天加速
 3 */3 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
+# 旺旺乐园
+0 */1 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
 #东东乐园
 16 7 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 #东东电竞经理
