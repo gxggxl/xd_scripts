@@ -1,23 +1,5 @@
-/*
-京喜财富岛提现
-活动地址: 京喜-财富岛
-活动时间：长期
-更新时间：2021-06-4 12:00
-脚本兼容: QuantumultX, Surge,Loon, JSBox, Node.js
- 获取Token方式：
-  打开【❗️京喜农场❗️】，手动任意完成<工厂任务>、<签到任务>、<金牌厂长任务>一项，提示获取cookie成功即可，然后退出跑任务脚本
-=================================Quantumultx=========================
-[task_local]
-#翻翻乐提现
-0 0 * * * https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jx_cfdtx.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-=================================Loon===================================
-[Script]
-cron "0 0 * * *" script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jx_cfdtx.js,tag=京喜财富岛提现
-===================================Surge================================
-京喜财富岛提现 = type=cron,cronexp="0 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jx_cfdtx.js
-====================================小火箭=============================
-京喜财富岛提现 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jx_cfdtx.js, cronexpr="0 0 * * *", timeout=3600, enable=true
- */
+
+
 const $ = new Env("京喜财富岛提现");
 const JD_API_HOST = "https://m.jingxi.com/";
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
@@ -40,7 +22,7 @@ $.userName = '';
     if ($.currentCookie) {
       $.userName =  decodeURIComponent($.currentCookie.match(/pt_pin=(.+?);/) && $.currentCookie.match(/pt_pin=(.+?);/)[1]);
       $.log(`\n开始【京东账号${i + 1}】${$.userName}`);
-
+      
       await cashOut();
     }
   }
@@ -55,7 +37,7 @@ function cashOut() {
       taskUrl(
         `consume/CashOut`,
         `ddwMoney=100&dwIsCreateToken=0&ddwMinPaperMoney=150000&strPgtimestamp=${$.currentToken['timestamp']}&strPhoneID=${$.currentToken['phoneid']}&strPgUUNum=${$.currentToken['farm_jstoken']}`
-      ),
+      ), 
       async (err, resp, data) => {
         try {
           $.log(data);
@@ -71,7 +53,7 @@ function cashOut() {
       }
     );
   });
-}
+} 
 
 function taskUrl(function_path, body) {
   return {
