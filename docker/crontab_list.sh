@@ -38,6 +38,8 @@
 ##############长期活动##############
 # 签到
 5 0,9 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+# 京东签到图形验证
+10 0,15 * * * node /scripts/jd_sign.js >> /scripts/logs/jd_sign.log 2>&1
 # 天天加速
 3 */3 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
 # 旺旺乐园
