@@ -39,9 +39,7 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [
-  `SvP1yRsuQcYJUuM9CKA@SaFDrmKeTI-VOIhr1nQ@SanbmlZGvIdxd-a9WlvcIdQ@SZk3UlYO5INRZ9ptFlvcIdQ@Sa0vOlrOMIdxn94hTlvcIdQ`
-]
+const inviteCodes = []
 let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 + 8 * 60 * 60 * 1000);
 !(async () => {
   await requireConfig();
