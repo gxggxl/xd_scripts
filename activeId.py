@@ -2,27 +2,32 @@ import requests, re, json, os
 
 
 def GET_TUAN_ID():
-    m, n = 5, 5
-    while m:
-        # 基于 178 大佬的 activeId.py 改写，感谢大佬！
-        url = 'https://wqsd.jd.com/pingou/dream_factory/index.html'
-        r = requests.get(url)
-        if r.ok:
-            resp = r.text
-            TUAN_ACTIVEID = re.findall('((?<=.)activeId.*?==)(?:.*?)("start".*?(?=,))(?:.*?)("end".*?(?=,))', re.sub('%3D%3D', '==', ''.join(re.findall('({"width".*?})', resp))))[0][0].split("=",1)[1]
-            return TUAN_ACTIVEID
-        else:
-            m -= 1
-    while n:
-        # 参考 https://github.com/qqwas/JD_Diy/blob/master/jbot/tuan.py 使用的链接
-        url = 'https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_updateFactoryTuanId.json'
-        r = requests.get(url)
-        if r.ok:
-            TUAN_ACTIVEID = r.json()['tuanActiveId']
-            return TUAN_ACTIVEID
-        else:
-            n -= 1
-    return False
+    m = 5
+    try:
+        while m:
+            # 基于 178 大佬的 activeId.py 改写，感谢大佬！
+            url = 'https://wqsd.jd.com/pingou/dream_factory/index.html'
+            r = requests.get(url)
+            if r.ok:
+                resp = r.text
+                TUAN_ACTIVEID = re.findall('((?<=.)activeId.*?==)(?:.*?)("start".*?(?=,))(?:.*?)("end".*?(?=,))', re.sub('%3D%3D', '==', ''.join(re.findall('({"width".*?})', resp))))[0][0].split("=",1)[1]
+                return TUAN_ACTIVEID
+            else:
+                m -= 1
+    except:
+        n = 5
+        try:
+            while n:
+                # 参考 https://github.com/qqwas/JD_Diy/blob/master/jbot/tuan.py 使用的链接
+                url = 'https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_updateFactoryTuanId.json'
+                r = requests.get(url)
+                if r.ok:
+                    TUAN_ACTIVEID = r.json()['tuanActiveId']
+                    return TUAN_ACTIVEID
+                else:
+                    n -= 1
+        except:
+            return False
 
 
 def TUAN_ACTIVEID():
@@ -31,12 +36,15 @@ def TUAN_ACTIVEID():
         msg = f"京喜工厂团ID：{TUAN_ACTIVEID}\n"
         with open(f"{env}/config/config.sh", 'r', encoding='utf-8') as f1:
             configs = f1.read()
-        if configs.find(f"export TUAN_ACTIVEID=") != -1:
+        if "export TUAN_ACTIVEID=" in configs:
             if TUAN_ACTIVEID in configs:
                 msg += "京喜工厂团ID相同，取消替换"
                 return msg
             configs = re.sub(f'TUAN_ACTIVEID=(\"|\').*(\"|\')', f'TUAN_ACTIVEID="{TUAN_ACTIVEID}"', configs)
-            msg += "替换京喜工厂团ID成功"
+            if TUAN_ACTIVEID in configs:
+                msg += "替换京喜工厂团ID成功"
+            else:
+                msg += "替换京喜工厂团ID失败，请手动替换"
         else:
             msg += "程序没有找到设置京喜工厂团的变量值，将自动添加进配置"
             export =  f"export TUAN_ACTIVEID={TUAN_ACTIVEID} # 京喜工厂团ID\n"
@@ -129,10 +137,7 @@ if __name__ == '__main__':
         isv4 = True
         if not os.path.isfile(f'{env}/config/config.sh'):  # v4-bot 容器内
             env = '/jd'
-    bot = f'{env}/config/bot.json'
-    with open(bot, 'r', encoding='utf-8') as botSet:
-        bot = json.load(botSet)
-    cron = '2 0,7,20 * * *' # 此处 V4 用户需要自行设置 cron 表达式，否则程序自动设置为 jd_dreamFactory.js 的运行时间
+    cron = '此处填写' # 此处 V4 用户需要自行设置 cron 表达式，否则程序自动设置为 jd_dreamFactory.js 的运行时间
     if 'jd' in env:
         if len(cron) < 9:
             cron = findCrontab()
@@ -141,4 +146,10 @@ if __name__ == '__main__':
         checkCrontab()
     msg = TUAN_ACTIVEID()
     print(msg)
-    tgNofity(bot['user_id'], bot['bot_token'], msg)
+    try:
+        bot = f'{env}/config/bot.json'
+        with open(bot, 'r', encoding='utf-8') as botSet:
+            bot = json.load(botSet)
+        tgNofity(bot['user_id'], bot['bot_token'], msg)
+    except:
+        None
