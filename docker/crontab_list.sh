@@ -39,7 +39,7 @@
 # 签到
 5 0,9 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 # 送豆得豆
-16 2,14,22 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
+16 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 京东签到图形验证
 10 0,15 * * * node /scripts/jd_sign.js >> /scripts/logs/jd_sign.log 2>&1
 # 天天加速
