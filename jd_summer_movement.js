@@ -60,6 +60,7 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
       );
   if(summer_movement_joinjoinjoinhui) console.log('\n您设置了入会')
   if(ShHelpFlag) console.log('\n您设置了执行【百元守卫站SH】互助')
+  console.log('该脚本启用了[正道的光]模式\n执行 做任务、做店铺任务、助力 会有几率不执行\n本脚本不让任务一次全部做完\n您可以多跑几次\n\n🐸')
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       $.cookie = cookiesArr[i];
