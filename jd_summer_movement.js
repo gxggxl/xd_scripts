@@ -2,7 +2,7 @@
 
 https://wbbny.m.jd.com/babelDiy/Zeus/2rtpffK8wqNyPBH6wyUDuBKoAbCt/index.html
 
-cron 12 0,9-15,17,18,21 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_summer_movement.js
+cron 12 6-23/2 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_summer_movement.js
 
 */
 
@@ -56,7 +56,7 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
       '店铺任务 已添加\n' +
       '新增 入会环境变量 默认不入会\n' +
       '活动时间：2021-07-08至2021-08-8\n' +
-      '脚本更新时间：2021年7月8日 20点00分\n'
+      '脚本更新时间：2021年7月8日 21点00分\n'
       );
   if(summer_movement_joinjoinjoinhui) console.log('\n您设置了入会')
   if(ShHelpFlag) console.log('\n您设置了执行【百元守卫站SH】互助')
