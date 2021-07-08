@@ -5,6 +5,9 @@
 
 ##############短期活动##############
 
+# 超级粉丝互动 活动时间：7.31结束
+1 8 1-31 7 * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
+
 # 燃动夏季 活动时间：7.8-8.8
 20 0,6-23/2 * 7-8 * node /scripts/jd_summer_movement.js >> /scripts/logs/jd_summer_movement.log 2>&1
 
@@ -69,8 +72,8 @@
 16 8 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 东东超市兑换奖品
 0,1 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
-
-
+# 新版点点券
+6 0,1,20 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
