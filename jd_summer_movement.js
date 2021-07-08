@@ -56,7 +56,7 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
       '店铺任务 已添加\n' +
       '新增 入会环境变量 默认不入会\n' +
       '活动时间：2021-07-08至2021-08-8\n' +
-      '脚本更新时间：2021年7月8日 19点00分\n'
+      '脚本更新时间：2021年7月8日 20点00分\n'
       );
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -213,7 +213,7 @@ async function movement() {
             let sendInfo = encodeURIComponent(`{"dataSource":"newshortAward","method":"getTaskAward","reqParams":"{\\"taskToken\\":\\"${$.callbackInfo.data.result.taskToken}\\"}","sdkVersion":"1.0.0","clientLanguage":"zh"}`)
             await callbackResult(sendInfo)
           } else if ($.oneTask.taskType === 5 || $.oneTask.taskType === 3 || $.oneTask.taskType === 26) {
-            await $.wait(2000);
+            await $.wait(getRndInteger(7000, 1500));
             console.log(`任务完成`);
           } else if ($.oneTask.taskType === 21) {
             let data = $.callbackInfo
@@ -224,11 +224,11 @@ async function movement() {
             }else{
             console.log(JSON.stringify($.callbackInfo));
             }
-            await $.wait(2000);
+            await $.wait(getRndInteger(500, 1000));
           } else {
             console.log($.callbackInfo);
             console.log(`任务失败`);
-            await $.wait(3000);
+            await $.wait(getRndInteger(2000, 3000));
           }
         }
       } else if ($.oneTask.taskType === 2 && $.oneTask.status === 1 && $.oneTask.scoreRuleVos[0].scoreRuleType === 2){
@@ -245,7 +245,7 @@ async function movement() {
           $.taskToken = productList[j].taskToken;
           console.log(`加购：${productList[j].skuName}`);
           await takePostRequest('add_car');
-          await $.wait(1500);
+          await $.wait(getRndInteger(700, 1500));
           needTime --;
         }
       }else if ($.oneTask.taskType === 2 && $.oneTask.status === 1 && $.oneTask.scoreRuleVos[0].scoreRuleType === 0){
@@ -259,12 +259,12 @@ async function movement() {
           console.log(`做任务：浏览${$.oneActivityInfo.skuName};等待完成`);
           await takePostRequest('olympicgames_doTaskDetail');
           if ($.oneTask.taskType === 2) {
-            await $.wait(2000);
+            await $.wait(getRndInteger(1000, 2000));
             console.log(`任务完成`);
           } else {
             console.log($.callbackInfo);
             console.log(`任务失败`);
-            await $.wait(3000);
+            await $.wait(getRndInteger(2000, 3000));
           }
         }
       }
@@ -274,6 +274,7 @@ async function movement() {
     $.shopInfoList = [];
     await takePostRequest('qryCompositeMaterials');
     for (let i = 0; i < $.shopInfoList.length; i++) {
+      let taskbool = false
       if(!aabbiill()) continue;
       $.shopSign = $.shopInfoList[i].extension.shopId;
       console.log(`执行第${i+1}个店铺任务：${$.shopInfoList[i].name} ID:${$.shopSign}`);
@@ -284,7 +285,8 @@ async function movement() {
       $.shopTask = $.shopResult.taskVos || [];
       for (let i = 0; i < $.shopTask.length; i++) {
         $.oneTask = $.shopTask[i];
-        if($.oneTask.taskType === 14 || $.oneTask.status !== 1){continue;} //不做邀请
+        if($.oneTask.taskType === 21 || $.oneTask.taskType === 14 || $.oneTask.status !== 1){continue;}  //不做入会//不做邀请
+        taskbool = true
         $.activityInfoList = $.oneTask.brandMemberVos || $.oneTask.followShopVo || $.oneTask.shoppingActivityVos || $.oneTask.browseShopVo || $.oneTask.simpleRecordInfoVo;
         if($.oneTask.taskType === 12){//签到
           $.oneActivityInfo =  $.activityInfoList;
@@ -310,7 +312,7 @@ async function movement() {
           }
         }
       }
-      await $.wait(1000);
+      if(taskbool) await $.wait(1000);
       let boxLotteryNum = $.shopResult.boxLotteryNum;
       for (let j = 0; j < boxLotteryNum; j++) {
         console.log(`开始第${j+1}次拆盒`)
@@ -325,7 +327,7 @@ async function movement() {
       //   await takePostRequest('zoo_wishShopLottery');
       //   await $.wait(3000);
       // }
-      await $.wait(3000);
+      if(taskbool) await $.wait(3000);
     }
 
     $.Shend = false
