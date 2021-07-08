@@ -1,16 +1,26 @@
 /*
-#京东零食街
-by@panghu
-后续添加自动兑换功能 如入会失败 自行去入会
-入口 京东 频道 美食馆
-零食街自动兑换变量 
+京东零食街
+活动地址: 京东-频道-美食馆
+活动时间：长期
+更新时间：2021-07-4 12:00
+脚本兼容: QuantumultX, Surge,Loon, JSBox, Node.js
+零食街自动兑换变量
 export lsjdh="jdAward1" ##兑换5豆
 export lsjdh="jdAward2" ##兑换10豆
 export lsjdh="jdAward3" ##兑换100豆
 export lsjdh="jdAward4" ##兑换牛奶
+=================================Quantumultx=========================
 [task_local]
-0 11 * * *
-*/
+#京东零食街
+10 11 * * * https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_lsj.js, tag=京东零食街, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+=================================Loon===================================
+[Script]
+cron "10 11 * * *" script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_lsj.js,tag=京东零食街
+===================================Surge================================
+京东零食街 = type=cron,cronexp="10 11 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_lsj.js
+====================================小火箭=============================
+京东零食街 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_lsj.js, cronexpr="10 11 * * *", timeout=3600, enable=true
+ */
 const $ = new Env('京东零食街');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -88,61 +98,45 @@ if ($.isNode()) {
     $.done();
   })
 async function star() {
-await gettoken()
+await getToken()
 $.log("开始入会任务")
 await dojoinMember(1000101562)
-await $.wait(3000)
 await dojoinMember(1000077335)
-await $.wait(3000)
 await dojoinMember(1000008814)
-await $.wait(3000)
 await dojoinMember(1000014803)
 $.log("开始领取首页水滴")
 await dotree(1)
-await $.wait(3000)
 await dotree(2)
-await $.wait(3000)
 await dotree(3)
-await $.wait(3000)
 $.log("开始浏览会场")
 await doliulan(1)
-await $.wait(3000)
 await doliulan(2)
-await $.wait(3000)
 await doliulan(3)
-//await gettask()  
+//await gettask()
 
 $.log("开始浏览会场")
 await doshop(10299171)
-await $.wait(3000)
 await doshop(1000077335)
-await $.wait(3000)
 await doshop(1000008814)
-await $.wait(3000)
 await doshop(1000014803)
 $.log("开始浏览推荐食品商品")
 await doGoods(1)
-await $.wait(3000)
 await doGoods(2)
-await $.wait(3000)
 await doGoods(3)
-await $.wait(3000)
 await doGoods(4)
 $.log("开始加购商品")
 await doadd(1)
-await $.wait(3000)
 await doadd(2)
-await $.wait(3000)
 await doadd(3)
-await $.wait(3000)
 await doadd(4)
+
 $.log("开始游戏刷分")
 await playgame()
 $.log("开始兑换")
 await duihuan()
 }
 
-function gettoken() {
+function getToken() {
   return new Promise(async (resolve) => {
     let options = {
       url: `https://api.m.jd.com/client.action?functionId=isvObfuscator&clientVersion=10.0.4&build=88641&client=android&d_brand=OPPO&d_model=PCAM00&osVersion=10&screen=2208*1080&partner=oppo&oaid=&openudid=7049442d7e41523&eid=eidAfb0d81231cs3I4yd3GgLRjqcx9qFEcJEmyOMn1BwD8wvLt%2FpM7ENipVIQXuRiDyQ0FYw2aud9%20AhtGqo1Zhp0TsLEgoKZvAWkaXhApgim9hlEyRB&sdkVersion=29&lang=zh_CN&uuid=7049442d7e415232&aid=7049442d7e415232&area=4_48201_54794_0&networkType=4g&wifiBssid=unknown&uts=0f31TVRjBSsqndu4%2FjgUPz6uymy50MQJs2X%2FHz8dwQrKfrmFvPGJYcIhgT3KrbJ2slvZoaufp78QzL4RqQVUgaKH%2Fq7EntlwV7J5l6acE2Wlj2%2Bu6Thwe90cWmtV80fH0yhpOV%2FhYIwvD5N6W1zo3LCVXTcuOw%2BARC%2F6K3bndzn3KzMw%2FpkYzhE2JcXeXiD44r%2BkUMawpn%2Bk7XqSVytdBg%3D%3D&uemps=0-0&st=1624988916642&sign=6a25b389996897b263c70516fc3c71e1&sv=122`,
@@ -211,41 +205,44 @@ function getnick() {
     });
   });
 }
-function doshop(goodsNumId) {
-    return new Promise(async (resolve) => {
-let options = {
-    url: `https://jinggengjcq-isv.isvjcloud.com/dm/front/foodRunning/complete/mission?open_id=&mix_nick=&bizExtString=&user_id=10299171`,
+async function doshop(goodsNumId) {
+  await $.wait(3000)
+  return new Promise(async (resolve) => {
+    let options = {
+      url: `https://jinggengjcq-isv.isvjcloud.com/dm/front/foodRunning/complete/mission?open_id=&mix_nick=&bizExtString=&user_id=10299171`,
 
-    body: `{"jsonRpc":"2.0","params":{"commonParameter":{"appkey":"51B59BB805903DA4CE513D29EC448375","m":"POST","sign":"c80a9253cc1558cbf7f54639198ee751","timestamp":1625029740517,"userId":10299171},"admJson":{"goodsNumId":${goodsNumId},"missionType":"viewShop","method":"/foodRunning/complete/mission","actId":"jd_food_running","buyerNick":"${nick}","pushWay":1,"userId":10299171}}}`,
-headers: {
-"Origin": "https://jinggengjcq-isv.isvjcloud.com",
-"Content-Type": "application/json; charset=UTF-8",
-"X-Requested-With": "XMLHttpRequest",
-"Host": "jinggengjcq-isv.isvjcloud.com",
-"Referer": "https://jinggengjcq-isv.isvjcloud.com/paoku/index.html?sid=75b413510cb227103e928769818a74ew&un_area=4_48201_54794_0",
-"User-Agent": "jdapp;iPhone;9.5.2;14.3;6898c30638c55142969304c8e2167997fa59eb53;network/4g;ADID/F108E1B6-8E30-477C-BE54-87CF23435488;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone9,2;addressid/390536540;supportBestPay/0;appBuild/167650;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
-}}
- $.post(options, async (err, resp, data) => {
-            try {
+      body: `{"jsonRpc":"2.0","params":{"commonParameter":{"appkey":"51B59BB805903DA4CE513D29EC448375","m":"POST","sign":"c80a9253cc1558cbf7f54639198ee751","timestamp":1625029740517,"userId":10299171},"admJson":{"goodsNumId":${goodsNumId},"missionType":"viewShop","method":"/foodRunning/complete/mission","actId":"jd_food_running","buyerNick":"${nick}","pushWay":1,"userId":10299171}}}`,
+      headers: {
+        "Origin": "https://jinggengjcq-isv.isvjcloud.com",
+        "Content-Type": "application/json; charset=UTF-8",
+        "X-Requested-With": "XMLHttpRequest",
+        "Host": "jinggengjcq-isv.isvjcloud.com",
+        "Referer": "https://jinggengjcq-isv.isvjcloud.com/paoku/index.html?sid=75b413510cb227103e928769818a74ew&un_area=4_48201_54794_0",
+        "User-Agent": "jdapp;iPhone;9.5.2;14.3;6898c30638c55142969304c8e2167997fa59eb53;network/4g;ADID/F108E1B6-8E30-477C-BE54-87CF23435488;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone9,2;addressid/390536540;supportBestPay/0;appBuild/167650;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
+      }
+    }
+    $.post(options, async (err, resp, data) => {
+      try {
 
-                    const reust = JSON.parse(data)
-                 
-                    if(reust.errorCode == 200){
-                   
-                    $.log(`${reust.data.data.remark}\n获得${reust.data.data.sendNum}`)
-                    }else if(reust.errorCode == 500) {
-                    
-                        $.log("今日已领取完毕,请明日再来！"+reust.errorMessage)
-                    }
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
-        });
+        const reust = JSON.parse(data)
+
+        if (reust.errorCode == 200) {
+
+          $.log(`${reust.data.data.remark}\n获得${reust.data.data.sendNum}`)
+        } else if (reust.errorCode == 500) {
+
+          $.log("今日已领取完毕,请明日再来！" + reust.errorMessage)
+        }
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     });
+  });
 }
-function doliulan(goodsNumId) {
+async function doliulan(goodsNumId) {
+  await $.wait(3000)
   return new Promise(async (resolve) => {
     let options = {
       url: `https://jinggengjcq-isv.isvjcloud.com/dm/front/foodRunning/complete/mission?open_id=&mix_nick=&bizExtString=&user_id=10299171`,
@@ -258,18 +255,19 @@ function doliulan(goodsNumId) {
         "Host": "jinggengjcq-isv.isvjcloud.com",
         "Referer": "https://jinggengjcq-isv.isvjcloud.com/paoku/index.html?sid=75b413510cb227103e928769818a74ew&un_area=4_48201_54794_0",
         "User-Agent": "jdapp;iPhone;9.5.2;14.3;6898c30638c55142969304c8e2167997fa59eb53;network/4g;ADID/F108E1B6-8E30-477C-BE54-87CF23435488;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone9,2;addressid/390536540;supportBestPay/0;appBuild/167650;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
-      }}
+      }
+    }
     $.post(options, async (err, resp, data) => {
       try {
 
         const reust = JSON.parse(data)
 
-        if(reust.errorCode == 200){
+        if (reust.errorCode == 200) {
 
           $.log(`${reust.data.data.remark}\n获得${reust.data.data.sendNum}`)
-        }else if(reust.errorCode == 500) {
+        } else if (reust.errorCode == 500) {
 
-          $.log("今日已领取完毕,请明日再来！"+reust.errorMessage)
+          $.log("今日已领取完毕,请明日再来！" + reust.errorMessage)
         }
       } catch (e) {
         $.logErr(e, resp);
@@ -280,7 +278,8 @@ function doliulan(goodsNumId) {
   });
 }
 
-function doGoods(goodsNumId) {
+async function doGoods(goodsNumId) {
+  await $.wait(3000)
   return new Promise(async (resolve) => {
     let options = {
       url: `https://jinggengjcq-isv.isvjcloud.com/dm/front/foodRunning/complete/mission?open_id=&mix_nick=&bizExtString=&user_id=10299171`,
@@ -293,18 +292,19 @@ function doGoods(goodsNumId) {
         "Host": "jinggengjcq-isv.isvjcloud.com",
         "Referer": "https://jinggengjcq-isv.isvjcloud.com/paoku/index.html?sid=75b413510cb227103e928769818a74ew&un_area=4_48201_54794_0",
         "User-Agent": "jdapp;iPhone;9.5.2;14.3;6898c30638c55142969304c8e2167997fa59eb53;network/4g;ADID/F108E1B6-8E30-477C-BE54-87CF23435488;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone9,2;addressid/390536540;supportBestPay/0;appBuild/167650;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
-      }}
+      }
+    }
     $.post(options, async (err, resp, data) => {
       try {
 
         const reust = JSON.parse(data)
 
-        if(reust.errorCode == 200){
+        if (reust.errorCode == 200) {
 
           $.log(`${reust.data.data.remark}\n获得${reust.data.data.sendNum}`)
-        }else if(reust.errorCode == 500) {
+        } else if (reust.errorCode == 500) {
 
-          $.log("今日已领取完毕,请明日再来！"+reust.errorMessage)
+          $.log("今日已领取完毕,请明日再来！" + reust.errorMessage)
         }
       } catch (e) {
         $.logErr(e, resp);
@@ -314,7 +314,8 @@ function doGoods(goodsNumId) {
     });
   });
 }
-function doadd(goodsNumId) {
+async function doadd(goodsNumId) {
+  await $.wait(3000)
   return new Promise(async (resolve) => {
     let options = {
       url: `https://jinggengjcq-isv.isvjcloud.com/dm/front/foodRunning/complete/mission?open_id=&mix_nick=&bizExtString=&user_id=10299171`,
@@ -327,18 +328,19 @@ function doadd(goodsNumId) {
         "Host": "jinggengjcq-isv.isvjcloud.com",
         "Referer": "https://jinggengjcq-isv.isvjcloud.com/paoku/index.html?sid=75b413510cb227103e928769818a74ew&un_area=4_48201_54794_0",
         "User-Agent": "jdapp;iPhone;9.5.2;14.3;6898c30638c55142969304c8e2167997fa59eb53;network/4g;ADID/F108E1B6-8E30-477C-BE54-87CF23435488;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone9,2;addressid/390536540;supportBestPay/0;appBuild/167650;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
-      }}
+      }
+    }
     $.post(options, async (err, resp, data) => {
       try {
 
         const reust = JSON.parse(data)
 
-        if(reust.errorCode == 200){
+        if (reust.errorCode == 200) {
 
           $.log(`${reust.data.data.remark}\n获得${reust.data.data.sendNum}`)
-        }else if(reust.errorCode == 500) {
+        } else if (reust.errorCode == 500) {
 
-          $.log("今日已领取完毕,请明日再来！"+reust.errorMessage)
+          $.log("今日已领取完毕,请明日再来！" + reust.errorMessage)
         }
       } catch (e) {
         $.logErr(e, resp);
@@ -348,7 +350,8 @@ function doadd(goodsNumId) {
     });
   });
 }
-function dotree(goodsNumId) {
+async function dotree(goodsNumId) {
+  await $.wait(3000)
   return new Promise(async (resolve) => {
     let options = {
       url: `https://jinggengjcq-isv.isvjcloud.com/dm/front/foodRunning/complete/mission?open_id=&mix_nick=&bizExtString=&user_id=10299171`,
@@ -361,18 +364,19 @@ function dotree(goodsNumId) {
         "Host": "jinggengjcq-isv.isvjcloud.com",
         "Referer": "https://jinggengjcq-isv.isvjcloud.com/paoku/index.html?sid=75b413510cb227103e928769818a74ew&un_area=4_48201_54794_0",
         "User-Agent": "jdapp;iPhone;9.5.2;14.3;6898c30638c55142969304c8e2167997fa59eb53;network/4g;ADID/F108E1B6-8E30-477C-BE54-87CF23435488;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone9,2;addressid/390536540;supportBestPay/0;appBuild/167650;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
-      }}
+      }
+    }
     $.post(options, async (err, resp, data) => {
       try {
 
         const reust = JSON.parse(data)
 
-        if(reust.errorCode == 200){
+        if (reust.errorCode == 200) {
 
           $.log(`${reust.data.data.remark}\n获得${reust.data.data.sendNum}`)
-        }else if(reust.errorCode == 500) {
+        } else if (reust.errorCode == 500) {
 
-          $.log("今日已领取完毕,请明日再来！"+reust.errorMessage)
+          $.log("今日已领取完毕,请明日再来！" + reust.errorMessage)
         }
       } catch (e) {
         $.logErr(e, resp);
@@ -418,7 +422,8 @@ function dohelp(inviterNick) {
     });
   });
 }
-function dojoinMember(id) {
+async function dojoinMember(id) {
+  await $.wait(3000)
   return new Promise(async (resolve) => {
     let options = {
       url: `https://jinggengjcq-isv.isvjcloud.com/dm/front/foodRunning/complete/mission?open_id=&mix_nick=&bizExtString=&user_id=10299171`,
@@ -431,16 +436,17 @@ function dojoinMember(id) {
         "Host": "jinggengjcq-isv.isvjcloud.com",
         "Referer": "https://jinggengjcq-isv.isvjcloud.com/paoku/index.html?sid=75b413510cb227103e928769818a74ew&un_area=4_48201_54794_0",
         "User-Agent": "jdapp;iPhone;9.5.2;14.3;6898c30638c55142969304c8e2167997fa59eb53;network/4g;ADID/F108E1B6-8E30-477C-BE54-87CF23435488;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone9,2;addressid/390536540;supportBestPay/0;appBuild/167650;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
-      }}
+      }
+    }
     $.post(options, async (err, resp, data) => {
       try {
 
         const reust = JSON.parse(data)
 
-        if(reust.errorCode == 200){
+        if (reust.errorCode == 200) {
           $.log(`\n如果入会失败 请手动去入会\n`)
           $.log(`${reust.data.data.remark}`)
-        }else if(reust.errorCode == 500) {
+        } else if (reust.errorCode == 500) {
 
           $.log(reust.errorMessage)
         }
