@@ -486,7 +486,7 @@ function exchange(id) {
                  //   console.log()
 if(data.result){
 console.log(`兑换 ${data.data.rewardName}成功`)
-$.exchange += 20
+$.exchange += 50
 }else{
 console.log(JSON.stringify(data))
 }
