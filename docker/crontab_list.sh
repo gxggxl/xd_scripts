@@ -38,6 +38,8 @@
 ##############长期活动##############
 # 签到
 5 0,9 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+# 汪汪乐园每日助力
+30 23 * * * node /scripts/jd_joy_park_help.js >> /scripts/logs/jd_joy_park_help.log 2>&1
 # 送豆得豆
 16 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 京东签到图形验证
