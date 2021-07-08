@@ -18,11 +18,18 @@ const { R_OK } = require('fs').constants;
 const vm = require('vm');
 let smashUtils;
 
-const summer_movement_joinjoinjoinhui = $.isNode() ? (process.env.summer_movement_joinjoinjoinhui ? process.env.summer_movement_joinjoinjoinhui : false) : ($.getdata("summer_movement_joinjoinjoinhui") ? $.getdata("summer_movement_joinjoinjoinhui") : false);;//是否入会  true 入会，false 不入会
+let summer_movement_joinjoinjoinhui = false;//是否入会  true 入会，false 不入会
+if ($.isNode() && process.env.summer_movement_joinjoinjoinhui) {
+  summer_movement_joinjoinjoinhui = process.env.summer_movement_joinjoinjoinhui;
+}
 
-const ShHelpFlag = $.isNode() ? (process.env.summer_movement_ShHelpFlag ? process.env.summer_movement_ShHelpFlag : true) : ($.getdata("summer_movement_ShHelpFlag") ? $.getdata("summer_movement_ShHelpFlag") : true);;//是否SH助力  true 助力，false 不助力
+let ShHelpFlag = false;//是否SH助力  true 助力，false 不助力
+if ($.isNode() && process.env.ShHelpFlag) {
+  ShHelpFlag = process.env.ShHelpFlag;
+}
 
-const ShHelpAuthorFlag = false;//是否助力作者SH  true 助力，false 不助力
+
+const ShHelpAuthorFlag = true;//是否助力作者SH  true 助力，false 不助力
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [];
 $.cookie = '';
@@ -58,9 +65,9 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
       '活动时间：2021-07-08至2021-08-8\n' +
       '脚本更新时间：2021年7月8日 21点00分\n'
       );
-      if(summer_movement_joinjoinjoinhui) console.log('您设置了入会')
-      if(ShHelpFlag) console.log('您设置了执行【百元守卫站SH】互助')
-      console.log('\n\n该脚本启用了[正道的光]模式\n执行 做任务、做店铺任务、助力 会有几率不执行\n本脚本不让任务一次全部做完\n您可以多跑几次\n\n🐸\n')
+      if(`${summer_movement_joinjoinjoinhui}` === "true") console.log('您设置了入会')
+      if(`${ShHelpFlag}` === "true") console.log('您设置了执行【百元守卫站SH】互助')
+      console.log('\n\n该脚本启用了[正道的光]模式\n执行 做任务、做店铺任务、助力 会有几率不执行\n本脚本不让任务一次全部做完\n您可以多跑几次\n北京时间18时后是正常模式\n\n🐸\n')
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       $.cookie = cookiesArr[i];
@@ -91,7 +98,7 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
     // $.secretp = $.secretpInfo[$.UserName];
     $.index = i + 1;
     if (new Date().getUTCHours() + 8 >= 9) {
-      if(ShHelpFlag){
+      if(`${ShHelpFlag}` === "true"){
         if ($.ShInviteList && $.ShInviteList.length) console.log(`\n******开始内部京东账号【百元守卫站SH】助力*********\n`);
         for (let i = 0; i < $.ShInviteList.length && $.canHelp; i++) {
           if(aabbiill()) {
@@ -196,7 +203,7 @@ async function movement() {
           }
           $.callbackInfo = {};
           console.log(`做任务：${$.oneActivityInfo.title || $.oneActivityInfo.taskName || $.oneActivityInfo.shopName};等待完成`);
-          if ($.oneTask.taskType === 21 && summer_movement_joinjoinjoinhui){
+          if ($.oneTask.taskType === 21 && `${summer_movement_joinjoinjoinhui}` === "true"){
             let channel = $.oneActivityInfo.memberUrl.match(/channel=(\d+)/) ? $.oneActivityInfo.memberUrl.match(/channel=(\d+)/)[1] : '';
             const jiarubody = {
               venderId: $.oneActivityInfo.vendorIds,
