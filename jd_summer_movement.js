@@ -58,6 +58,8 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
       '活动时间：2021-07-08至2021-08-8\n' +
       '脚本更新时间：2021年7月8日 20点00分\n'
       );
+  if(summer_movement_joinjoinjoinhui) console.log('\n您设置了入会')
+  if(ShHelpFlag) console.log('\n您设置了执行【百元守卫站SH】互助')
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       $.cookie = cookiesArr[i];
