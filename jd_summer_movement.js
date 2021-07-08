@@ -496,7 +496,7 @@ async function getPostBody(type) {
     let taskBody = '';
     try {
       const log = await getBody($)
-      if (type === 'help' || help === 'byhelp') {
+      if (type === 'help' || type === 'byhelp') {
         taskBody = `functionId=olympicgames_assist&body=${JSON.stringify({"inviteId":$.inviteId,"type": "confirm","ss" :log})}&client=wh5&clientVersion=1.0.0&uuid=${uuid}&appid=o2_act`
       } else if (type === 'olympicgames_collectCurrency') {
         taskBody = `functionId=olympicgames_collectCurrency&body=${JSON.stringify({"type":$.collectId,"ss" : log})}&client=wh5&clientVersion=1.0.0&uuid=${uuid}&appid=o2_act`;
