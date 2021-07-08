@@ -5,6 +5,9 @@
 
 ##############短期活动##############
 
+# 燃动夏季 活动时间：7.8-8.8
+20 0,6-23/2 * 7-8 * node /scripts/jd_summer_movement.js >> /scripts/logs/jd_summer_movement.log 2>&1
+
 # 京享值PK 活动时间：6.22-7.21
 11 0,6,11,16,21 5-21 7 * node /scripts/jd_jxzpk.js >> /scripts/logs/jd_jxzpk.log 2>&1
 
