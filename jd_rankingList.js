@@ -43,6 +43,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action?functionId=`;
     cookie = cookiesArr[i];
     if (cookie) {
       if (i) console.log(`\n***************开始京东账号${i + 1}***************`)
+      $.Nname=`京东账号${i + 1}`
       initial();
       await  QueryJDUserInfo();
       if (!merge.enabled)  //cookie不可用
@@ -74,11 +75,12 @@ function QueryJDUserInfo(timeout = 0) {
       $.get(url, (err, resp, data) => {
         try {
           data = JSON.parse(data);
+          //console.log(data)
           if (data.retcode === 13) {
             merge.enabled = false
             return
           }
-          merge.nickname = data.base.nickname;
+          //merge.nickname = data.base.nickname;
         } catch (e) {
           $.logErr(e, resp);
         } finally {
@@ -201,7 +203,7 @@ function initial() {
 function msgShow() {
   let message = "";
   let url ={ "open-url" : `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://h5.m.jd.com/babelDiy/Zeus/3wtN2MjeQgjmxYTLB3YFcHjKiUJj/index.html%22%20%7D`}
-  let title = `京东账号：${merge.nickname}`;
+  let title = $.Nname;
   for (let i in merge) {
     if (typeof (merge[i]) !== "object" || !merge[i].show) continue;
     if (merge[i].notify.split("").reverse()[0] === "\n") merge[i].notify = merge[i].notify.substr(0,merge[i].notify.length - 1);
