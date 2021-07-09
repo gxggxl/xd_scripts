@@ -8,7 +8,6 @@ cron 12 0,6-23/2 * * * https://raw.githubusercontent.com/smiek2221/scripts/maste
 
 
 const $ = new Env('燃动夏季');
-const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
@@ -164,18 +163,16 @@ async function movement() {
       }
     }
 
-    if(aabbiill()){
-      console.log('\n运动\n')
-      $.speedTraining = true;
-      await takePostRequest('olympicgames_startTraining');
-      await $.wait(1000);
-      for(let i=0;i<=3;i++){
-        if($.speedTraining){
-          await takePostRequest('olympicgames_speedTraining');
-          await $.wait(1000);
-        }else{
-          break;
-        }
+    console.log('\n运动\n')
+    $.speedTraining = true;
+    await takePostRequest('olympicgames_startTraining');
+    await $.wait(1000);
+    for(let i=0;i<=3;i++){
+      if($.speedTraining){
+        await takePostRequest('olympicgames_speedTraining');
+        await $.wait(1000);
+      }else{
+        break;
       }
     }
     
