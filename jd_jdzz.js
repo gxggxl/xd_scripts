@@ -230,8 +230,8 @@ function readShareCode() {
     $.get({url: `https://code.chiang.fun/api/v1/jd/jdzz/read/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
-      //  console.log(`${JSON.stringify(err)}`)
-      //  console.log(`${$.name} API请求失败，请检查网路重试`)
+      // console.log(`${JSON.stringify(err)}`)
+      // console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
             console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
