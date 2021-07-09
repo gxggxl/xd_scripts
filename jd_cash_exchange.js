@@ -2,7 +2,7 @@
 签到领现金兑换
 需要填写exchangeAccounts参数，兑换多少取决于app内显示，默认为所有账号兑换10红包，部分账号会出现参数错误的提示，是因为账号提现到的微信任务没有全部完成。
 指定账号+金额应这样填写(pt_pin1@10&pt_pin2@10)
-变量实例：export exchangeAccounts="账号1的pt_pin值@10&账号2的pt_pin值@10"
+变量示例：export exchangeAccounts="账号1的pt_pin值@10&账号2的pt_pin值@10"
 TG学习交流群https://t.me/cdles
 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_cash_exchange.js
 */
