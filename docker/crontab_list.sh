@@ -56,7 +56,7 @@
 # 送豆得豆
 16 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 京东签到图形验证
-10 0,15 * * * node /scripts/jd_sign.js >> /scripts/logs/jd_sign.log 2>&1
+10 0,15 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 # 天天加速
 3 */3 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
 # 旺旺乐园
