@@ -48,9 +48,9 @@
 # 签到
 5 0,9 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 # 龙王半点雨
-30,31 0-23 * * * node /scripts/long_half_redrain.js now >> /scripts/logs/long_half_redrain.log 2>&1
+30,31 0-23 * * * node /scripts/long_half_redrain.js >> /scripts/logs/long_half_redrain.log 2>&1
 # 龙王整点雨
-0,1 0-23 * * * node /scripts/long_super_redrain.js now >> /scripts/logs/long_super_redrain.log 2>&1
+0,1 0-23 * * * node /scripts/long_super_redrain.js >> /scripts/logs/long_super_redrain.log 2>&1
 # 早起福利
 30 6 * * * node /scripts/jd_zqfl.js >> /scripts/logs/jd_zqfl.log 2>&1
 # 京东零食街 活动时间：年底
