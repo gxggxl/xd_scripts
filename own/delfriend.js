@@ -1,5 +1,6 @@
 // root
 // 跳转京东好有页面
+const $ = new Env("删除好友");
 app.startActivity({
     packageName: "com.jingdong.app.mall", 
     className: "com.jd.lib.jdfriend.view.activity.FriendListActivity", 
