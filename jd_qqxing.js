@@ -105,7 +105,7 @@ $.shareuuid = "7d6b4dfb043a4ff28835daec3ee19a24"
                     }
                     await getinfo()                     
                     if(!Exchange){console.log("你 默认 不兑换东西,请自行进去活动兑换")}                    
-                    message += `【京东账号${$.index}】${$.nickName || $.UserName}\n${$.cow} 兑换京🐶 ${$.exchange}  ${$.drawresult}\n`
+                    message += `【京东账号${$.index}】${$.nickName || $.UserName}\n${$.cow} 兑换京🐶 ${$.exchange}  ${$.drawresult}\n\n`
                     if($.index%3===0) 
                    {
                   await $.wait(60*1000) 
@@ -486,7 +486,7 @@ function exchange(id) {
                  //   console.log()
 if(data.result){
 console.log(`兑换 ${data.data.rewardName}成功`)
-$.exchange += 50
+$.exchange += 20
 }else{
 console.log(JSON.stringify(data))
 }
