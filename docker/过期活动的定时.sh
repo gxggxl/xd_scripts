@@ -1,5 +1,8 @@
 ####################过期活动的定时####################
 
+# 欧洲狂欢杯 活动时间：###
+0 5,10,11 * * * node /scripts/jd_europeancup.js >> /scripts/logs/jd_europeancup.log 2>&1
+
 # 京喜领88元红包(已结束)
 #30 1,6,12,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 
