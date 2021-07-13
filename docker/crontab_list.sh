@@ -178,7 +178,8 @@
 10 0 * * * node /scripts/jd_dj_plantBeans.js >> /scripts/logs/jd_dj_plantBeans.log 2>&1
 # 京东到家鲜豆庄园收水滴
 */5 * * * * node /scripts/jd_dj_getPoints.js >> /scripts/logs/jd_dj_getPoints.log 2>&1
-
+# 京喜财富岛热气球挂机
+10 1,12 * * * node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
 
 
 
