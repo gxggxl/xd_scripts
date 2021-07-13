@@ -1,7 +1,6 @@
 /*
 京喜财富岛
 根据github@MoPoQAQ 财富岛脚本修改而来。无需京喜token,只需京东cookie即可.
-作者：Aaron-lv
 cron 5 8,13,19 * * * jd_cfd.js
 更新时间：2021-6-9
 活动入口：京喜APP-我的-京喜财富岛
