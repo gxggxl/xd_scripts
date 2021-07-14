@@ -1,5 +1,11 @@
 ####################过期活动的定时####################
 
+# crazyJoy自动每日任务
+30 7,23 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
+
+#监控crazyJoy分红
+10 12 * * * node /scripts/jd_crazy_joy_bonus.js >> /scripts/logs/jd_crazy_joy_bonus.log 2>&1
+
 # 欧洲狂欢杯 活动时间：###
 0 5,10,11 * * * node /scripts/jd_europeancup.js >> /scripts/logs/jd_europeancup.log 2>&1
 
