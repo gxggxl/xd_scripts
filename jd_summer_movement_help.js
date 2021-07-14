@@ -1,12 +1,7 @@
 /*
-
 https://wbbny.m.jd.com/babelDiy/Zeus/2rtpffK8wqNyPBH6wyUDuBKoAbCt/index.html
-
-cron 14/41 7-14 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_summer_movement_help.js
-
+cron 32 8-23/4 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_summer_movement_help.js
 */
-
-
 const $ = new Env('燃动夏季_SH助力');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -41,7 +36,8 @@ if ($.isNode()) {
 }
 
 $.appid = 'o2_act';
-const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "jdapp;iPhone;10.0.8;15.0;239fef5700934564335c2519c4a5b764e8fca656;network/wifi;model/iPhone10,3;addressid/827662943;appBuild/167740;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1") : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;10.0.8;15.0;239fef5700934564335c2519c4a5b764e8fca656;network/wifi;model/iPhone10,3;addressid/827662943;appBuild/167740;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "JD4iPhone/9.3.5 CFNetwork/1209 Darwin/20.2.0") : ($.getdata('JDUA') ? $.getdata('JDUA') : "JD4iPhone/9.3.5 CFNetwork/1209 Darwin/20.2.0")
+
 
 !(async () => {
   if (!cookiesArr[0]) {
@@ -90,13 +86,14 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
     res2 = await getAuthorShareCode('');
   }
   $.ShInviteLists = []
-  $.ShInviteLists = []
+  $.ShInviteLists = ['']
   if (ShHelpAuthorFlag) {
     $.innerShInviteLists = getRandomArrayElements([...res, ...res2], [...res, ...res2].length);
     $.ShInviteLists.push(...$.ShInviteList,...$.innerShInviteList,...$.innerShInviteLists);
   }else{
     $.ShInviteLists.push(...$.ShInviteList);
   }
+  $.ShInviteLists = ['']
   for (let i = 0; i < cookiesArr.length; i++) {
     $.cookie = cookiesArr[i];
     $.canHelp = true;
@@ -117,7 +114,7 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
             await $.wait(1000);
           }
         }
-        $.ShInviteLists = []
+        $.ShInviteLists = ['']
         $.innerShInviteLists = getRandomArrayElements([...res, ...res2], [...res, ...res2].length);
         $.ShInviteLists.push(...$.ShInviteList,...$.innerShInviteList,...$.innerShInviteLists);
       }
@@ -311,7 +308,7 @@ async function getPostRequest(type, body) {
     'Cookie': $.cookie,
     "Origin": "https://wbbny.m.jd.com",
     "Referer": "https://wbbny.m.jd.com/",
-    "User-Agent": UA,
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88",
 
   };
   return {url: url, method: method, headers: headers, body: body};
