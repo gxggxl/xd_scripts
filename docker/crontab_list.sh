@@ -47,6 +47,8 @@
 ##############长期活动##############
 # 签到
 5 0,9 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+# 财富岛红包
+0 * * * * node /scripts/jx_cfdhb.js >> /scripts/logs/jx_cfdhb.log 2>&1
 # 早起福利
 30 6 * * * node /scripts/jd_zqfl.js >> /scripts/logs/jd_zqfl.log 2>&1
 # 京东零食街 活动时间：年底
