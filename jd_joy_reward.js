@@ -695,7 +695,7 @@ async function joyReward() {
 }
 function getExchangeRewards() {
   let opt = {
-    url: "//jdjoy.jd.com/common/gift/getBeanConfigs?reqSource=h5&invokeKey=NRp8OPxZMFXmGkaE",
+    url: "//jdjoy.jd.com/common/gift/getBeanConfigs?reqSource=h5&invokeKey=qRKHmL4sna8ZOP9F",
     method: "GET",
     data: {},
     credentials: "include",
@@ -739,7 +739,7 @@ function getExchangeRewards() {
 function exchange(saleInfoId, orderSource) {
   let body = {"buyParam":{"orderSource":orderSource,"saleInfoId":saleInfoId},"deviceInfo":{}}
   let opt = {
-    "url": "//jdjoy.jd.com/common/gift/new/exchange?reqSource=h5&invokeKey=NRp8OPxZMFXmGkaE",
+    "url": "//jdjoy.jd.com/common/gift/new/exchange?reqSource=h5&invokeKey=qRKHmL4sna8ZOP9F",
     "data":body,
     "credentials":"include","method":"POST","header":{"content-type":"application/json"}
   }
@@ -830,7 +830,7 @@ function TotalBean() {
 function validate() {
   return new Promise(resolve => {
     let opt = {
-      url: `//jdjoy.jd.com/common/pet/getPetTaskConfig?validate=${$.validate}&reqSource=h5&invokeKey=NRp8OPxZMFXmGkaE`,
+      url: `//jdjoy.jd.com/common/pet/getPetTaskConfig?validate=${$.validate}&reqSource=h5&invokeKey=qRKHmL4sna8ZOP9F`,
       method: "GET",
       data: {},
       credentials: "include",
