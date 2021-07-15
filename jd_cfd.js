@@ -112,7 +112,7 @@ $.appId = 10028;
       console.log(`\n助力作者\n`);
       for (let id of $.strMyShareIds) {
         console.log(`账号${$.UserName} 去助力 ${id}`)
-        await helpByStage(id)
+    //  await helpByStage(id)
         if (!$.canHelp) break
         await $.wait(3000)
       }
@@ -1421,13 +1421,13 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://share.turinglabs.net/api/v3/jxbfd/query/${randomCount}/`,
+      url: `/`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+     //  console.log(`${JSON.stringify(err)}`)
+     //  console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
             console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
