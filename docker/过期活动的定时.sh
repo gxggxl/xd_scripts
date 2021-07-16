@@ -1,5 +1,8 @@
 ####################过期活动的定时####################
 
+# 明星小店(星店长)
+0 1,21 * * * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+
 # crazyJoy自动每日任务
 30 7,23 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 
