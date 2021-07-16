@@ -641,7 +641,7 @@ function taskPostUrl(url, Host, reqSource) {
 }
 function taskUrl(functionId, friendPin) {
   let opt = {
-    url: `//jdjoy.jd.com/common/pet/${functionId}?friendPin=${encodeURI(friendPin)}&invokeKey=NRp8OPxZMFXmGkaE`,
+    url: `//jdjoy.jd.com/common/pet/${functionId}?friendPin=${encodeURI(friendPin)}&invokeKey=qRKHmL4sna8ZOP9F`,
     // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5`,
     method: "GET",
     data: {},
