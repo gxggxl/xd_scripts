@@ -111,7 +111,7 @@ $.appId = 10028;
       console.log(`\n助力作者\n`);
       for (let id of $.strMyShareIds) {
         console.log(`账号${$.UserName} 去助力 ${id}`)
-    //  await helpByStage(id)
+     //getAuthorShareCode await helpByStage(id)
         if (!$.canHelp) break
         await $.wait(3000)
       }
@@ -669,7 +669,7 @@ function helpdraw(dwUserId) {
           data = JSON.parse(data);
           if (data.iRet === 0 || data.sErrMsg === "success") {
             if (data.Data.StagePrizeInfo) {
-              console.log(`领取助力奖励成功：获得${data.Data.ddwCoin}金币 ${data.Data.StagePrizeInfo.ddwMoney}财富 ${data.Data.StagePrizeInfo.strPrizeName && !data.Data.StagePrizeInfo.ddwMoney || `0元`}红包`)
+              console.log(`领取助力奖励成功：获得${data.Data.ddwCoin}金币 ${data.Data.StagePrizeInfo.ddwMoney}财富 ${(data.Data.StagePrizeInfo.strPrizeName && !data.Data.StagePrizeInfo.ddwMoney) ? data.Data.StagePrizeInfo.strPrizeName : `0元`}红包`)
             } else {
               console.log(`领取助力奖励成功：获得${data.Data.ddwCoin}金币`)
             }
@@ -1073,16 +1073,16 @@ function helpByStage(shareCodes) {
           if (data.iRet === 0 || data.sErrMsg === 'success') {
             console.log(`助力成功：获得${data.Data.GuestPrizeInfo.strPrizeName}`)
           } else if (data.iRet === 2232 || data.sErrMsg === '今日助力次数达到上限，明天再来帮忙吧~') {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：${data.sErrMsg}`)
             $.canHelp = false
           } else if (data.iRet === 9999 || data.sErrMsg === '您还没有登录，请先登录哦~') {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：${data.sErrMsg}`)
             $.canHelp = false
           } else if (data.iRet === 2229 || data.sErrMsg === '助力失败啦~') {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：您的账号或者被助力的账号可能已黑，请联系客服`)
             // $.canHelp = false
           } else {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：${data.sErrMsg}`)
           }
         }
       } catch (e) {
@@ -1493,16 +1493,16 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `/`,
+      url: ``,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+      //  console.log(`${JSON.stringify(err)}`)
+      //  console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-        //  console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+        console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
