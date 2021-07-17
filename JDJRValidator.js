@@ -397,3 +397,4 @@ class MousePosFaker {
 }
 
 module.exports = JDJRValidator;
+
