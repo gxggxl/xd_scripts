@@ -317,17 +317,18 @@ EOF
 
 echo "$lrr" | sed -e "s/RRAID/$1/g" > /jd/scripts/lxk0301_live_redrain.js
 
-echo "红包雨RRA替换成$1完成"
+#echo "红包雨RRA替换成$1完成"
+echo "红包雨RRA替换完成！"
 
 # 删除旧的定时任务
 sed -i '/lxk0301_live_redrain/d' /jd/config/crontab.list
 
-echo "删除旧的lxk0301_live_redrain定时任务完成"
+echo "删除旧的红包雨定时任务完成！"
 
 # 添加今天的定时任务
 echo "0,30 0-23$(date "+ %-d %-m") * jtask lxk0301_live_redrain now"  >>  /jd/config/crontab.list
 
-echo "添加当天的lxk0301_live_redrain红包雨定时任务完成"
+echo "添加当天的红包雨定时任务完成！"
 
 #echo "顺便白嫖一下红包雨"
 
