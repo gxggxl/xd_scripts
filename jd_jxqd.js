@@ -1,7 +1,5 @@
 /*
 * 根据TG群群友an zi提供的脚本修改而来，套用京喜工厂的脚本。
-* TG交流群：https://t.me/jd_zero205
-* TG通知频道：https://t.me/jd_zero205_tz
 /*
 京喜签到
 已支持IOS双京东账号,Node.js支持N个京东账号
