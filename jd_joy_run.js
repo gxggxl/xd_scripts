@@ -12,7 +12,7 @@ token获取途径：
 
 docker 设置环境变量 JOY_RUN_HELP_MYSELF 为true,则开启账号内部互助.默认关闭(即给脚本作者内置的助力).
 
-## 宠汪汪赛跑开启自己账号内部互助
+## 如需开启自己账号内部互助，则配置写入此条变量：
 export JOY_RUN_HELP_MYSELF="true"
 
 [MITM]
