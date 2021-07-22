@@ -185,5 +185,7 @@
 */6 * * * * node /scripts/jd_dj_getPoints.js >> /scripts/logs/jd_dj_getPoints.log 2>&1
 # 京喜财富岛
 6 * * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
-
-
+# 喜财富岛热气球挂机
+13 1,11 * * * node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
+# 京喜财富岛提现
+59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
