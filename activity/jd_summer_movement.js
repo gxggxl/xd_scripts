@@ -9,7 +9,7 @@ cron 12 0,6-23/2 * * * https://raw.githubusercontent.com/smiek2221/scripts/maste
 
 const $ = new Env('燃动夏季');
 //Node.js用户请在jdCookie.js处填写京东ck;
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 
 const https = require('https');
 const fs = require('fs/promises');
