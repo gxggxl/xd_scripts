@@ -80,7 +80,7 @@
 # 天天优惠大乐透
 9 0 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 # 京东试用
-16 8 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
+#16 8 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 东东超市兑换奖品
 0,1 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 点点券修复
@@ -88,11 +88,11 @@
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
-10 7,11,15,19 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+10 7,11,15,19 * * *  node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 宠汪汪
 7 */2,23 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
 # 宠汪汪积分兑换京豆.
-59 7,15,23 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+59 7,15,23 * * * sleep 59; node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
 # 宠汪汪赛跑与邀请助力
 1 9-19/2,20 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 宠汪汪喂食
