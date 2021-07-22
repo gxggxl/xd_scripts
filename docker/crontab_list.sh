@@ -52,7 +52,7 @@
 # 财富岛提现
 59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
 # 京喜签到
-6 0 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
+6 0,13 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 早起福利
 30 6 * * * node /scripts/jd_zqfl.js >> /scripts/logs/jd_zqfl.log 2>&1
 # 店铺签到
