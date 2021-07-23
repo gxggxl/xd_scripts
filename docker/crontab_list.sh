@@ -81,8 +81,10 @@
 10 7,11,15,19 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 宠汪汪
 7 */2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
-# 宠汪汪积分兑换京豆.
+# 宠汪汪积分兑换京豆
 59 7,15,23 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+# 宠汪汪封印解锁
+59 7,15,23 * * * node /scripts/jd_joy_reward_auth.js >> /scripts/logs/jd_joy_reward_auth.log 2>&1
 # 宠汪汪赛跑与邀请助力
 1 9-19/3 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 宠汪汪喂食
