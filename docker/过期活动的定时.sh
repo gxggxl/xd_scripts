@@ -48,3 +48,5 @@
 # 燃动夏季百元守卫战_助力 活动时间：7.8-8.8
 12 7-14 * 7-8 * node /scripts/jd_summer_movement_help.js >> /scripts/logs/jd_summer_movement_help.log 2>&1
 
+# 特物Z|万物皆可国创 活动时间：###
+3 0,13 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
