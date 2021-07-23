@@ -151,7 +151,7 @@
 #京东健康社区
 13 1,6,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
 #京东健康社区收集健康能量
-5-45/20 */2 * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
+5-45/20 */4 * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
 # 幸运大转盘
 10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 # 领金贴
@@ -159,7 +159,7 @@
 # 京喜牧场
 15 15 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
 # 京喜牧场 new
-15 0,6-23/4 * * * node /scripts/jd_jxmc_new.js >> /scripts/logs/jd_jxmc_new.log 2>&1
+15 0,6-23/3 * * * node /scripts/jd_jxmc_new.js >> /scripts/logs/jd_jxmc_new.log 2>&1
 # 京东到家果园
 10 0,3,8,11,17 * * * node /scripts/jd_dj_fruit.js >> /scripts/logs/jd_dj_fruit.log 2>&1
 # 京东到家鲜豆任务
