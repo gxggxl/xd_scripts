@@ -8,9 +8,9 @@ cron 14,41 7-14 * * * https://raw.githubusercontent.com/smiek2221/scripts/master
 
 
 const $ = new Env('燃动夏季_SH助力');
-const notify = $.isNode() ? require('./sendNotify') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 
 $.joyytoken = "";
 let joyytoken_count = 1
