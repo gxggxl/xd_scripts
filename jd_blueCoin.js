@@ -113,7 +113,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
 
 async function PrizeIndex() {
   let nowtime = new Date().Format("s.S")
-  let starttime = process.env.SM_STARTTIME ? process.env.SM_STARTTIME : 59;
+  let starttime = $.isNode() ? (process.env.SM_STARTTIME ? process.env.SM_STARTTIME * 1 : 59) : ($.getdata('SM_STARTTIME') ? $.getdata('SM_STARTTIME') * 1 : 59);
   if(nowtime < 59) {
     let sleeptime = (starttime - nowtime) * 1000;
     console.log(`等待时间 ${sleeptime / 1000}`);
@@ -353,15 +353,15 @@ function smtg_obtainPrize(prizeId, timeout = 0, functionId = 'smt_exchangePrize'
           if (safeGet(data)) {
             data = JSON.parse(data);
             $.data = data;
-            if ($.data.data.bizCode !== 0 && $.data.data.bizCode !== 106) {
+            if ($.data.data.bizCode !== 0 && $.data.data.bizCode !== 400) {
               $.beanerr = `${$.data.data.bizMsg}`;
               //console.log(`【京东账号${$.index}】${$.nickName} 换取京豆失败：${$.data.data.bizMsg}`)
               return
             }
-            if ($.data.data.bizCode === 106) {
+            if ($.data.data.bizCode === 400) {
               $.errBizCodeCount ++;
               console.log(`debug 兑换京豆活动火爆次数:${$.errBizCodeCount}`);
-              if ($.errBizCodeCount >= 20) return
+              if ($.errBizCodeCount >= 3) return
             }
             if ($.data.data.bizCode === 0) {
               if (`${coinToBeans}` === '1000') {
