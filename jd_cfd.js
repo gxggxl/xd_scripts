@@ -60,7 +60,7 @@ $.appId = 10028;
   await $.wait(1000)
   let res = await getAuthorShareCode('')
   if (!res) {
- // $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+   // $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
     res = await getAuthorShareCode('')
   }
@@ -108,7 +108,7 @@ $.appId = 10028;
       console.log(`\n助力作者\n`);
       for (let id of $.strMyShareIds) {
         console.log(`账号${$.UserName} 去助力 ${id}`)
-   //   await helpByStage(id)
+    //  await helpByStage(id)
         if (!$.canHelp) break
         await $.wait(3000)
       }
@@ -1102,7 +1102,7 @@ function helpByStage(shareCodes) {
             console.log(`助力失败：${data.sErrMsg}`)
             $.canHelp = false
           } else if (data.iRet === 2229 || data.sErrMsg === '助力失败啦~') {
-            console.log(`助力失败：您的账号或者被助力的账号可能已黑，请联系客服`)
+            console.log(`助力失败：您的账号或被助力的账号可能已黑，请联系客服`)
             // $.canHelp = false
           } else {
             console.log(`助力失败：${data.sErrMsg}`)
@@ -1204,8 +1204,8 @@ function getUserInfo(showInvite = true) {
       } finally {
         resolve();
       }
-    });
-  });
+    })
+  })
 }
 
 //任务
@@ -1540,7 +1540,7 @@ function readShareCode() {
    //    console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-   //      console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+   //     console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
