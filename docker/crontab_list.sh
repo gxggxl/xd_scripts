@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 京喜领88元红包(8.31结束)
+0 0,12,21 * 7-8 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
+
 # 沃尔玛畅玩88(7.15-8.8)
 0 0,12,18 * 7-8 * node /scripts/jd_walmart.js >> /scripts/logs/jd_walmart.log 2>&1
 
