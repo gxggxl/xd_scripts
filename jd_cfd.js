@@ -60,7 +60,7 @@ $.appId = 10028;
   await $.wait(1000)
   let res = await getAuthorShareCode('')
   if (!res) {
-   // $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+  // $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
     res = await getAuthorShareCode('')
   }
@@ -99,18 +99,18 @@ $.appId = 10028;
       for (let id of $.shareCodes) {
         console.log(`账号${$.UserName} 去助力 ${id}`)
         await helpByStage(id)
-        if (!$.canHelp) break
         await $.wait(3000)
+        if (!$.canHelp) break
       }
     }
     if (!$.canHelp) continue
     if ($.strMyShareIds && $.strMyShareIds.length) {
-      console.log(`\n助力作者\n`);
+  //  console.log(`\n助力作者\n`);
       for (let id of $.strMyShareIds) {
-        console.log(`账号${$.UserName} 去助力 ${id}`)
-    //  await helpByStage(id)
-        if (!$.canHelp) break
+  //    console.log(`账号${$.UserName} 去助力 ${id}`)
+  //   await helpByStage(id)
         await $.wait(3000)
+        if (!$.canHelp) break
       }
     }
   }
@@ -474,7 +474,7 @@ async function mermaidOper(strStoryId, dwType, ddwTriggerDay) {
                 console.log(`昨日解救美人鱼领奖成功：获得${data.Data.Prize.strPrizeName}\n`)
               } else {
                 console.log(`昨日解救美人鱼领奖失败：${data.sErrMsg}\n`)
-              }
+              }             
               break
             default:
               break
@@ -895,6 +895,13 @@ async function employTourGuideInfo() {
         } else {
           data = JSON.parse(data);
           console.log(`雇导游`)
+          let minProductCoin = data.TourGuideList[0].ddwProductCoin
+          for(let key of Object.keys(data.TourGuideList)) {
+            let vo = data.TourGuideList[key]
+            if (vo.ddwProductCoin < minProductCoin) {
+              minProductCoin = vo.ddwProductCoin
+            }
+          }
           for(let key of Object.keys(data.TourGuideList)) {
             let vo = data.TourGuideList[key]
             let buildNmae;
@@ -913,16 +920,17 @@ async function employTourGuideInfo() {
               default:
                 break
             }
-            if(vo.ddwRemainTm === 0 && vo.strBuildIndex !== 'food') {
+            if(vo.ddwRemainTm === 0 && vo.ddwProductCoin !== minProductCoin) {
               let dwIsFree;
               if(vo.dwFreeMin !== 0) {
                 dwIsFree = 1
               } else {
                 dwIsFree = 0
               }
+              console.log(`【${buildNmae}】雇佣费用：${vo.ddwCostCoin}金币 增加收益：${vo.ddwProductCoin}金币`)
               const body = `strBuildIndex=${vo.strBuildIndex}&dwIsFree=${dwIsFree}&ddwConsumeCoin=${vo.ddwCostCoin}`
               await employTourGuide(body, buildNmae)
-            } else if (vo.strBuildIndex !== 'food') {
+            } else if (vo.ddwProductCoin !== minProductCoin) {
               console.log(`【${buildNmae}】无可雇佣导游`)
             }
             await $.wait(2000)
@@ -1536,11 +1544,11 @@ function readShareCode() {
     }, (err, resp, data) => {
       try {
         if (err) {
-   //    console.log(`${JSON.stringify(err)}`)
+   //     console.log(`${JSON.stringify(err)}`)
    //    console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-   //     console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+  //       console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
