@@ -48,3 +48,6 @@
 # 燃动夏季百元守卫战_助力 活动时间：7.8-8.8
 14,41 7-14 * 7-8 * node /scripts/jd_summer_movement_help.js >> /scripts/logs/jd_summer_movement_help.log 2>&1
 
+# 跳跳乐瓜分京豆(7.20-7.27)
+15 */2 20-27 7 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
+
