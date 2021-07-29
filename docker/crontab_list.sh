@@ -52,9 +52,9 @@
 # 升级赚京豆
 9 0,9 * * * node /scripts/jd_sjzjd.js >> /scripts/logs/jd_sjzjd.log 2>&1
 # 京东签到图形验证
-10 0,12 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
+10 6,12 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 # 京喜签到
-6 0,13 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
+3 0,13 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 早起福利
 30 6 * * * node /scripts/jd_zqfl.js >> /scripts/logs/jd_zqfl.log 2>&1
 # 店铺签到
