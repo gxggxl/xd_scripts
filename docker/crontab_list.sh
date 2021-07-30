@@ -44,30 +44,32 @@
 
 # 签到
 5 0,12,21 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+# 京喜签到
+3 0,13 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 领京豆额外奖励(每日可获得3京豆)
 23 1,12,22 * * * node /scripts/jd_bean_home.js >> /scripts/logs/jd_bean_home.log 2>&1
 # 升级赚京豆
 9 0,9 * * * node /scripts/jd_sjzjd.js >> /scripts/logs/jd_sjzjd.log 2>&1
 # 京东签到图形验证
 10 6,12 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
-# 京喜签到
-3 0,13 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 早起福利
 30 6 * * * node /scripts/jd_zqfl.js >> /scripts/logs/jd_zqfl.log 2>&1
 # 店铺签到
 5 0 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
 # 京东零食街 活动时间：年底
 11 11 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
-# 汪汪乐园每日助力
-30 23 * * * node /scripts/jd_joy_park_help.js >> /scripts/logs/jd_joy_park_help.log 2>&1
+# 摇京豆
+6 0,12,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 送豆得豆
 16 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 天天加速
 3 9 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
-# 旺旺乐园
-0 */1 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
 # 东东乐园
 15 7,15 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
+# 旺旺乐园
+0 */1 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
+# 汪汪乐园每日助力
+30 23 * * * node /scripts/jd_joy_park_help.js >> /scripts/logs/jd_joy_park_help.log 2>&1
 # 东东电竞经理
 15 10 * * * node /scripts/jd_Elecsport.js >> /scripts/logs/jd_Elecsport.log 2>&1
 # 京东日资产变动通知
@@ -79,9 +81,7 @@
 # 东东超市兑换奖品
 0,1 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 点点券修复
-5 0,6,20,22 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
-# 摇京豆
-6 0,12,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
+5 0,20,22 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 东东农场
 15 6,12,17,21 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 宠汪汪
