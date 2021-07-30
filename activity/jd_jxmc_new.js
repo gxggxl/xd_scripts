@@ -44,7 +44,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var date_fns_1 = require("date-fns");
 var axios_1 = require("axios");
-var TS_USER_AGENTS_1 = require("./utils/TS_USER_AGENTS");
+var TS_USER_AGENTS_1 = require("../utils/TS_USER_AGENTS");
 var CryptoJS = require('crypto-js');
 // console.log('时间戳：', format(new Date(), 'yyyyMMddHHmmssSSS'));
 var appId = 10028, fingerprint, token, enCryptMethodJD;
@@ -401,7 +401,7 @@ function decrypt(stk, url) {
 function requireConfig() {
     return new Promise(function (resolve) {
         console.log('开始获取配置文件\n');
-        var jdCookieNode = require('./jdCookie.js');
+        var jdCookieNode = require('../jdCookie.js');
         Object.keys(jdCookieNode).forEach(function (item) {
             if (jdCookieNode[item]) {
                 cookiesArr.push(jdCookieNode[item]);
