@@ -86,7 +86,7 @@
 # 点点券修复
 5 0,20,22 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 东东农场
-15 6,12,17,21 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+13 6,12,17,21 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 宠汪汪
 7 */2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
 # 宠汪汪积分兑换京豆
