@@ -54,3 +54,6 @@
 # 京喜牧场 new
 #15 0,7,13 * * * node /scripts/jd_jxmc_new.js >> /scripts/logs/jd_jxmc_new.log 2>&1
 
+# 送豆得豆
+16 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
+

@@ -63,8 +63,7 @@
 11 11 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 # 摇京豆
 6 0,12,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
-# 送豆得豆
-16 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
+
 # 天天加速
 3 9 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
 # 东东乐园
