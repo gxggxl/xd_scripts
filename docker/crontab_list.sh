@@ -80,8 +80,8 @@
 15 10 * * * node /scripts/jd_Elecsport.js >> /scripts/logs/jd_Elecsport.log 2>&1
 # 京东日资产变动通知
 0 8,17,23 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
-# 京东月资产变动通知
-10 7 * * 1 node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
+# 京东月资产变动通知 在每个月最后一天
+30 23 28-31 * * [ `date -d tomorrow +\%e` -eq 1 ] && node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 # 天天优惠大乐透
 9 0 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 # 京东秒秒币
