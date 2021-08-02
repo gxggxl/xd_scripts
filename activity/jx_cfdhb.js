@@ -5,7 +5,7 @@
  **/
 
 const $ = new Env("财富岛红包");
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 const JD_API_HOST = "https://m.jingxi.com/";
 $.cookieArr = [];
 if ($.isNode()) {
