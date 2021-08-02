@@ -8,7 +8,7 @@
 ##############短期活动##############
 
 # 集胜券点亮金牌 活动时间：2021-08-01到2021-08-08
-35 3,4 1-8 8 * /scripts/jd_necklacecard.js >> /scripts/logs/jd_necklacecard.log 2>&1
+25 9,10 1-8 8 * node /scripts/jd_necklacecard.js >> /scripts/logs/jd_necklacecard.log 2>&1
 
 # 大富翁ChinaJoy (没找到入口)
 0 12 * * * node /scripts/jd_chinajoy.js >> /scripts/logs/jd_chinajoy.log 2>&1
