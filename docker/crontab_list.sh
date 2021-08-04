@@ -7,9 +7,6 @@
 
 ##############短期活动##############
 
-# 集胜券点亮金牌 活动时间：2021-08-01到2021-08-08
-25 9,10 1-8 8 * node /scripts/jd_necklacecard.js >> /scripts/logs/jd_necklacecard.log 2>&1
-
 # 沃尔玛畅玩88(7.15-8.8)
 0 0,12,18 1-8 8 * node /scripts/jd_walmart.js >> /scripts/logs/jd_walmart.log 2>&1
 
