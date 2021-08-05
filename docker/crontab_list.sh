@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 女装盲盒 活动时间：2021-05-24到2021-08-31
+35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
+
 # 沃尔玛畅玩88(7.15-8.8)
 0 0,12,18 1-8 8 * node /scripts/jd_walmart.js >> /scripts/logs/jd_walmart.log 2>&1
 
