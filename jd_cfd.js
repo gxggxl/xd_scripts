@@ -62,7 +62,7 @@ $.appId = 10028;
   await $.wait(1000)
   let res = await getAuthorShareCode('')
   if (!res) {
- // $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+  //  $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
     res = await getAuthorShareCode('')
   }
@@ -110,10 +110,10 @@ $.appId = 10028;
     }
     if (!$.canHelp) continue
     if ($.strMyShareIds && $.strMyShareIds.length) {
-   // console.log(`\n助力作者\n`);
+   //   console.log(`\n助力作者\n`);
       for (let id of $.strMyShareIds) {
-   //   console.log(`账号${$.UserName} 去助力 ${id}`)
-   //   await helpByStage(id)
+   //    console.log(`账号${$.UserName} 去助力 ${id}`)
+   //     await helpByStage(id)
         await $.wait(3000)
         if (!$.canHelp) break
       }
@@ -144,6 +144,10 @@ async function cfd() {
     //每日签到
     await $.wait(2000)
     await getTakeAggrPage('sign')
+
+    //小程序每日签到
+    await $.wait(2000)
+    await getTakeAggrPage('wxsign')
 
     //助力奖励
     await $.wait(2000)
@@ -595,6 +599,36 @@ async function getTakeAggrPage(type) {
           }
         })
         break
+      case 'wxsign':
+        $.get(taskUrl(`story/GetTakeAggrPage`, '', 6), async (err, resp, data) => {
+          try {
+            if (err) {
+              console.log(`${JSON.stringify(err)}`)
+              console.log(`${$.name} GetTakeAggrPage API请求失败，请检查网路重试`)
+            } else {
+              data = JSON.parse(data);
+              console.log(`小程序每日签到`)
+              for (let key of Object.keys(data.Data.Sign.SignList)) {
+                let vo = data.Data.Sign.SignList[key]
+                if (vo.dwDayId === data.Data.Sign.dwTodayId) {
+                  if (vo.dwStatus !== 1) {
+                    const body = `ddwCoin=${vo.ddwCoin}&ddwMoney=${vo.ddwMoney}&dwPrizeType=${vo.dwPrizeType}&strPrizePool=${vo.strPrizePool}&dwPrizeLv=${vo.dwBingoLevel}`
+                    await rewardSign(body, 6)
+                    await $.wait(2000)
+                  } else {
+                    console.log(`今日已签到\n`)
+                    break
+                  }
+                }
+              }
+            }
+          } catch (e) {
+            $.logErr(e, resp);
+          } finally {
+            resolve();
+          }
+        })
+        break
       case 'helpdraw':
         $.get(taskUrl(`story/GetTakeAggrPage`), async (err, resp, data) => {
           try {
@@ -632,9 +666,9 @@ async function getTakeAggrPage(type) {
     }
   })
 }
-function rewardSign(body) {
+function rewardSign(body, dwEnv = 7) {
   return new Promise((resolve) => {
-    $.get(taskUrl(`story/RewardSign`, body), (err, resp, data) => {
+    $.get(taskUrl(`story/RewardSign`, body, dwEnv), (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -1483,8 +1517,8 @@ function biz(contents){
   })
 }
 
-function taskUrl(function_path, body = '') {
-  let url = `${JD_API_HOST}jxbfd/${function_path}?strZone=jxbfd&bizCode=jxbfd&source=jxbfd&dwEnv=7&_cfd_t=${Date.now()}&ptag=138631.26.55&${body}&_stk=_cfd_t%2CbizCode%2CddwTaskId%2CdwEnv%2Cptag%2Csource%2CstrShareId%2CstrZone&_ste=1`;
+function taskUrl(function_path, body = '', dwEnv = 7) {
+  let url = `${JD_API_HOST}jxbfd/${function_path}?strZone=jxbfd&bizCode=jxbfd&source=jxbfd&dwEnv=${dwEnv}&_cfd_t=${Date.now()}&ptag=138631.26.55&${body}&_stk=_cfd_t%2CbizCode%2CddwTaskId%2CdwEnv%2Cptag%2Csource%2CstrShareId%2CstrZone&_ste=1`;
   url += `&h5st=${decrypt(Date.now(), '', '', url)}&_=${Date.now() + 2}&sceneval=2&g_login_type=1&g_ty=ls`;
   return {
     url,
@@ -1560,11 +1594,11 @@ function readShareCode() {
     }, (err, resp, data) => {
       try {
         if (err) {
-    //    console.log(`${JSON.stringify(err)}`)
-    //    console.log(`${$.name} API请求失败，请检查网路重试`)
+  //    console.log(`${JSON.stringify(err)}`)
+  //    console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-    //      console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+  //      console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
