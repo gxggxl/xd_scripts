@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 荣耀焕新季 活动时间：2021-08-05到2021-08-31
+35 6,18 * * * node /scripts/zy_ryhxj.js >> /scripts/logs/zy_ryhxj.log 2>&1
+
 # 女装盲盒 活动时间：2021-08-05到2021-08-31
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 
