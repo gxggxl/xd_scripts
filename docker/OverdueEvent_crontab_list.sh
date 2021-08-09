@@ -21,9 +21,6 @@
 # 宠汪汪强制为别人助力(旧版.不可用)
 #15 10 * * * node /scripts/jd_joy_help.js >> /scripts/logs/jd_joy_help.log 2>&1
 
-# 京东手机狂欢城(已结束)
-#0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-
 # 新潮品牌狂欢(已结束)
 #20 1,21 * * * node /scripts/jd_mcxhd.js >> /scripts/logs/jd_mcxhd.log 2>&1
 
