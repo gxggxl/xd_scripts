@@ -57,9 +57,6 @@
 # 超级粉丝互动 活动时间：7.31结束
 1 8 1-31 7 * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 
-# 每日抽奖(活动时间：2021-05-01至2021-05-31)
-13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
-
 # 大富翁ChinaJoy (没找到入口)
 0 12 * * * node /scripts/jd_chinajoy.js >> /scripts/logs/jd_chinajoy.log 2>&1
 
