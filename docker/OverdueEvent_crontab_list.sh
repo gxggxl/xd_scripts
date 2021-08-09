@@ -65,3 +65,6 @@
 
 # 大富翁ChinaJoy (没找到入口)
 0 12 * * * node /scripts/jd_chinajoy.js >> /scripts/logs/jd_chinajoy.log 2>&1
+
+# 沃尔玛畅玩88(7.15-8.8)
+0 0,12,18 1-8 8 * node /scripts/jd_walmart.js >> /scripts/logs/jd_walmart.log 2>&1

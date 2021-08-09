@@ -8,16 +8,13 @@
 ##############短期活动##############
 
 # 荣耀焕新季( 玩一玩- 来电好物季 )
-11 0 9-25 8 * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
+13 0 9-25 8 * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
 
 # 荣耀焕新季( 玩一玩- 荣耀焕新 )
-5 0 7-20 8 * node /scripts/jd_ryhxj.js >> /scripts/logs/jd_ryhxj.log 2>&1
+7 0 7-20 8 * node /scripts/jd_ryhxj.js >> /scripts/logs/jd_ryhxj.log 2>&1
 
 # 女装盲盒 活动时间：2021-08-05到2021-08-31
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
-
-# 沃尔玛畅玩88(7.15-8.8)
-0 0,12,18 1-8 8 * node /scripts/jd_walmart.js >> /scripts/logs/jd_walmart.log 2>&1
 
 # 京喜领88元红包(8.31结束)
 0 0,12,21 * 7-8 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1

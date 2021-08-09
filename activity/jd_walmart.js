@@ -11,8 +11,8 @@
     * - Modification    : 
 **/
 const $ = new Env("沃尔玛畅玩88");
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const notify = $.isNode() ? require('./sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
