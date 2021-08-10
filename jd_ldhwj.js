@@ -5,7 +5,7 @@ boxjs：https://raw.githubusercontent.com/Ariszy/Private-Script/master/Ariszy.bo
 
 [task_local]
 #来电好物季
-0 1 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag= 来电好物季
+10 1 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag= 来电好物季
 ================Loon==============
 [Script]
 cron "10 1 * * *" script-path= https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ldhwj.js,tag= 来电好物季
@@ -183,11 +183,11 @@ async function getLottery(){
     try{
         const result = JSON.parse(data)
         if(logs)$.log(data)
-        if(result.data.bizCode == 0 && result.data.result.userAwardsCacheDto.jBeanAwardVo.prizeName){
+        if(result.data.bizCode == 0 && result.data.result.lotteryReturnCode == 0){
            console.log("\n获得"+result.data.result.userAwardsCacheDto.jBeanAwardVo.prizeName+"\n")
    await $.wait(4000)
         }else{
-           $.log(result.data.bizMsg+"\n")
+           $.log("恭喜你，抽中了0豆豆\n")
         }
         }catch(e) {
           $.logErr(e, response);
