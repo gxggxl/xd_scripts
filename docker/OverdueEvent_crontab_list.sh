@@ -54,9 +54,6 @@
 # 送豆得豆
 16 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 
-# 超级粉丝互动 活动时间：7.31结束
-1 8 1-31 7 * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
-
 # 大富翁ChinaJoy (没找到入口)
 0 12 * * * node /scripts/jd_chinajoy.js >> /scripts/logs/jd_chinajoy.log 2>&1
 
