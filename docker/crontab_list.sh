@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 汽车生活节
+16 1 12-20 8 * node /scripts/jd_qcshj.js >> /scripts/logs/jd_qcshj.log 2>&1
+
 # 金机奖投票
 35 1,10 8-20 8 * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
 
@@ -84,7 +87,7 @@
 # 东东电竞经理
 15 10 * * * node /scripts/jd_Elecsport.js >> /scripts/logs/jd_Elecsport.log 2>&1
 # 京东日资产变动通知
-0 9,18,23 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
+0 9,13,18,22,23 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
 # 京东月资产变动通知 在每个月最后一天
 30 23 28-31 * * [ `date -d tomorrow +\%e` -eq 1 ] && node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 # 天天优惠大乐透
