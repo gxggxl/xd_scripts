@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 送豆得豆
+15 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
+
 # 汽车生活节
 16 1 12-20 8 * node /scripts/jd_qcshj.js >> /scripts/logs/jd_qcshj.log 2>&1
 
