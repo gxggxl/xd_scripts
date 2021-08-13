@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 骁龙品牌日
+11 6,20 13-25 8 * node /scripts/jd_xl.js >> /scripts/logs/jd_xl.log 2>&1
+
 # 送豆得豆
 15 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 
