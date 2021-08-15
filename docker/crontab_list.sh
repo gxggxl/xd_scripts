@@ -101,7 +101,7 @@
 # 京东秒秒币
 10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 点点券修复
-5 0,20,22 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
+5 0,20 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 京东全民开红包
 1 1,2,13,23 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 # 进店领豆
@@ -211,3 +211,4 @@
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
 #家庭号(易黑号，默认注释)
 #10 6,7 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
+
