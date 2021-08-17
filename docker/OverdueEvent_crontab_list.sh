@@ -56,3 +56,6 @@
 
 # 沃尔玛畅玩88(7.15-8.8)
 0 0,12,18 1-8 8 * node /scripts/jd_walmart.js >> /scripts/logs/jd_walmart.log 2>&1
+
+# 天天优惠大乐透
+9 0,12 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
