@@ -200,8 +200,8 @@ async function pasture() {
     if (Number($.homeInfo.coins) > 5000) {
       let canBuyTimes = Math.floor(Number($.homeInfo.coins) / 5000);
       console.log(`\n共有金币${$.homeInfo.coins},可以购买${canBuyTimes}次白菜`);
-      if(Number(materialNumber) < 100){
-        for (let j = 0; j < canBuyTimes && j < 1; j++) {
+      if(Number(materialNumber) < 200){
+        for (let j = 0; j < canBuyTimes && j < 2; j++) {
           console.log(`第${j + 1}次购买白菜`);
           await takeGetRequest('buy');
           await $.wait(2000);
@@ -209,7 +209,7 @@ async function pasture() {
         await takeGetRequest('GetHomePageInfo');
         await $.wait(2000);
       }else{
-        console.log(`现有白菜${materialNumber},大于100颗,不进行购买`);
+        console.log(`现有白菜${materialNumber},大于200颗,不进行购买`);
       }
     }else{
       console.log(`\n共有金币${$.homeInfo.coins}`);
