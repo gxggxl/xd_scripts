@@ -114,12 +114,12 @@
 32 7 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 # 京东汽车(签到满500赛点可兑换500京豆)
 41 7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
-# 京东赚赚(微信小程序)
-6 0-5/1,11 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
-# 赚京豆(微信小程序)
-25 0,9,18,23 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 京东汽车旅程赛点兑换金豆
 0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
+# 京东赚赚(微信小程序)
+6 0-4/1,11,12 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
+# 赚京豆(微信小程序)
+25 0,9,18,23 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 口袋书店
 25 8,12,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
 # 闪购盲盒
