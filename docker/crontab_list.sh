@@ -34,7 +34,7 @@
 7 0,12 7-20 8 * node /scripts/jd_ryhxj.js >> /scripts/logs/jd_ryhxj.log 2>&1
 
 # 超级粉丝互动 活动时间：XXX结束
-#3 8,16 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
+3 8,16 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 
 # 女装盲盒 活动时间：2021-08-05到2021-08-31
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
