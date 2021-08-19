@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 众筹许愿池 活动时间：2021-08-01到2021-12-31
+11 1,9 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
+
 # 骁龙品牌日
 11 6,20 13-25 8 * node /scripts/jd_xl.js >> /scripts/logs/jd_xl.log 2>&1
 
