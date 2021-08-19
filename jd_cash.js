@@ -87,7 +87,7 @@ async function jdCash() {
   $.signMoney = 0;
   await index()
   await shareCodesFormat()
- //await helpFriends() //取消助力
+  await helpFriends() //恢复助力
   await getReward()
   await getReward('2');
   $.exchangeBeanNum = 0;
