@@ -62,7 +62,7 @@ $.appId = 10028;
   await $.wait(1000)
   let res = await getAuthorShareCode('')
   if (!res) {
- // $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+   //$.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
     res = await getAuthorShareCode('')
   }
@@ -94,28 +94,37 @@ $.appId = 10028;
       UAInfo[$.UserName] = UA
     }
   }
-  for (let j = 0; j < cookiesArr.length; j++) {
-    cookie = cookiesArr[j];
+  for (let i = 0; i < cookiesArr.length; i++) {
+    cookie = cookiesArr[i];
     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
     $.canHelp = true
     UA = UAInfo[$.UserName]
     if ($.shareCodes && $.shareCodes.length) {
       console.log(`\n自己账号内部循环互助\n`);
-      for (let id of $.shareCodes) {
-        console.log(`账号${$.UserName} 去助力 ${id}`)
-        await helpByStage(id)
-        await $.wait(3000)
-        if (!$.canHelp) break
+      for (let j = 0; j < $.shareCodes.length && $.canHelp; j++) {
+        console.log(`账号${$.UserName} 去助力 ${$.shareCodes[j]}`)
+        $.delcode = false
+        await helpByStage($.shareCodes[j])
+        await $.wait(2000)
+        if ($.delcode) {
+          $.shareCodes.splice(j, 1)
+          j--
+          continue
+        }
       }
     }
-    if (!$.canHelp) continue
-    if ($.strMyShareIds && $.strMyShareIds.length) {
-   // console.log(`\n助力作者\n`);
-      for (let id of $.strMyShareIds) {
-   //   console.log(`账号${$.UserName} 去助力 ${id}`)
-   //   await helpByStage(id)
-        await $.wait(3000)
-        if (!$.canHelp) break
+    if ($.strMyShareIds && $.strMyShareIds.length && $.canHelp) {
+    //console.log(`\n助力作者\n`);
+      for (let j = 0; j < $.strMyShareIds.length && $.canHelp; j++) {
+      //console.log(`账号${$.UserName} 去助力 ${$.strMyShareIds[j]}`)
+        $.delcode = false
+      //await helpByStage($.strMyShareIds[j])
+        await $.wait(2000)
+        if ($.delcode) {
+          $.strMyShareIds.splice(j, 1)
+          j--
+          continue
+        }
       }
     }
   }
@@ -1154,7 +1163,10 @@ function helpByStage(shareCodes) {
           } else if (data.iRet === 2229 || data.sErrMsg === '助力失败啦~') {
             console.log(`助力失败：您的账号或被助力的账号可能已黑，请联系客服`)
             // $.canHelp = false
-          } else {
+          } else if (data.iRet === 2190 || data.sErrMsg === '达到助力上限') {
+            console.log(`助力失败：${data.sErrMsg}`)
+            $.delcode = true
+          } else{
             console.log(`助力失败：${data.sErrMsg}`)
           }
         }
@@ -1594,11 +1606,11 @@ function readShareCode() {
     }, (err, resp, data) => {
       try {
         if (err) {
-      //  console.log(`${JSON.stringify(err)}`)
-      //  console.log(`${$.name} API请求失败，请检查网路重试`)
+        //console.log(`${JSON.stringify(err)}`)
+        //console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-      //    console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+          //console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
