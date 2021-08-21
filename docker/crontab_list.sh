@@ -181,8 +181,6 @@
 
 # 摇钱树
 21 */4 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
-# 摇钱树助力
-8 1,11,21 * * * node /scripts/jd_moneyTree_heip.js >> /scripts/logs/jd_moneyTree_heip.log 2>&1
 # 天天提鹅
 30 2-23/3 * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 金融养猪
