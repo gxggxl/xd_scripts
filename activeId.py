@@ -1,4 +1,7 @@
-import requests, re, json, os
+import json
+import os
+import re
+import requests
 
 
 def GET_TUAN_ID():
@@ -10,7 +13,9 @@ def GET_TUAN_ID():
             r = requests.get(url)
             if r.ok:
                 resp = r.text
-                TUAN_ACTIVEID = re.findall('((?<=.)activeId.*?==)(?:.*?)("start".*?(?=,))(?:.*?)("end".*?(?=,))', re.sub('%3D%3D', '==', ''.join(re.findall('({"width".*?})', resp))))[0][0].split("=",1)[1]
+                TUAN_ACTIVEID = re.findall('((?<=.)activeId.*?==)(?:.*?)("start".*?(?=,))(?:.*?)("end".*?(?=,))',
+                                           re.sub('%3D%3D', '==', ''.join(re.findall('({"width".*?})', resp))))[0][
+                    0].split("=", 1)[1]
                 return TUAN_ACTIVEID
             else:
                 m -= 1
@@ -47,7 +52,7 @@ def TUAN_ACTIVEID():
                 msg += "替换京喜工厂团ID失败，请手动替换"
         else:
             msg += "程序没有找到设置京喜工厂团的变量值，将自动添加进配置"
-            export =  f"export TUAN_ACTIVEID={TUAN_ACTIVEID} # 京喜工厂团ID\n"
+            export = f"export TUAN_ACTIVEID={TUAN_ACTIVEID} # 京喜工厂团ID\n"
             if 'jd' in env:
                 with open(f"{env}/config/config.sh", 'r', encoding='utf-8') as f3:
                     configs = f3.readlines()
@@ -137,7 +142,7 @@ if __name__ == '__main__':
         isv4 = True
         if not os.path.isfile(f'{env}/config/config.sh'):  # v4-bot 容器内
             env = '/jd'
-    cron = '2 0,7,20 * * *' # 此处 V4 用户需要自行设置 cron 表达式，否则程序自动设置为 jd_dreamFactory.js 的运行时间
+    cron = '2 0,7,20 * * *'  # 此处 V4 用户需要自行设置 cron 表达式，否则程序自动设置为 jd_dreamFactory.js 的运行时间
     if 'jd' in env:
         if len(cron) < 9:
             cron = findCrontab()
