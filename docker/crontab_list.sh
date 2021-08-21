@@ -70,6 +70,8 @@
 
 # 签到
 5 0,12,21 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+# 积分换话费
+13 6,18 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 # 升级赚京豆
 9 0,10 * * * node /scripts/jd_sjzjd.js >> /scripts/logs/jd_sjzjd.log 2>&1
 # 京喜签到
@@ -179,6 +181,8 @@
 
 # 摇钱树
 21 */4 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
+# 摇钱树助力
+8 1,11,21 * * * node /scripts/jd_moneyTree_heip.js >> /scripts/logs/jd_moneyTree_heip.log 2>&1
 # 天天提鹅
 30 2-23/3 * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 金融养猪
@@ -206,6 +210,9 @@
 #9 21 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 
 ###################### 敏感操作 ######################
+
+# 取关主播
+3 5 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
 
 # 取关京东店铺商品
 2 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
