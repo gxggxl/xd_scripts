@@ -24,8 +24,8 @@ cron "10 0-21/3 * * *" script-path=jd_joy_steal.js,tag=宠汪汪偷好友积分�
 */
 const $ = new Env('宠汪汪偷好友积分与狗粮');
 const zooFaker = require('./utils/JDJRValidator_Pure');
-$.get = zooFaker.injectToRequest2($.get.bind($));
-$.post = zooFaker.injectToRequest2($.post.bind($));
+$.get = zooFaker.injectToRequest($.get.bind($));
+$.post = zooFaker.injectToRequest($.post.bind($));
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
