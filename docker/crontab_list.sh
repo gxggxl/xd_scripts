@@ -33,9 +33,6 @@
 # 荣耀焕新季( 玩一玩- 来电好物季 )
 13 0,12 9-25 8 * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
 
-# 荣耀焕新季( 玩一玩- 荣耀焕新 )
-7 0,12 7-20 8 * node /scripts/jd_ryhxj.js >> /scripts/logs/jd_ryhxj.log 2>&1
-
 # 超级粉丝互动 活动时间：XXX结束
 3 8,16 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 
