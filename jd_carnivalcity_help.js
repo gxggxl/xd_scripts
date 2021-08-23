@@ -109,7 +109,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
         // console.log($.temp)
         for (let i = 0; i < $.temp.length; i++) {
             if (i == 0) codeNotify = `gua-submit_codes carnivalcity ${$.temp[i]}`
-            if (i > 0) codeNotify += `&${$.temp[i]}`
+            if (i > 0) codeNotify += `\&${$.temp[i]}`
         }
         // console.log(codeNotify)
         await notify.sendNotify($.name, `${codeNotify}\n助力码提交机器人 @guaguagua_bot`, {url: "https://carnivalcity.m.jd.com/"});
