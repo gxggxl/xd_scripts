@@ -31,7 +31,7 @@
 # 京东手机狂欢城
 0 0-18/6 9-28 8 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 京东手机狂欢城 助力
-0 0,6 9-28 8 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
+1 0,6 9-28 8 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 
 # 荣耀焕新季( 玩一玩- 来电好物季 )
 13 0,12 9-25 8 * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
