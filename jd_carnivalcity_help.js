@@ -112,8 +112,8 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
             if (i > 0) codeNotify += `\&${$.temp[i]}`
         }
         // console.log(codeNotify)
-        await notify.sendNotify($.name, `${codeNotify}\n助力码提交机器人 @guaguagua_bot`, {url: "https://carnivalcity.m.jd.com/"});
-        $.msg($.name, '', `${codeNotify}\n助力码提交机器人 @guaguagua_bot`);
+        await notify.sendNotify($.name, `${codeNotify}\n\n助力码提交机器人 @guaguagua_bot`, {url: "https://carnivalcity.m.jd.com/"});
+        $.msg($.name, '', `${codeNotify}\n\n助力码提交机器人 @guaguagua_bot`);
     }
 })()
     .catch((e) => {
