@@ -330,16 +330,16 @@ function tgBotNotify(text, desp) {
         url: `https://${TG_API_HOST}/bot${TG_BOT_TOKEN}/sendMessage`,
         // body: `chat_id=${TG_USER_ID}&text=${text}\n\n${desp}&disable_web_page_preview=true`,
         json: {
-          "chat_id":`${TG_USER_ID}`,
-          "text":`${text}\n\n${desp}`,
-          "disable_web_page_preview":true
+          chat_id: `${TG_USER_ID}`,
+          text: `${text}\n\n${desp}`,
+          disable_web_page_preview: true,
         },
         headers: {
           // 'Content-Type': 'application/x-www-form-urlencoded'
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        timeout
-      }
+        timeout,
+      };
       if (TG_PROXY_HOST && TG_PROXY_PORT) {
         const tunnel = require("tunnel");
         const agent = {
