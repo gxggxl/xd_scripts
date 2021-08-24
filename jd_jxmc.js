@@ -293,6 +293,11 @@ async function doTask(j) {
   }
 }
 
+/**
+ * @description: 任务列表
+ * @param type 选项
+ * @return url
+ */
 async function takeGetRequest(type) {
   let url = ``;
   let myRequest = ``;
