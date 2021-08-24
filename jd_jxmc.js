@@ -180,7 +180,7 @@ async function pasture() {
         //横扫鸡腿
         $.runFlag = true;
         console.log(`\n开始进行横扫鸡腿`);
-        for (let i = 0; i < 15 && $.runFlag; i++) {
+        for (let i = 0; i < 10 && $.runFlag; i++) {
           console.log(`开始第${i + 1}次横扫鸡腿`);
           await takeGetRequest('jump');
           await $.wait(2000);
