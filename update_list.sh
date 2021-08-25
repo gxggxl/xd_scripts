@@ -17,13 +17,13 @@ JsList=($(cd "$WorkDir" || exit; ls -- *.js | grep -E "j[drx]_" | perl -ne "{pri
 #JsList=("$(cd "$WorkDir" || exit; find . -maxdepth 1 -name "*.js" | grep -E "j[drx]_" | perl -ne "{print unless /\.bak/}")")
 FileReadme=$WorkDir/list_README.md
 UrlRaw=https://github.com/gxggxl/xd_scripts/raw/master/
-SheetHead="# 脚本列表\n\n| 序号 | 文件 | 名称 | 活动入口 |\n| :-: | - | - | - |"
+SheetHead="# 脚本列表\n\n| 序号 | 文件 | 名称 | 活动入口 |\n| :--: | ---- | ---- | ---- |"
 
 ## 删除标记行的内容
-StartLine=$(($(grep -n "标记开始" "$FileReadme" | awk -F ":" '{print $1}') + 1))
-EndLine=$(($(grep -n "标记结束" "$FileReadme" | awk -F ":" '{print $1}') - 1))
+#StartLine=$(($(grep -n "标记开始" "$FileReadme" | awk -F ":" '{print $1}') + 1))
+#EndLine=$(($(grep -n "标记结束" "$FileReadme" | awk -F ":" '{print $1}') - 1))
 #Tail=$(perl -ne "$. > $EndLine && print" "$FileReadme")
-perl -i -ne "{print unless $StartLine .. eof}" "$FileReadme"
+#perl -i -ne "{print unless $StartLine .. eof}" "$FileReadme"
 
 ## 生成新的表格并写入Readme
 cd "$WorkDir" || exit
@@ -34,7 +34,7 @@ for ((i = 1; i <= ${#JsList[*]}; i++)); do
   [[ -z $Entry ]] || [[ $Entry == 暂无 ]] && Entry=$(grep -E "^ *活动地址" "${JsList[i]}" | awk -F "：|: " '{print $2}' | head -1)
   [[ $Entry == http* ]] && Entry="[活动地址]($Entry)"
   Raw="$UrlRaw${JsList[i]}"
-  Sheet="$Sheet\n|$((i ))|[${JsList[i]}]($Raw)|$Name|$Entry|"
+  Sheet="$Sheet\n| $((i)) | [${JsList[i]}]($Raw) | $Name | $Entry |"
 done
 #echo -e "$Sheet\n$Tail" >>"$FileReadme"
 echo -e "$Sheet" >"$FileReadme"
