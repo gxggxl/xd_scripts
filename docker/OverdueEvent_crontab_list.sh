@@ -62,3 +62,6 @@
 
 # 金机奖投票
 35 1,10 8-20 8 * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
+
+# 京喜财富岛提现
+59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
