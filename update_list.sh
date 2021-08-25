@@ -12,14 +12,12 @@ WorkDir=$(
 
 # shellcheck disable=SC2207
 # shellcheck disable=SC2010
-JsList=($(cd "$WorkDir" || exit;ls -- *.js* | grep -E "j[drx]_" | perl -ne "{print unless /\.bak/}"))
-
-#echo ${JsList[*]}|grep .js
+JsList=($(cd "$WorkDir" || exit; ls -- *.js | grep -E "j[drx]_" | perl -ne "{print unless /\.bak/}"))
 
 #JsList=("$(cd "$WorkDir" || exit; find . -maxdepth 1 -name "*.js" | grep -E "j[drx]_" | perl -ne "{print unless /\.bak/}")")
 FileReadme=$WorkDir/list_README.md
 UrlRaw=https://github.com/gxggxl/xd_scripts/raw/master/
-SheetHead="| 序号 | 文件 | 名称 | 活动入口 |\n| :-: | - | - | - |"
+SheetHead="# 脚本列表\n\n| 序号 | 文件 | 名称 | 活动入口 |\n| :-: | - | - | - |"
 
 ## 删除标记行的内容
 StartLine=$(($(grep -n "标记开始" "$FileReadme" | awk -F ":" '{print $1}') + 1))
