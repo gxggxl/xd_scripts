@@ -1,7 +1,7 @@
 # 脚本列表
 
 | 序号 | 文件 | 名称 | 活动入口 |
-| :--: | ---- | ---- | ---- |
+| :---: | --- | --- | --- |
 | 1 | [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 |  |
 | 2 | [jd_all_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_all_bean_change.js) | 京东月资产变动通知 |  |
 | 3 | [jd_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change.js) | 京东资产变动通知 |  |
