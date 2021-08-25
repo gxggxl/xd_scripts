@@ -74,8 +74,8 @@ function exchange(cookie,amount,pt_pin) {
 
 function requireConfig() {
     return new Promise(resolve => {
-        notify = $.isNode() ? require('./sendNotify') : '';
-        const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+        notify = $.isNode() ? require('../sendNotify') : '';
+        const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
         if ($.isNode()) {
             Object.keys(jdCookieNode).forEach((item) => {
                 if (jdCookieNode[item]) {
