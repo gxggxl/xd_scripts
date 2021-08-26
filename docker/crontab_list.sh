@@ -16,9 +16,6 @@
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
 11 1,9 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 
-# 骁龙品牌日
-11 6,20 13-25 8 * node /scripts/jd_xl.js >> /scripts/logs/jd_xl.log 2>&1
-
 # 小鸽有礼 - 每日抽奖(活动时间：2021-05-01至2021-05-31)
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 
@@ -26,9 +23,6 @@
 0 0-18/6 9-28 8 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 京东手机狂欢城 助力
 1 0,6 9-28 8 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
-
-# 荣耀焕新季( 玩一玩- 来电好物季 )
-13 0,12 9-25 8 * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
 
 # 超级粉丝互动 活动时间：XXX结束
 3 8,16 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
