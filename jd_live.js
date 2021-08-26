@@ -9,14 +9,11 @@
 [task_local]
 #京东直播
 10-20/5 12 * * * jd_live.js, tag=京东直播, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-
 ================Loon==============
 [Script]
 cron "10-20/5 12 * * *" script-path=jd_live.js,tag=京东直播
-
 ===============Surge=================
 京东直播 = type=cron,cronexp="10-20/5 12 * * *",wake-system=1,timeout=3600,script-path=jd_live.js
-
 ============小火箭=========
 京东直播 = type=cron,script-path=jd_live.js, cronexpr="10-20/5 12 * * *", timeout=3600, enable=true
  */
@@ -54,7 +51,6 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
       console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
-
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
         }
@@ -77,7 +73,6 @@ async function jdHealth() {
   message += `领奖完成，共计获得 ${$.bean} 京豆\n`
   await showMsg();
 }
-
 function getTs() {
   return new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 + 8 * 60 * 60 * 1000
 }
