@@ -189,7 +189,7 @@
 3 * * * * node /scripts/jd_dj_getPoints.js >> /scripts/logs/jd_dj_getPoints.log 2>&1
 
 #美丽研究院
-#6 5,11,17 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
+6 5,12,17 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东保价
 #9 21 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 
