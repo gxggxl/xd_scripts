@@ -30,8 +30,8 @@ cron "18 9,19 13-25 8 *" script-path=https://raw.githubusercontent.com/smiek2221
 8.13-8.25 骁龙品牌日 = type=cron,script-path=https://raw.githubusercontent.com/smiek2221/scripts/master/gua_xiaolong.js, cronexpr="18 9,19 13-25 8 *", timeout=3600, enable=true
 */
 const $ = new Env('8.13-8.25 骁龙品牌日');
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const notify = $.isNode() ? require('./sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [],
     cookie = '';
