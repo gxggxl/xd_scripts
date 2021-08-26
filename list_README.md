@@ -58,41 +58,39 @@
 | 54 | [jd_jxzpk.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxzpk.js) | 京享值PK | 京东-我的-京享值-京享值pk |
 | 55 | [jd_kd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_kd.js) | 京东快递签到 | [活动地址](https://jingcai-h5.jd.com/#/) |
 | 56 | [jd_kxcdz.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_kxcdz.js) | 开学充电站 |  |
-| 57 | [jd_ldhwj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ldhwj.js) | 来电好物季 |  |
-| 58 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |
-| 59 | [jd_live_redrain.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live_redrain.js) | 超级直播间红包雨 |  |
-| 60 | [jd_lotteryMachine.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lotteryMachine.js) | 京东抽奖机 |  |
-| 61 | [jd_lsj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lsj.js) | 零食街 |  |
-| 62 | [jd_market_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_market_lottery.js) | 幸运大转盘 | [活动地址](https://pro.m.jd.com/mall/active/3ryu78eKuLyY5YipWWVSeRQEpLQP/index.html) |
-| 63 | [jd_mohe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mohe.js) | 5G超级盲盒 | [活动地址](https://blindbox5g.jd.com) |
-| 64 | [jd_moneyTree.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_moneyTree.js) | 京东摇钱树 | 京东APP我的-更多工具-摇钱树，[活动链接](https://uua.jr.jd.com/uc-fe-wxgrowing/moneytree/index/?channel=yxhd) |
-| 65 | [jd_ms.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ms.js) | 京东秒秒币 | 京东app-京东秒杀-签到领红包 |
-| 66 | [jd_necklace.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_necklace.js) | 点点券 | 京东APP-领券中心/券后9.9-领点点券 [活动地址](https://h5.m.jd.com/babelDiy/Zeus/41Lkp7DumXYCFmPYtU3LTcnTTXTX/index.html) |
-| 67 | [jd_nzmh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_nzmh.js) | 女装盲盒抽京豆 | 京东app-女装馆-赢京豆 |
-| 68 | [jd_pet.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_pet.js) | 东东萌宠 | 京东APP我的-更多工具-东东萌宠 |
-| 69 | [jd_pigPet.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_pigPet.js) | 金融养猪 | 京东金融养猪猪 |
-| 70 | [jd_plantBean.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_plantBean.js) | 京东种豆得豆 | 京东APP我的-更多工具-种豆得豆 |
-| 71 | [jd_price.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_price.js) | 京东保价 | 京东保价 |
-| 72 | [jd_qqxing.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_qqxing.js) | QQ星系牧场 | QQ星儿童牛奶京东自营旗舰店->星系牧场 |
-| 73 | [jd_rankingList.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_rankingList.js) | 京东排行榜 | 京东APP首页-更多频道-排行榜-悬浮按钮 |
-| 74 | [jd_redPacket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_redPacket.js) | 京东全民开红包 | 京东APP首页-领券-锦鲤红包。[活动地址](https://happy.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html) |
-| 75 | [jd_sendBeans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sendBeans.js) | 送豆得豆 | 来客有礼小程序 |
-| 76 | [jd_sgmh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sgmh.js) | 闪购盲盒 | 京东APP首页-闪购-闪购盲盒 |
-| 77 | [jd_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_shop.js) | 进店领豆 | 京东APP首页-领京豆-进店领豆 |
-| 78 | [jd_shop_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_shop_sign.js) | 店铺签到 |  |
-| 79 | [jd_sign_graphics.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sign_graphics.js) | 京东签到图形验证 |  |
-| 80 | [jd_sjzjd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sjzjd.js) | 升级赚京豆 |  |
-| 81 | [jd_small_home.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_small_home.js) | 东东小窝 | 京东APP我的-游戏与更多-东东小窝 |
-| 82 | [jd_speed.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed.js) | ✈️天天加速 | 京东APP我的-更多工具-天天加速 |
-| 83 | [jd_speed_redpocke.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_redpocke.js) | 京东极速版红包 | 京东极速版-领红包 |
-| 84 | [jd_speed_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_sign.js) | 京东极速版 | 京东极速版app-现金签到 |
-| 85 | [jd_star_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_star_shop.js) | 明星小店 |  |
-| 86 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |
-| 87 | [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序)-赚京豆-签到领京豆 |
-| 88 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |
-| 89 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |
-| 90 | [jd_unsubscribe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscribe.js) | 取关京东店铺和商品 |  |
-| 91 | [jd_wish.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wish.js) | 众筹许愿池 | 京东-京东众筹-众筹许愿池 |
-| 92 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |
-| 93 | [jd_xl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_xl.js) | 8.13-8.25 骁龙品牌日 |  |
-| 94 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 |  |
+| 57 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |
+| 58 | [jd_live_redrain.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live_redrain.js) | 超级直播间红包雨 |  |
+| 59 | [jd_lotteryMachine.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lotteryMachine.js) | 京东抽奖机 |  |
+| 60 | [jd_lsj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lsj.js) | 零食街 |  |
+| 61 | [jd_market_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_market_lottery.js) | 幸运大转盘 | [活动地址](https://pro.m.jd.com/mall/active/3ryu78eKuLyY5YipWWVSeRQEpLQP/index.html) |
+| 62 | [jd_mohe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mohe.js) | 5G超级盲盒 | [活动地址](https://blindbox5g.jd.com) |
+| 63 | [jd_moneyTree.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_moneyTree.js) | 京东摇钱树 | 京东APP我的-更多工具-摇钱树，[活动链接](https://uua.jr.jd.com/uc-fe-wxgrowing/moneytree/index/?channel=yxhd) |
+| 64 | [jd_ms.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ms.js) | 京东秒秒币 | 京东app-京东秒杀-签到领红包 |
+| 65 | [jd_necklace.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_necklace.js) | 点点券 | 京东APP-领券中心/券后9.9-领点点券 [活动地址](https://h5.m.jd.com/babelDiy/Zeus/41Lkp7DumXYCFmPYtU3LTcnTTXTX/index.html) |
+| 66 | [jd_nzmh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_nzmh.js) | 女装盲盒抽京豆 | 京东app-女装馆-赢京豆 |
+| 67 | [jd_pet.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_pet.js) | 东东萌宠 | 京东APP我的-更多工具-东东萌宠 |
+| 68 | [jd_pigPet.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_pigPet.js) | 金融养猪 | 京东金融养猪猪 |
+| 69 | [jd_plantBean.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_plantBean.js) | 京东种豆得豆 | 京东APP我的-更多工具-种豆得豆 |
+| 70 | [jd_price.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_price.js) | 京东保价 | 京东保价 |
+| 71 | [jd_qqxing.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_qqxing.js) | QQ星系牧场 | QQ星儿童牛奶京东自营旗舰店->星系牧场 |
+| 72 | [jd_rankingList.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_rankingList.js) | 京东排行榜 | 京东APP首页-更多频道-排行榜-悬浮按钮 |
+| 73 | [jd_redPacket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_redPacket.js) | 京东全民开红包 | 京东APP首页-领券-锦鲤红包。[活动地址](https://happy.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html) |
+| 74 | [jd_sendBeans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sendBeans.js) | 送豆得豆 | 来客有礼小程序 |
+| 75 | [jd_sgmh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sgmh.js) | 闪购盲盒 | 京东APP首页-闪购-闪购盲盒 |
+| 76 | [jd_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_shop.js) | 进店领豆 | 京东APP首页-领京豆-进店领豆 |
+| 77 | [jd_shop_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_shop_sign.js) | 店铺签到 |  |
+| 78 | [jd_sign_graphics.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sign_graphics.js) | 京东签到图形验证 |  |
+| 79 | [jd_sjzjd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sjzjd.js) | 升级赚京豆 |  |
+| 80 | [jd_small_home.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_small_home.js) | 东东小窝 | 京东APP我的-游戏与更多-东东小窝 |
+| 81 | [jd_speed.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed.js) | ✈️天天加速 | 京东APP我的-更多工具-天天加速 |
+| 82 | [jd_speed_redpocke.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_redpocke.js) | 京东极速版红包 | 京东极速版-领红包 |
+| 83 | [jd_speed_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_sign.js) | 京东极速版 | 京东极速版app-现金签到 |
+| 84 | [jd_star_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_star_shop.js) | 明星小店 |  |
+| 85 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |
+| 86 | [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序)-赚京豆-签到领京豆 |
+| 87 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |
+| 88 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |
+| 89 | [jd_unsubscribe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscribe.js) | 取关京东店铺和商品 |  |
+| 90 | [jd_wish.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wish.js) | 众筹许愿池 | 京东-京东众筹-众筹许愿池 |
+| 91 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |
+| 92 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |
