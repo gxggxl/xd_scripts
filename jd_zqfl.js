@@ -1,5 +1,6 @@
 /*
 早起福利
+活动入口：京东APP ==> 首页领京豆 ==> 早起福利
 更新时间：2021-7-8
 30 6 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_goodMorning.js
 */
