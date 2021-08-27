@@ -2,7 +2,7 @@
 ###
  # @Author       : gxggxl
  # @Date         : 2021-08-25 08:20:37
- # @LastEditTime : 2021-08-27 09:42:08
+ # @LastEditTime : 2021-08-27 22:53:03
  # @FilePath     : /xd_scripts/update_list.sh
  # @Description  : 生成脚本列表
 ### 
@@ -23,7 +23,7 @@ SheetHead="# 脚本列表\n\n| 序号 | 文件 | 名称 | 活动入口 |\n| :---
 ## 生成新的表格并写入Readme
 cd "$WorkDir" || exit
 Sheet=$SheetHead
-
+# 循环 Array
 for jsFileName in "${JsList[@]}" ; do
   Name=$(grep -E "new Env|Env" "$jsFileName" | awk -F "['\"]" '{print $2}' | sed 's/\|/\&/g' | head -1)
   Entry=$(grep -E "^ *活动入口" "$jsFileName" | awk -F "：|: " '{print $2}' | head -1)
