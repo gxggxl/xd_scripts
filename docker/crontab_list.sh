@@ -22,6 +22,9 @@
 # 超级粉丝互动 活动时间：XXX结束
 3 8,16 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 
+# 特物Z|万物皆可国创 活动时间：###
+5 13,22 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+
 # 女装盲盒 活动时间：2021-08-05到2021-08-31
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 
