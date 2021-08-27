@@ -19,11 +19,6 @@
 # 小鸽有礼 - 每日抽奖(活动时间：2021-05-01至2021-05-31)
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 
-# 京东手机狂欢城
-0 0-18/6 9-28 8 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-# 京东手机狂欢城 助力
-1 0,6 9-28 8 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
-
 # 超级粉丝互动 活动时间：XXX结束
 3 8,16 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 
