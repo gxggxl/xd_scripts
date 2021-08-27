@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+###
+ # @Author       : gxggxl
+ # @Date         : 2021-08-25 08:20:37
+ # @LastEditTime : 2021-08-27 09:42:08
+ # @FilePath     : /xd_scripts/update_list.sh
+ # @Description  : 生成脚本列表
+### 
 ## Author: https://github.com/nevinee
 ## Modified： 2021-03-18
 ## Version： v1.0.5
@@ -26,4 +33,4 @@ for jsFileName in "${JsList[@]}" ; do
   Sheet="$Sheet\n| $(((a++)+1)) | [$jsFileName]($Raw) | $Name | $Entry |"
 done
 
-echo -e "$Sheet" >"$FileReadme"
+echo -e "$Sheet\n\n此内容仅供参考" >"$FileReadme"
