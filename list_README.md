@@ -84,13 +84,14 @@
 | 80 | [jd_speed_redpocke.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_redpocke.js) | 京东极速版红包 | 京东极速版-领红包 |
 | 81 | [jd_speed_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_sign.js) | 京东极速版 | 京东极速版app-现金签到 |
 | 82 | [jd_star_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_star_shop.js) | 明星小店 |  |
-| 83 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |
-| 84 | [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序)-赚京豆-签到领京豆 |
-| 85 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |
-| 86 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |
-| 87 | [jd_unsubscribe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscribe.js) | 取关京东店铺和商品 |  |
-| 88 | [jd_wish.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wish.js) | 众筹许愿池 | 京东-京东众筹-众筹许愿池 |
-| 89 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |
-| 90 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |
+| 83 | [jd_superBrand.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superBrand.js) | 特物Z|万物皆可国创 |  |
+| 84 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |
+| 85 | [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序)-赚京豆-签到领京豆 |
+| 86 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |
+| 87 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |
+| 88 | [jd_unsubscribe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscribe.js) | 取关京东店铺和商品 |  |
+| 89 | [jd_wish.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wish.js) | 众筹许愿池 | 京东-京东众筹-众筹许愿池 |
+| 90 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |
+| 91 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |
 
 此内容仅供参考
