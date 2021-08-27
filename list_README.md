@@ -84,7 +84,7 @@
 | 80 | [jd_speed_redpocke.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_redpocke.js) | 京东极速版红包 | 京东极速版-领红包 |
 | 81 | [jd_speed_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_sign.js) | 京东极速版 | 京东极速版app-现金签到 |
 | 82 | [jd_star_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_star_shop.js) | 明星小店 |  |
-| 83 | [jd_superBrand.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superBrand.js) | 特物Z|万物皆可国创 |  |
+| 83 | [jd_superBrand.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superBrand.js) | 特物Z&万物皆可国创 |  |
 | 84 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |
 | 85 | [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序)-赚京豆-签到领京豆 |
 | 86 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |
