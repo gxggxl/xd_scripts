@@ -7,6 +7,7 @@ const vm = require('vm');
 const PNG = require('png-js');
 const UA = require('./USER_AGENTS.js').USER_AGENT;
 const fs = require("fs");
+const invokeKey="RtKLB8euDo7KwsO0";
 
 
 Math.avg = function average() {
@@ -489,7 +490,7 @@ function taskList(ac) {
   console.log(`账号${ac.index}:开始解锁宠汪汪封印~`)
   return new Promise(resolve => {
     $.get({
-      url: `https://jdjoy.jd.com/common/pet/getPetTaskConfig?reqSource=h5&invokeKey=qRKHmL4sna8ZOP9F`,
+      url: `https://jdjoy.jd.com/common/pet/getPetTaskConfig?reqSource=h5&invokeKey=${invokeKey}`,
       headers: {
         'Host': 'jdjoy.jd.com',
         'accept': '*/*',
