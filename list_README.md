@@ -5,7 +5,7 @@
 | 1 | [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 |  |
 | 2 | [jd_all_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_all_bean_change.js) | 京东月资产变动通知 |  |
 | 3 | [jd_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change.js) | 京东资产变动通知 |  |
-| 4 | [jd_bean_change_new.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change_new.js) | 京东资产变动通知 |  |
+| 4 | [jd_bean_change_new.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change_new.js) | 京东日资产变动通知 |  |
 | 5 | [jd_bean_home.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_home.js) | 领京豆额外奖励 | 京东APP首页-领京豆 |
 | 6 | [jd_bean_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_sign.js) | 京东多合一签到 | 各处的签到汇总 |
 | 7 | [jd_beauty.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_beauty.js) | 美丽研究院 | 京东app首页-美妆馆-底部中间按钮 |
