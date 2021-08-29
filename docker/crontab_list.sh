@@ -155,7 +155,7 @@
 # 京喜牧场
 15 0,6-23/2 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
 # 京喜农场
-0 8,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
+#0 8,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 京喜财富岛
 3 * * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
 # 京喜财富岛热气球挂机
