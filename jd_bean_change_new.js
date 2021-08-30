@@ -103,32 +103,35 @@ async function showMsg() {
     ReturnMessage+=`昨日支出：${$.expenseBean}京豆 🐶\n`;
     ReturnMessage+=`当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆🐶\n`;
 
+/*     if (typeof $.JD_cash_total !== "undefined") {
+      ReturnMessage += `💴签到现金：${$.JD_cash_total}元\n`;
+    } */
     if(typeof $.JDEggcnt !== "undefined"){
-        ReturnMessage+=`京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
+        ReturnMessage+=`🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
     }
     if(typeof $.JDtotalcash !== "undefined"){
-        ReturnMessage+=`极速金币：${$.JDtotalcash}金币(≈${$.JDtotalcash / 10000}元)\n`;
+        ReturnMessage+=`💰极速金币：${$.JDtotalcash}金币(≈${$.JDtotalcash / 10000}元)\n`;
     }
     if(typeof $.JdzzNum !== "undefined"){
-        ReturnMessage+=`京东赚赚：${$.JdzzNum}金币(≈${$.JdzzNum / 10000}元)\n`;
+        ReturnMessage+=`💰京东赚赚：${$.JdzzNum}金币(≈${$.JdzzNum / 10000}元)\n`;
     }
     if($.JdMsScore!=0){
-        ReturnMessage+=`京东秒杀：${$.JdMsScore}秒秒币(≈${$.JdMsScore / 1000}元)\n`;
+        ReturnMessage+=`💰京东秒杀：${$.JdMsScore}秒秒币(≈${$.JdMsScore / 1000}元)\n`;
     }
     if($.JdFarmProdName != ""){
         if($.JdtreeEnergy!=0){
-            ReturnMessage+=`东东农场：${$.JdFarmProdName},进度${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%`;
+            ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName},进度${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%`;
             if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
                 ReturnMessage+=`,${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天后'}可兑🍉\n`;
             } else {
                 ReturnMessage+=`\n`;
             }
         } else {
-            ReturnMessage+=`东东农场：${$.JdFarmProdName}\n`;
+            ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
         }
     }
     if ($.jxFactoryInfo) {
-        ReturnMessage += `京喜工厂：${$.jxFactoryInfo}🏭\n`
+        ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}🏭\n`
     }
     if ($.ddFactoryInfo) {
         ReturnMessage += `东东工厂：${$.ddFactoryInfo}🏭\n`
@@ -139,7 +142,7 @@ async function showMsg() {
     if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
         $.petInfo = initPetTownRes.result;
         if (response.resultCode === '0') {
-            ReturnMessage += `东东萌宠：${$.petInfo.goodsInfo.goodsName},`;
+            ReturnMessage += `🐶东东萌宠：${$.petInfo.goodsInfo.goodsName},`;
             ReturnMessage += `勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块(${response.result.medalPercent}%)\n`;
             //ReturnMessage += `          已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
 
