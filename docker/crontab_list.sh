@@ -25,8 +25,8 @@
 # 女装盲盒 活动时间：2021-08-05到2021-08-31
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 
-# 京喜领88元红包(8.31结束)
-0 0,12,21 * 7-8 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
+# 京喜领88元红包(9.30结束)
+0 0,12,21 * 7-9 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 
 # 发财大赢家之翻翻乐 .8.15结束
 20,40 * * 7-8 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
