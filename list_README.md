@@ -54,8 +54,8 @@
 | 50 | [jd_jxqd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxqd.js) | 京喜签到 | 京喜APP-我的-京喜签到 |
 | 51 | [jd_jxzpk.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxzpk.js) | 京享值PK | 京东-我的-京享值-京享值pk |
 | 52 | [jd_kd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_kd.js) | 京东快递签到 | [活动地址](https://jingcai-h5.jd.com/#/) |
-| 53 | [jd_kxcdz.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_kxcdz.js) | 开学充电站 |  |
-| 54 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |
+| 53 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |
+| 54 | [jd_live_ddo.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live_ddo.js) | 京东直播 | 京东APP首页-京东直播 |
 | 55 | [jd_live_redrain.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live_redrain.js) | 超级直播间红包雨 |  |
 | 56 | [jd_lotteryMachine.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lotteryMachine.js) | 京东抽奖机 |  |
 | 57 | [jd_lsj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lsj.js) | 零食街 |  |
