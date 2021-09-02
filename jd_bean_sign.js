@@ -44,6 +44,8 @@ if ($.isNode()) {
   await requireConfig();
   // 下载最新代码
   // await downFile();
+  // await deleteFile(resultPath);//删除result.txt
+  // await deleteFile(NodeSet);//删除CookieSet.json
   if (!await fs.existsSync(JD_DailyBonusPath)) {
     console.log(`\nJD_DailyBonus.js 文件不存在，停止执行${$.name}\n`);
     await notify.sendNotify($.name, `本次执行${$.name}失败，JD_DailyBonus.js 文件下载异常，详情请查看日志`)
