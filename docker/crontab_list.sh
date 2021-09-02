@@ -10,9 +10,6 @@
 # 送豆得豆
 #15 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 
-# 开学充电站
-18 1 20-31 8 * node /scripts/jd_kxcdz.js >> /scripts/logs/jd_kxcdz.log 2>&1
-
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
 11 1,9 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 
