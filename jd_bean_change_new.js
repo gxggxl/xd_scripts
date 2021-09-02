@@ -76,10 +76,9 @@ if ($.isNode()) {
             //await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
-    }
-
-    if ($.isNode() && allMessage) {
+        if ($.isNode() && allMessage) {
         await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+    }
     }
 })()
     .catch((e) => {
