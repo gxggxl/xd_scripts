@@ -8,6 +8,8 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``):``;
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+//通知分为单账号 true or false 默认 false,环境变量 BEAN_CHANGE_NOTIFYTIP
+const notifyTip = $.isNode() ? process.env.BEAN_CHANGE_NOTIFYTIP : false;
 let allMessage = '';
 let ReturnMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
@@ -76,10 +78,15 @@ if ($.isNode()) {
             //await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
-        if ($.isNode() && allMessage) {
+        if ($.isNode() && notifyTip && allMessage) {
+            console.log("单账号通知")
             await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
             allMessage=""
         }
+    }
+    if ($.isNode() && !notifyTip && allMessage) {
+        console.log("多账号通知")
+        await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
     }
 })()
     .catch((e) => {
