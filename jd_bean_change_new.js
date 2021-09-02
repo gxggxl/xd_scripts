@@ -77,8 +77,9 @@ if ($.isNode()) {
             await showMsg();
         }
         if ($.isNode() && allMessage) {
-        await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-    }
+            await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+            allMessage=""
+        }
     }
 })()
     .catch((e) => {
