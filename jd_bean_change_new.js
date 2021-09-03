@@ -155,8 +155,8 @@ async function showMsg() {
 
         }
     }
-    ReturnMessage+=`🧧🧧🧧🧧红包明细🧧🧧🧧🧧`;
-    ReturnMessage+=`${$.message}\n\n====== 分隔线 ======`;
+    // ReturnMessage+=`🧧🧧🧧🧧红包明细🧧🧧🧧🧧`;
+    ReturnMessage+=`${$.message}\n📣=============END ${$.index}=============📣\n`;
     allMessage+=ReturnMessage;
     $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
 }
