@@ -46,6 +46,9 @@
 # 5G超级盲盒(活动时间：2021-08-2到2021-10-29)
 0 0-23/3 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 
+# 京东零食街 活动时间：年底
+11 11 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
+
 ##############长期活动##############
 
 # 签到
@@ -74,14 +77,12 @@
 30 6 * * * node /scripts/jd_zqfl.js >> /scripts/logs/jd_zqfl.log 2>&1
 # 店铺签到
 45 0,23 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
-# 京东零食街 活动时间：年底
-11 11 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 # 摇京豆
 6 0,12,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 天天加速
 3 9 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
 # 东东电竞经理
-15 10 * * * node /scripts/jd_Elecsport.js >> /scripts/logs/jd_Elecsport.log 2>&1
+15 10,16 * * * node /scripts/jd_Elecsport.js >> /scripts/logs/jd_Elecsport.log 2>&1
 # 京东日资产变动通知
 0 13 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
 0 9,18,22 * * * node /scripts/jd_bean_change_new.js >> /scripts/logs/jd_bean_change_new.log 2>&1
