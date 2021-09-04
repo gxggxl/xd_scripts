@@ -105,7 +105,7 @@ async function showMsg() {
 
     ReturnMessage=`📣=============账号${$.index}=============📣\n`
     ReturnMessage+=`账号名称：${$.nickName || $.UserName}\n`;
-    ReturnMessage+=`今日收入：${$.todayIncomeBean}京豆 🐶\n`;
+    ReturnMessage+=`今日收入：${$.todayIncomeBean}京豆🐶\n`;
     ReturnMessage+=`昨日收入：${$.incomeBean}京豆🐶`;
     ReturnMessage+=`支出：${$.expenseBean}京豆\n`;
     ReturnMessage+=`当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆🐶\n`;
