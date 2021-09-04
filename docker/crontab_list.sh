@@ -28,8 +28,8 @@
 # 京喜领88元红包(9.30结束)
 0 0,12,21 * 7-10 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 
-# 发财大赢家之翻翻乐 .8.15结束
-20,40 * * 7-8 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+# 发财大赢家之翻翻乐 8.15结束
+20,40 * * 7-10 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 
 # 星系牧场 #wen
 2 */2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
