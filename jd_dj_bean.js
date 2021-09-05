@@ -1,9 +1,7 @@
 /*
 京东到家鲜豆任务脚本,支持qx,loon,shadowrocket,surge,nodejs
-用抓包抓 https://daojia.jd.com/html/index.html 页面cookie填写到下面,暂时不知cookie有效期
-抓多账号直接清除浏览器缓存再登录新账号,千万别点退出登录,否则cookie失效
-cookie只要里面的deviceid_pdj_jd=xxx-xxx-xxx;o2o_m_h5_sid=xxx-xxx-xxx关键信息
-一天运行一次
+兼容京东jdCookie.js
+手机设备在boxjs里填写cookie
 boxjs订阅地址:https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json
 TG群:https://t.me/passerbyb2021
 
@@ -15,7 +13,6 @@ cron "10 0 * * *" script-path=https://raw.githubusercontent.com/passerby-b/JDDJ/
 
 */
 
-
 const $ = new API("jd_dj_bean");
 let ckPath = './jdCookie.js';//ck路径,环境变量:JDDJ_CKPATH
 let cookies = [];
@@ -26,7 +23,7 @@ let thiscookie = '', deviceid = '';
             if (process.env.JDDJ_CKPATH) ckPath = process.env.JDDJ_CKPATH;
             delete require.cache[ckPath];
             let jdcookies = require(ckPath);
-            for (let key in jdcookies) cookies.push(jdcookies[key]);
+            for (let key in jdcookies) if (!!jdcookies[key]) cookies.push(jdcookies[key]);
         }
         else {
             let ckstr = $.read('#jddj_cookies');
@@ -48,41 +45,14 @@ let thiscookie = '', deviceid = '';
         thiscookie = cookies[i];
         if (!thiscookie.trim()) continue;
 
-        deviceid = _uuid();
-        let option = taskLoginUrl(deviceid, thiscookie);
-        //console.log(option)
-        
-        await $.http.get(option).then(response => {
-           
-            hd = JSON.parse(JSON.stringify(response.headers));
-                let o2o_m_h5_sid = hd['set-cookie'][0]
-    o2o_m_h5_sid = o2o_m_h5_sid.substring(o2o_m_h5_sid.indexOf("=") + 1, o2o_m_h5_sid.indexOf(";"))
-    let PDJ_H5_JDPIN = hd['set-cookie'][1]
-    PDJ_H5_JDPIN = PDJ_H5_JDPIN.substring(PDJ_H5_JDPIN.indexOf("=") + 1, PDJ_H5_JDPIN.indexOf(";"))
-        let PDJ_H5_MOBILE = hd['set-cookie'][2]
-    PDJ_H5_MOBILE = PDJ_H5_MOBILE.substring(PDJ_H5_MOBILE.indexOf("=") + 1, PDJ_H5_MOBILE.indexOf(";"))
-        let PDJ_H5_PIN = hd['set-cookie'][3]
-    PDJ_H5_PIN = PDJ_H5_PIN.substring(PDJ_H5_PIN.indexOf("=") + 1, PDJ_H5_PIN.indexOf(";"))
-
-    cookie1 = "o2o_m_h5_sid=" + o2o_m_h5_sid + ";PDJ_H5_JDPIN=" + PDJ_H5_JDPIN + ";"+"PDJ_H5_MOBILE="+PDJ_H5_MOBILE+";"+"PDJ_H5_PIN="+PDJ_H5_PIN;
-
-    
-     
-            let data = JSON.parse(response.body);
-            if (data.code == 0) {
-               
-                thiscookie = thiscookie + cookie1;
-          
-            }
-            else thiscookie = 'aabbcc';
-        });
+        thiscookie = await taskLoginUrl(thiscookie);
 
         await userinfo();
         await $.wait(1000);
 
         let tslist = await taskList();
         if (tslist.code == 1) {
-            $.notify('第' + (i + 1) + '个账号cookie过期', '请访问\nhttps://bean.m.jd.com/bean/signIndex.action抓取cookie', { url: 'https://bean.m.jd.com/bean/signIndex.action' });
+            $.notify('第' + (i + 1) + '个账号cookie过期', '请访问\nhttps://bean.m.jd.com/bean/signIndex.action\n抓取cookie', { url: 'https://bean.m.jd.com/bean/signIndex.action' });
             continue;
         }
 
@@ -95,8 +65,6 @@ let thiscookie = '', deviceid = '';
 }).finally(() => {
     $.done();
 })
-
-
 
 //个人信息
 async function userinfo() {
@@ -124,13 +92,10 @@ async function userinfo() {
 async function taskList() {
     return new Promise(async resolve => {
         try {
-           // 'https://daojia.jd.com/client?_jdrandom=' + Math.round(new Date()) + '&_funid_=task/list&functionId=task/list&isNeedDealError=true&body={"modelId":"M10007","plateCode":4}&lat=29.540071&lng=114.06442&lat_pos=29.540071&lng_pos=114.06442&city_id=1458&channel=rn&platform=6.6.0&platCode=h5&appVersion=6.6.0&appName=paidaojia&deviceModel=appmodel&traceId=' + deviceid + '&deviceToken=' + deviceid + '&deviceId=' + deviceid + '&_jdrandom=' + Math.round(new Date()) + '&_funid_=task/list'
-            
-            let option = urlTask('https://daojia.jd.com/client?_jdrandom=' + Math.round(new Date()) + '&_funid_=task/list&functionId=task/list&isNeedDealError=true&body={"modelId":"M10007","plateCode":4}&lat=29.540071&lng=114.06442&lat_pos=29.540071&lng_pos=114.06442&city_id=1458&channel=rn&platform=6.6.0&platCode=h5&appVersion=6.6.0&appName=paidaojia&deviceModel=appmodel&traceId=' + deviceid + '&deviceToken=' + deviceid + '&deviceId=' + deviceid + '&_jdrandom=' + Math.round(new Date()) + '&_funid_=task/list', '');
+            let option = urlTask('https://daojia.jd.com/client?_jdrandom=' + Math.round(new Date()) + '&functionId=task%2Flist&isNeedDealError=true&body=%7B%22modelId%22%3A%22M10001%22%2C%22plateCode%22%3A1%7D&channel=ios&platform=6.6.0&platCode=h5&appVersion=6.6.0&appName=paidaojia&deviceModel=appmodel&traceId=' + deviceid + '&deviceToken=' + deviceid + '&deviceId=' + deviceid, '');
 
             $.http.get(option).then(response => {
                 var data = JSON.parse(response.body);
-               // console.log(option);
                 //console.log(response.body);
                 resolve(data);
             })
@@ -221,18 +186,50 @@ function urlTask(url, body) {
     return option;
 }
 
-function taskLoginUrl(deviceid, thiscookie) {
-  // 'https://daojia.jd.com/client?_jdrandom=' + (+new Date()) + '&_funid_=login/treasure&functionId=login/treasure&body={}&lat=&lng=&lat_pos=&lng_pos=&city_id=&channel=h5&platform=6.6.0&platCode=h5&appVersion=6.6.0&appName=paidaojia&deviceModel=appmodel&isNeedDealError=false&traceId=' + deviceid + '&deviceToken=' + deviceid + '&deviceId=' + deviceid + '&_jdrandom=1627648796622&_funid_=login/treasure'
-    return {
-        url: 'https://daojia.jd.com/client?_jdrandom=' + (+new Date()) + '&_funid_=login/treasure&functionId=login/treasure&body={}&lat=&lng=&lat_pos=&lng_pos=&city_id=&channel=h5&platform=6.6.0&platCode=h5&appVersion=6.6.0&appName=paidaojia&deviceModel=appmodel&isNeedDealError=false&traceId=' + deviceid + '&deviceToken=' + deviceid + '&deviceId=' + deviceid + '&_jdrandom=1627648796622&_funid_=login/treasure',
-        headers: {
-            "Cookie": 'deviceid_pdj_jd=' + deviceid + ';' + thiscookie + ';',
-            "Host": "daojia.jd.com",
-            "referer": "https://daojia.jd.com/taroh5/h5dist/",
-            'Content-Type': 'application/x-www-form-urlencoded',
-            "User-Agent": 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)'
+//根据京东ck获取到家ck
+async function taskLoginUrl(thiscookie) {
+    return new Promise(async resolve => {
+        try {
+            if (thiscookie.indexOf('deviceid_pdj_jd') > -1) {
+                let arr = thiscookie.split(';');
+                for (const o of arr) {
+                    if (o.indexOf('deviceid_pdj_jd') > -1) {
+                        deviceid = o.split('=')[1];
+                    }
+                }
+                resolve(thiscookie);
+            }
+            else {
+                deviceid = _uuid();
+                let option = {
+                    url: encodeURI('https://daojia.jd.com/client?_jdrandom=' + (+new Date()) + '&_funid_=login/treasure&functionId=login/treasure&body={}&lat=&lng=&lat_pos=&lng_pos=&city_id=&channel=h5&platform=6.6.0&platCode=h5&appVersion=6.6.0&appName=paidaojia&deviceModel=appmodel&isNeedDealError=false&traceId=' + deviceid + '&deviceToken=' + deviceid + '&deviceId=' + deviceid + '&_jdrandom=' + (+new Date()) + '&_funid_=login/treasure'),
+                    headers: {
+                        "Cookie": 'deviceid_pdj_jd=' + deviceid + ';' + thiscookie + ';',
+                        "Host": "daojia.jd.com",
+                        'Content-Type': 'application/x-www-form-urlencoded;',
+                        "User-Agent": 'jdapp;iPhone;10.0.10;14.1;' + deviceid + ';network/wifi;model/iPhone11,6;appBuild/167764;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1'
+                    }
+                };
+                let ckstr = '';
+                await $.http.get(option).then(async response => {
+                    //console.log(response);
+                    if (response.body.indexOf('请求成功') > -1) {
+                        for (const key in response.headers) {
+                            if (key.toLowerCase().indexOf('cookie') > -1) {
+                                ckstr = response.headers[key].toString();
+                            }
+                        }
+                        ckstr += ';deviceid_pdj_jd=' + deviceid;
+                    }
+                });
+                resolve(ckstr);
+            }
+
+        } catch (error) {
+            console.log(error);
+            resolve('');
         }
-    }
+    })
 }
 
 function _uuid() {
