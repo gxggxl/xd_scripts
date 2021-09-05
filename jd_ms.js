@@ -237,7 +237,7 @@ function showMsg() {
             + `\n可兑换 ${$.score / 1000}元 红包🧧 (满1毛可换，每天一次)`
             + "\n活动入口 ===>>\n京东app首页 ==> 京东秒杀 ==> 签到领红包 ==> 秒秒币";
         $.msg($.name, '', `京东账号${$.index}${$.nickName}\n${message}`);
-        await notify.sendNotify($.name, `京东账号${$.index}${$.nickName}\n${message}`)
+        // await notify.sendNotify($.name, `京东账号${$.index}${$.nickName}\n${message}`)
         resolve()
     })
 }
