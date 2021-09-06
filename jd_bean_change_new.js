@@ -56,6 +56,7 @@ if ($.isNode()) {
             $.JDtotalcash=0;
             $.JDEggcnt=0;
             $.Jxmctoken='';
+            $.TotalMoney = 0;
             await TotalBean();
             console.log(`\n********开始【京东账号${$.index}】${$.nickName || $.UserName}******\n`);
             if (!$.isLogin) {
@@ -71,6 +72,7 @@ if ($.isNode()) {
             await jdfruitRequest('taskInitForFarm', {"version":14,"channel":1,"babelChannel":"120"});
             await getjdfruit();
             await cash();
+            await TotalMoney();//领现金
             await requestAlgo();
             await JxmcGetRequest();
             await bean();
@@ -109,10 +111,11 @@ async function showMsg() {
     ReturnMessage+=`昨日收入：${$.incomeBean}京豆🐶`;
     ReturnMessage+=`支出：${$.expenseBean}京豆\n`;
     ReturnMessage+=`当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆🐶\n`;
+    ReturnMessage+= `🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
 
-/*     if (typeof $.JD_cash_total !== "undefined") {
-      ReturnMessage += `💴签到现金：${$.JD_cash_total}元\n`;
-    } */
+    if (typeof $.TotalMoney !== "undefined") {
+      ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
+    }
     if(typeof $.JDEggcnt !== "undefined"){
         ReturnMessage+=`🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
     }
@@ -129,7 +132,7 @@ async function showMsg() {
         if($.JdtreeEnergy!=0){
             ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName},进度${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%`;
             if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
-                ReturnMessage+=`,${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天后'}可兑🍉\n`;
+                ReturnMessage+=`,${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天后'}可兑\n`;
             } else {
                 ReturnMessage+=`\n`;
             }
@@ -138,7 +141,7 @@ async function showMsg() {
         }
     }
     if ($.jxFactoryInfo) {
-        ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}🏭\n`
+        ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}\n`
     }
     if ($.ddFactoryInfo) {
         ReturnMessage += `东东工厂：${$.ddFactoryInfo}🏭\n`
@@ -403,7 +406,8 @@ function redPacket() {
                         $.jdhRed = $.jdhRed.toFixed(2)
                         $.balance = data.balance
                         $.expiredBalance = ($.jxRedExpire + $.jsRedExpire + $.jdRedExpire).toFixed(2)
-                        $.message += `\n🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元`;//健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元 🧧
+                        // $.message += `\n🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元`
+                        $.message += `\n🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元\n🧧健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元`;
                     } else {
                         console.log(`京东服务器返回空数据`)
                     }
@@ -635,6 +639,39 @@ function safeGet(data) {
         console.log(`京东服务器访问数据为空，请检查自身设备网络情况`);
         return false;
     }
+}
+
+//领现金
+function TotalMoney() {
+    return new Promise(resolve => {
+        $.get({
+            url: 'https://api.m.jd.com/client.action?functionId=cash_exchangePage&body=%7B%7D&build=167398&client=apple&clientVersion=9.1.9&openudid=1fce88cd05c42fe2b054e846f11bdf33f016d676&sign=762a8e894dea8cbfd91cce4dd5714bc5&st=1602179446935&sv=102',
+            headers: {
+                Cookie: cookie,
+            }
+        }, async (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`)
+                    console.log(`${$.name} API请求失败，请检查网路重试`)
+                } else {
+                    if (safeGet(data)) {
+                        data = JSON.parse(data);
+                        if (data.code == 0 && data.data.bizCode == 0 && data.data.result) {
+                            $.TotalMoney = data.data.result.totalMoney || 0
+                            console.log(`京东-总现金查询成功${$.TotalMoney}元`)
+                        } else {
+                            console.log(`京东-总现金查询失败 ${data.code}`)
+                        }
+                    }
+                }
+            } catch (e) {
+                $.logErr(e, resp)
+            } finally {
+                resolve(data);
+            }
+        })
+    })
 }
 
 function cash() {
@@ -951,7 +988,6 @@ function getGetRequest(type, url) {
     };
     return {url: url, method: method, headers: headers};
 }
-
 
 Date.prototype.Format = function (fmt) {
     var e,
