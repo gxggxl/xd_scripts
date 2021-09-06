@@ -106,11 +106,11 @@ async function showMsg() {
     // }
 
     ReturnMessage=`📣=============账号${$.index}=============📣\n`
-    ReturnMessage+=`账号名称：${$.nickName || $.UserName}\n`;
-    ReturnMessage+=`今日收入：${$.todayIncomeBean}京豆🐶\n`;
-    ReturnMessage+=`昨日收入：${$.incomeBean}京豆🐶`;
+    ReturnMessage+=`👤账号名称：${$.nickName || $.UserName}\n`;
+    ReturnMessage+=`🥔今日收入：${$.todayIncomeBean}京豆🐶\n`;
+    ReturnMessage+=`🥔昨日收入：${$.incomeBean}京豆🐶`;
     ReturnMessage+=`支出：${$.expenseBean}京豆\n`;
-    ReturnMessage+=`当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆🐶\n`;
+    ReturnMessage+=`🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆🐶\n`;
     ReturnMessage+= `🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
 
     if (typeof $.TotalMoney !== "undefined") {
@@ -158,7 +158,7 @@ async function showMsg() {
 
         }
     }
-    ReturnMessage+=`====== 红包明细 ======`;
+    ReturnMessage+=`🧧============ 红包明细 ============🧧`;
     ReturnMessage+=`${$.message}\n📣=============END ${$.index}=============📣\n`;
     allMessage+=ReturnMessage;
     $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
