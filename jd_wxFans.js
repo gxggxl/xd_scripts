@@ -1,32 +1,36 @@
 /**
-粉丝互动，没啥水
+粉丝互动，尽量自己设置定时，在0点和1点抽奖，白天基本没水
 修改温某的脚本，由于温某不干活，只能自己动手修改了
 注意：脚本会加购，脚本会加购，脚本会加购
 若发现脚本里没有的粉丝互动活动。欢迎反馈给我
-cron 34 6,18 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
+cron 34 5,18 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
 * */
 const $ = new Env('粉丝互动');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
 const activityList = [
-    {'actid':'5ae85e34c6054f379b3bdb0867842cd0','endTime':1629302400000},
-    {'actid':'4baf19fa3f454e6abf82be7d66605ab4','endTime':1630425599000},
-    {'actid':'c75ae2afd7ff4aec9ed47008b08400f7','endTime':1630288800000},
-    {'actid':'3da50af9e8664746844c5456b8920b7d','endTime':1630425599000},
-    {'actid':'162c43699ba945e8adb83b2bd5fe0142','endTime':1630425599000},
-    {'actid':'58121dee0d84428bbdeb83934ffa1b80','endTime':1630425599000},
-    {'actid':'8afc9104d6444696b3f16ceb23a24536','endTime':1630425599000},
-    {'actid':'f006443799d34b55b9061be7b765c3fa','endTime':1630339200000},
-    {'actid':'4ee56f673e164305a527545efe566b20','endTime':1630425599000},//需要入会
-    {'actid':'c77e8342bca24d5f86d2a076b8f00860','endTime':1629907199000},
-    {'actid':'49d8035a8f294ac7893e814d2b8e79ed','endTime':1629907199000},
-    {'actid':'f22809ea36b14411a625641ef9685e53','endTime':1630339200000},
-    {'actid':'9bb5cb2801114f2981c183abbc2aa522','endTime':1630425596000},//需要入会
-    {'actid':'eff9c47393be446f9dd576e26d13dd9d','endTime':1631635200000},
-    {'actid':'d6fe4bd6a34e4eb9b498932122453890','endTime':1630548000000},
-    {'actid':'e4c6bdba323948ceb05e4122acd97fba','endTime':1629648000000},
-];
+    {"actid":"b6bd7155cefe443aae1e5a74383008f2","endTime":1635695999000},
+    {"actid":"4368aa3b3c26477dbf8f9a3a45226938","endTime":1631545200000},
+    {"actid":"3651af1ff7194fb3b37235dd15538d58","endTime":1632067199000},
+    {"actid":"6b1fb17eceb047c487537b2deb9694d8","endTime":1631261565000},
+    {"actid":"2bfa9b34365140f8a51293043ca2821f","endTime":1633017599000},
+    {"actid":"9c9ebe1af0ee49658730c3b4f002d3e9","endTime":1631116800000},
+    {"actid":"3ae867cd253f42b1992ae90598b7549a","endTime":1632931200000},
+    {"actid":"9f90ca09236d4f9b86aca47db4d885f2","endTime":1631375999000},
+    {"actid":"2d2280b86b394cc09d436feecb4e5d3b","endTime":1632931200000},
+    {"actid":"0b8f1d09788947669f75c4bcc4fde4ae","endTime":1633017599000},
+    {"actid":"e7a53032cfe84b1fb882c3bbf43f5e5e","endTime":1631203200000},
+    {"actid":"7d50a3e8ab124db9bc12b9730b3a55c9","endTime":1631116799000},
+    {"actid":"bde48555ac8b41669f516f892f95e21c","endTime":1633017599000},
+    {"actid":"86eab05c547d4d28829d269e2a5c4f1e","endTime":1633017599000},
+    {"actid":"73086c4fed7746e1b911a776d2e8662e","endTime":1633017599000},
+    {"actid":"179e156d768240db84393751fc9c427b","endTime":1633017599000},
+    {"actid":"fa3c9189473141c0aec883301452e562","endTime":1633017599000},
+    {"actid":"bed695cfc40941c0a641eba935f9601e","endTime":1633017599000},
+    {"actid":"eff9c47393be446f9dd576e26d13dd9d","endTime":1631635200000},
+    {"actid":"5622386323bb4a82a2ed4e0158f7c6a7","endTime":1631289599000}
+]
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -113,6 +117,16 @@ async function main() {
     let date = new Date($.activityData.actInfo.endTime)
     let endtime = date.getFullYear() + "-" + (date.getMonth() < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) + "-" + (date.getDate() < 10 ? '0' + date.getDate() : date.getDate())
     console.log(`${$.actinfo.actName},${$.actinfo.shopName},当前积分：${$.nowUseValue},结束时间：${endtime}，${$.activityData.actInfo.endTime}`);
+    let gitList = [];
+    let gitTypeList = ['One','Two','Three'];
+    for (let i = 0; i < gitTypeList.length; i++) {
+        let gitInfo = $.activityData.actInfo['giftLevel'+ gitTypeList[i]] || '';
+        if(gitInfo){
+            gitInfo = JSON.parse(gitInfo);
+            gitList.push(gitInfo[0].name);
+        }
+    }
+    console.log(`奖品列表：` + gitList.toString());
     if($.actorInfo.prizeOneStatus && $.actorInfo.prizeTwoStatus && $.actorInfo.prizeThreeStatus){
         console.log(`已抽过所有奖品`);return;
     }
@@ -155,7 +169,15 @@ async function luckDraw(){
 }
 async function doTask(){
     $.runFalag = true;
-    if ($.activityData.task1Sign && $.activityData.task1Sign.finishedCount === 0) {
+    if($.activityData.actorInfo && !$.activityData.actorInfo.follow){
+        console.log(`关注店铺`);
+        await takePostRequest('followShop');
+        await $.wait(2000);
+        $.upFlag = true;
+    }else{
+        console.log('已关注')
+    }
+    if ($.activityData.task1Sign && $.activityData.task1Sign.finishedCount === 0 && $.runFalag) {
         console.log(`执行每日签到`);
         await takePostRequest('doSign');
         await $.wait(2000);
@@ -280,15 +302,13 @@ async function takePostRequest(type){
             url= 'https://lzkjdz-isv.isvjcloud.com/wxCommonInfo/getActMemberInfo';
             body = `venderId=${$.shopid}&activityId=${$.activityID}&pin=${encodeURIComponent($.pin)}`;
             break;
-        case 'doSign':
-            url= 'https://lzkjdz-isv.isvjcloud.com/wxFansInterActionActivity/doSign';
-            body = `activityId=${$.activityID}&uuid=${$.activityData.actorInfo.uuid}`;
-            break;
         case 'doBrowGoodsTask':
         case 'doAddGoodsTask':
             url= `https://lzkjdz-isv.isvjcloud.com/wxFansInterActionActivity/${type}`;
             body = `activityId=${$.activityID}&uuid=${$.activityData.actorInfo.uuid}&skuId=${$.oneGoodInfo.skuId}`;
             break;
+        case 'doSign':
+        case 'followShop':
         case 'doShareTask':
         case 'doRemindTask':
         case 'doMeetingTask':
@@ -365,6 +385,7 @@ function dealReturn(type, data) {
                 console.log(data.errorMessage)
             }
             break;
+        case 'followShop':
         case 'doBrowGoodsTask':
         case 'doAddGoodsTask':
         case 'doShareTask':
