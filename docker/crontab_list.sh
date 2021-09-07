@@ -20,7 +20,7 @@
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 
 # 超级粉丝互动 活动时间：XXX结束
-3 8,16 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
+1 0,1 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 
 # 特物Z|万物皆可国创 活动时间：###
 5 13,22 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
