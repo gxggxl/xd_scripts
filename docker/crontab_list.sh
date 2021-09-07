@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 心相印店铺活动  古蜀寻宝 (10.6 结束)
+17 8,16 1-30 9-10 * node /scripts/jd_xinxiangyin.js >> /scripts/logs/jd_xinxiangyin.log 2>&1
+
 # 9.6-9.17 福满中秋
 25 10,20 6-17 9 * export guaopencard23=true && node /scripts/gua_opencard23.js >> /scripts/logs/gua_opencard23.log 2>&1
 
