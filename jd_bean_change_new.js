@@ -136,6 +136,19 @@ async function showMsg() {
     if ($.ddFactoryInfo) {
       ReturnMessage += `🏭东东工厂：${$.ddFactoryInfo}\n`;
     }
+
+    const response = await PetRequest('energyCollect');
+    const initPetTownRes = await PetRequest('initPetTown');
+    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
+        $.petInfo = initPetTownRes.result;
+        if (response.resultCode === '0') {
+            ReturnMessage += `🐶东东萌宠：${$.petInfo.goodsInfo.goodsName},`;
+            ReturnMessage += `勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块(${response.result.medalPercent}%)\n`;
+            //ReturnMessage += `          已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
+
+        }
+    }
+    
     if(typeof $.JDEggcnt !== "undefined"){
         ReturnMessage+=`🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
     }
@@ -149,17 +162,6 @@ async function showMsg() {
         ReturnMessage+=`💰京东秒杀：${$.JdMsScore}秒秒币(≈${$.JdMsScore / 1000}元)\n`;
     }
 
-    const response = await await PetRequest('energyCollect');
-    const initPetTownRes = await PetRequest('initPetTown');
-    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
-        $.petInfo = initPetTownRes.result;
-        if (response.resultCode === '0') {
-            ReturnMessage += `🐶东东萌宠：${$.petInfo.goodsInfo.goodsName},`;
-            ReturnMessage += `勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块(${response.result.medalPercent}%)\n`;
-            //ReturnMessage += `          已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
-
-        }
-    }
     ReturnMessage+=`🧧============ 红包明细 ============🧧`;
     ReturnMessage+=`${$.message}\n📣=============END ${$.index}=============📣\n`;
     allMessage+=ReturnMessage;
