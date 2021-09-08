@@ -8,8 +8,8 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``):``;
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-//通知分为单账号 默认合并|true 为分割,环境变量 export BEAN_CHANGE_NOTIFYTIP=true
-const notifyTip = $.isNode() ? process.env.BEAN_CHANGE_NOTIFYTIP : false;
+//通知分为单账号 默认合并|1 为分割,环境变量 export BEAN_CHANGE_NOTIFYTIP=1
+const notifyTip = $.isNode() ? process.env.BEAN_CHANGE_NOTIFYTIP : 0;
 let allMessage = '';
 let ReturnMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
@@ -80,13 +80,13 @@ if ($.isNode()) {
             //await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
-        if ($.isNode() && notifyTip===true && allMessage) {
+        if ($.isNode() && notifyTip==1 && allMessage) {
             console.log("分割为单账号发送一次通知")
             await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
             allMessage=""
         }
     }
-    if ($.isNode() && !notifyTip===false && allMessage) {
+    if ($.isNode() && notifyTip==0 && allMessage) {
         console.log("多账号合并发送一次通知")
         await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
         $.msg(`${$.name}`, `${allMessage}`)
