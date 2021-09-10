@@ -1,8 +1,12 @@
 /*
 cron "30 10,22 * * *" jd_bean_change.js, tag:资产变化强化版by-ccwav
+
+https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change_new.js
+更新by ccwav,20210821
+* 支持环境变量控制每次发送的账号个数，默认为2
+* 环境变量为：JD_BEAN_CHANGE_SENDNUM
+* export JD_BEAN_CHANGE_SENDNUM=2
 */
-// https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change_new.js
-//更新by ccwav,20210821
 const $ = new Env('京东日资产变动通知');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``):``;
@@ -15,6 +19,8 @@ let ReturnMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
+$.sendNum = process.env.JD_BEAN_CHANGE_SENDNUM * 1 || 2;
+$.sentNum = 0;
 
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -29,6 +35,9 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
         return;
     }
+    console.log('=====环境变量配置如下=====')
+    console.log(`sendNum: ${typeof $.sendNum}, ${$.sendNum}`)
+    console.log('=======================')
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
@@ -80,16 +89,26 @@ if ($.isNode()) {
             //await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
-        if ($.isNode() && notifyTip==1 && allMessage) {
-            console.log("分割为单账号发送一次通知")
-            await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-            allMessage=""
+        // if($.index % $.sendNum === 0 || (cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum){
+        //     allMessage += `[京东账号${$.index}]\n`
+        // } else {
+        //     allMessage += `[京东账号${$.index}]\n\n`
+        // }
+        console.log(`[京东账号${$.index} ${$.UserName}] 结束\n`)
+        if($.isNode()){
+            if($.index % $.sendNum === 0){
+                $.sentNum++;
+                console.log(`正在进行第 ${$.sentNum} 次发送通知，发送账号信息数量：${$.sendNum}`)
+                await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+                $.msg(`${$.name}`, `${allMessage}`)
+                allMessage=""
+            } else if((cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum){
+                console.log(`正在进行最后一次发送通知，发送账号信息数量：${(cookiesArr.length - ($.sentNum * $.sendNum))}`)
+                await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+                $.msg(`${$.name}`, `${allMessage}`)
+                allMessage=""
+            }
         }
-    }
-    if ($.isNode() && notifyTip==0 && allMessage) {
-        console.log("多账号合并发送一次通知")
-        await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-        $.msg(`${$.name}`, `${allMessage}`)
     }
 })()
     .catch((e) => {
@@ -166,7 +185,7 @@ async function showMsg() {
     ReturnMessage+=`📣============ 红包明细 ============📣`;
     ReturnMessage+=`${$.message}\n📣=============END ${$.index}=============📣\n\n`;
     allMessage+=ReturnMessage;
-    $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
+    // $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
 }
 async function bean() {
     // console.log(`北京时间零点时间戳:${parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000}`);
@@ -664,9 +683,9 @@ function TotalMoney() {
                         data = JSON.parse(data);
                         if (data.code == 0 && data.data.bizCode == 0 && data.data.result) {
                             $.TotalMoney = data.data.result.totalMoney || 0
-                            console.log(`京东-总现金查询成功${$.TotalMoney}元`)
+                            console.log(`京东-总现金查询成功${$.TotalMoney}元\n`)
                         } else {
-                            console.log(`京东-总现金查询失败 ${data.code}`)
+                            console.log(`京东-总现金查询失败 ${data}\n`)
                         }
                     }
                 }
