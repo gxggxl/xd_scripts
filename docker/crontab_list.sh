@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 内容鉴赏官 (9.30 结束，10月继续开启)
+11 1,5 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
+
 # 心相印店铺活动  古蜀寻宝 (10.6 结束)
 17 8,16 1-30 9-10 * node /scripts/jd_xinxiangyin.js >> /scripts/logs/jd_xinxiangyin.log 2>&1
 
