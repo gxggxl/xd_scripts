@@ -1162,7 +1162,7 @@ function timeFn(dateBegin) {
     seconds = Math.round(leave3 / 1000)
   }
   hours = hours < 10 ? '0'+ hours : hours
-  minutes = minuAuthor : 瓜佬tes < 10 ? '0'+ minutes : minutes
+  minutes = minutes < 10 ? '0'+ minutes : minutes
   seconds = seconds < 10 ? '0'+ seconds : seconds
   var timeFn = hours + ":" + minutes + ":" + seconds;
   return timeFn;
