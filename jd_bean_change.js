@@ -1,19 +1,15 @@
-/*
-cron "30 10,22 * * *" jd_bean_change.js, tag:资产变化强化版by-ccwav
-
-https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change_new.js
-更新by ccwav,20210821
-* 支持环境变量控制每次发送的账号个数，默认为2
-* 环境变量为：JD_BEAN_CHANGE_SENDNUM
-* export JD_BEAN_CHANGE_SENDNUM=2
-*/
+/**
+ * cron "30 10,22 * * *" jd_bean_change.js, tag:资产变化强化版
+ * 原版链接 https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change_new.js
+ * 支持环境变量控制每次发送的账号个数，默认为2
+ * 环境变量为：JD_BEAN_CHANGE_SENDNUM | export JD_BEAN_CHANGE_SENDNUM=2
+ *
+ */
 const $ = new Env('京东日资产变动通知');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``):``;
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-//通知分为单账号 默认合并|1 为分割,环境变量 export BEAN_CHANGE_NOTIFYTIP=1
-const notifyTip = $.isNode() ? process.env.BEAN_CHANGE_NOTIFYTIP : 0;
 let allMessage = '';
 let ReturnMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
@@ -89,11 +85,6 @@ if ($.isNode()) {
             //await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
-        // if($.index % $.sendNum === 0 || (cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum){
-        //     allMessage += `[京东账号${$.index}]\n`
-        // } else {
-        //     allMessage += `[京东账号${$.index}]\n\n`
-        // }
         console.log(`[京东账号${$.index} ${$.UserName}] 结束\n`)
         if($.isNode()){
             if($.index % $.sendNum === 0){
