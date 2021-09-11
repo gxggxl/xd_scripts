@@ -197,11 +197,17 @@
 #京东保价
 #9 21 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 
+# 京喜购物返红包助力
+11 */6 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
+# 宠汪汪跑验证码
+58 7,15,23 * * * node /scripts/jd_work_validate.js >> /scripts/logs/jd_work_validate.log 2>&1
+# 宠汪汪兑换
+0 */8 * * * node /scripts/jd_exchange_joy.js >> /scripts/logs/jd_exchange_joy.log 2>&1
+
 ###################### 敏感操作 ######################
 
 # 取关主播
 3 5 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
-
 # 取关京东店铺商品
 2 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京东试用
@@ -210,11 +216,3 @@
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
 #家庭号(易黑号，默认注释)
 #10 6,7 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
-
-
-# 京喜购物返红包助力
-11 */6 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
-# 宠汪汪跑验证码
-58 7,15,23 * * * node /scripts/jd_work_validate.js >> /scripts/logs/jd_work_validate.log 2>&1
-# 宠汪汪兑换
-0 */8 * * * node /scripts/jd_exchange_joy.js >> /scripts/logs/jd_exchange_joy.log 2>&1
