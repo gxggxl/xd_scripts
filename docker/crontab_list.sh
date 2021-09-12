@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 京小鸽吾悦寄 (9.30 结束)
+9 1,13 1-30 9 * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
+
 # 内容鉴赏官 (9.30 结束，10月继续开启)
 11 1,5 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 
