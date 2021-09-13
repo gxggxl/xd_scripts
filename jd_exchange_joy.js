@@ -59,7 +59,7 @@ async function main(id) {
                         log = "已兑换过"
                         break;
                     case 'buy_success':
-                        log = "兑换成功"
+                        log = "兑换成功🎉"
                         break;
                     case 'H0001':
                         log = "刷新验证"
