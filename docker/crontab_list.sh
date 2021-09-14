@@ -7,6 +7,9 @@
 
 ##############短期活动##############
 
+# 跳跳乐瓜分京豆(9.13-9.19)
+15 */2 20-27 7 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
+
 # 京小鸽吾悦寄 (9.30 结束)
 9 1,13 1-30 9 * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
 
