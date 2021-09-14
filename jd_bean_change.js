@@ -82,7 +82,7 @@ if ($.isNode()) {
             await JxmcGetRequest();
             await bean();
             await getJxFactory();   //惊喜工厂
-            //await getDdFactoryInfo(); // 东东工厂
+            await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
         console.log(`[京东账号${$.index} ${$.UserName}] 结束\n`)
@@ -173,7 +173,7 @@ async function showMsg() {
         ReturnMessage+=`💰京东秒杀：${$.JdMsScore}秒秒币(≈${$.JdMsScore / 1000}元)\n`;
     }
 
-    ReturnMessage+=`📣============ 红包明细 ============📣`;
+    ReturnMessage+=`📣=========== 红包明细 ===========📣`;
     ReturnMessage+=`${$.message}\n📣=============END ${$.index}=============📣\n\n`;
     allMessage+=ReturnMessage;
     // $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
