@@ -110,19 +110,14 @@ if ($.isNode()) {
     })
 async function showMsg() {
     if ($.errorMsg) return
-    //allMessage += `账号${$.index}：${$.nickName || $.UserName}\n今日收入：${$.todayIncomeBean}京豆 🐶\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆 🐶${$.message}${$.index !== cookiesArr.length ? '\n\n' : ''}`;
-
-    // if ($.isNode()) {
-    //   await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `账号${$.index}：${$.nickName || $.UserName}\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}京豆 🐶${$.message}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-    // }
 
     ReturnMessage=`📣=============账号${$.index}=============📣\n`
     ReturnMessage+=`👤账号名称：${$.nickName || $.UserName}\n`;
-    ReturnMessage+=`🥔今日收入：${$.todayIncomeBean}京豆🐶\n`;
-    ReturnMessage+=`🥔昨日收入：${$.incomeBean}京豆🐶`;
-    ReturnMessage+=`支出：${$.expenseBean}京豆\n`;
-    ReturnMessage+=`🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆🐶\n`;
-    ReturnMessage+= `🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
+    ReturnMessage+=`🥔今日收入：${$.todayIncomeBean}京豆\n`;
+    ReturnMessage+=`🥔昨日收支：${$.incomeBean}京豆 🐶 `;
+    ReturnMessage+=`${$.expenseBean}京豆\n`;
+    ReturnMessage+=`🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
+    ReturnMessage+=`🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
 
     if (typeof $.TotalMoney !== "undefined") {
       ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
@@ -144,9 +139,6 @@ async function showMsg() {
     if ($.jxFactoryInfo) {
       ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}\n`;
     }
-    if ($.ddFactoryInfo) {
-      ReturnMessage += `🏭东东工厂：${$.ddFactoryInfo}\n`;
-    }
 
     const response = await PetRequest('energyCollect');
     const initPetTownRes = await PetRequest('initPetTown');
@@ -158,6 +150,10 @@ async function showMsg() {
             //ReturnMessage += `          已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
 
         }
+    }
+
+    if ($.ddFactoryInfo) {
+      ReturnMessage += `🏭东东工厂：${$.ddFactoryInfo}\n`;
     }
 
     if(typeof $.JDEggcnt !== "undefined"){
