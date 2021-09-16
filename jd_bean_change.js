@@ -172,7 +172,11 @@ async function showMsg() {
     ReturnMessage += `🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n`;
     ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
     ReturnMessage += `🧧健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元\n`;
-    ReturnMessage += `📣=============END ${$.index}=============📣\n\n`;
+    if($.sendNum > 1) {
+        ReturnMessage += `📣=============END ${$.index}=============📣\n\n`;
+    } else {
+        ReturnMessage += `📣=============END ${$.index}=============📣\n`;
+    }
     allMessage += ReturnMessage;
     // $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
 }
