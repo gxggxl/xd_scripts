@@ -4,7 +4,7 @@
 cron 17 8,16 * * * jd_priceProtect.js
 */
 const $ = new Env('京东保价');
-let jsdom = require("jsdom"); //cd scripts && npm install jsdom
+let jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
