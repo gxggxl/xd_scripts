@@ -160,22 +160,21 @@ async function showMsg() {
     if($.sendNum > 1) {
         ReturnMessage += `📣=============END ${$.index}=============📣\n\n`;
     } else {
-        ReturnMessage += `📣=============END ${$.index}=============📣\n`;
+        ReturnMessage += `📣=============END ${$.index}=============📣`;
     }
     allMessage += ReturnMessage;
 
     console.log(`[京东账号${$.index} ${$.UserName}] 结束\n`)
+    $.msg(`${$.name}`, `${allMessage}`)
     if($.isNode()){
         if($.index % $.sendNum === 0){
             $.sentNum++;
             console.log(`正在进行第 ${$.sentNum} 次发送通知，发送账号信息数量：${$.sendNum}`)
             await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-            $.msg(`${$.name}`, `${allMessage}`)
             allMessage=""
         } else if((cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum){
             console.log(`正在进行最后一次发送通知，发送账号信息数量：${(cookiesArr.length - ($.sentNum * $.sendNum))}`)
             await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-            $.msg(`${$.name}`, `${allMessage}`)
             allMessage=""
         }
     }
