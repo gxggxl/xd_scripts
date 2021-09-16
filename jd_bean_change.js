@@ -165,7 +165,7 @@ async function showMsg() {
     allMessage += ReturnMessage;
 
     console.log(`[京东账号${$.index} ${$.UserName}] 结束\n`)
-    $.msg(`${$.name}`, `${allMessage}`)
+    $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
     if($.isNode()){
         if($.index % $.sendNum === 0){
             $.sentNum++;
@@ -178,7 +178,6 @@ async function showMsg() {
             allMessage=""
         }
     }
-    // $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
 }
 async function bean() {
     // console.log(`北京时间零点时间戳:${parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000}`);
