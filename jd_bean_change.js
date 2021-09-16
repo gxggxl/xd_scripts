@@ -3,7 +3,6 @@
  * 原版链接 https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change_new.js
  * 支持环境变量控制每次发送的账号个数，默认为2
  * 环境变量为：JD_BEAN_CHANGE_SENDNUM | export JD_BEAN_CHANGE_SENDNUM=2
- *
  */
 const $ = new Env('京东日资产变动通知');
 const notify = $.isNode() ? require('./sendNotify') : '';
