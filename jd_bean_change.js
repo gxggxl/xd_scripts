@@ -84,21 +84,6 @@ if ($.isNode()) {
             await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
-        console.log(`[京东账号${$.index} ${$.UserName}] 结束\n`)
-        if($.isNode()){
-            if($.index % $.sendNum === 0){
-                $.sentNum++;
-                console.log(`正在进行第 ${$.sentNum} 次发送通知，发送账号信息数量：${$.sendNum}`)
-                await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-                $.msg(`${$.name}`, `${allMessage}`)
-                allMessage=""
-            } else if((cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum){
-                console.log(`正在进行最后一次发送通知，发送账号信息数量：${(cookiesArr.length - ($.sentNum * $.sendNum))}`)
-                await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-                $.msg(`${$.name}`, `${allMessage}`)
-                allMessage=""
-            }
-        }
     }
 })()
     .catch((e) => {
@@ -178,6 +163,22 @@ async function showMsg() {
         ReturnMessage += `📣=============END ${$.index}=============📣\n`;
     }
     allMessage += ReturnMessage;
+
+    console.log(`[京东账号${$.index} ${$.UserName}] 结束\n`)
+    if($.isNode()){
+        if($.index % $.sendNum === 0){
+            $.sentNum++;
+            console.log(`正在进行第 ${$.sentNum} 次发送通知，发送账号信息数量：${$.sendNum}`)
+            await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+            $.msg(`${$.name}`, `${allMessage}`)
+            allMessage=""
+        } else if((cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum){
+            console.log(`正在进行最后一次发送通知，发送账号信息数量：${(cookiesArr.length - ($.sentNum * $.sendNum))}`)
+            await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+            $.msg(`${$.name}`, `${allMessage}`)
+            allMessage=""
+        }
+    }
     // $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
 }
 async function bean() {
