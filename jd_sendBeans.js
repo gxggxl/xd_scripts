@@ -28,6 +28,7 @@ let lkt = 0
   $.activityId = '';
   $.completeNumbers = '';
   $.invokeKey = 'JL1VTNRadM68cIMQ'
+  $.invokeKey = $.isNode() ? (process.env.JD_invokeKey ? process.env.JD_invokeKey : `${$.invokeKey}`) : ($.getdata('JD_invokeKey') ? $.getdata('JD_invokeKey') : `${$.invokeKey}`);
   MD5()
   console.log(`开始获取活动信息`);
   for (let i = 0; i < cookiesArr.length && $.activityId === '' && i < 3; i++) {
