@@ -6,7 +6,6 @@
 23 7,13 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
 
 ##############短期活动##############
-
 # 企有此礼(9.30 结束)
 28 0 10-30 9 * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
 
@@ -44,7 +43,7 @@
 0 0,12,21 * 7-10 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 
 # 发财大赢家之翻翻乐 8.15结束
-20,40 * * 7-10 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+15,36 * * 7-10 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 
 # 京东极速版红包(活动时间：2021-5-5至2021-8-31)
 11 0,10,16 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
@@ -62,7 +61,6 @@
 11 11 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 
 ##############长期活动##############
-
 # 签到
 5 0,21 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 # 领券中心签到
@@ -133,7 +131,7 @@
 5-45/20 */4 * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
 
 # 东东农场(水果)
-13 6,12,18,22 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+5 6,12,18,22 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 东东乐园
 8 6,15 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 # 东东萌宠
@@ -209,7 +207,6 @@
 0 */8 * * * node /scripts/jd_exchange_joy.js >> /scripts/logs/jd_exchange_joy.log 2>&1
 
 ###################### 敏感操作 ######################
-
 # 取关主播
 3 5 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
 # 取关京东店铺商品
