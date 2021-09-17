@@ -126,7 +126,7 @@ async function doTask(){
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -140,7 +140,7 @@ async function DoTask(){
         if(logs)$.log(data)
         if(result.data.bizCode == 0){
            console.log(result.data.bizMsg+"获得"+result.data.result.score+";共有"+result.data.result.userScore+"\n")
-   await $.wait(4000)
+   await $.wait(4000) 
         }else{
            console.log(result.data.bizMsg+"\n")
         }
@@ -148,7 +148,7 @@ async function DoTask(){
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -170,7 +170,7 @@ async function Lottery(){
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -192,7 +192,7 @@ async function getLottery(){
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -205,7 +205,7 @@ async function Ariszy(){
     await doTask()
     await DoTask()
   }
-
+    
 }
 async function scans(){
   for(let j = 0; j < list0tokenArr.length; j++){
@@ -256,7 +256,7 @@ async function dosupport(){
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -272,43 +272,43 @@ async function getlist(){
        let list1 = result.data.result.taskVos.find(item => item.taskId == 1)
        listtokenArr.push(1+list1.simpleRecordInfoVo.taskToken)
 list2tokenArr.push(list1.simpleRecordInfoVo.taskToken)
-
-
+       
+       
        let list2 = result.data.result.taskVos.find(item => item.taskId == 2)
        for(let i = 0; i < list2.shoppingActivityVos.length; i ++){
        listtokenArr.push(2+list2.shoppingActivityVos[i].taskToken)
 list2tokenArr.push(list2.shoppingActivityVos[i].taskToken)
 
        }
-
+       
        let list3 = result.data.result.taskVos.find(item => item.taskId == 3)
        for(let i = 0; i < list3.followShopVo.length; i ++){
        listtokenArr.push(3+list3.followShopVo[i].taskToken)
 list2tokenArr.push(list3.followShopVo[i].taskToken)
        }
-
+       
        let list4 = result.data.result.taskVos.find(item => item.taskId == 4)
        for(let i = 0; i < list4.shoppingActivityVos.length; i ++){
        listtokenArr.push(4+list4.shoppingActivityVos[i].taskToken)
 list2tokenArr.push(list4.shoppingActivityVos[i].taskToken)
 //$.log(list4.productInfoVos[i].taskToken)
        }
-
+    
        let list5 = result.data.result.taskVos.find(item => item.taskId == 5)
        for(let i = 0; i < list5.productInfoVos.length; i ++){listtokenArr.push(5+list5.productInfoVos[i].taskToken)
 list2tokenArr.push(list5.productInfoVos[i].taskToken)
 //$.log(list5.followShopVo[i].taskToken)
        }
-
+       
        let list8 = result.data.result.taskVos.find(item => item.taskId == 8)
        for(let i = 0; i < list8.shoppingActivityVos.length; i ++){
        listtokenArr.push(8+list8.shoppingActivityVos[i].taskToken)
 list2tokenArr.push(list8.shoppingActivityVos[i].taskToken)
 //$.log(list4.productInfoVos[i].taskToken)
        }
-
+       
        //$.log(JSON.stringify(listtokenArr))
-
+      
         }else{
            $.log(result.data.bizMsg+"\n")
         }
@@ -316,7 +316,7 @@ list2tokenArr.push(list8.shoppingActivityVos[i].taskToken)
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -334,7 +334,7 @@ let list6 = result.data.result.taskVos.find(item => item.taskId == 6)
 list0tokenArr.push(6+list6.productInfoVos[i].taskToken)
 list1tokenArr.push(list4.productInfoVos[i].taskToken)
 }
-
+        
         }else{
            $.log(result.data.bizMsg+"\n")
         }
@@ -342,7 +342,7 @@ list1tokenArr.push(list4.productInfoVos[i].taskToken)
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -358,7 +358,7 @@ async function gethelpcode(){
 let list6 = result.data.result.taskVos.find(item => item.taskId == 6)
        list0tokenArr.push(6+list6.assistTaskDetailVo.taskToken)
 list1tokenArr.push(list6.assistTaskDetailVo.taskToken)
-
+        
         }else{
            $.log(result.data.bizMsg+"\n")
         }
@@ -366,7 +366,7 @@ list1tokenArr.push(list6.assistTaskDetailVo.taskToken)
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
@@ -391,7 +391,7 @@ async function userScore(){
           $.logErr(e, response);
       } finally {
         resolve();
-      }
+      } 
     })
    })
   }
