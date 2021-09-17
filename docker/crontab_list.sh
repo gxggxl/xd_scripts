@@ -8,6 +8,9 @@
 0 */4 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 芯意制造盒(9.23 结束)
+39 0 15-23 9 * node /scripts/jd_xyzzh.js >> /scripts/logs/jd_xyzzh.log 2>&1
+
 # 企有此礼(9.30 结束)
 28 0 10-30 9 * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
 
