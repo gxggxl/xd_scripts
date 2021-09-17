@@ -5,7 +5,7 @@
 # 导到所有互助码
 23 7,13 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
 # Cookie检查
-0 */4 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
+0 0 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
 # 芯意制造盒(9.23 结束)
