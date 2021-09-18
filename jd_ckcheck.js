@@ -51,6 +51,14 @@ if ($.isNode()) {
 
 async function check() {
     return new Promise((resolve) => {
+        // const options = {
+        //     url: 'https://plogin.m.jd.com/cgi-bin/ml/islogin',
+        //     headers: {
+        //         "Cookie": cookie,
+        //         "referer": "https://h5.m.jd.com/",
+        //         "User-Agent": "jdapp;iPhone;10.1.2;15.0;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
+        //     },
+        // }
         let check_url = {
             url: `https://me-api.jd.com/user_new/info/GetJDUserInfoUnion`,
             headers: {
@@ -74,11 +82,14 @@ async function check() {
                     }
                     if (logs) $.log(data)
                     if (result.retcode == 0) {
-                        $.log(`${$.UserName}  \t✅Cookie有效中\n`)
-                        message += `${$.UserName}  \t✅Cookie有效中\n`
+                        $.log(`[京东账号${$.index} ${$.UserName}] \t✅Cookie有效中\n`)
+                        message += `[京东账号${$.index} ${$.UserName}] \t✅Cookie有效中\n`
+                    } else if (result.retcode == 1001) {
+                        $.log(`[京东账号${$.index} ${$.UserName}] \t❌Cookie失效\n`)
+                        message += `[京东账号${$.index} ${$.UserName}] \t❌Cookie失效\n`
                     } else {
-                        $.log(`${$.UserName}  \t❌Cookie失效\n`)
-                        message += `${$.UserName}  \t❌Cookie失效\n`
+                        console.log(`[京东账号${$.index} ${$.UserName}] \t⚠️未知返回...\n`)
+                        message += `[京东账号${$.index} ${$.UserName}] \t⚠️未知返回...\n`
                     }
                 }
             } catch (e) {
