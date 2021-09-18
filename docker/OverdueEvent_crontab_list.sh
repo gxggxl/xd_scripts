@@ -66,7 +66,5 @@
 # 骁龙品牌日
 11 6,20 13-25 8 * node /scripts/jd_xl.js >> /scripts/logs/jd_xl.log 2>&1
 
-# 京东手机狂欢城
-0 0-18/6 9-28 8 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 京东手机狂欢城 助力
 1 0,6 9-28 8 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
