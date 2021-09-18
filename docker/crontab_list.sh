@@ -8,6 +8,9 @@
 1 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 京东手机狂欢城 (10.1 结束)
+6 0-18/6 1,16-30 9-10 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
+
 # 芯意制造盒(9.23 结束)
 39 0 15-23 9 * node /scripts/jd_xyzzh.js >> /scripts/logs/jd_xyzzh.log 2>&1
 
