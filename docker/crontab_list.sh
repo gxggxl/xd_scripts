@@ -168,7 +168,7 @@
 # 宠汪汪偷好友积分与狗粮
 3 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
 # 宠汪汪积分兑换京豆
-0 8,16,0 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+#0 8,16,0 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
 
 # 京喜工厂
 13 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
