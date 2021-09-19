@@ -61,12 +61,8 @@ if ($.isNode()) {
       await jd_wish();
     }
   }
-  let res = await getAuthorShareCode('')
-  if (!res) {
-    await $.wait(1000)
-    res = await getAuthorShareCode('')
-  }
-  $.shareCode = [...$.shareCode, ...(res || [])]
+
+  $.shareCode = [...$.shareCode]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
