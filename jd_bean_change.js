@@ -117,9 +117,6 @@ async function showMsg() {
         ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
       }
     }
-    if ($.jxFactoryInfo) {
-      ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}\n`;
-    }
 
     const response = await PetRequest('energyCollect');
     const initPetTownRes = await PetRequest('initPetTown');
@@ -132,6 +129,9 @@ async function showMsg() {
         }
     }
 
+    if ($.jxFactoryInfo) {
+      ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}\n`;
+    }
     if ($.ddFactoryInfo) {
         ReturnMessage += `🏭东东工厂：${$.ddFactoryInfo}\n`;
     }
@@ -157,9 +157,10 @@ async function showMsg() {
     ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
     ReturnMessage += `🧧健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元\n`;
     if($.sendNum > 1) {
-        ReturnMessage += `📣=============END ${$.index}=============📣\n\n`;
+        // ReturnMessage += `📣=============END ${$.index}=============📣\n\n`;
+        ReturnMessage += `\n\n`;
     } else {
-        ReturnMessage += `📣=============END ${$.index}=============📣`;
+        // ReturnMessage += `📣=============END ${$.index}=============📣`;
     }
     allMessage += ReturnMessage;
 
