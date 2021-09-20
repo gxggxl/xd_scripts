@@ -27,7 +27,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
-let cookiesArr = [], cookie = '', message;
+let cookiesArr = [], cookie = '', message = '';
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -51,7 +51,6 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
             $.index = i + 1;
             $.isLogin = true;
             $.nickName = '';
-            message = '';
             await TotalBean();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             if (!$.isLogin) {
@@ -65,6 +64,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
             await jdMs()
         }
     }
+    await showMsg()
 })()
     .catch((e) => {
         $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -82,7 +82,9 @@ async function jdMs() {
         await getTaskList()
     }
     await getUserInfo(false)
-    await showMsg()
+    message += `京东账号${$.index}: ${$.nickName}\n`
+        + `本次运行获得秒秒币${$.score - $.cur}枚，共${$.score}枚\n`
+        + `可兑换 ${$.score / 1000}元 红包🧧\n\n`;
 }
 
 function getActInfo() {
@@ -233,11 +235,9 @@ function doTask(body) {
 
 function showMsg() {
     return new Promise(async resolve => {
-        message += `本次运行获得秒秒币${$.score - $.cur}枚，共${$.score}枚`
-            + `\n可兑换 ${$.score / 1000}元 红包🧧 (满1毛可换，每天一次)`
-            + "\n活动入口 ===>>\n京东app首页 ==> 京东秒杀 ==> 签到领红包 ==> 秒秒币";
-        $.msg($.name, '', `京东账号${$.index}${$.nickName}\n${message}`);
-        // await notify.sendNotify($.name, `京东账号${$.index}${$.nickName}\n${message}`)
+        message += "\n满1毛可换，每天一次\n活动入口 ===>>\n京东app首页 ==> 京东秒杀 ==> 签到领红包 ==> 秒秒币"
+        $.msg($.name, '', `${message}`);
+        await notify.sendNotify($.name, `${message}`)
         resolve()
     })
 }
