@@ -482,9 +482,10 @@ function getMs() {
                     console.log(`${err},${jsonParse(resp.body)['message']}`)
                     console.log(`${$.name} API请求失败，请检查网路重试`)
                 } else {
+                    // $.log(data)
                     if (safeGet(data)) {
                         data = JSON.parse(data)
-                        if (data.code === 2041) {
+                        if (data.code === 2041 || data.code === 2042) {
                             $.JdMsScore = data.result.assignment.assignmentPoints || 0
                         }
                     }
