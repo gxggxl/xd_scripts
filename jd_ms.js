@@ -82,7 +82,7 @@ async function jdMs() {
         await getTaskList()
     }
     await getUserInfo(false)
-    message += `京东账号${$.index}: ${$.nickName}\n`
+    message += `【京东账号${$.index}】${$.nickName}\n`
         + `本次运行获得秒秒币${$.score - $.cur}枚，共${$.score}枚\n`
         + `可兑换 ${$.score / 1000}元 红包🧧\n\n`;
 }
@@ -235,7 +235,7 @@ function doTask(body) {
 
 function showMsg() {
     return new Promise(async resolve => {
-        message += "\n满1毛可换，每天一次\n活动入口 ===>>\n京东app首页 ==> 京东秒杀 ==> 签到领红包 ==> 秒秒币"
+        message += "\n活动入口 ===>>  满1毛可换，每天一次\n京东app首页 ==> 京东秒杀 ==> 签到领红包 ==> 秒秒币"
         $.msg($.name, '', `${message}`);
         await notify.sendNotify($.name, `${message}`)
         resolve()
