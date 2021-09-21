@@ -31,43 +31,30 @@
 
 # 内容鉴赏官 (9.30 结束，10月继续开启)
 11 1,5 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
-
 # 心相印店铺活动  古蜀寻宝 (10.6 结束)
 17 8,16 1-30 9-10 * node /scripts/jd_xinxiangyin.js >> /scripts/logs/jd_xinxiangyin.log 2>&1
-
 # 送豆得豆
 15 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
-
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
 11 1,9 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-
 # 小鸽有礼 - 每日抽奖(活动时间：2021-05-01至2021-05-31)
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
-
 # 超级粉丝互动 活动时间：XXX结束
 1 0,1 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
-
 # 特物Z
 13 8,9 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
-
 # 女装盲盒 活动时间：2021-08-05到2021-09-30
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
-
 # 京喜领88元红包(9.30结束)
 0 0,12,21 * 7-10 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
-
 # 发财大赢家之翻翻乐 8.15结束
 15,36 * * 7-10 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
-
 # 京东极速版红包(活动时间：2021-5-5至2021-8-31)
 11 0,10,16 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
-
 # 金榜创造营 活动时间：2021-05-21至2021-12-31
 0 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
-
 # 5G超级盲盒(活动时间：2021-08-2到2021-10-29)
 0 0-23/3 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
-
 # 京东零食街 活动时间：年底
 11 11 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 
