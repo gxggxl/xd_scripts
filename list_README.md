@@ -1,5 +1,7 @@
 # 脚本列表
 
+共有 **98** 个文件
+
 | 文件 | 名称 | 活动入口 |
 | --- | --- | --- |
 | [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 |  |
@@ -100,7 +102,5 @@
 | [jd_xyzzh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_xyzzh.js) | 芯意制造盒 |  |
 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |
 | [jx_aid_cashback.js](https://github.com/gxggxl/xd_scripts/raw/master/jx_aid_cashback.js) |  |  |
-
-共有 **98** 个文件
 
 此内容仅供参考
