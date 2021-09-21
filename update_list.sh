@@ -19,7 +19,7 @@ JsList=($(cd "$WorkDir" && ls -- *.js | grep -E "j[drx]_" | grep -v jd_cash_ddo.
 FileReadme=$WorkDir/list_README.md
 UrlRaw=https://github.com/gxggxl/xd_scripts/raw/master/
 #SheetHead="# 脚本列表\n\n| 序号 | 文件 | 名称 | 活动入口 |\n| :---: | --- | --- | --- |"
-SheetHead="# 脚本列表\n\n| 文件 | 名称 | 活动入口 |\n| --- | --- | --- |"
+SheetHead="# 脚本列表\n\n共有 **"${#JsList[@]}"** 个文件\n\n| 文件 | 名称 | 活动入口 |\n| --- | --- | --- |"
 
 ## 生成新的表格并写入Readme
 cd "$WorkDir" || exit
@@ -35,4 +35,4 @@ for jsFileName in "${JsList[@]}" ; do
   Sheet="$Sheet\n| [$jsFileName]($Raw) | $Name | $Entry |"
 done
 
-echo -e "$Sheet\n\n共有 **"${#JsList[@]}"** 个文件\n\n此内容仅供参考" >"$FileReadme"
+echo -e "$Sheet\n\n此内容仅供参考" >"$FileReadme"
