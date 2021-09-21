@@ -8,6 +8,9 @@
 1 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 明星小店(星店长)9.18-10.9
+5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+
 # 东东玩家(9.17-10.11)
 9 0 * 9-10 * node /scripts/jd_ddwj.js >> /scripts/logs/jd_ddwj.log 2>&1
 
