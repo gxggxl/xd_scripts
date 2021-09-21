@@ -32,7 +32,7 @@ for jsFileName in "${JsList[@]}" ; do
   [[ $Entry == http* ]] && Entry="[活动地址]($Entry)"
   Raw="$UrlRaw$jsFileName"
 #  Sheet="$Sheet\n| $(((a++)+1)) | [$jsFileName]($Raw) | $Name | $Entry |"
-  Sheet="$Sheet\n|[$jsFileName]($Raw) | $Name | $Entry |"
+  Sheet="$Sheet\n| [$jsFileName]($Raw) | $Name | $Entry |"
 done
 
 echo -e "$Sheet\n\n共有 **"${#JsList[@]}"** 个文件\n\n此内容仅供参考" >"$FileReadme"
