@@ -10,11 +10,11 @@ Last Modified time: 2021-05-28 17:27:14
 
  */
 const $ = new Env('点点券');
-const ZooFaker=require('./utils/ZooFaker_Necklace.js').utils;
+const ZooFaker=require('../utils/ZooFaker_Necklace.js').utils;
 let allMessage = ``;
-const notify = $.isNode() ? require('./sendNotify') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 const openUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://h5.m.jd.com/babelDiy/Zeus/41Lkp7DumXYCFmPYtU3LTcnTTXTX/index.html%22%20%7D`
 
 $.UA = ``;
