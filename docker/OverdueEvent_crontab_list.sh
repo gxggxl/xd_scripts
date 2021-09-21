@@ -63,5 +63,8 @@
 # 骁龙品牌日
 11 6,20 13-25 8 * node /scripts/jd_xl.js >> /scripts/logs/jd_xl.log 2>&1
 
+# 点点券修复
+5 20 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
+
 # 京东手机狂欢城 助力
 1 0,6 9-28 8 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
