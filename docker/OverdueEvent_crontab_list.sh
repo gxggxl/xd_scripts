@@ -68,3 +68,6 @@
 
 # 京东手机狂欢城 助力
 1 0,6 9-28 8 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
+
+# 京喜财富岛热气球挂机
+13 12 * * * node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
