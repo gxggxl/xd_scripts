@@ -82,14 +82,14 @@ async function check() {
                     }
                     if (logs) $.log(data)
                     if (result.retcode == 0) {
-                        $.log(`[京东账号${$.index} ${$.UserName}] \t✅Cookie有效中\n`)
-                        message += `[京东账号${$.index} ${$.UserName}] \t✅Cookie有效中\n`
+                        $.log(`[账号${$.index} ${$.UserName}] \t✅Cookie有效中\n`)
+                        message += `[账号${$.index} ${$.UserName}] \t✅Cookie有效中\n`
                     } else if (result.retcode == 1001) {
-                        $.log(`[京东账号${$.index} ${$.UserName}] \t❌Cookie失效\n`)
-                        message += `[京东账号${$.index} ${$.UserName}] \t❌Cookie失效\n`
+                        $.log(`[账号${$.index} ${$.UserName}] \t❌Cookie失效\n`)
+                        message += `[账号${$.index} ${$.UserName}] \t❌Cookie失效\n`
                     } else {
-                        console.log(`[京东账号${$.index} ${$.UserName}] \t⚠️未知返回...\n`)
-                        message += `[京东账号${$.index} ${$.UserName}] \t⚠️未知返回...\n`
+                        console.log(`[账号${$.index} ${$.UserName}] \t⚠️未知返回...\n`)
+                        message += `[账号${$.index} ${$.UserName}] \t⚠️未知返回...\n`
                     }
                 }
             } catch (e) {
