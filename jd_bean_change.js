@@ -96,16 +96,23 @@ if ($.isNode()) {
 async function showMsg() {
     if ($.errorMsg) return
     //ReturnMessage=`📣=============账号${$.index}=============📣\n`
-    ReturnMessage=`👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
+    ReturnMessage =`👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
     ReturnMessage+=`🥔今日收入：${$.todayIncomeBean}京豆\n`;
     ReturnMessage+=`🥔昨日收支：${$.incomeBean}京豆 🐶 `;
     ReturnMessage+=`${$.expenseBean}京豆\n`;
     ReturnMessage+=`🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
     ReturnMessage+=`🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
 
+    if(typeof $.JDEggcnt !== "undefined"){
+        ReturnMessage += `🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
+    }
+    if (typeof $.TotalMoney !== "undefined") {
+        ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
+    }
     if ($.JdFarmProdName != "") {
       if ($.JdtreeEnergy != 0) {
-        ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName},进度${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(
+        // ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName},进度${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(
+        ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName}\n👨🏻‍🌾农场进度：${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(
           2
         )}%`;
         if ($.JdwaterD != "Infinity" && $.JdwaterD != "-Infinity") {
@@ -124,7 +131,7 @@ async function showMsg() {
         $.petInfo = initPetTownRes.result;
         if (response.resultCode === '0') {
             ReturnMessage += `🐶东东萌宠：${$.petInfo.goodsInfo.goodsName},`;
-            ReturnMessage += `勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块(${response.result.medalPercent}%)\n`;
+            ReturnMessage += `\n🐶萌宠进度：勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块(${response.result.medalPercent}%)\n`;
             //ReturnMessage += `已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
         }
     }
@@ -134,12 +141,6 @@ async function showMsg() {
     }
     if ($.ddFactoryInfo) {
         ReturnMessage += `🏭东东工厂：${$.ddFactoryInfo}\n`;
-    }
-    if(typeof $.JDEggcnt !== "undefined"){
-        ReturnMessage += `🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
-    }
-    if (typeof $.TotalMoney !== "undefined") {
-        ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
     }
     if($.JdMsScore != 0){
         ReturnMessage += `💰京东秒杀：${$.JdMsScore}秒秒币(≈${$.JdMsScore / 1000}元)\n`;
