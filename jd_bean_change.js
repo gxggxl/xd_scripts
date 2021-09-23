@@ -6,7 +6,6 @@
  */
 const $ = new Env('京东日资产变动通知');
 const notify = $.isNode() ? require('./sendNotify') : '';
-const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``):``;
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let allMessage = '';
@@ -535,7 +534,7 @@ function jdfruitRequest(function_id, body = {}, timeout = 1000){
 
 async function PetRequest(function_id, body = {}) {
     await $.wait(3000);
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         $.post(taskPetUrl(function_id, body), (err, resp, data) => {
             try {
                 if (err) {
