@@ -197,7 +197,7 @@
 3 15 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 
 # 京喜购物返红包助力
-11 */6 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
+1 */6 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
 # 宠汪汪跑验证码
 #56 7,15,23 * * * rm -rf /scripts/jdvalidate.txt
 58 7,15,23 * * * node /scripts/jd_work_validate.js >> /scripts/logs/jd_work_validate.log 2>&1
