@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **96** 个文件
+共有 **97** 个文件
 
 | 文件 | 名称 | 活动入口 |
 | --- | --- | --- |
@@ -28,6 +28,7 @@
 | [jd_ddnc_farmpark.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ddnc_farmpark.js) | 东东乐园 | 东东农场->东东乐园(点大风车 |
 | [jd_ddwj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ddwj.js) | 东东玩家 |  |
 | [jd_ddworld.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ddworld.js) | 东东世界 |  |
+| [jd_decompression.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_decompression.js) | 热血心跳,狂解压 |  |
 | [jd_delCoupon.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_delCoupon.js) | 删除优惠券 | 京东APP我的-优惠券 |
 | [jd_dj_bean.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dj_bean.js) |  |  |
 | [jd_dj_fruit.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dj_fruit.js) |  |  |
