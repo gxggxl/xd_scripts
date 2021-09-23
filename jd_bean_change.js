@@ -68,15 +68,17 @@ if ($.isNode()) {
                 }
                 continue
             }
+            await bean();
+            await queryexpirejingdou();//过期京豆
+            await redPacket();//过期红包
+            await TotalMoney();//领现金
+            await cash();
             await getJdZZ();
             await getMs();
             await jdfruitRequest('taskInitForFarm', {"version":14,"channel":1,"babelChannel":"120"});
             await getjdfruit();
-            await cash();
-            await TotalMoney();//领现金
             await requestAlgo();
             await JxmcGetRequest();
-            await bean();
             await getJxFactory();   //惊喜工厂
             // await getDdFactoryInfo(); // 东东工厂
             await showMsg();
@@ -184,14 +186,10 @@ async function bean(){
     $.yestodayIncome = 0
     $.yestodayExpenditure = 0
     $.beanFlag = true;
-    $.beanCount = 0;
     do {
         getJingBeanBalanceDetail($.beanPage);
         await $.wait(500)
     } while($.beanFlag === true)
-
-  await queryexpirejingdou();//过期京豆
-  await redPacket();//过期红包
 }
 //获取京豆数据
 function getJingBeanBalanceDetail(page){
