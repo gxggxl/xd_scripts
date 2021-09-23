@@ -78,7 +78,7 @@ if ($.isNode()) {
             await getjdfruit();
             await requestAlgo();
             await JxmcGetRequest();
-            await getJxFactory();   //惊喜工厂
+            await getJxFactory(); //惊喜工厂
             // await getDdFactoryInfo(); // 东东工厂
             await showMsg();
         }
@@ -112,6 +112,7 @@ async function showMsg() {
     if(typeof $.JDtotalcash !== "undefined"){
         ReturnMessage += `💰极速金币：${$.JDtotalcash}金币(≈${$.JDtotalcash / 10000}元)\n`;
     }
+    ReturnMessage += `━╋━╋━\n`;
     if(typeof $.JDEggcnt !== "undefined"){
         ReturnMessage += `🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
     }
@@ -756,7 +757,7 @@ function getJxFactory() {
                                         }
                                         // await exchangeProNotify()
                                     } else {
-                                        infoMsg += ` ,预计:${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(2)}天可兑换`
+                                        infoMsg += ` ,预计:${((production.needElectric - production.investedElectric) / (1 * 60 * 60 * 24)).toFixed(2)}天可兑换`
                                     }
                                     if (production.status === 3) {
                                         infoMsg = "${$.jxProductName} ,已经超时失效, 请选择新商品进行制造"
