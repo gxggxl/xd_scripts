@@ -58,7 +58,7 @@
 # 5G超级盲盒(活动时间：2021-08-2到2021-10-29)
 0 0-23/3 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 # 京东零食街 活动时间：年底
-11 11 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
+11 11,17 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -210,7 +210,7 @@
 # 取关京东店铺商品
 2 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京东试用
-13 9,15 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
+25 16 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
 #家庭号(易黑号，默认注释)
