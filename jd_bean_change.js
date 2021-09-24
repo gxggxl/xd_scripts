@@ -804,14 +804,14 @@ function getJxFactory() {
                                     $.commodityDimId = production.commodityDimId;
                                     // subTitle = data.user.pin;
                                     await GetCommodityDetails();//获取已选购的商品信息
-                                    infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度: ${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%`;
+                                    infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度：${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%`;
                                     if (production.investedElectric >= production.needElectric) {
                                         if (production['exchangeStatus'] === 1) {
-                                            infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度: 已经可兑换，请手动兑换`;
+                                            infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度：已经可兑换，请手动兑换`;
                                         }
                                         if (production['exchangeStatus'] === 3) {
                                             if (new Date().getHours() === 9) {
-                                                infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度: 兑换已超时，请选择新商品进行制造`;
+                                                infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度：兑换已超时，请选择新商品进行制造`;
                                             }
                                         }
                                         // await exchangeProNotify()
