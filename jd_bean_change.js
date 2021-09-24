@@ -105,15 +105,16 @@ async function showMsg() {
     if ($.levelName) {
         if ($.levelName.length > 2) $.levelName = $.levelName.substring(0, 2);
 
-        if ($.levelName == "注册") $.levelName = `😊普通`;
-
-        if ($.levelName == "钻石") $.levelName = `💎钻石`;
-
-        if ($.levelName == "金牌") $.levelName = `🥇金牌`;
-
-        if ($.levelName == "银牌") $.levelName = `🥈银牌`;
-
-        if ($.levelName == "铜牌") $.levelName = `🥉铜牌`;
+        if ($.levelName == "注册")
+            $.levelName = `😊普通`;
+        else if ($.levelName == "金牌")
+            $.levelName = `🥇金牌`;
+        else if ($.levelName == "银牌")
+            $.levelName = `🥈银牌`;
+        else if ($.levelName == "铜牌")
+            $.levelName = `🥉铜牌`;
+        else if ($.levelName == "钻石")
+            $.levelName = `💎钻石`;
 
         if ($.isPlusVip == 1)
             ReturnMessage += `${$.levelName}Plus,`;
