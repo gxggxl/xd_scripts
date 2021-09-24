@@ -14,7 +14,7 @@
 5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 
 # 东东玩家(9.17-10.11)
-9 0 * 9-10 * node /scripts/jd_ddwj.js >> /scripts/logs/jd_ddwj.log 2>&1
+#9 0 * 9-10 * node /scripts/jd_ddwj.js >> /scripts/logs/jd_ddwj.log 2>&1
 
 # 京东手机狂欢城 (10.1 结束)
 6 0-18/6 1,16-30 9-10 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
