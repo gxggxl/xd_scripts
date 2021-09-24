@@ -121,10 +121,10 @@ async function showMsg() {
             ReturnMessage += `${$.levelName}会员,`;
     }
 
-    if ($.JingXiang) ReturnMessage += `${$.JingXiang}\n`;
+    if ($.JingXiang) ReturnMessage += ` ${$.JingXiang}\n`;
 
-    ReturnMessage+=`🥔今日收支：${$.todayIncomeBean}京豆 🐶 -${$.todayOutcomeBean}京豆\n`;
-    ReturnMessage+=`🥔昨日收支：${$.incomeBean}京豆 🐶 -${$.expenseBean}京豆\n`;
+    ReturnMessage+=`🥔今日收支：${$.todayIncomeBean}京豆 🐶 - ${$.todayOutcomeBean}京豆\n`;
+    ReturnMessage+=`🥔昨日收支：${$.incomeBean}京豆 🐶 - ${$.expenseBean}京豆\n`;
     ReturnMessage+=`🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
     ReturnMessage+=`🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
 
