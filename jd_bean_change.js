@@ -97,6 +97,7 @@ if ($.isNode()) {
 async function showMsg() {
     if ($.errorMsg) return
     //ReturnMessage=`📣=============账号${$.index}=============📣\n`
+
     ReturnMessage =`👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
 
     if ($.levelName || $.JingXiang) ReturnMessage += `✉️账号信息：`;
@@ -114,7 +115,7 @@ async function showMsg() {
 
         if ($.levelName == "铜牌") $.levelName = `🥉铜牌`;
 
-        if ($.isPlusVip === 1)
+        if ($.isPlusVip == 1)
             ReturnMessage += `${$.levelName}Plus,`;
         else
             ReturnMessage += `${$.levelName}会员,`;
@@ -650,7 +651,7 @@ function safeGet(data) {
     }
 }
 
-//领现金
+//签到领现金
 function TotalMoney() {
     return new Promise(resolve => {
         $.get({
@@ -668,9 +669,9 @@ function TotalMoney() {
                         data = JSON.parse(data);
                         if (data.code == 0 && data.data.bizCode == 0 && data.data.result) {
                             $.TotalMoney = data.data.result.totalMoney || 0
-                            console.log(`京东-总现金查询成功${$.TotalMoney}元\n`)
+                            console.log(`京东-签到现金查询成功 ${$.TotalMoney}元\n`)
                         } else {
-                            console.log(`京东-总现金查询失败 ${data}\n`)
+                            $.log(`京东-签到现金查询失败 ${data}\n`)
                         }
                     }
                 }
