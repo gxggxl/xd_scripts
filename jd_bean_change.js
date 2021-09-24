@@ -98,7 +98,7 @@ async function showMsg() {
     if ($.errorMsg) return
     //ReturnMessage=`📣=============账号${$.index}=============📣\n`
     ReturnMessage =`👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
-    
+
     if ($.levelName || $.JingXiang) ReturnMessage += `✉️账号信息：`;
 
     if ($.levelName) {
