@@ -98,9 +98,8 @@ async function showMsg() {
     if ($.errorMsg) return
     //ReturnMessage=`📣=============账号${$.index}=============📣\n`
     ReturnMessage =`👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
-
-    if ($.levelName || $.JingXiang)
-        ReturnMessage += `✉️账号信息：`;
+    
+    if ($.levelName || $.JingXiang) ReturnMessage += `✉️账号信息：`;
 
     if ($.levelName) {
         if ($.levelName.length > 2) $.levelName = $.levelName.substring(0, 2);
