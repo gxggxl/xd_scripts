@@ -115,23 +115,23 @@ async function showMsg() {
 
         if ($.levelName == "铜牌") $.levelName = `🥉铜牌`;
 
-        if ($.isPlusVip == 1)
+        if ($.isPlusVip === 1)
             ReturnMessage += `${$.levelName}Plus,`;
         else
             ReturnMessage += `${$.levelName}会员,`;
     }
 
-    if($.JingXiang) ReturnMessage += `${$.JingXiang}\n`;
+    if ($.JingXiang) ReturnMessage += `${$.JingXiang}\n`;
 
-    ReturnMessage+=`🥔今日收支：${$.todayIncomeBean}京豆 🐶 ${$.todayOutcomeBean}京豆\n`;
-    ReturnMessage+=`🥔昨日收支：${$.incomeBean}京豆 🐶 ${$.expenseBean}京豆\n`;
+    ReturnMessage+=`🥔今日收支：${$.todayIncomeBean}京豆 🐶 -${$.todayOutcomeBean}京豆\n`;
+    ReturnMessage+=`🥔昨日收支：${$.incomeBean}京豆 🐶 -${$.expenseBean}京豆\n`;
     ReturnMessage+=`🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
     ReturnMessage+=`🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
 
     if (typeof $.TotalMoney !== "undefined") {
         ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
     }
-    if($.JdMsScore != 0){
+    if($.JdMsScore !== 0){
         ReturnMessage += `💰京东秒杀：${$.JdMsScore}秒秒币(≈${$.JdMsScore / 1000}元)\n`;
     }
     if(typeof $.JdzzNum !== "undefined"){
