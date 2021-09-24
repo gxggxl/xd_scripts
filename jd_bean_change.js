@@ -39,10 +39,10 @@ if ($.isNode()) {
             $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
             $.index = i + 1;
             $.beanCount = 0;
-			$.incomeBean = 0;
-			$.expenseBean = 0;
-			$.todayIncomeBean = 0;
-			$.todayOutcomeBean = 0;
+            $.incomeBean = 0;
+            $.expenseBean = 0;
+            $.todayIncomeBean = 0;
+            $.todayOutcomeBean = 0;
             $.errorMsg = '';
             $.isLogin = true;
             $.nickName = '';
