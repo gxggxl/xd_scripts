@@ -1,17 +1,17 @@
 /**
  * cron "30 10,22 * * *" jd_bean_change.js, tag:资产变化强化版
- * 原版链接 https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change_new.js
+ * 原版链接 https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change.js
  * 支持环境变量控制每次发送的账号个数，默认为2
  * 环境变量为：JD_BEAN_CHANGE_SENDNUM | export JD_BEAN_CHANGE_SENDNUM=2
  */
-const $ = new Env('京东日资产变动通知');
+const $ = new Env('京东日资产变动');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let allMessage = '';
-let ReturnMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
+let allMessage = '';
+let ReturnMessage = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 $.sendNum = process.env.JD_BEAN_CHANGE_SENDNUM * 1 || 2;
 $.sentNum = 0;
@@ -804,14 +804,14 @@ function getJxFactory() {
                                     $.commodityDimId = production.commodityDimId;
                                     // subTitle = data.user.pin;
                                     await GetCommodityDetails();//获取已选购的商品信息
-                                    infoMsg = `${$.jxProductName} ,进度:${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%`;
+                                    infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度: ${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%`;
                                     if (production.investedElectric >= production.needElectric) {
                                         if (production['exchangeStatus'] === 1) {
-                                            infoMsg = `${$.jxProductName} ,已经可兑换，请手动兑换`;
+                                            infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度: 已经可兑换，请手动兑换`;
                                         }
                                         if (production['exchangeStatus'] === 3) {
                                             if (new Date().getHours() === 9) {
-                                                infoMsg = `${$.jxProductName} ,兑换已超时，请选择新商品进行制造`;
+                                                infoMsg = `${$.jxProductName} ,\n👨🏻‍🔧工厂进度: 兑换已超时，请选择新商品进行制造`;
                                             }
                                         }
                                         // await exchangeProNotify()
@@ -819,7 +819,7 @@ function getJxFactory() {
                                         infoMsg += ` ,预计:${((production.needElectric - production.investedElectric) / (1 * 60 * 60 * 24)).toFixed(2)}天可兑换`
                                     }
                                     if (production.status === 3) {
-                                        infoMsg = "${$.jxProductName} ,已经超时失效, 请选择新商品进行制造"
+                                        infoMsg = `${$.jxProductName} ,已经超时失效, 请选择新商品进行制造`
                                     }
                                 } else {
                                     $.unActive = false;//标记是否开启了京喜活动或者选购了商品进行生产
