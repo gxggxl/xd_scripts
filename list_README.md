@@ -1,12 +1,12 @@
 # 脚本列表
 
-共有 **97** 个文件
+共有 **98** 个文件
 
 | 文件 | 名称 | 活动入口 |
 | --- | --- | --- |
 | [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 |  |
 | [jd_all_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_all_bean_change.js) | 京东月资产变动通知 |  |
-| [jd_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change.js) | 京东日资产变动通知 |  |
+| [jd_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change.js) | 京东日资产变动 |  |
 | [jd_bean_home.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_home.js) | 领京豆额外奖励 | 京东APP首页-领京豆 |
 | [jd_bean_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_sign.js) | 京东多合一签到 | 各处的签到汇总 |
 | [jd_beauty.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_beauty.js) | 美丽研究院 | 京东app首页-美妆馆-底部中间按钮 |
@@ -66,6 +66,7 @@
 | [jd_lotteryMachine.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lotteryMachine.js) | 京东抽奖机 |  |
 | [jd_lsj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lsj.js) | 零食街 |  |
 | [jd_market_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_market_lottery.js) | 幸运大转盘 | [活动地址](https://pro.m.jd.com/mall/active/3ryu78eKuLyY5YipWWVSeRQEpLQP/index.html) |
+| [jd_mofang.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mofang.js) | 集魔方 |  |
 | [jd_mohe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mohe.js) | 5G超级盲盒 | [活动地址](https://blindbox5g.jd.com) |
 | [jd_moneyTree.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_moneyTree.js) | 京东摇钱树 | 京东APP我的-更多工具-摇钱树，[活动链接](https://uua.jr.jd.com/uc-fe-wxgrowing/moneytree/index/?channel=yxhd) |
 | [jd_ms.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ms.js) | 京东秒秒币 | 京东app-京东秒杀-签到领红包 |
