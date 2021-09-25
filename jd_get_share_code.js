@@ -70,38 +70,48 @@ if ($.isNode()) {
 function shareCodeinfo() {
   if ($.myPlantUuid != '') {
     if ($.index == 1)
-      $.myPlantUuids =`${$.myPlantUuid}`
+      $.myPlantUuids = $.myPlantUuid
     else
-      $.myPlantUuids +=`&${$.myPlantUuid}`
+      $.myPlantUuids += `&` + $.myPlantUuid
+    $.myPlantUuid = ''
   }
   if ($.farmInfo.farmUserPro.shareCode != '') {
     if ($.index == 1)
-      $.farmsinfo=$.farmInfo.farmUserPro.shareCode
+      $.farmsinfo = $.farmInfo.farmUserPro.shareCode
     else
       $.farmsinfo += '&' + $.farmInfo.farmUserPro.shareCode
+    $.farmInfo.farmUserPro.shareCode = ''
   }
   if ($.encryptPin != '') {
     if ($.index == 1)
       $.encryptPins = $.encryptPin
     else
-      $.encryptPins +='&' + $.encryptPin
+      $.encryptPins += '&' + $.encryptPin
+    $.encryptPin = ''
   }
   if ($.petInfo.shareCode != '') {
-    if ($.index == 1)
+    if ($.index == 1) {
       $.pets = $.petInfo.shareCode
-    else
+    } else {
       $.pets += '&' + $.petInfo.shareCode
+    }
+    $.petInfo.shareCode = ''
   }
   if ($.healthShareCode != '') {
-    if ($.index == 1)
+    // console.log("健康社区" + $.index)
+    if ($.index == 1) {
+      // console.log("健康社区a" + $.index)
       $.healthShareCodes = $.healthShareCode
-    else
+    } else {
+      // console.log("健康社区b" + $.index)
       $.healthShareCodes += '&' + $.healthShareCode
+    }
+    $.healthShareCode = ''
   }
-  if ($.index === (cookiesArr.length)){
+  if ($.index === (cookiesArr.length)) {
     shareCodeInfo += `种豆得豆\n/bean ${$.myPlantUuids}\n\n`
     shareCodeInfo += `东东农场\n/farm ${$.farmsinfo}\n\n`
-    shareCodeInfo += `东东健康社区\n/health ${$.healthShareCodes}\n\n`
+    shareCodeInfo += `健康社区\n/health ${$.healthShareCodes}\n\n`
     shareCodeInfo += `京喜工厂\n/jxfactory ${$.encryptPins}\n\n`
     shareCodeInfo += `东东萌宠\n/pet ${$.pets}\n\n`
   }
@@ -151,7 +161,7 @@ function getHealthShareCode(taskId = '') {
               } else if (taskId === 6) {
                 if (data?.data?.result?.taskVos) {
                   $.healthShareCode = data?.data?.result?.taskVos[0].assistTaskDetailVo.taskToken
-                  console.log(`【京东账号${$.index}（${$.UserName}）东东健康社区】${$.healthShareCode}\n`);
+                  console.log(`【京东账号${$.index}（${$.UserName}）健康社区】${$.healthShareCode}\n`);
                 }
               }
             }
