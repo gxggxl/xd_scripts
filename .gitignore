@@ -1,6 +1,7 @@
 /node_modules/
 /yarn.lock
 /.idea
+/.run
 /.history
 /box.dat
 /CookieSet.json
