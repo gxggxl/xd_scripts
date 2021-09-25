@@ -1,7 +1,5 @@
-/*
- Last Modified time: 2021-4-3 16:00:54
- */
 /**
+ * Last Modified time: 2021-4-3 16:00:54
  * sendNotify 推送通知功能
  * @param text 通知头
  * @param desp 通知体
@@ -23,7 +21,6 @@ let BARK_PUSH = '';
 //BARK app推送铃声,铃声列表去APP查看复制填写
 let BARK_SOUND = '';
 
-
 // =======================================telegram机器人通知设置区域===========================================
 //此处填你telegram bot 的Token，telegram机器人通知推送必填项.例如：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
 //(环境变量名 TG_BOT_TOKEN)
@@ -37,6 +34,7 @@ let TG_PROXY_PORT = '';//例如:1080(环境变量名:TG_PROXY_PORT)
 let TG_PROXY_AUTH = '';//tg代理配置认证参数
 //Telegram api自建的反向代理地址(不懂可忽略,telegram机器人通知推送功能中非必填),默认tg官方api(环境变量名:TG_API_HOST)
 let TG_API_HOST = 'api.telegram.org'
+
 // =======================================钉钉机器人通知设置区域===========================================
 //此处填你钉钉 bot 的webhook，例如：5a544165465465645d0f31dca676e7bd07415asdasd
 //(环境变量名 DD_BOT_TOKEN)
@@ -148,7 +146,7 @@ if (process.env.PUSH_PLUS_USER) {
  * @param author 作者仓库等信息  例：`本脚本免费使用 By：xxxx`
  * @returns {Promise<unknown>}
  */
-async function sendNotify(text, desp, params = {}, author = '\n\n仅供用于学习') {
+async function sendNotify(text, desp, params = {}, author = '\n仅供用于学习') {
   //提供6种通知
   desp += author;//增加作者信息，防止被贩卖等
   await Promise.all([
