@@ -1173,7 +1173,6 @@ function TotalBean() {
                 } else {
                     if (data) {
                         data = JSON.parse(data);
-
                         if (data['retcode'] === "1001") {
                             $.isLogin = false; //cookie过期
                             return;
@@ -1182,7 +1181,6 @@ function TotalBean() {
                             $.nickName = data.data.userInfo.baseInfo.nickname;
                             $.levelName = data.data.userInfo.baseInfo.levelName;
                             $.isPlusVip = data.data.userInfo.isPlusVip;
-
                         }
                         if (data['retcode'] === '0' && data.data && data.data['assetInfo']) {
                             $.beanCount = data.data && data.data['assetInfo']['beanNum'];
