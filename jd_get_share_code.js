@@ -56,9 +56,9 @@ if ($.isNode()) {
       }
       await getShareCode()
       await shareCodeinfo()
+      await showMsg()
     }
   }
-  await showMsg()
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -68,6 +68,7 @@ if ($.isNode()) {
   })
 
 function shareCodeinfo() {
+  // 种豆得豆
   if ($.myPlantUuid != '') {
     if ($.index == 1)
       $.myPlantUuids = $.myPlantUuid
@@ -75,6 +76,7 @@ function shareCodeinfo() {
       $.myPlantUuids += `&` + $.myPlantUuid
     $.myPlantUuid = ''
   }
+  // 东东农场
   if ($.farmInfo.farmUserPro.shareCode != '') {
     if ($.index == 1)
       $.farmsinfo = $.farmInfo.farmUserPro.shareCode
@@ -82,6 +84,7 @@ function shareCodeinfo() {
       $.farmsinfo += '&' + $.farmInfo.farmUserPro.shareCode
     $.farmInfo.farmUserPro.shareCode = ''
   }
+  // 京喜工厂
   if ($.encryptPin != '') {
     if ($.index == 1)
       $.encryptPins = $.encryptPin
@@ -89,6 +92,7 @@ function shareCodeinfo() {
       $.encryptPins += '&' + $.encryptPin
     $.encryptPin = ''
   }
+  // 东东萌宠
   if ($.petInfo.shareCode != '') {
     if ($.index == 1) {
       $.pets = $.petInfo.shareCode
@@ -97,6 +101,7 @@ function shareCodeinfo() {
     }
     $.petInfo.shareCode = ''
   }
+  // 健康社区
   if ($.healthShareCode != '') {
     // console.log("健康社区" + $.index)
     if ($.index == 1) {
@@ -108,22 +113,21 @@ function shareCodeinfo() {
     }
     $.healthShareCode = ''
   }
-  if ($.index === (cookiesArr.length)) {
+}
+
+async function showMsg() {
+  if ($.index === cookiesArr.length) {
     shareCodeInfo += `种豆得豆\n/bean ${$.myPlantUuids}\n\n`
     shareCodeInfo += `东东农场\n/farm ${$.farmsinfo}\n\n`
     shareCodeInfo += `健康社区\n/health ${$.healthShareCodes}\n\n`
     shareCodeInfo += `京喜工厂\n/jxfactory ${$.encryptPins}\n\n`
     shareCodeInfo += `东东萌宠\n/pet ${$.pets}\n\n`
-  }
-}
-
-async function showMsg() {
-  if ($.isNode()) {
-    await notify.sendNotify($.name, shareCodeInfo)
-    $.msg($.name, "", shareCodeInfo)
-    // $.log(message)
-  } else {
-    $.log(shareCodeInfo)
+    if ($.isNode()) {
+      await notify.sendNotify($.name, shareCodeInfo)
+      $.msg($.name, "", shareCodeInfo)
+    } else {
+      $.log(shareCodeInfo)
+    }
   }
 }
 
@@ -161,7 +165,7 @@ function getHealthShareCode(taskId = '') {
               } else if (taskId === 6) {
                 if (data?.data?.result?.taskVos) {
                   $.healthShareCode = data?.data?.result?.taskVos[0].assistTaskDetailVo.taskToken
-                  console.log(`【京东账号${$.index}（${$.UserName}）健康社区】${$.healthShareCode}\n`);
+                  console.log(`【京东账号${$.index}（${$.UserName}）健康社区】${$.healthShareCode}`);
                 }
               }
             }
@@ -602,50 +606,6 @@ async function getJDFruit() {
 
   await jdFruit();
 }
-async function getJoy(){
-  function taskUrl(functionId, body = '') {
-    let t = Date.now().toString().substr(0, 10)
-    let e = body || ""
-    e = $.md5("aDvScBv$gGQvrXfva8dG!ZC@DA70Y%lX" + e + t)
-    e = e + Number(t).toString(16)
-    return {
-      url: `${JD_API_HOST}?uts=${e}&appid=crazy_joy&functionId=${functionId}&body=${escape(body)}&t=${t}`,
-      headers: {
-        'Cookie': cookie,
-        'Host': 'api.m.jd.com',
-        'Accept': '*/*',
-        'Connection': 'keep-alive',
-        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
-        'Accept-Language': 'zh-cn',
-        'Referer': 'https://crazy-joy.jd.com/',
-        'origin': 'https://crazy-joy.jd.com',
-        'Accept-Encoding': 'gzip, deflate, br',
-      }
-    }
-  }
-  let body = {"paramData": {}}
-  return new Promise(async resolve => {
-    $.get(taskUrl('crazyJoy_user_gameState', JSON.stringify(body)), async (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
-        } else {
-          if (safeGet(data)) {
-            data = JSON.parse(data);
-            if (data.success && data.data && data.data.userInviteCode) {
-              console.log(`【京东账号${$.index}（${$.UserName}）crazyJoy】${data.data.userInviteCode}`)
-            }
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
 //闪购盲盒
 async function getSgmh(timeout = 0) {
   return new Promise((resolve) => {
@@ -679,45 +639,6 @@ async function getSgmh(timeout = 0) {
       })
     },timeout)
   })
-}
-//财富岛
-function getCFD(showInvite = true) {
-  function taskUrl(function_path, body) {
-    return {
-      url: `https://m.jingxi.com/jxcfd/${function_path}?strZone=jxcfd&bizCode=jxcfd&source=jxcfd&dwEnv=7&_cfd_t=${Date.now()}&ptag=138631.26.55&${body}&_ste=1&_=${Date.now()}&sceneval=2&g_login_type=1&g_ty=ls`,
-      headers: {
-        Cookie: cookie,
-        Accept: "*/*",
-        Connection: "keep-alive",
-        Referer:"https://st.jingxi.com/fortune_island/index.html?ptag=138631.26.55",
-        "Accept-Encoding": "gzip, deflate, br",
-        Host: "m.jingxi.com",
-        "User-Agent":`jdpingou;iPhone;3.15.2;14.2.1;ea00763447803eb0f32045dcba629c248ea53bb3;network/wifi;model/iPhone13,2;appBuild/100365;ADID/00000000-0000-0000-0000-000000000000;supportApplePay/1;hasUPPay/0;pushNoticeIsOpen/0;hasOCPay/0;supportBestPay/0;session/${Math.random * 98 + 1};pap/JA2015_311210;brand/apple;supportJDSHWK/1;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148`,
-        "Accept-Language": "zh-cn",
-      },
-    };
-  }
-  return new Promise(async (resolve) => {
-    $.get(taskUrl(`user/QueryUserInfo`), (err, resp, data) => {
-      try {
-        const {
-          iret,
-          SceneList = {},
-          XbStatus: { XBDetail = [], dwXBRemainCnt } = {},
-          ddwMoney,
-          dwIsNewUser,
-          sErrMsg,
-          strMyShareId,
-          strPin,
-        } = JSON.parse(data);
-        console.log(`【京东账号${$.index}（${$.UserName}）财富岛】${strMyShareId}`)
-      } catch (e) {
-        $.logErr(e, resp);
-      } finally {
-        resolve();
-      }
-    });
-  });
 }
 //领现金
 function getJdCash() {
@@ -763,15 +684,13 @@ async function getShareCode() {
   await getPlantBean()
   await getJDFruit()
   await getJdPet()
-  // await getJdFactory()
+  await getJdFactory()
   await getJxFactory()
   await getHealthShareCode(6)
-  // await getJxNc()
-  // await getJdZZ()
-  // await getJoy()
-  // await getSgmh()
-  // await getCFD()
-  // await getJdCash()
+  await getJdZZ()
+  await getSgmh()
+  await getJdCash()
+  await getJxNc()
   console.log(`======账号${$.index}结束======\n`)
 }
 
