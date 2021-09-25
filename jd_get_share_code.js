@@ -102,7 +102,7 @@ function shareCodeinfo() {
 
 async function showMsg() {
   if ($.isNode()) {
-    await notify.sendNotify($.name, botstr)
+    await notify.sendNotify($.name, shareCodeInfo)
     $.msg($.name, "", shareCodeInfo)
     // $.log(message)
   } else {
