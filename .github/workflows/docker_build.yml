@@ -1,4 +1,4 @@
-name: 构建 Docker 镜像
+name: Build Docker image
 on:
   #防止fork乱用action设置只能手动触发构建
   workflow_dispatch:
