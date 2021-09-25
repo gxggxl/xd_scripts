@@ -92,9 +92,16 @@ function shareCodeinfo() {
     else
       $.pets += '&' + $.petInfo.shareCode
   }
+  if ($.healthShareCode != '') {
+    if ($.index == 1)
+      $.healthShareCodes = $.healthShareCode
+    else
+      $.healthShareCodes += '&' + $.healthShareCode
+  }
   if ($.index === (cookiesArr.length)){
     shareCodeInfo += `种豆得豆\n/bean ${$.myPlantUuids}\n\n`
-    shareCodeInfo += `京东农场\n/farm ${$.farmsinfo}\n\n`
+    shareCodeInfo += `东东农场\n/farm ${$.farmsinfo}\n\n`
+    shareCodeInfo += `东东健康社区\n/health ${$.healthShareCodes}\n\n`
     shareCodeInfo += `京喜工厂\n/jxfactory ${$.encryptPins}\n\n`
     shareCodeInfo += `东东萌宠\n/pet ${$.pets}\n\n`
   }
@@ -108,6 +115,53 @@ async function showMsg() {
   } else {
     $.log(shareCodeInfo)
   }
+}
+
+function getHealthShareCode(taskId = '') {
+  function taskhealthUrl(function_id, body = {}) {
+    return {
+      url: `https://api.m.jd.com/?functionId=${function_id}&body=${escape(JSON.stringify(body))}&client=wh5&clientVersion=1.0.0&uuid=`,
+      headers: {
+        "Cookie": cookie,
+        "origin": "https://h5.m.jd.com",
+        "referer": "https://h5.m.jd.com/",
+        'accept-language': 'zh-cn',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+      }
+    }
+  }
+  return new Promise(resolve => {
+    $.get(taskhealthUrl('jdhealth_getTaskDetail', {"buildingId": "", taskId: taskId === -1 ? '' : taskId, "channelId": 1}),
+        async (err, resp, data) => {
+          try {
+            if (safeGet(data)) {
+              data = $.toObj(data)
+              if (taskId === -1) {
+                let tmp = parseInt(parseFloat(data?.data?.result?.userScore ?? '0'))
+                if (!$.earn) {
+                  $.score = tmp
+                  $.earn = 1
+                } else {
+                  $.earn = tmp - $.score
+                  $.score = tmp
+                }
+              } else if (taskId === 6) {
+                if (data?.data?.result?.taskVos) {
+                  $.healthShareCode = data?.data?.result?.taskVos[0].assistTaskDetailVo.taskToken
+                  console.log(`【京东账号${$.index}（${$.UserName}）东东健康社区】${$.healthShareCode}\n`);
+                }
+              }
+            }
+          } catch (e) {
+            console.log(e)
+          } finally {
+            resolve()
+          }
+        })
+  })
 }
 
 function getJdFactory() {
@@ -701,6 +755,7 @@ async function getShareCode() {
   await getJdPet()
   // await getJdFactory()
   await getJxFactory()
+  await getHealthShareCode(6)
   // await getJxNc()
   // await getJdZZ()
   // await getJoy()
