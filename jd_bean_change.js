@@ -98,7 +98,7 @@ async function showMsg() {
     if ($.errorMsg) return
     //ReturnMessage=`📣=============账号${$.index}=============📣\n`
 
-    ReturnMessage =`👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
+    ReturnMessage = `👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
 
     if ($.levelName || $.JingXiang) ReturnMessage += `✉️账号信息：`;
 
@@ -124,27 +124,27 @@ async function showMsg() {
 
     if ($.JingXiang) ReturnMessage += ` ${$.JingXiang}\n`;
 
-    ReturnMessage+=`🥔今日收支：${$.todayIncomeBean}京豆 🐶 - ${$.todayOutcomeBean}京豆\n`;
-    ReturnMessage+=`🥔昨日收支：${$.incomeBean}京豆 🐶 - ${$.expenseBean}京豆\n`;
-    ReturnMessage+=`🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
-    ReturnMessage+=`🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
+    ReturnMessage += `🥔今日收支：${$.todayIncomeBean}京豆 🐶 - ${$.todayOutcomeBean}京豆\n`;
+    ReturnMessage += `🥔昨日收支：${$.incomeBean}京豆 🐶 - ${$.expenseBean}京豆\n`;
+    ReturnMessage += `🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
+    ReturnMessage += `🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
     // ReturnMessage += `━╋━╋━\n`;
 
-    if(typeof $.JDEggcnt !== "undefined"){
+    if (typeof $.JDEggcnt !== "undefined") {
         ReturnMessage += `🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
     }
     if ($.JdFarmProdName != "") {
-      if ($.JdtreeEnergy != 0) {
-        ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`
-        ReturnMessage += `👨🏻‍🌾农场进度：${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%`;
-        if ($.JdwaterD != "Infinity" && $.JdwaterD != "-Infinity") {
-          ReturnMessage += `,${$.JdwaterD === 1 ? "明天" : $.JdwaterD === 2 ? "后天" : $.JdwaterD + "天后"}可兑\n`;
+        if ($.JdtreeEnergy != 0) {
+            ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`
+            ReturnMessage += `👨🏻‍🌾农场进度：${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%`;
+            if ($.JdwaterD != "Infinity" && $.JdwaterD != "-Infinity") {
+                ReturnMessage += `,${$.JdwaterD === 1 ? "明天" : $.JdwaterD === 2 ? "后天" : $.JdwaterD + "天后"}可兑\n`;
+            } else {
+                ReturnMessage += `\n`;
+            }
         } else {
-          ReturnMessage += `\n`;
+            ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
         }
-      } else {
-        ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
-      }
     }
 
     const response = await PetRequest('energyCollect');
@@ -153,13 +153,13 @@ async function showMsg() {
         $.petInfo = initPetTownRes.result;
         if (response.resultCode === '0') {
             ReturnMessage += `🐶东东萌宠：${$.petInfo.goodsInfo.goodsName},`;
-            ReturnMessage += `\n🐶萌宠进度：勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块(${response.result.medalPercent}%)\n`;
-            //ReturnMessage += `已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
+            ReturnMessage += `\n🐶萌宠进度：勋章${response.result.medalNum}/${response.result.medalNum + response.result.needCollectMedalNum}块(${response.result.medalPercent}%)\n`;
+            // ReturnMessage += `已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
         }
     }
 
     if ($.jxFactoryInfo) {
-      ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}\n`;
+        ReturnMessage += `👨🏻‍🔧京喜工厂：${$.jxFactoryInfo}\n`;
     }
     if ($.ddFactoryInfo) {
         ReturnMessage += `🏭东东工厂：${$.ddFactoryInfo}\n`;
@@ -168,41 +168,40 @@ async function showMsg() {
     if (typeof $.TotalMoney !== "undefined") {
         ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
     }
-    if($.JdMsScore !== 0){
+    if ($.JdMsScore !== 0) {
         ReturnMessage += `💰京东秒杀：${$.JdMsScore}秒秒币(≈${$.JdMsScore / 1000}元)\n`;
     }
-    if(typeof $.JdzzNum !== "undefined"){
+    if (typeof $.JdzzNum !== "undefined") {
         ReturnMessage += `💰京东赚赚：${$.JdzzNum}金币(≈${$.JdzzNum / 10000}元)\n`;
     }
-    if(typeof $.JDtotalcash !== "undefined"){
+    if (typeof $.JDtotalcash !== "undefined") {
         ReturnMessage += `💰极速金币：${$.JDtotalcash}金币(≈${$.JDtotalcash / 10000}元)\n`;
     }
-    //ReturnMessage += `📣============红包明细============📣\n`;
+    // ReturnMessage += `📣============红包明细============📣\n`;
     // ReturnMessage += `━╋━╋━\n`;
     ReturnMessage += `🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元\n`;
     ReturnMessage += `🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n`;
     ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
     if ($.jdhRed != "0.00") ReturnMessage += `🧧健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元\n`;
-    if($.sendNum > 1) {
+    if ($.sendNum > 1) {
         // ReturnMessage += `📣=============END ${$.index}=============📣\n\n`;
-        ReturnMessage += `\n\n`;
-    } else {
-        // ReturnMessage += `📣=============END ${$.index}=============📣`;
+        ReturnMessage += `\n`;
     }
+
     allMessage += ReturnMessage;
 
     console.log(`[京东账号${$.index} ${$.UserName}] 结束`)
-    $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
-    if( $.isNode() ){
-        if($.index % $.sendNum === 0){
+    $.msg($.name, '', ReturnMessage, {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
+    if ($.isNode()) {
+        if ($.index % $.sendNum === 0) {
             $.sentNum++;
             console.log(`正在进行第 ${$.sentNum} 次发送通知，推送的账号数量为 ${$.sendNum} 个`)
-            await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-            allMessage=""
-        } else if((cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum){
+            await notify.sendNotify(`${$.name}`, `${allMessage}`, {url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`})
+            allMessage = ""
+        } else if ((cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum) {
             console.log(`正在进行最后一次发送通知，推送的账号数量为 ${(cookiesArr.length - ($.sentNum * $.sendNum))} 个`)
-            await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-            allMessage=""
+            await notify.sendNotify(`${$.name}`, `${allMessage}`, {url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`})
+            allMessage = ""
         }
     }
 }
