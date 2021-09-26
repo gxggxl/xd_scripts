@@ -101,12 +101,9 @@ function shareCodeinfo() {
   }
   // 健康社区
   if ($.healthShareCode != '') {
-    // console.log("健康社区" + $.index)
     if ($.index == 1) {
-      // console.log("健康社区a" + $.index)
       $.healthShareCodes = $.healthShareCode
     } else {
-      // console.log("健康社区b" + $.index)
       $.healthShareCodes += '&' + $.healthShareCode
     }
     $.healthShareCode = ''
@@ -115,11 +112,11 @@ function shareCodeinfo() {
 
 async function showMsg() {
   if ($.index === cookiesArr.length) {
-    shareCodeInfo += `种豆得豆\n/bean ${$.myPlantUuids}\n\n`
-    shareCodeInfo += `东东农场\n/farm ${$.farmsinfo}\n\n`
-    shareCodeInfo += `健康社区\n/health ${$.healthShareCodes}\n\n`
-    shareCodeInfo += `京喜工厂\n/jxfactory ${$.encryptPins}\n\n`
-    shareCodeInfo += `东东萌宠\n/pet ${$.pets}\n\n`
+    shareCodeInfo += `种豆得豆\n\n/bean ${$.myPlantUuids}\n\n`
+    shareCodeInfo += `东东农场\n\n/farm ${$.farmsinfo}\n\n`
+    shareCodeInfo += `健康社区\n\n/health ${$.healthShareCodes}\n\n`
+    shareCodeInfo += `京喜工厂\n\n/jxfactory ${$.encryptPins}\n\n`
+    shareCodeInfo += `东东萌宠\n\n/pet ${$.pets}\n\n`
     if ($.isNode()) {
       $.msg($.name, "", shareCodeInfo)
       await notify.sendNotify($.name, shareCodeInfo)
@@ -145,8 +142,13 @@ function getHealthShareCode(taskId = '') {
       }
     }
   }
+
   return new Promise(resolve => {
-    $.get(taskhealthUrl('jdhealth_getTaskDetail', {"buildingId": "", taskId: taskId === -1 ? '' : taskId, "channelId": 1}),
+    $.get(taskhealthUrl('jdhealth_getTaskDetail', {
+          "buildingId": "",
+          taskId: taskId === -1 ? '' : taskId,
+          "channelId": 1
+        }),
         async (err, resp, data) => {
           try {
             if (safeGet(data)) {
