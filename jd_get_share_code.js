@@ -20,11 +20,10 @@ cron "20 13 * * 6" script-path=jd_get_share_code.js, tag=获取互助码
 ============小火箭=========
 获取互助码 = type=cron,script-path=jd_get_share_code.js, cronexpr="20 13 * * 6", timeout=3600, enable=true
  */
-const {index} = require("cheerio/lib/api/traversing");
 const $ = new Env("获取互助码");
 const JD_API_HOST = "https://api.m.jd.com/client.action";
 let cookiesArr = [], cookie = '', message, shareCodeInfo;
- shareCodeInfo = `互助码提交机器人 @JD_ShareCode_Bot\n\n`
+shareCodeInfo = `互助码提交机器人 @JD_ShareCode_Bot\n\n`
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 if ($.isNode()) {
