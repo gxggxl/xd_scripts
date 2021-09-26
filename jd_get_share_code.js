@@ -69,33 +69,33 @@ function shareCodeinfo() {
   // 种豆得豆
   if ($.myPlantUuid != '') {
     if ($.index == 1)
-      $.myPlantUuids = $.myPlantUuid
+      $.plantBeanShareCode = $.myPlantUuid
     else
-      $.myPlantUuids += `&` + $.myPlantUuid
+      $.plantBeanShareCode += `&` + $.myPlantUuid
     $.myPlantUuid = ''
   }
   // 东东农场
   if ($.farmInfo.farmUserPro.shareCode != '') {
     if ($.index == 1)
-      $.farmsinfo = $.farmInfo.farmUserPro.shareCode
+      $.farmShareCode = $.farmInfo.farmUserPro.shareCode
     else
-      $.farmsinfo += '&' + $.farmInfo.farmUserPro.shareCode
+      $.farmShareCode += '&' + $.farmInfo.farmUserPro.shareCode
     $.farmInfo.farmUserPro.shareCode = ''
   }
   // 京喜工厂
   if ($.encryptPin != '') {
     if ($.index == 1)
-      $.encryptPins = $.encryptPin
+      $.dreamFactoryShareCode = $.encryptPin
     else
-      $.encryptPins += '&' + $.encryptPin
+      $.dreamFactoryShareCode += '&' + $.encryptPin
     $.encryptPin = ''
   }
   // 东东萌宠
   if ($.petInfo.shareCode != '') {
     if ($.index == 1) {
-      $.pets = $.petInfo.shareCode
+      $.petShareCode = $.petInfo.shareCode
     } else {
-      $.pets += '&' + $.petInfo.shareCode
+      $.petShareCode += '&' + $.petInfo.shareCode
     }
     $.petInfo.shareCode = ''
   }
@@ -112,11 +112,11 @@ function shareCodeinfo() {
 
 async function showMsg() {
   if ($.index === cookiesArr.length) {
-    shareCodeInfo += `种豆得豆\n\n/bean ${$.myPlantUuids}\n\n`
-    shareCodeInfo += `东东农场\n\n/farm ${$.farmsinfo}\n\n`
+    shareCodeInfo += `种豆得豆\n\n/bean ${$.plantBeanShareCode}\n\n`
+    shareCodeInfo += `东东农场\n\n/farm ${$.farmShareCode}\n\n`
     shareCodeInfo += `健康社区\n\n/health ${$.healthShareCodes}\n\n`
-    shareCodeInfo += `京喜工厂\n\n/jxfactory ${$.encryptPins}\n\n`
-    shareCodeInfo += `东东萌宠\n\n/pet ${$.pets}\n\n`
+    shareCodeInfo += `京喜工厂\n\n/jxfactory ${$.dreamFactoryShareCode}\n\n`
+    shareCodeInfo += `东东萌宠\n\n/pet ${$.petShareCode}\n\n`
     if ($.isNode()) {
       $.msg($.name, "", shareCodeInfo)
       await notify.sendNotify($.name, shareCodeInfo)
