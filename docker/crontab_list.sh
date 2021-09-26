@@ -13,9 +13,6 @@
 # 明星小店(星店长)9.18-10.9
 5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 
-# 东东玩家(9.17-10.11)
-#9 0 * 9-10 * node /scripts/jd_ddwj.js >> /scripts/logs/jd_ddwj.log 2>&1
-
 # 集魔方 (京东APP - 新品 - 集魔方)
 16 5,13 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 
@@ -123,7 +120,7 @@
 # 赚京豆(微信小程序)
 25 0,9,18,23 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 口袋书店
-25 8,12,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
+20 8,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
 # 闪购盲盒
 43 8,22 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 #京东直播（又回来了）
