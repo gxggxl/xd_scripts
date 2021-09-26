@@ -138,7 +138,7 @@ async function showMsg() {
             ReturnMessage += `👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`
             ReturnMessage += `👨🏻‍🌾农场进度：${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%`;
             if ($.JdwaterD != "Infinity" && $.JdwaterD != "-Infinity") {
-                ReturnMessage += `,${$.JdwaterD === 1 ? "明天" : $.JdwaterD === 2 ? "后天" : $.JdwaterD + "天后"}可兑\n`;
+                ReturnMessage += `,${$.JdwaterD === 1 ? "明天" : $.JdwaterD === 2 ? "后天" : $.JdwaterD + "天后"}可兑🎉\n`;
             } else {
                 ReturnMessage += `\n`;
             }
@@ -179,9 +179,9 @@ async function showMsg() {
     }
     // ReturnMessage += `📣============红包明细============📣\n`;
     // ReturnMessage += `━╋━╋━\n`;
-    ReturnMessage += `🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元\n`;
-    ReturnMessage += `🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n`;
-    ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
+    if ($.jdRed != "0.00") ReturnMessage += `🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元\n`;
+    if ($.jxRed != "0.00") ReturnMessage += `🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n`;
+    if ($.jsRed != "0.00") ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
     if ($.jdhRed != "0.00") ReturnMessage += `🧧健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元\n`;
     if ($.sendNum > 1) {
         // ReturnMessage += `📣=============END ${$.index}=============📣\n\n`;
