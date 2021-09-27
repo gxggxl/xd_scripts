@@ -23,14 +23,11 @@
 # 京东手机狂欢城 (10.1 结束)
 6 0-18/6 1,16-30 9-10 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 
-# 芯意制造盒(9.23 结束)
-39 0 15-23 9 * node /scripts/jd_xyzzh.js >> /scripts/logs/jd_xyzzh.log 2>&1
-
 # 企有此礼(9.30 结束)
 28 0 10-30 9 * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
 
 # 跳跳乐瓜分京豆(9.13-9.19)
-15 */2 20-27 7 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
+15 */2 20-27 9 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 
 # 京小鸽吾悦寄 (9.30 结束)
 9 1,13 1-30 9 * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
@@ -54,7 +51,7 @@
 # 京喜领88元红包(9.30结束)
 0 0,12,21 * 7-10 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 # 发财大赢家之翻翻乐 8.15结束
-15,36 * * 7-10 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+13,37 * * 7-10 * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 京东极速版红包(活动时间：2021-5-5至2021-8-31)
 11 0,10,16 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 # 金榜创造营 活动时间：2021-05-21至2021-12-31
@@ -210,9 +207,9 @@
 
 ###################### 敏感操作 ######################
 # 取关主播
-3 5 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
+30 23 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
 # 取关京东店铺商品
-2 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
+5 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京东试用
 13 16 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
