@@ -1,6 +1,6 @@
 /**
  * cron "30 10,22 * * *" jd_bean_change.js, tag:资产变化强化版
- * 原版链接 https://github.com/ccwav/QLScript/main/jd_bean_change.js
+ * 原版链接 https://github.com/ccwav/QLScript/blob/main/jd_bean_change.js
  * 支持环境变量控制每次发送的账号个数，默认为2
  * 环境变量为 export JD_BEAN_CHANGE_SENDNUM=3
  */
