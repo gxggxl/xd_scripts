@@ -1,8 +1,8 @@
 /**
  * cron "30 10,22 * * *" jd_bean_change.js, tag:资产变化强化版
- * 原版链接 https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_bean_change.js
+ * 原版链接 https://github.com/ccwav/QLScript/main/jd_bean_change.js
  * 支持环境变量控制每次发送的账号个数，默认为2
- * 环境变量为：JD_BEAN_CHANGE_SENDNUM | export JD_BEAN_CHANGE_SENDNUM=2
+ * 环境变量为 export JD_BEAN_CHANGE_SENDNUM=3
  */
 const $ = new Env('京东日资产变动');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -13,6 +13,7 @@ let cookiesArr = [], cookie = '';
 let allMessage = '';
 let ReturnMessage = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
+$.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
 $.sendNum = process.env.JD_BEAN_CHANGE_SENDNUM * 1 || 2;
 $.sentNum = 0;
 
@@ -36,7 +37,6 @@ if ($.isNode()) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-            $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
             $.index = i + 1;
             $.beanCount = 0;
             $.incomeBean = 0;
@@ -221,6 +221,7 @@ async function bean() {
         todayArr = [];
     do {
         let response = await getJingBeanBalanceDetail(page);
+        await $.wait(2000);
         // console.log(`第${page}页: ${JSON.stringify(response)}`);
         if (response && response.code === "0") {
             page++;
