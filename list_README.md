@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **98** 个文件
+共有 **100** 个文件
 
 | 文件 | 名称 | 活动入口 |
 | --- | --- | --- |
@@ -26,7 +26,6 @@
 | [jd_daily_egg.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_daily_egg.js) | 天天提鹅 | 京东金融-天天提鹅 |
 | [jd_daily_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_daily_lottery.js) | 小鸽有礼-每日抽奖 | 京东首页搜索 边玩边赚 |
 | [jd_ddnc_farmpark.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ddnc_farmpark.js) | 东东乐园 | 东东农场->东东乐园(点大风车 |
-| [jd_ddwj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ddwj.js) | 东东玩家 |  |
 | [jd_ddworld.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ddworld.js) | 东东世界 |  |
 | [jd_decompression.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_decompression.js) | 热血心跳,狂解压 |  |
 | [jd_delCoupon.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_delCoupon.js) | 删除优惠券 | 京东APP我的-优惠券 |
@@ -63,9 +62,11 @@
 | [jd_jxzpk.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxzpk.js) | 京享值PK | 京东-我的-京享值-京享值pk |
 | [jd_kd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_kd.js) | 京东快递签到 | [活动地址](https://jingcai-h5.jd.com/#/) |
 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |
+| [jd_live_redrain.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live_redrain.js) | 整点京豆雨 |  |
 | [jd_lotteryMachine.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lotteryMachine.js) | 京东抽奖机 |  |
 | [jd_lsj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lsj.js) | 零食街 |  |
 | [jd_market_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_market_lottery.js) | 幸运大转盘 | [活动地址](https://pro.m.jd.com/mall/active/3ryu78eKuLyY5YipWWVSeRQEpLQP/index.html) |
+| [jd_mf.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mf.js) | 京东小魔方 |  |
 | [jd_mofang.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mofang.js) | 集魔方 |  |
 | [jd_mohe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mohe.js) | 5G超级盲盒 | [活动地址](https://blindbox5g.jd.com) |
 | [jd_moneyTree.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_moneyTree.js) | 京东摇钱树 | 京东APP我的-更多工具-摇钱树，[活动链接](https://uua.jr.jd.com/uc-fe-wxgrowing/moneytree/index/?channel=yxhd) |
@@ -99,8 +100,9 @@
 | [jd_work_validate.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_work_validate.js) |  |  |
 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |
 | [jd_xinxiangyin.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_xinxiangyin.js) | 古蜀寻宝 |  |
-| [jd_xyzzh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_xyzzh.js) | 芯意制造盒 |  |
+| [jd_zmf.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zmf.js) | 九月超级上新季 |  |
 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |
+| [jd_zsign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zsign.js) | 芥末签到 |  |
 | [jx_aid_cashback.js](https://github.com/gxggxl/xd_scripts/raw/master/jx_aid_cashback.js) |  |  |
 
 此内容仅供参考
