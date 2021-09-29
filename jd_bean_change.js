@@ -221,7 +221,7 @@ async function bean() {
         todayArr = [];
     do {
         let response = await getJingBeanBalanceDetail(page);
-        await $.wait(2000);
+        await $.wait(1000);
         // console.log(`第${page}页: ${JSON.stringify(response)}`);
         if (response && response.code === "0") {
             page++;
@@ -653,12 +653,13 @@ function safeGet(data) {
 //签到领现金
 function TotalMoney() {
     return new Promise(resolve => {
-        $.get({
-            url: 'https://api.m.jd.com/client.action?functionId=cash_exchangePage&body=%7B%7D&build=167398&client=apple&clientVersion=9.1.9&openudid=1fce88cd05c42fe2b054e846f11bdf33f016d676&sign=762a8e894dea8cbfd91cce4dd5714bc5&st=1602179446935&sv=102',
+        const option = {
+            url: `${JD_API_HOST}?functionId=cash_exchangePage&body=%7B%7D&build=167398&client=apple&clientVersion=9.1.9&openudid=1fce88cd05c42fe2b054e846f11bdf33f016d676&sign=762a8e894dea8cbfd91cce4dd5714bc5&st=1602179446935&sv=102`,
             headers: {
                 Cookie: cookie,
             }
-        }, async (err, resp, data) => {
+        }
+        $.get(option, async (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`)
