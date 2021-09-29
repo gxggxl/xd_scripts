@@ -1,13 +1,13 @@
-FROM node:lts-alpine3.14
+FROM node:lts-alpine3.12
 
 LABEL AUTHOR="none" \
-      VERSION=0.1.4
+      VERSION="0.1.5"
 
 ENV DEFAULT_LIST_FILE=crontab_list.sh \
     CUSTOM_LIST_MERGE_TYPE=append \
-    COOKIES_LIST=/scripts/logs/cookies.list \
-    REPO_URL=https://ghproxy.com/https://github.com/gxggxl/xd_scripts.git \
-    REPO_BRANCH=master
+    COOKIES_LIST="/scripts/logs/cookies.list" \
+    REPO_URL="https://ghproxy.com/https://github.com/gxggxl/xd_scripts.git" \
+    REPO_BRANCH="master"
 
 RUN set -ex \
     && apk update \
