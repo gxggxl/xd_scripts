@@ -59,7 +59,7 @@
 # 5G超级盲盒(活动时间：2021-08-2到2021-10-29)
 0 0-23/3 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 # 芥末小程序签到领现金 (12.31结束)
-17 9,17 * * * node /scripts/jd_mustard_sign.js >> /scripts/logs/jd_mustard_sign.log 2>&1
+15 9,17 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 # 京东零食街 活动时间：年底
 11 11,17 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 
