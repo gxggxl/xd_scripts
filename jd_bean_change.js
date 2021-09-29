@@ -165,7 +165,7 @@ async function showMsg() {
         ReturnMessage += `🏭东东工厂：${$.ddFactoryInfo}\n`;
     }
     // ReturnMessage += `━╋━╋━\n`;
-    if (typeof $.TotalMoney !== "undefined") {
+    if ($.TotalMoney !== 0) {
         ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
     }
     if ($.JdMsScore !== 0) {
