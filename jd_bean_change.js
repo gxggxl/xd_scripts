@@ -107,12 +107,12 @@ async function showMsg() {
 
         if ($.levelName == "注册")
             $.levelName = `😊普通`;
-        else if ($.levelName == "金牌")
-            $.levelName = `🥇金牌`;
-        else if ($.levelName == "银牌")
-            $.levelName = `🥈银牌`;
         else if ($.levelName == "铜牌")
             $.levelName = `🥉铜牌`;
+        else if ($.levelName == "银牌")
+            $.levelName = `🥈银牌`;
+        else if ($.levelName == "金牌")
+            $.levelName = `🥇金牌`;
         else if ($.levelName == "钻石")
             $.levelName = `💎钻石`;
 
@@ -1183,6 +1183,7 @@ function TotalBean() {
                             $.nickName = data.data.userInfo.baseInfo.nickname;
                             $.levelName = data.data.userInfo.baseInfo.levelName;
                             $.isPlusVip = data.data.userInfo.isPlusVip;
+                            // console.log($.levelName + '\t' + 'vip:' + $.isPlusVip);
                         }
                         if (data['retcode'] === '0' && data.data && data.data['assetInfo']) {
                             $.beanCount = data.data && data.data['assetInfo']['beanNum'];
@@ -1229,13 +1230,13 @@ function TotalBean2() {
                         }
                         const userInfo = data.user;
                         if (userInfo) {
-                            if (!$.nickName)
+                            $.JingXiang = userInfo.uclass;
+                            if (!$.nickName) {
                                 $.nickName = userInfo.unickName;
+                            }
                             if ($.beanCount == 0) {
                                 $.beanCount = userInfo.jingBean;
-                                $.isPlusVip = 3;
                             }
-                            $.JingXiang=userInfo.uclass;
                         }
                     } else {
                         $.log('京东服务器返回空数据');
