@@ -12,8 +12,6 @@
 7 8,9 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 京东小魔方(9.29 24.00 结束)
 13 1,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
-# 超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
-0,1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 # 蚊子腿豆子 (9.21-10.16 10月16号应该可以参与瓜分)
 3 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
 # 明星小店(星店长)9.18-10.9
