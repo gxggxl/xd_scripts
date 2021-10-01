@@ -8,7 +8,7 @@
 1 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
-# 特物Z|万物皆可国创 活动时间：###
+# 特物Z 活动时间：
 7 8,9 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 京东小魔方(9.29 24.00 结束)
 13 1,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
