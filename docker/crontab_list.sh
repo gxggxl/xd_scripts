@@ -38,7 +38,7 @@
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 # 超级粉丝互动 活动时间：XXX结束
 1 0,1 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
-# 女装盲盒 活动时间：2021-08-05到2021-09-30
+# 女装盲盒 活动时间：2021-08-05到2021-10-31
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 # 京喜领88元红包(9.30结束)
 0 0,12,21 * 7-10 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
