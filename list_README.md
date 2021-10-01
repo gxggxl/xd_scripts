@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **99** 个文件
+共有 **97** 个文件
 
 | 文件 | 名称 | 活动入口 |
 | --- | --- | --- |
@@ -53,8 +53,6 @@
 | [jd_joy_reward.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_joy_reward.js) | 宠汪汪积分兑换奖品 | 京东APP我的-更多工具-宠汪汪 |
 | [jd_joy_run.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_joy_run.js) | 宠汪汪赛跑 | 京东APP我的-更多工具-宠汪汪 |
 | [jd_joy_steal.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_joy_steal.js) | 宠汪汪偷好友积分与狗粮 | 京东APP我的-更多工具-宠汪汪 |
-| [jd_jump.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jump.js) | 跳跳乐瓜分京豆 | 来客有礼(微信小程序)=>跳跳乐或京东APP=》首页=》母婴馆=》底部中间 |
-| [jd_jxg.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxg.js) | 京小鸽吾悦寄 |  |
 | [jd_jxlhb.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxlhb.js) | 京喜领88元红包 | 京喜app-》我的-》京喜领88元红包 |
 | [jd_jxmc.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxmc.js) | 京喜牧场 |  |
 | [jd_jxnc.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxnc.js) | 京喜农场 | 京喜APP我的-京喜农场 |
