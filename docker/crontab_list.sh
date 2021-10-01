@@ -26,9 +26,6 @@
 # 企有此礼(9.30 结束)
 28 0 10-30 9 * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
 
-# 京小鸽吾悦寄 (9.30 结束)
-9 1,13 1-30 9 * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
-
 # 内容鉴赏官 (9.30 结束，10月继续开启)
 11 1,5 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 # 心相印店铺活动  古蜀寻宝 (10.6 结束)
