@@ -77,3 +77,6 @@
 
 # 京小鸽吾悦寄 (9.30 结束)
 9 1,13 1-30 9 * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
+
+# 京东手机狂欢城 (10.1 结束)
+6 0-18/6 1,16-30 9-10 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
