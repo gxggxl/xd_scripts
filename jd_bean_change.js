@@ -1205,6 +1205,7 @@ function TotalBean() {
 }
 function TotalBean2() {
     return new Promise(async(resolve) => {
+        $.JingXiang=0;
         const options = {
             url: `https://wxapp.m.jd.com/kwxhome/myJd/home.json?&useGuideModule=0&bizId=&brandId=&fromType=wxapp&timestamp=${Date.now()}`,
             headers: {
