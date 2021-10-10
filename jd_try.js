@@ -140,7 +140,7 @@ let args_xh = {
      * 每多少个账号发送一次通知，默认为4
      * 可通过环境变量控制 JD_TRY_SENDNUM
      * */
-    sendNum: process.env.JD_TRY_SENDNUM * 1 || 30,
+    sendNum: process.env.JD_TRY_SENDNUM * 1 || 50,
 }
 //上面很重要，遇到问题请把上面注释看一遍再来问
 let JD_TRY = true
