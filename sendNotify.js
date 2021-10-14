@@ -329,7 +329,8 @@ function tgBotNotify(text, desp) {
         // body: `chat_id=${TG_USER_ID}&text=${text}\n\n${desp}&disable_web_page_preview=true`,
         json: {
           chat_id: `${TG_USER_ID}`,
-          text: `${text}\n\n${desp}`,
+          // text: `${text}\n\n${desp}`,
+          parse_mode:`${text}\n\n${desp}`,
           disable_web_page_preview: true,
         },
         headers: {
