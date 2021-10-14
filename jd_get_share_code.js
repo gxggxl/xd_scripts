@@ -108,6 +108,15 @@ function shareCodeinfo() {
     }
     $.healthShareCode = ''
   }
+  //闪购盲盒sgmh
+  if ($.sgmh != '') {
+    if ($.index == 1) {
+      $.sgmhs = $.sgmh
+    } else {
+      $.sgmhs += '&' + $.sgmh
+    }
+    $.sgmh = ''
+  }
 }
 
 async function showMsg() {
@@ -117,6 +126,7 @@ async function showMsg() {
     shareCodeInfo += `健康社区\n\n/health ${$.healthShareCodes}\n\n`
     shareCodeInfo += `京喜工厂\n\n/jxfactory ${$.dreamFactoryShareCode}\n\n`
     shareCodeInfo += `东东萌宠\n\n/pet ${$.petShareCode}\n\n`
+    shareCodeInfo += `闪购盲盒\n\n/sgmh ${$.sgmhs}\n\n`
     if ($.isNode()) {
       $.msg($.name, "", shareCodeInfo)
       await notify.sendNotify($.name, shareCodeInfo)
@@ -630,6 +640,7 @@ async function getSgmh(timeout = 0) {
           if (data.data.bizCode === 0) {
             const invites  = data.data.result.taskVos.filter(item => item['taskName'] === '邀请好友助力');
             console.log(`【京东账号${$.index}（${$.UserName}）闪购盲盒】${invites && invites[0]['assistTaskDetailVo']['taskToken']}`)
+            $.sgmh=`${invites && invites[0]['assistTaskDetailVo']['taskToken']}`;
           }
         } catch (e) {
           $.logErr(e, resp);
