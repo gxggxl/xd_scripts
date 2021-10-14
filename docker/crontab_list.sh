@@ -20,9 +20,6 @@
 # 集魔方 (京东APP - 新品 - 集魔方)
 16 5,13 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 
-# 企有此礼(9.30 结束)
-28 0 10-30 9 * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
-
 # 内容鉴赏官 (9.30 结束，10月继续开启)
 11 1,5 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 # 送豆得豆
