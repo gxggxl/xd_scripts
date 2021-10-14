@@ -121,7 +121,11 @@ function shareCodeinfo() {
 
 async function showMsg() {
   if ($.index === cookiesArr.length) {
-    shareCodeInfo += `种豆得豆\n\n/bean ${$.plantBeanShareCode}\n\n`
+    shareCodeInfo += `种豆得豆
+    \`\`\`
+    /bean ${$.plantBeanShareCode}
+    \`\`\`
+    \n`
     shareCodeInfo += `东东农场\n\n/farm ${$.farmShareCode}\n\n`
     shareCodeInfo += `健康社区\n\n/health ${$.healthShareCodes}\n\n`
     shareCodeInfo += `京喜工厂\n\n/jxfactory ${$.dreamFactoryShareCode}\n\n`
