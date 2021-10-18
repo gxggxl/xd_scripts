@@ -10,6 +10,8 @@
 ##############短期活动##############
 # 特物Z 活动时间：
 7 8,9 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+# 京东小家 9.28 - 10.28
+7 8 01-29 10 * node /scripts/jd_chinaJoy.js >> /scripts/logs/jd_chinaJoy.log 2>&1
 # 京东小魔方(9.29 24.00 结束)
 13 1,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 蚊子腿豆子 (9.21-10.16 10月16号应该可以参与瓜分)
