@@ -32,6 +32,10 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
         return;
     }
+    if (activityList.length === 0 ){
+      console.log(`未找到活动 溜了溜了`)
+      return;
+    }
     for (let i = 0; i < cookiesArr.length; i++) {
         await getUA();
         $.index = i + 1;
