@@ -37,7 +37,7 @@
 # 京喜领88元红包(9.30结束)
 0 0,12,21 * 7-10 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 # 发财大赢家之翻翻乐 8.15结束
-13,37 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+13,37 0-9 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 京东极速版红包(活动时间：2021-5-5至2021-8-31)
 11 0,10,16 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 # 金榜创造营 活动时间：2021-05-21至2021-12-31
