@@ -8,7 +8,7 @@
 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
-# 惊喜大作战
+# 预售福利机
 7 0,2 * 10-11 * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 # 惠聚京东 好物连连 10-20 ~ 11-3
 12 0,9 20-31,1-3 10-11 * node /scripts/rush_lzdz1_huiju2.js >> /scripts/logs/rush_lzdz1_huiju2.log 2>&1
