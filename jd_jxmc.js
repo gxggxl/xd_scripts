@@ -317,8 +317,8 @@ async function buyCabbage(homePageInfo){
     console.log(`\n共有金币${homePageInfo.coins}`);
     if (Number(homePageInfo.coins) > 5000) {
         let canBuyTimes = Math.floor(Number(homePageInfo.coins) / 5000);
-        if(Number(materialNumber) < 400){
-            for (let j = 0; j < canBuyTimes && j < 4; j++) {
+        if(Number(materialNumber) < 200){
+            for (let j = 0; j < canBuyTimes && j < 2; j++) {
                 console.log(`第${j + 1}次购买白菜`);
                 let buyInfo = await takeRequest(`jxmc`,`operservice/Buy`,`&type=1`,`activeid%2Cactivekey%2Cchannel%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp%2Ctype`,true);
                 console.log(`购买成功，当前有白菜：${buyInfo.newnum}颗`);
@@ -326,7 +326,7 @@ async function buyCabbage(homePageInfo){
             }
             await $.wait(2000);
         }else{
-            console.log(`现有白菜${materialNumber},大于400颗,不进行购买`);
+            console.log(`现有白菜${materialNumber},大于200颗,不进行购买`);
         }
     }
 }
