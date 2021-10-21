@@ -1,48 +1,54 @@
 /*
 京东抽奖机
-更新时间：2021-08-26 09:29
+更新时间：2021-09-17 14:00
 脚本说明：抽奖活动,有新活动可以@我或者提Issues
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 // quantumultx
 [task_local]
 #京东抽奖机
-11 1 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js, tag=京东抽奖机, img-url=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/jdlottery.png, enabled=true
-// Loon
-[Script]
-cron "11 1 * * *" script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js,tag=京东抽奖机
+cron "11 1 * * *" script-path=jd_lotteryMachine.js,tag=京东抽奖机
 // Surge
-京东抽奖机 = type=cron,cronexp=11 1 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js
+京东抽奖机 = type=cron,cronexp=11 1 * * *,wake-system=1,timeout=20,script-path=jd_lotteryMachine.js
  */
 const $ = new Env('京东抽奖机');
+const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const STRSPLIT = "|";
 const needSum = false;            //是否需要显示汇总
 const printDetail = false;        //是否显示出参详情
-const appIdArr =   ['1EFRRxA','1EFRQwA','1EFRXxg','1EFVRxg','1E1xVyqw']
-const shareCodeArr = ['T0225KkcRx4b8lbWJU72wvZZcwCjVWmIaW5kRrbA','T0225KkcRx4b8lbWJU72wvZZcwCjVXnIaW5kRrbA','T0225KkcRx4b8lbWJU72wvZZcwCjVQmoaT5kRrbA','T0225KkcRx4b8lbWJU72wvZZcwCjVQmoaT5kRrbA','T0225KkcRx4b8lbWJU72wvZZcwCT1Slq-7yx55awQ','T0225KkcRx4b8lbWJU72wvZZcwCTJfn6-7zDQjeQOc']
-const homeDataFunPrefixArr = ['interact_template','interact_template','harmony_template','','','','','','','','','','interact_template','interact_template']
+const appIdArr =['1EFRRxA','1EFRQwA','1EFRXxg','1E1NXxq0', '1ElBTx6o','1FV1VwKc']
+const shareCodeArr = ['T018v_VxQxkZ_FXVJBqb1ACjVWmIaW5kRrbA','T018v_VxQxkZ_FXVJBqb1ACjVXnIaW5kRrbA','T018v_VxQxkZ_FXVJBqb1ACjVQmoaT5kRrbA']
+const homeDataFunPrefixArr = ['interact_template','interact_template','interact_template','interact_template','interact_template','interact_template']
 const collectScoreFunPrefixArr = ['','','','','','','','','','','','','interact_template','interact_template']
 const lotteryResultFunPrefixArr = ['','','','','','','','','','','','','','interact_template','interact_template']
 let merge = {}
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = `https://api.m.jd.com/client.action`;
+if ($.isNode()) {
+  Object.keys(jdCookieNode).forEach((item) => {
+    cookiesArr.push(jdCookieNode[item])
+  })
+  if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
+}
 !(async () => {
-  await requireConfig()
   if (!cookiesArr[0]) {
-    $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {"open-url": "https://bean.m.jd.com/"});
+    $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     if (cookie) {
-      if (i) console.log(`\n***************开始京东账号${i + 1}***************`)
+      $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+      $.index = i + 1;
       initial();
       await  QueryJDUserInfo();
-      if (!merge.enabled)  //cookie不可用
-      {
-        $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
-        $.msg($.name, `【提示】京东账号${i + 1} cookie已过期！请先获取cookie\n直接使用NobyDa的京东签到获取`, 'https://bean.m.jd.com/', {"open-url": "https://bean.m.jd.com/"});
-        continue;
+      console.log(`\n***************开始京东账号${$.index} ${merge.nickname || $.UserName}***************`)
+      if (!merge.enabled){
+        $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+        if ($.isNode()) {
+          await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+        }
+        continue
       }
       for (let j in appIdArr) {
         //j = appIdArr.length - 1
@@ -62,8 +68,8 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
     }
   }
 })()
-  .catch((e) => $.logErr(e))
-  .finally(() => $.done())
+    .catch((e) => $.logErr(e))
+    .finally(() => $.done())
 
 //获取昵称
 function QueryJDUserInfo(timeout = 0) {
@@ -72,22 +78,41 @@ function QueryJDUserInfo(timeout = 0) {
       let url = {
         url : `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
         headers : {
-          'Referer' : `https://wqs.jd.com/my/iserinfo.html`,
-          'Cookie' : cookie
+          "Accept": "application/json,text/plain, */*",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Accept-Language": "zh-cn",
+          "Connection": "keep-alive",
+          "Cookie": cookie,
+          "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
+          "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
         }
       }
       $.get(url, (err, resp, data) => {
         try {
-          data = JSON.parse(data);
-          if (data.retcode === 13) {
-            merge.enabled = false
-            return
+          if (err) {
+            console.log(`${JSON.stringify(err)}`)
+            console.log(`${$.name} API请求失败，请检查网路重试`)
+          } else {
+            if (data) {
+              data = JSON.parse(data);
+              if (data['retcode'] === 13) {
+                merge.enabled = false;
+                return
+              }
+              if (data['retcode'] === 0) {
+                merge.nickname = (data['base'] && data['base'].nickname) || $.UserName;
+              } else {
+                merge.nickname = $.UserName;
+              }
+            } else {
+              console.log(`京东服务器返回空数据`)
+            }
           }
-          merge.nickname = data.base.nickname;
         } catch (e) {
-          $.logErr(e, resp);
+          $.logErr(e, resp)
         } finally {
-          resolve()
+          resolve();
         }
       })
     },timeout)
@@ -325,11 +350,11 @@ function jsonParse(str) {
 
 //初始化
 function initial() {
-   merge = {
-     nickname: "",
-     enabled: true,
-     redPacket: {prizeDesc : "抽得|红包|元",number : true,fixed : 2},  //定义 动作|奖励名称|奖励单位   是否是数字
-     jdBeans: {prizeDesc : "抽得|京豆|个",number : true,fixed : 0}
+  merge = {
+    nickname: "",
+    enabled: true,
+    redPacket: {prizeDesc : "抽得|红包|元",number : true,fixed : 2},  //定义 动作|奖励名称|奖励单位   是否是数字
+    jdBeans: {prizeDesc : "抽得|京豆|个",number : true,fixed : 0}
   }
   for (let i in merge) {
     merge[i].success = 0;
