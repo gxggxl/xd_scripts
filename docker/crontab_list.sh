@@ -8,6 +8,8 @@
 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 惠聚京东 好物连连 10-20 ~ 11-3
+12 0,9 20-31,1-3 10-11 * node /scripts/rush_lzdz1_huiju2.js >> /scripts/logs/rush_lzdz1_huiju2.log 2>&1
 # 东东超市抢京豆 活动时间：2021-10-20 至 2021-11-20
 10 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 城城领现金
