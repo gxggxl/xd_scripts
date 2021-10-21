@@ -189,7 +189,7 @@
 #美丽研究院
 #6 9,17 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东保价
-3 15 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
+3 12,22 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 
 # 京喜购物返红包助力
 1 */6 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
@@ -205,7 +205,7 @@
 # 取关京东店铺商品
 5 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京东试用
-13 16 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
+33 15 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
 #家庭号(易黑号，默认注释)
