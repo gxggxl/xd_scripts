@@ -112,7 +112,7 @@
 # 京东汽车(签到满500赛点可兑换500京豆)
 41 7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
 # 京东汽车旅程赛点兑换金豆
-59 23 * * * sleep 59 && node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
+59 23 * * * sleep 58 && node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
 # 京东赚赚(微信小程序)
 6 0-4/1,11,12 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 赚京豆(微信小程序)
