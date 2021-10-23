@@ -9,7 +9,8 @@
 
 ##############短期活动##############
 # 京东手机狂欢城 (11.13 结束)
-7 0-18/6 * 10-11 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
+13 0-18/6 * 10-11 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
+3 0 * 10-11 * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 #美妆馆选品官
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 # 预售福利机
