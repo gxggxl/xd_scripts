@@ -8,6 +8,8 @@
 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 发财大赢家之翻翻乐
+13,37 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 电竞预言家 (11.6 结束)
 11 1,11 * * * node /scripts/jd_lol.js >> /scripts/logs/jd_lol.log 2>&1
 # 京东手机狂欢城 (11.13 结束)
