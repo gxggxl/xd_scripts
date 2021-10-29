@@ -12,9 +12,6 @@
 # 欧洲狂欢杯 活动时间：###
 0 5,10,11 * * * node /scripts/jd_europeancup.js >> /scripts/logs/jd_europeancup.log 2>&1
 
-# 跳跳乐瓜分京豆(已结束)
-#15 0-23/2 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-
 # 宠汪汪强制为别人助力(旧版.不可用)
 #15 10 * * * node /scripts/jd_joy_help.js >> /scripts/logs/jd_joy_help.log 2>&1
 
