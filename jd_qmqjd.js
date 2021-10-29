@@ -308,7 +308,7 @@ function randomString(e) {
      let t = "abcdefhijkmnprstwxyz2345678",
           a = t.length,
           n = "";
-     for (i = 0; i < e; i++)
+     for (let i = 0; i < e; i++)
           n += t.charAt(Math.floor(Math.random() * a));
      return n
 }
