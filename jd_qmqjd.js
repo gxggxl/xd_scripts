@@ -1,10 +1,11 @@
 /**
- ## 真·抢京豆
+ # 真·抢京豆 #
  更新时间：2021-7-25
  活动时间：10-29 至 11-11
 
  备注：
- - ~~高速并发抢京豆，专治偷助力。设置环境变量angryBeanPins为指定账号助力，默认不助力。~~
+ - 默认 ck1 ck2
+ - 高速并发抢京豆，专治偷助力。
  - 环境变量angryBeanMode可选值priority(优先模式)、smart(智能模式)和speed(极速模式)，默认speed模式。
  - 默认推送通知，如要屏蔽通知需将环境变量enableAngryBeanNotify的值设为false。
 
@@ -23,7 +24,6 @@ const $ = new Env("全民抢京豆")
 const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random()*4+10)}.${Math.ceil(Math.random()*4)};${randomString(40)}`
 const speed = "speed"
 const smart = "smart"
-const angryBeanPins=[];
 var pins =  "";
 
 let cookiesArr = [];
