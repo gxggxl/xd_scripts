@@ -8,6 +8,8 @@
 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 发财挖宝help助力 (11.30 结束)
+7 1,3,7,11,16,20 * 10-11 * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 发财大赢家之翻翻乐
 13,37 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 全民抢京豆(活动时间：10-29 至 11-11)
