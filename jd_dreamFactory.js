@@ -66,7 +66,7 @@ if ($.isNode()) {
     return;
   }
   for (let i = 0; i < cookiesArr.length; i++) {
-    if (cookiesArr[i]) {
+    if (cookiesArr[i]&&i!=1) {//屏蔽ck2
       cookie = cookiesArr[i];
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
       $.index = i + 1;
