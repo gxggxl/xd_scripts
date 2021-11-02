@@ -10,6 +10,8 @@
 ##############短期活动##############
 # 双11特物
 3 9,13,16,19 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
+# 特物Z 活动时间：
+7 8 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 选品官 (11.13 结束)
@@ -21,7 +23,7 @@
 # 京东超级盒子 (11.11 结束)
 13 3,13 * 10-11 * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 # 发财挖宝help助力 (11.30 结束)
-7 1,9,21 * 10-11 * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
+#7 1,9,21 * 10-11 * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 发财大赢家之翻翻乐
 13,37 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 全民抢京豆(活动时间：10-29 至 11-11)
@@ -39,8 +41,6 @@
 3 0,9 20-31,1-3 10-11 * node /scripts/rush_lzdz1_huiju2.js >> /scripts/logs/rush_lzdz1_huiju2.log 2>&1
 # 东东超市抢京豆 活动时间：2021-10-20 至 2021-11-20
 10 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
-# 特物Z 活动时间：
-7 8,9 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 京东小魔方(9.29 24.00 结束)
 13 0,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 魔方兑换 (只兑换5魔方)
