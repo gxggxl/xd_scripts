@@ -77,3 +77,6 @@
 
 # 京东抽奖机
 9 0 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
+
+# 城城领现金
+2 0,5,9,13,17,22 * 10 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
