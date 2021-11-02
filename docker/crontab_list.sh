@@ -79,8 +79,6 @@
 9 0,15 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.log 2>&1
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
 11 1,9,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-# 京东抽奖机
-9 0 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 ##############长期活动##############
 # 签到
 5 7,21 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1

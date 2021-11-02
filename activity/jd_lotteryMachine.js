@@ -11,7 +11,7 @@ cron "11 1 * * *" script-path=jd_lotteryMachine.js,tag=京东抽奖机
 京东抽奖机 = type=cron,cronexp=11 1 * * *,wake-system=1,timeout=20,script-path=jd_lotteryMachine.js
  */
 const $ = new Env('京东抽奖机');
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 const STRSPLIT = "|";
 const needSum = false;            //是否需要显示汇总
 const printDetail = false;        //是否显示出参详情
@@ -85,7 +85,7 @@ function QueryJDUserInfo(timeout = 0) {
           "Connection": "keep-alive",
           "Cookie": cookie,
           "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-          "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+          "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
         }
       }
       $.get(url, (err, resp, data) => {
@@ -314,7 +314,7 @@ function interact_template_getLotteryResult(taskId,timeout = 0) {
 function requireConfig() {
   return new Promise(resolve => {
     //Node.js用户请在jdCookie.js处填写京东ck;
-    const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+    const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
     //IOS等用户直接用NobyDa的jd cookie
     if ($.isNode()) {
       Object.keys(jdCookieNode).forEach((item) => {
