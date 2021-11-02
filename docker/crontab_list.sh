@@ -8,6 +8,8 @@
 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 跳跳乐瓜分京豆(11.01-11.11)
+15 */2 20-27 9 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 选品官 (11.13 结束)
 21 2,11 1-13 11 * node /scripts/jd_xpg.js >> /scripts/logs/jd_xpg.log 2>&1
 # 双11星推官 (11.10 结束)

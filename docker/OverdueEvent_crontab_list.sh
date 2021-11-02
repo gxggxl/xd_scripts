@@ -69,9 +69,6 @@
 # 超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
 1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 
-# 跳跳乐瓜分京豆(9.13-9.19)
-15 */2 20-27 9 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-
 # 京小鸽吾悦寄 (9.30 结束)
 9 1,13 1-30 9 * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
 
