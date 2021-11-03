@@ -37,8 +37,6 @@
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 # 预售福利机
 7 0,2 * 10-11 * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
-# 惠聚京东 好物连连 10-20 ~ 11-3
-3 0,9 20-31,1-3 10-11 * node /scripts/rush_lzdz1_huiju2.js >> /scripts/logs/rush_lzdz1_huiju2.log 2>&1
 # 东东超市抢京豆 活动时间：2021-10-20 至 2021-11-20
 10 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 京东小魔方(9.29 24.00 结束)
