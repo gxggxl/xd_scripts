@@ -11,7 +11,7 @@
 # 手机竞猜 (2021年10月31日20:00:00-2021年11月10日 23:59:59 )
 6 0,7,17 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
 # 双11特物
-3 9,13,16,19 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
+3 9,13,16,19,20 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
 # 特物Z 活动时间：
 7 8 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
