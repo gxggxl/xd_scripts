@@ -85,7 +85,7 @@
 # 领券中心签到
 7 0,6,18 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 # 积分换话费
-13 6,18 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
+13 6,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 # 升级赚京豆
 9 0,10 * * * node /scripts/jd_sjzjd.js >> /scripts/logs/jd_sjzjd.log 2>&1
 # 东东世界
@@ -119,7 +119,8 @@
 # 京东日资产变动
 0 12,22 * * *  node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
 # 京东月资产变动 在每个月最后一天
-45 22 28-31 * * [ "$(TZ=IST-32 date +%e)" -eq 1 ] && node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
+45 8 1 * * node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
+#45 22 28-31 * * [ "$(TZ=IST-32 date +%e)" -eq 1 ] && node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 # 京东秒秒币
 10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 京东全民开红包
