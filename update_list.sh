@@ -27,8 +27,8 @@ Sheet=$SheetHead
 # 循环 Array
 for jsFileName in "${JsList[@]}"; do
   Name=$(grep -E "new Env|Env" "$jsFileName" | awk -F "['\"]" '{print $2}' | sed 's/\|/\&/g' | head -1)
-  Entry=$(grep -E "^( *|\*|\*.|\ \*\ )活动入口" "$jsFileName" | awk -F "：|: " '{print $2}' | head -1)
-  [[ -z $Entry ]] || [[ $Entry == 暂无 ]] && Entry=$(grep -E "^( *|\*|\*.|\ \*\ )活动地址" "$jsFileName" | awk -F "：|: " '{print $2}' | head -1)
+  Entry=$(grep -E "^( *|\*|\*.|\s+\*\s+)活动入口" "$jsFileName" | awk -F "：|: " '{print $2}' | head -1)
+  [[ -z $Entry ]] || [[ $Entry == 暂无 ]] && Entry=$(grep -E "^( *|\*|\*.|\s+\*\s+)活动地址" "$jsFileName" | awk -F "：|: " '{print $2}' | head -1)
   [[ $Entry == http* ]] && Entry="[活动地址]($Entry)"
   Raw="$UrlRaw$jsFileName"
   #  Sheet="$Sheet\n| $(((a++)+1)) | [$jsFileName]($Raw) | $Name | $Entry |"
