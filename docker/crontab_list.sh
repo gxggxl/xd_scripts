@@ -140,7 +140,7 @@
 # 京东赚赚(微信小程序)
 6 0-4/1,11,12 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 赚京豆(微信小程序)
-25 0,9,18,23 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
+23 1,9,18,23 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 口袋书店
 20 8,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
 # 闪购盲盒
