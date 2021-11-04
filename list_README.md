@@ -5,7 +5,7 @@
 | 文件 | 名称 | 活动入口 |
 | --- | --- | --- |
 | [jd_1111superBrand.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_1111superBrand.js) | 双11特务 |  |
-| [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 |  |
+| [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 | 东东农场 - 东东乐园 - 电竞经理 |
 | [jd_aid_ftzy.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_aid_ftzy.js) |  |  |
 | [jd_all_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_all_bean_change.js) | 京东月资产变动通知 |  |
 | [jd_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change.js) | 京东日资产变动 |  |
