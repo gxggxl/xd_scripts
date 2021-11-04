@@ -2,7 +2,7 @@
 
 共有 **114** 个文件
 
-| 文件 | 名称 | 活动入口 ｜ 活动时间 |
+| 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
 | [jd_1111superBrand.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_1111superBrand.js) | 双11特务 |  |  |
 | [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 | 东东农场 - 东东乐园 - 电竞经理 | 长期 |
