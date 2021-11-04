@@ -1,24 +1,24 @@
 /**
- # 真·抢京豆 #
- 更新时间：2021-7-25
- 活动时间：10-29 至 11-11
+# 真·抢京豆
+活动时间：10月-29日 至 11月-11日
+更新时间：2021-7-25
 
- 备注：
- - 默认 ck1 ck2
- - 高速并发抢京豆，专治偷助力。
- - 环境变量angryBeanMode可选值priority(优先模式)、smart(智能模式)和speed(极速模式)，默认speed模式。
- - 默认推送通知，如要屏蔽通知需将环境变量enableAngryBeanNotify的值设为false。
+备注：
+- 默认 ck1 ck2
+- 高速并发抢京豆，专治偷助力。
+- 环境变量angryBeanMode可选值priority(优先模式)、smart(智能模式)和speed(极速模式)，默认speed模式。
+- 默认推送通知，如要屏蔽通知需将环境变量enableAngryBeanNotify的值设为false。
 
- ```text
- TG学习交流群：https://t.me/cdles
- 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryBean.js
- ```
+```text
+TG学习交流群：https://t.me/cdles
+0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryBean.js
+```
 
- 推选 CRON
- ```bash
- # 全民抢京豆(活动时间：10-29 至 11-11)
- 1 0,1 * * * node /scripts/jd_qmqjd.js >> /scripts/logs/jd_qmqjd.log 2>&1
- ```
+推选 CRON
+```bash
+# 全民抢京豆(活动时间：10-29 至 11-11)
+1 0,1 * * * node /scripts/jd_qmqjd.js >> /scripts/logs/jd_qmqjd.log 2>&1
+```
 */
 const $ = new Env("全民抢京豆")
 const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random()*4+10)}.${Math.ceil(Math.random()*4)};${randomString(40)}`
