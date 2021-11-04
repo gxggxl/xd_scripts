@@ -116,13 +116,22 @@ async function showMsg() {
         else if ($.levelName == "钻石")
             $.levelName = `💎钻石`;
 
-        if ($.isPlusVip == 1)
-            ReturnMessage += `${$.levelName}Plus,`;
-        else
-            ReturnMessage += `${$.levelName}会员,`;
+        if ($.isPlusVip == 1) {
+            if ($.JingXiang) {
+                ReturnMessage += `${$.levelName}Plus,`;
+                ReturnMessage += ` ${$.JingXiang}\n`;
+            } else {
+                ReturnMessage += `${$.levelName}Plus\n`;
+            }
+        } else {
+            if ($.JingXiang) {
+                ReturnMessage += `${$.levelName}会员,`;
+                ReturnMessage += ` ${$.JingXiang}\n`;
+            } else {
+                ReturnMessage += `${$.levelName}会员\n`;
+            }
+        }
     }
-
-    if ($.JingXiang) ReturnMessage += ` ${$.JingXiang}\n`;
 
     ReturnMessage += `🥔今日收支：${$.todayIncomeBean}京豆 🐶 - ${$.todayOutcomeBean}京豆\n`;
     ReturnMessage += `🥔昨日收支：${$.incomeBean}京豆 🐶 - ${$.expenseBean}京豆\n`;
