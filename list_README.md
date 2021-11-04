@@ -85,7 +85,7 @@
 | [jd_pigPet.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_pigPet.js) | 金融养猪 | 京东金融养猪猪 |  |
 | [jd_plantBean.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_plantBean.js) | 京东种豆得豆 | 京东APP我的-更多工具-种豆得豆 |  |
 | [jd_price.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_price.js) | 京东保价 |  |  |
-| [jd_qmqjd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_qmqjd.js) | 全民抢京豆 |  | 10-29 至 11-11 |
+| [jd_qmqjd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_qmqjd.js) | 全民抢京豆 |  | 10月-29日 至 11月-11日 |
 | [jd_rankingList.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_rankingList.js) | 京东排行榜 | 京东APP首页-更多频道-排行榜-悬浮按钮 |  |
 | [jd_redPacket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_redPacket.js) | 京东全民开红包 | 京东APP首页-领券-锦鲤红包。[活动地址](https://happy.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html) |  |
 | [jd_selectionOfficer.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_selectionOfficer.js) | 选品官 |  |  |
