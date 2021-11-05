@@ -66,7 +66,7 @@
 # 女装盲盒 活动时间：2021-08-05到2021-10-31
 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 # 京喜领88元红包(9.30结束)
-0 0,12,21 * 7-10 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
+3 1,8,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 # 京东极速版红包(活动时间：2021-5-5至2021-8-31)
 11 0,10,16 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 # 金榜创造营 活动时间：2021-05-21至2021-12-31
