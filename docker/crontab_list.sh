@@ -11,7 +11,7 @@
 # 双11红包
 0 10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
 # 电器盲盒抽京豆 (11.20?)
-0 1,8 1-20 11 * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
+0 1,8 * * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
 # 电器盲盒抽京豆 (11.30?)
 13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 # 手机竞猜 (2021年10月31日20:00:00-2021年11月10日 23:59:59 )
