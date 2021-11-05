@@ -10,12 +10,14 @@
 ##############短期活动##############
 # 双11红包
 0 10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
-# 电器盲盒抽京豆 (11.20)
+# 电器盲盒抽京豆 (11.20?)
 0 1,8 1-20 11 * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
+# 电器盲盒抽京豆 (11.30?)
+13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
+# 手机竞猜 (2021年10月31日20:00:00-2021年11月10日 23:59:59 )
+0,20 0,5 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
 # 牛牛福利
 1 0,9,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
-# 手机竞猜 (2021年10月31日20:00:00-2021年11月10日 23:59:59 )
-6 0,7,17 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
 # 双11特物
 3 9,13,15,16,19 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
 # 特物Z 活动时间：

@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **114** 个文件
+共有 **115** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -108,6 +108,7 @@
 | [jd_ttpt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ttpt.js) | 天天拼图 | 京东金融APP-签到-天天拼图 |  |
 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |  |
 | [jd_unsubscribe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscribe.js) | 取关京东店铺和商品 |  |  |
+| [jd_vivo.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_vivo.js) | Phone狂制噪吧 |  |  |
 | [jd_wish.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wish.js) | 众筹许愿池 | 京东-京东众筹-众筹许愿池 |  |
 | [jd_work_validate.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_work_validate.js) |  |  |  |
 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |  |
