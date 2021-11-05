@@ -1,18 +1,18 @@
 /**
- * cron "30 10,22 * * *" jd_bean_change.js, tag:资产变化强化版
- * 原版链接 https://github.com/ccwav/QLScript/blob/main/jd_bean_change.js
- * 支持环境变量控制每次发送的账号个数，默认为2
- * 环境变量为 export JD_BEAN_CHANGE_SENDNUM=3
+ 京东日资产变动
+ 30 10,22 * * * jd_bean_change.js
+ 添加环境变量，支持控制每次推送信息的账号个数，默认为 2 个
+ 环境变量为 export JD_BEAN_CHANGE_SENDNUM=3
  */
-const $ = new Env('京东日资产变动');
+const $ = new Env('京东资产变动(日)');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
+const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let cookiesArr = [], cookie = '';
 let allMessage = '';
 let ReturnMessage = '';
-const JD_API_HOST = 'https://api.m.jd.com/client.action';
 $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
 $.sendNum = process.env.JD_BEAN_CHANGE_SENDNUM * 1 || 2;
 $.sentNum = 0;
@@ -97,7 +97,7 @@ if ($.isNode()) {
 async function showMsg() {
     if ($.errorMsg) return
     //ReturnMessage=`📣=============账号${$.index}=============📣\n`
-    ReturnMessage = `👤账号名称：${$.nickName || $.UserName} [账号${$.index}]\n`;
+    ReturnMessage = `👤账号名称：${$.nickName || $.UserName}\n`;
 
     if ($.levelName || $.JingXiang) {
         ReturnMessage += `✉️账号信息：`;
@@ -131,7 +131,7 @@ async function showMsg() {
     ReturnMessage += `🥔今日收支：${$.todayIncomeBean}京豆 🐶 - ${$.todayOutcomeBean}京豆\n`;
     ReturnMessage += `🥔昨日收支：${$.incomeBean}京豆 🐶 - ${$.expenseBean}京豆\n`;
     ReturnMessage += `🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
-    ReturnMessage += `🧧共计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
+    ReturnMessage += `🧧红包总额：${$.balance}(今日总过期${$.expiredBalance})元\n`
     if ($.jdRed != "0.00") ReturnMessage += `🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元\n`;
     if ($.jxRed != "0.00") ReturnMessage += `🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n`;
     if ($.jsRed != "0.00") ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
@@ -191,16 +191,16 @@ async function showMsg() {
     allMessage += ReturnMessage;
 
     console.log(`[京东账号${$.index} ${$.UserName}] 结束`)
-    $.msg($.name, '', ReturnMessage, {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
+    $.msg(`${$.name}[账号${$.index}]`, '', ReturnMessage, {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
     if ($.isNode()) {
         if ($.index % $.sendNum === 0) {
             $.sentNum++;
             console.log(`正在进行第 ${$.sentNum} 次发送通知，推送的账号数量为 ${$.sendNum} 个`)
-            await notify.sendNotify(`${$.name}`, `${allMessage}`, {url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`})
+            await notify.sendNotify(`${$.name}[账号${$.index}]`, `${allMessage}`, {url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`})
             allMessage = ""
         } else if ((cookiesArr.length - ($.sentNum * $.sendNum)) < $.sendNum) {
             console.log(`正在进行最后一次发送通知，推送的账号数量为 ${(cookiesArr.length - ($.sentNum * $.sendNum))} 个`)
-            await notify.sendNotify(`${$.name}`, `${allMessage}`, {url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`})
+            await notify.sendNotify(`${$.name}[账号${$.index}]`, `${allMessage}`, {url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`})
             allMessage = ""
         }
     }
