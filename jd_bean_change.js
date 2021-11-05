@@ -131,7 +131,11 @@ async function showMsg() {
     ReturnMessage += `🥔今日收支：${$.todayIncomeBean}京豆 🐶 - ${$.todayOutcomeBean}京豆\n`;
     ReturnMessage += `🥔昨日收支：${$.incomeBean}京豆 🐶 - ${$.expenseBean}京豆\n`;
     ReturnMessage += `🥔当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆\n`;
-    ReturnMessage += `🧧总计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
+    ReturnMessage += `🧧共计红包：${$.balance}(今日总过期${$.expiredBalance})元\n`
+    if ($.jdRed != "0.00") ReturnMessage += `🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元\n`;
+    if ($.jxRed != "0.00") ReturnMessage += `🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n`;
+    if ($.jsRed != "0.00") ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
+    if ($.jdhRed != "0.00") ReturnMessage += `🧧健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元\n`;
     if ($.TotalMoney !== 0) {
         ReturnMessage += `💴签到现金：${$.TotalMoney}元\n`;
     }
@@ -144,11 +148,6 @@ async function showMsg() {
     if (typeof $.JDtotalcash !== "undefined") {
         ReturnMessage += `💰极速金币：${$.JDtotalcash}金币(≈${$.JDtotalcash / 10000}元)\n`;
     }
-    if ($.jdRed != "0.00") ReturnMessage += `🧧京东红包：${$.jdRed}(今日将过期${$.jdRedExpire.toFixed(2)})元\n`;
-    if ($.jxRed != "0.00") ReturnMessage += `🧧京喜红包：${$.jxRed}(今日将过期${$.jxRedExpire.toFixed(2)})元\n`;
-    if ($.jsRed != "0.00") ReturnMessage += `🧧极速红包：${$.jsRed}(今日将过期${$.jsRedExpire.toFixed(2)})元\n`;
-    if ($.jdhRed != "0.00") ReturnMessage += `🧧健康红包：${$.jdhRed}(今日将过期${$.jdhRedExpire.toFixed(2)})元\n`;
-
     if (typeof $.JDEggcnt !== "undefined") {
         ReturnMessage += `🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
     }
