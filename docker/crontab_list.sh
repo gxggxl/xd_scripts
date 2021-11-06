@@ -8,6 +8,8 @@
 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 
 ##############短期活动##############
+# 京东饭粒
+46 9 * * * python3 /scripts/jd_fanli.py >> /scripts/logs/jd_fanli.log 2>&1
 # 环游记大富翁 (11.11)
 3 3 1-11 11 * node /scripts/jd_travel_shop.js >> /scripts/logs/jd_travel_shop.log 2>&1
 # 双11红包
