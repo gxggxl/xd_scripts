@@ -134,7 +134,7 @@
 # 京东秒秒币
 10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 京东全民开红包
-1 2,13,23 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
+#1 2,13,23 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 # 进店领豆
 0 0,12 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 # 京东排行榜
