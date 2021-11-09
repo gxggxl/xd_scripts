@@ -99,7 +99,7 @@
 # 东东世界兑换
 3 0,15 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
 #店铺浏览任务
-25 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
+#25 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
 # 京喜签到
 3 0,6,12 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 领京豆额外奖励(每日可获得3京豆)
