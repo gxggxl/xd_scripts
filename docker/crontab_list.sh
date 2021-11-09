@@ -62,7 +62,7 @@
 # 明星小店(星店长)9.18-10.9
 5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 # 内容鉴赏官 (9.30 结束，10月继续开启)
-11 1,5 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
+11 8,18 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 # 送豆得豆
 15 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 小鸽有礼 - 每日抽奖(活动时间：2021-05-01至2021-05-31)
