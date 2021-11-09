@@ -98,6 +98,8 @@
 13 1,9,15 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 # 东东世界兑换
 3 0,15 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
+#店铺浏览任务
+25 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
 # 京喜签到
 3 0,6,12 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 领京豆额外奖励(每日可获得3京豆)
@@ -181,7 +183,7 @@
 # 宠汪汪偷好友积分与狗粮
 3 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
 # 宠汪汪积分兑换京豆
-#0 8,16,0 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+0 8,16,0 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
 # 京喜工厂
 13 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜牧场
