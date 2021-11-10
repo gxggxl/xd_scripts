@@ -25,6 +25,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const jsdom = $.isNode() ? require('jsdom') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message, allMessage = '';
+
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -39,6 +40,7 @@ const JD_API_HOST = 'https://api.m.jd.com/';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
+  await jstoken();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -49,7 +51,7 @@ const JD_API_HOST = 'https://api.m.jd.com/';
       $.token = ''
       message = '';
       await TotalBean();
-      console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
 
@@ -76,7 +78,7 @@ const JD_API_HOST = 'https://api.m.jd.com/';
 async function price() {
   let num = 0
   do {
-    await jstoken();
+    $.token = $.jab.getToken() || ''
     if ($.token) {
       await siteppM_skuOnceApply();
     }
@@ -88,10 +90,10 @@ async function price() {
 async function siteppM_skuOnceApply() {
   let body = {
     sid: "",
-    type: "3",
+    type: "25",
     forcebot: "",
     token: $.token,
-    feSt: "s"
+    feSt: $.token ? "s" : "f"
   }
   return new Promise(async resolve => {
     $.post(taskUrl("siteppM_skuOnceApply", body), async (err, resp, data) => {
@@ -103,7 +105,7 @@ async function siteppM_skuOnceApply() {
           if (safeGet(data)) {
             data = JSON.parse(data)
             if (data.flag) {
-              await $.wait(8 * 1000)
+              await $.wait(25 * 1000)
               await siteppM_appliedSuccAmount()
             } else {
               console.log(`保价失败：${data.responseMessage}`)
@@ -119,15 +121,15 @@ async function siteppM_skuOnceApply() {
     })
   })
 }
-function siteppM_appliedSuccAmount() {
+async function siteppM_appliedSuccAmount() {
   let body = {
     sid: "",
-    type: "3",
+    type: "25",
     forcebot: "",
     num: 15
   }
-  return new Promise(resolve => {
-    $.post(taskUrl("siteppM_appliedSuccAmount", body), (err, resp, data) => {
+  return new Promise(async resolve => {
+    $.post(taskUrl("siteppM_appliedSuccAmount", body), async (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
@@ -138,6 +140,12 @@ function siteppM_appliedSuccAmount() {
             if (data.flag) {
               console.log(`保价成功：返还${data.succAmount}元`)
               message += `保价成功：返还${data.succAmount}元\n`
+
+              let the_msg = `本次保价成功：返还${data.succAmount}元`
+              if ($.isNode()) {
+                await notify.sendNotify(`${$.name}`, `【京东账号${$.index}】${$.nickName || $.UserName}\n${the_msg}`);
+              }
+
             } else {
               console.log(`保价失败：没有可保价的订单`)
             }
@@ -155,30 +163,53 @@ function siteppM_appliedSuccAmount() {
 async function jstoken() {
   const { JSDOM } = jsdom;
   let resourceLoader = new jsdom.ResourceLoader({
-      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0',
-      referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu",
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0',
+    referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu"
   });
   let virtualConsole = new jsdom.VirtualConsole();
-  var options = {
-      referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu",
-      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0',
-      runScripts: "dangerously",
-      resources: resourceLoader,
-      includeNodeLocations: true,
-      storageQuota: 10000000,
-      pretendToBeVisual: true,
-      virtualConsole
+  let options = {
+    url: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu",
+    referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu",
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0',
+    runScripts: "dangerously",
+    resources: resourceLoader,
+    includeNodeLocations: true,
+    storageQuota: 10000000,
+    pretendToBeVisual: true,
+    virtualConsole
   };
-  let dom = new JSDOM(`<body><script src="https://js-nocaptcha.jd.com/statics/js/main.min.js"></script></body>`, options);
-  await $.wait(1000)
+  const { window } = new JSDOM(``, options);
+  const jdPriceJs = await downloadUrl("https://js-nocaptcha.jd.com/statics/js/main.min.js")
   try {
-    feSt = 's'
-    jab = new dom.window.JAB({
+    window.eval(jdPriceJs)
+    window.HTMLCanvasElement.prototype.getContext = () => {
+      return {};
+    };
+    $.jab = new window.JAB({
       bizId: 'jdjiabao',
       initCaptcha: false
     })
-    $.token = jab.getToken() || ''
   } catch (e) {}
+}
+
+function downloadUrl(url) {
+  return new Promise(resolve => {
+    const options = { url, "timeout": 10000 };
+    $.get(options, async (err, resp, data) => {
+      let res = null
+      try {
+        if (err) {
+          console.log(`⚠️网络请求失败`);
+        } else {
+          res = data;
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(res);
+      }
+    })
+  })
 }
 
 function showMsg() {
@@ -186,7 +217,7 @@ function showMsg() {
     if (message) {
       allMessage += `【京东账号${$.index}】${$.nickName || $.UserName}\n${message}${$.index !== cookiesArr.length ? '\n\n' : '\n\n'}`;
     }
-    //$.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
+    //$.msg($.name, '', `【京东账号${$.index}】${$.nickName || $.UserName}\n${message}`);
     resolve()
   })
 }
@@ -210,18 +241,16 @@ function taskUrl(functionId, body) {
 }
 
 function TotalBean() {
-  return new Promise(async resolve => {
+  return new Promise(resolve => {
     const options = {
-      url: "https://wq.jd.com/user_new/info/GetJDUserInfoUnion?sceneval=2",
+      url: "https://me-api.jd.com/user_new/info/GetJDUserInfoUnion",
       headers: {
-        Host: "wq.jd.com",
-        Accept: "*/*",
-        Connection: "keep-alive",
-        Cookie: cookie,
-        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
-        "Accept-Language": "zh-cn",
-        "Referer": "https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&",
-        "Accept-Encoding": "gzip, deflate, br"
+        "Host": "me-api.jd.com",
+        "Accept": "*/*",
+        "User-Agent": "ScriptableWidgetExtension/185 CFNetwork/1312 Darwin/21.0.0",
+        "Accept-Language": "zh-CN,zh-Hans;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Cookie": cookie
       }
     }
     $.get(options, (err, resp, data) => {
@@ -231,11 +260,11 @@ function TotalBean() {
         } else {
           if (data) {
             data = JSON.parse(data);
-            if (data['retcode'] === 1001) {
+            if (data['retcode'] === "1001") {
               $.isLogin = false; //cookie过期
               return;
             }
-            if (data['retcode'] === 0 && data.data && data.data.hasOwnProperty("userInfo")) {
+            if (data['retcode'] === "0" && data.data && data.data.hasOwnProperty("userInfo")) {
               $.nickName = data.data.userInfo.baseInfo.nickname;
             }
           } else {
@@ -243,9 +272,9 @@ function TotalBean() {
           }
         }
       } catch (e) {
-        $.logErr(e)
+        $.logErr(e, resp)
       } finally {
-        resolve();
+        resolve()
       }
     })
   })
