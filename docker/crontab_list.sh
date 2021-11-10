@@ -26,8 +26,6 @@
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 选品官 (11.13 结束)
 21 2,11 1-13 11 * node /scripts/jd_xpg.js >> /scripts/logs/jd_xpg.log 2>&1
-# 双11星推官 (11.10 结束)
-21 3,4,15 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
 # 潮玩儿制躁团 (11.14 结束)
 7 9,20 * 10-11 * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
 # 京东超级盒子 (11.11 结束)
