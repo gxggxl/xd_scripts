@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **114** 个文件
+共有 **113** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -66,7 +66,6 @@
 | [jd_jxnc.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxnc.js) | 京喜农场 | 京喜APP我的-京喜农场 |  |
 | [jd_jxqd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxqd.js) | 京喜签到 | 京喜APP-我的-京喜签到 |  |
 | [jd_jxred.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxred.js) | 双11红包 |  |  |
-| [jd_jxzpk.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxzpk.js) | 京享值PK | 京东-我的-京享值-京享值pk | 6.22-7.21 |
 | [jd_kd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_kd.js) | 京东快递签到 | [活动地址](https://jingcai-h5.jd.com/#/) |  |
 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |  |
 | [jd_lol.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lol.js) | 电竞预言家 |  |  |
