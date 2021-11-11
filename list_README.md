@@ -1,11 +1,10 @@
 # 脚本列表
 
-共有 **113** 个文件
+共有 **112** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
 | [jd_Elecsport.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_Elecsport.js) | 东东电竞经理 | 东东农场 - 东东乐园 - 电竞经理 | 长期 |
-| [jd_aid_ftzy.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_aid_ftzy.js) |  |  |  |
 | [jd_all_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_all_bean_change.js) | 京东月资产变动通知 |  |  |
 | [jd_bean_change.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_change.js) | 京东资产变动(日) |  |  |
 | [jd_bean_home.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bean_home.js) | 领京豆额外奖励 | 京东APP首页-领京豆 |  |
@@ -42,6 +41,7 @@
 | [jd_dwapp.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dwapp.js) | 积分换话费 |  |  |
 | [jd_exchange_joy.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchange_joy.js) |  |  |  |
 | [jd_family.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_family.js) | 京东家庭号 | 玩一玩-家庭号 |  |
+| [jd_fanli.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fanli.js) | 饭粒 |  |  |
 | [jd_fcwb.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fcwb.js) | 发财挖宝 |  |  |
 | [jd_fission.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fission.js) | 东东超市抢京豆 |  | 2021-10-20 至 2021-11-20 |
 | [jd_fruit.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fruit.js) | 东东农场 | 京东APP我的-更多工具-东东农场 |  |
@@ -102,7 +102,6 @@
 | [jd_star_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_star_shop.js) | 明星小店 |  |  |
 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |  |
 | [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序) |  |
-| [jd_travel_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_travel_shop.js) | 双11环游记大富翁 |  |  |
 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |  |
 | [jd_ttpt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ttpt.js) | 天天拼图 | 京东金融APP-签到-天天拼图 |  |
 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |  |
