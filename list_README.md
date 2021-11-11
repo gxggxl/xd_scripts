@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **112** 个文件
+共有 **110** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -15,8 +15,6 @@
 | [jd_bookshop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_bookshop.js) | 口袋书店 | 京东app首页-京东图书-右侧口袋书店 |  |
 | [jd_car.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_car.js) | 京东汽车 | 京东APP首页-京东汽车-屏幕右中部，车主福利 |  |
 | [jd_car_exchange.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_car_exchange.js) | 京东汽车兑换 | 京东APP首页-京东汽车-屏幕右中部，车主福利 |  |
-| [jd_carnivalcity.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_carnivalcity.js) | 京东手机狂欢城 | 暂无 [活动地址](https://carnivalcity.m.jd.com) | 2021-9-23至2021-11-13 |
-| [jd_carnivalcity_help.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_carnivalcity_help.js) | 京东手机狂欢城助力 | 暂无 [活动地址](https://carnivalcity.m.jd.com/) | 2021-10-23至2021-11-13 |
 | [jd_cash.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cash.js) | 签到领现金 | 京东APP搜索领现金进入 |  |
 | [jd_ccSign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ccSign.js) | 领券中心签到 | 领券中心 |  |
 | [jd_cfd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd.js) | 京喜财富岛 |  |  |
