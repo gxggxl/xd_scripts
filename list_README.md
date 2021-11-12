@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **110** 个文件
+共有 **109** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -109,7 +109,6 @@
 | [jd_work_validate.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_work_validate.js) |  |  |  |
 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |  |
 | [jd_xpg.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_xpg.js) | 选品官 |  |  |
-| [jd_ys.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ys.js) | 预售福利机 | [活动地址](https://prodev.m.jd.com/mall/active/3QvpPkepEuB5hRgtQvWJ2bjRTCA8/index.html) |  |
 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |  |
 | [jd_zsign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zsign.js) | 芥末签到 |  |  |
 | [jd_zzt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zzt.js) | 潮玩儿制躁团 |  |  |
