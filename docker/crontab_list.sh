@@ -14,7 +14,7 @@
 0 0,10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
 # 电器盲盒抽京豆 (11.20?)
 0 1,8 * * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
-# 电器盲盒抽京豆 (11.30?)
+# Phone狂制噪吧 (11.30?)
 13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 # 手机竞猜 (2021年10月31日20:00:00-2021年11月10日 23:59:59 )
 0,20 0,5 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
