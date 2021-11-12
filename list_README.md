@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **107** 个文件
+共有 **106** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -19,7 +19,6 @@
 | [jd_ccSign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ccSign.js) | 领券中心签到 | 领券中心 |  |
 | [jd_cfd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd.js) | 京喜财富岛 |  |  |
 | [jd_cfd_help.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd_help.js) | 财富岛互助 |  |  |
-| [jd_cjhz.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cjhz.js) | 京东超级盒子 | 京东APP-搜索-超级盒子 |  |
 | [jd_ckcheck.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ckcheck.js) | Cookie检查 |  |  |
 | [jd_club_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_club_lottery.js) | 摇京豆 | 京东APP首页-领京豆-摇京豆/京东APP首页-我的-京东会员-摇京豆 |  |
 | [jd_connoisseur.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_connoisseur.js) | 寻找内容鉴赏官 |  |  |

@@ -98,3 +98,6 @@
 
 # 双11红包
 0 0,10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
+
+# 京东超级盒子 (11.11 结束)
+13 3,13 * 10-11 * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
