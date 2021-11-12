@@ -83,8 +83,6 @@
 
 # 双11特物
 3 9,13,15,16,19 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
-# 特物Z 活动时间：
-5 20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 
 # 京东手机狂欢城 (11.13 结束)
 13 0-18/6 * 10-11 * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1

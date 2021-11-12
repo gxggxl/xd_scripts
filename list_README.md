@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **106** 个文件
+共有 **107** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@
 | [jd_cash.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cash.js) | 签到领现金 | 京东APP搜索领现金进入 |  |
 | [jd_ccSign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ccSign.js) | 领券中心签到 | 领券中心 |  |
 | [jd_cfd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd.js) | 京喜财富岛 |  |  |
-| [jd_cfd_help.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd_help.js) | 财富岛互助 |  |  |
+| [jd_cfd_help.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd_help.js) | 财富大陆互助 |  |  |
 | [jd_ckcheck.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ckcheck.js) | Cookie检查 |  |  |
 | [jd_club_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_club_lottery.js) | 摇京豆 | 京东APP首页-领京豆-摇京豆/京东APP首页-我的-京东会员-摇京豆 |  |
 | [jd_connoisseur.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_connoisseur.js) | 寻找内容鉴赏官 |  |  |
@@ -95,6 +95,7 @@
 | [jd_speed_redpocke.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_redpocke.js) | 京东极速版红包 | 京东极速版-领红包 | 2021-4-6至2021-5-30 |
 | [jd_speed_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed_sign.js) | 京东极速版 | 京东极速版app-现金签到 | 长期 |
 | [jd_star_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_star_shop.js) | 明星小店 |  |  |
+| [jd_superBrand.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superBrand.js) | 特务Z |  |  |
 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |  |
 | [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序) |  |
 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |  |
