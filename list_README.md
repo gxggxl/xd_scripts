@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **109** 个文件
+共有 **108** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -66,7 +66,6 @@
 | [jd_jxred.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_jxred.js) | 双11红包 |  |  |
 | [jd_kd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_kd.js) | 京东快递签到 | [活动地址](https://jingcai-h5.jd.com/#/) |  |
 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |  |
-| [jd_lol.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lol.js) | 电竞预言家 |  |  |
 | [jd_lsj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lsj.js) | 零食街 |  |  |
 | [jd_market_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_market_lottery.js) | 幸运大转盘 | [活动地址](https://pro.m.jd.com/mall/active/3ryu78eKuLyY5YipWWVSeRQEpLQP/index.html) |  |
 | [jd_mf.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mf.js) | 京东小魔方 |  |  |

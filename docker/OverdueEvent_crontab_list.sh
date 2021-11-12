@@ -92,3 +92,6 @@
 
 # 预售福利机
 7 0,2 * 10-11 * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
+
+# 电竞预言家 (11.6 结束)
+11 1,11 * * * node /scripts/jd_lol.js >> /scripts/logs/jd_lol.log 2>&1

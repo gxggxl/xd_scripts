@@ -34,8 +34,6 @@
 13 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 全民抢京豆(活动时间：10-29 至 11-11)
 1 0,1 * * * node /scripts/jd_qmqjd.js >> /scripts/logs/jd_qmqjd.log 2>&1
-# 电竞预言家 (11.6 结束)
-11 1,11 * * * node /scripts/jd_lol.js >> /scripts/logs/jd_lol.log 2>&1
 #美妆馆选品官
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 # 东东超市抢京豆 活动时间：2021-10-20 至 2021-11-20
