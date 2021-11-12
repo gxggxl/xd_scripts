@@ -95,3 +95,6 @@
 
 # 电竞预言家 (11.6 结束)
 11 1,11 * * * node /scripts/jd_lol.js >> /scripts/logs/jd_lol.log 2>&1
+
+# 双11红包
+0 0,10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1

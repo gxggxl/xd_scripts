@@ -10,8 +10,6 @@
 ##############短期活动##############
 # 京东饭粒
 5 0,5,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
-# 双11红包
-0 0,10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
 # 电器盲盒抽京豆 (11.20?)
 0 1,8 * * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
 # Phone狂制噪吧 (11.30?)

@@ -4,8 +4,8 @@ cron 0 10,12,20 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/
 返利变量：FLCODE，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量FLCODE；例：FLCODE="你的返利code"
 * */
 const $ = new Env('双11红包');
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const notify = $.isNode() ? require('./sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : '3MxMafB'):'3MxMafB';
 let cookiesArr = [];
 if ($.isNode()) {
@@ -281,7 +281,7 @@ async function getInfo1(cookie){
     })
 }
 const navigator = {
-    userAgent: require('./USER_AGENTS').USER_AGENT,
+    userAgent: require('../USER_AGENTS').USER_AGENT,
     plugins: { length: 0 },
     language: "zh-CN",
 };
@@ -2358,7 +2358,7 @@ function TotalBean() {
                 "Connection": "keep-alive",
                 "Cookie": cookie,
                 "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
             }
         }
         $.post(options, (err, resp, data) => {
