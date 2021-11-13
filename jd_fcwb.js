@@ -10,7 +10,7 @@ const $ = new Env('发财挖宝');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
-let link = `yCcpwTLIbY6pjaM42ACUVg`;
+let link = `pTTvJeSTrpthgk9ASBVGsw`;
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -33,7 +33,7 @@ let fcwbinviteCode = "";
     }
     console.log(`\n注意：本脚本暂时只会执行助力，助力后，请手动进活动进行游戏（发财挖宝: 入口,极速版-》我的-》发财挖宝）\n`)
     let res = [];
-    try {
+/*    try {
         res = await getAuthorShareCode('https://raw.githubusercontent.com/lsh26/share_code/main/fcwb.json');
     } catch (e) {
     }
@@ -45,7 +45,7 @@ let fcwbinviteCode = "";
         if (!res) {
             res = [];
         }
-    }
+    }*/
     if(res.length > 0){
         let actCodeInfo = getRandomArrayElements(res,1)[0];
         fcwbinviter = actCodeInfo.fcwbinviter;
