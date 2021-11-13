@@ -33,10 +33,18 @@ let fcwbinviteCode = "";
     }
     console.log(`\n注意：本脚本暂时只会执行助力，助力后，请手动进活动进行游戏（发财挖宝: 入口,极速版-》我的-》发财挖宝）\n`)
     let res = [];
-    try{res = await getAuthorShareCode('https://raw.githubusercontent.com/lsh26/share_code/main/fcwb.json');}catch (e) {}
-    if(!res){
-        try{res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/lsh26/share_code@main/fcwb.json');}catch (e) {}
-        if(!res){res = [];}
+    try {
+        res = await getAuthorShareCode('https://raw.githubusercontent.com/lsh26/share_code/main/fcwb.json');
+    } catch (e) {
+    }
+    if (!res) {
+        try {
+            res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/lsh26/share_code@main/fcwb.json');
+        } catch (e) {
+        }
+        if (!res) {
+            res = [];
+        }
     }
     if(res.length > 0){
         let actCodeInfo = getRandomArrayElements(res,1)[0];
@@ -160,7 +168,7 @@ async function takeRequest(functionId,bodyInfo,h5stFlag = false){
                 }
             } catch (e) {
                 console.log(data);
-                $.logErr(e, resp)
+                //$.logErr(e, resp)
             } finally {
                 resolve(data.data || {});
             }
