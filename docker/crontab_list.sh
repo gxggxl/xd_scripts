@@ -25,7 +25,7 @@
 # 潮玩儿制躁团 (11.14 结束)
 7 9,20 * 10-11 * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
 # 发财挖宝help助力 (11.30 结束)
-6 0 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
+#5 7 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 发财大赢家之翻翻乐
 13 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 全民抢京豆(活动时间：10-29 至 11-11)
