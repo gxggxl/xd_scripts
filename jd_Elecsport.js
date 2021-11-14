@@ -10,7 +10,7 @@
  * 
  * 账号内循环助力
  * 
- * 推荐cron: 15 10 * * * 
+15 10 * * * jd_Elecsport.js
  * 环境变量:
  *     - export ZOO_OPENCARD="true" //默认不开通会员
  */
