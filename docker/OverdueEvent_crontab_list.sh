@@ -99,3 +99,6 @@
 
 # 京东超级盒子 (11.11 结束)
 13 3,13 * 10-11 * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
+
+# 电器盲盒抽京豆 (11.20?)
+0 1,8 * * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
