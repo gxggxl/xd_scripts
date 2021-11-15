@@ -12,16 +12,10 @@
 5 0,5,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 # Phone狂制噪吧 (11.30?)
 13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
-# 手机竞猜 (2021年10月31日20:00:00-2021年11月10日 23:59:59 )
-0,20 0,5 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
 # 牛牛福利
 1 0,9,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-# 选品官 (11.13 结束)
-21 2,11 1-13 11 * node /scripts/jd_xpg.js >> /scripts/logs/jd_xpg.log 2>&1
-# 潮玩儿制躁团 (11.14 结束)
-7 9,20 * 10-11 * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
 # 发财挖宝help助力 (11.30 结束)
 #5 7 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 发财大赢家之翻翻乐

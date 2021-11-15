@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **107** 个文件
+共有 **104** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -19,6 +19,7 @@
 | [jd_ccSign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ccSign.js) | 领券中心签到 | 领券中心 |  |
 | [jd_cfd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd.js) | 京喜财富岛 |  |  |
 | [jd_cfd_help.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd_help.js) | 财富大陆互助 |  |  |
+| [jd_cfd_mooncake.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_cfd_mooncake.js) | 京喜财富岛合成月饼 | 京喜APP-我的-京喜财富岛 |  |
 | [jd_ckcheck.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ckcheck.js) | Cookie检查 |  |  |
 | [jd_club_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_club_lottery.js) | 摇京豆 | 京东APP首页-领京豆-摇京豆/京东APP首页-我的-京东会员-摇京豆 |  |
 | [jd_connoisseur.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_connoisseur.js) | 寻找内容鉴赏官 |  |  |
@@ -33,7 +34,6 @@
 | [jd_dj_fruit_collectWater.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dj_fruit_collectWater.js) |  |  |  |
 | [jd_dj_getPoints.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dj_getPoints.js) |  |  |  |
 | [jd_dj_plantBeans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dj_plantBeans.js) |  |  |  |
-| [jd_dqmh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dqmh.js) | 电器盲盒抽京豆 | 微信小程序-京东电器-首页抽盲盒 |  |
 | [jd_dreamFactory.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dreamFactory.js) | 京喜工厂 | 京东APP-游戏与互动-查看更多-京喜工厂 |  |
 | [jd_dwapp.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dwapp.js) | 积分换话费 |  |  |
 | [jd_exchange_joy.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchange_joy.js) |  |  |  |
@@ -88,7 +88,6 @@
 | [jd_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_shop.js) | 进店领豆 | 京东APP首页-领京豆-进店领豆 |  |
 | [jd_shop_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_shop_sign.js) | 店铺签到 |  | 长期 |
 | [jd_sign_graphics.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sign_graphics.js) | 京东签到图形验证 |  |  |
-| [jd_sjjc.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sjjc.js) |  |  |  |
 | [jd_sjzjd.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_sjzjd.js) | 升级赚京豆 |  |  |
 | [jd_small_home.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_small_home.js) | 东东小窝 | 京东APP我的-游戏与更多-东东小窝 |  |
 | [jd_speed.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_speed.js) | ✈️天天加速 | 京东APP我的-更多工具-天天加速 |  |
@@ -106,10 +105,8 @@
 | [jd_wish.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wish.js) | 众筹许愿池 | 京东-京东众筹-众筹许愿池 |  |
 | [jd_work_validate.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_work_validate.js) |  |  |  |
 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |  |
-| [jd_xpg.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_xpg.js) | 选品官 |  |  |
 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |  |
 | [jd_zsign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zsign.js) | 芥末签到 |  |  |
-| [jd_zzt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zzt.js) | 潮玩儿制躁团 |  |  |
 | [jx_aid_cashback.js](https://github.com/gxggxl/xd_scripts/raw/master/jx_aid_cashback.js) |  |  |  |
 
 此内容仅供参考
