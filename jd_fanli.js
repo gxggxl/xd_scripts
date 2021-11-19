@@ -1,7 +1,7 @@
 
 /* 
 5 0,5,15 * * * jd_fanli.js
-liuliu修改自jd_fanli.py
+修改自jd_fanli.py
 */
 
 const $ = new Env('饭粒');
@@ -63,7 +63,7 @@ if ($.isNode()) {
                             if($.taskList[i].taskId!==null){
                                 await saveTaskRecord(cookie,$.taskList[i].taskId,$.taskList[i].businessId,$.taskList[i].taskType)
                                 if($.sendBody){
-                                    await $.wait(10000)
+                                    await $.wait(Number($.taskList[i].watchTime)*1000)
                                     await saveTaskRecord1(cookie,$.taskList[i].taskId,$.taskList[i].businessId,$.taskList[i].taskType,$.sendBody.uid,$.sendBody.tt)
                                 }
                                 else{
