@@ -200,7 +200,7 @@
 #美丽研究院
 #6 9,17 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东保价
-5 10,20 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
+#5 10,20 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 
 # 京喜购物返红包助力
 1 */6 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
