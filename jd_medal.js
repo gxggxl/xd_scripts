@@ -1,7 +1,8 @@
 /**
-农场集勋章
-cron 16 7,16 * * * jd_medal.js
-TG频道：https://t.me/sheeplost
+ 农场集勋章
+ cron 16 7,16 * * * jd_medal.js
+ TG频道：https://t.me/sheeplost
+ 活动入口：农场鸭子对面！
 */
 const $ = new Env('农场集勋章');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -88,8 +89,8 @@ async function main() {
                 console.log("没有获取到活动列表")
             }
         } else if (mainInfo.result.activityStatus === 3) {
-            console.log("您已经集齐所有勋章了，快去领取奖品吧！")
-            message += `\n【京东账号${$.index}】${$.nickName || $.UserName}\n您已经集齐所有勋章了，快去领取奖品吧！`
+            console.log("您已经集齐所有勋章了，快去领取奖品吧！\n活动入口：农场鸭子对面！")
+            message += `\n【京东账号${$.index}】${$.nickName || $.UserName}\n您已经集齐所有勋章了，快去领取奖品吧！\n活动入口：农场鸭子对面！`
         } else if (mainInfo.result.activityStatus === 4) {
             console.log("您已经集齐所有勋章并领取奖品了,等待下一次活动开启!")
         }
