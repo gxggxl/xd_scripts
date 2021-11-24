@@ -90,7 +90,7 @@ async function main() {
             }
         } else if (mainInfo.result.activityStatus === 3) {
             console.log("您已经集齐所有勋章了，快去领取奖品吧！\n活动入口：农场鸭子对面【大风车】里的《双十一集勋章》！")
-            message += `\n【京东账号${$.index}】${$.nickName || $.UserName}\n您已经集齐所有勋章了，快去领取奖品吧！\n活动入口：农场鸭子对面【大风车】里的《双十一集勋章》！`
+            message += `\n【京东账号${$.index}】${$.nickName || $.UserName}\n您已经集齐所有勋章了，快去领取奖品吧！\n\n活动入口：农场鸭子对面【大风车】里的《双十一集勋章》！\n`
         } else if (mainInfo.result.activityStatus === 4) {
             console.log("您已经集齐所有勋章并领取奖品了,等待下一次活动开启!")
         }
