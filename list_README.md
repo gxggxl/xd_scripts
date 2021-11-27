@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **104** 个文件
+共有 **107** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -37,8 +37,10 @@
 | [jd_dreamFactory.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dreamFactory.js) | 京喜工厂 | 京东APP-游戏与互动-查看更多-京喜工厂 |  |
 | [jd_dwapp.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dwapp.js) | 积分换话费 |  |  |
 | [jd_exchange_joy.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchange_joy.js) |  |  |  |
+| [jd_exchangejxbeans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchangejxbeans.js) | 京豆兑换为喜豆 |  |  |
 | [jd_family.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_family.js) | 京东家庭号 | 玩一玩-家庭号 |  |
 | [jd_fanli.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fanli.js) | 饭粒 |  |  |
+| [jd_fanpai_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fanpai_sign.js) | 京东翻牌签到 |  |  |
 | [jd_fcwb.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fcwb.js) | 发财挖宝 |  |  |
 | [jd_fission.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fission.js) | 东东超市抢京豆 |  | 2021-10-20 至 2021-11-20 |
 | [jd_fruit.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fruit.js) | 东东农场 | 京东APP我的-更多工具-东东农场 |  |
@@ -66,6 +68,7 @@
 | [jd_live.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_live.js) | 京东直播 | 京东APP首页-京东直播 |  |
 | [jd_lsj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_lsj.js) | 零食街 |  |  |
 | [jd_market_lottery.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_market_lottery.js) | 幸运大转盘 | [活动地址](https://pro.m.jd.com/mall/active/3ryu78eKuLyY5YipWWVSeRQEpLQP/index.html) |  |
+| [jd_medal.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_medal.js) | 农场集勋章 | 农场鸭子对面【大风车】里的《双十一集勋章》！ |  |
 | [jd_mf.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mf.js) | 京东小魔方 |  |  |
 | [jd_mf_exchange.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mf_exchange.js) | 5魔方兑换 |  |  |
 | [jd_mofang.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mofang.js) | 集魔方 |  |  |
@@ -96,7 +99,7 @@
 | [jd_star_shop.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_star_shop.js) | 明星小店 |  |  |
 | [jd_superBrand.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superBrand.js) | 特务Z |  |  |
 | [jd_superMarket.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_superMarket.js) | 东东超市 | 京东APP首页-京东超市-底部东东超市 |  |
-| [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序) |  |
+| [jd_syj.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_syj.js) | 赚京豆 | 赚京豆(微信小程序)-赚京豆-签到领京豆 |  |
 | [jd_try.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_try.js) | 京东试用 |  |  |
 | [jd_ttpt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ttpt.js) | 天天拼图 | 京东金融APP-签到-天天拼图 |  |
 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |  |
