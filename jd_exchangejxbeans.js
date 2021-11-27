@@ -87,7 +87,7 @@ async function domain() {
             console.log('您未来7天内无过期京豆')
         }
     } else {
-        console.log('脚本默认不兑换豆子，如需兑换请设置环境变量exjxbeans为true')
+        console.log('脚本默认兑换豆子，如需不兑换请设置环境变量exjxbeans为false')
     }
 }
 function queryexpirebeans() {
