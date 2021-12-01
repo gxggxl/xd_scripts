@@ -12,10 +12,6 @@
 15 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
 # 京东饭粒
 5 0,5,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
-# Phone狂制噪吧 (11.30?)
-13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
-# 牛牛福利
-1 0,9,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 发财挖宝help助力 (11.30 结束)
@@ -26,8 +22,6 @@
 #1 0,1 * * * node /scripts/jd_qmqjd.js >> /scripts/logs/jd_qmqjd.log 2>&1
 #美妆馆选品官
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
-# 东东超市抢京豆 活动时间：2021-10-20 至 2021-11-20
-10 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 京东小魔方(9.29 24.00 结束)
 13 0,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 魔方兑换 (只兑换5魔方)

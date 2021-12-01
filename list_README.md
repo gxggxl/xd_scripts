@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **107** 个文件
+共有 **106** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -35,6 +35,7 @@
 | [jd_dj_getPoints.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dj_getPoints.js) |  |  |  |
 | [jd_dj_plantBeans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dj_plantBeans.js) |  |  |  |
 | [jd_dreamFactory.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dreamFactory.js) | 京喜工厂 | 京东APP-游戏与互动-查看更多-京喜工厂 |  |
+| [jd_dt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dt.js) | 京东答题领金豆 | 京东APP-》搜索 玩一玩-》瓜分20亿 | 2021-10-21至2021-12-31 |
 | [jd_dwapp.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dwapp.js) | 积分换话费 |  |  |
 | [jd_exchange_joy.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchange_joy.js) |  |  |  |
 | [jd_exchangejxbeans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchangejxbeans.js) | 京豆兑换为喜豆 |  |  |
@@ -42,7 +43,6 @@
 | [jd_fanli.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fanli.js) | 饭粒 |  |  |
 | [jd_fanpai_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fanpai_sign.js) | 京东翻牌签到 |  |  |
 | [jd_fcwb.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fcwb.js) | 发财挖宝 |  |  |
-| [jd_fission.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fission.js) | 东东超市抢京豆 |  | 2021-10-20 至 2021-11-20 |
 | [jd_fruit.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fruit.js) | 东东农场 | 京东APP我的-更多工具-东东农场 |  |
 | [jd_genz.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_genz.js) | 芥么赚豪礼 |  |  |
 | [jd_get_share_code.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_get_share_code.js) | 获取互助码 |  |  |
@@ -72,11 +72,10 @@
 | [jd_mf.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mf.js) | 京东小魔方 |  |  |
 | [jd_mf_exchange.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mf_exchange.js) | 5魔方兑换 |  |  |
 | [jd_mofang.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mofang.js) | 集魔方 |  |  |
-| [jd_mohe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mohe.js) | 5G超级盲盒 | [活动地址](https://blindbox5g.jd.com) | 2021-06-2到2021-07-31 |
+| [jd_mohe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_mohe.js) | 5G超级盲盒 | [活动地址](https://blindbox5g.jd.com) | 2021年11月1日00:00:00-2022年1月28日23:59:59 |
 | [jd_moneyTree.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_moneyTree.js) | 京东摇钱树 | 京东APP我的-更多工具-摇钱树，[活动链接](https://uua.jr.jd.com/uc-fe-wxgrowing/moneytree/index/?channel=yxhd) |  |
 | [jd_ms.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ms.js) | 京东秒秒币 | 京东app-京东秒杀-签到领红包 | 长期活动 |
-| [jd_nnfls.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_nnfls.js) | 牛牛福利 |  |  |
-| [jd_nzmh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_nzmh.js) | 女装盲盒抽京豆 | 京东app-女装馆-赢京豆 | 2021-10-31至2021-11-30 |
+| [jd_nzmh.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_nzmh.js) | 女装盲盒抽京豆 | 京东app-女装馆-赢京豆 | 2021-12-1至2021-12-31 |
 | [jd_open.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_open.js) | 店铺浏览任务 |  |  |
 | [jd_pet.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_pet.js) | 东东萌宠 | 京东APP我的-更多工具-东东萌宠 |  |
 | [jd_pigPet.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_pigPet.js) | 金融养猪 | 京东金融养猪猪 |  |
@@ -104,8 +103,8 @@
 | [jd_ttpt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_ttpt.js) | 天天拼图 | 京东金融APP-签到-天天拼图 |  |
 | [jd_unsubscriLive.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscriLive.js) | 取关所有主播 |  |  |
 | [jd_unsubscribe.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_unsubscribe.js) | 取关京东店铺和商品 |  |  |
-| [jd_vivo.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_vivo.js) | Phone狂制噪吧 |  |  |
 | [jd_wish.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wish.js) | 众筹许愿池 | 京东-京东众筹-众筹许愿池 |  |
+| [jd_work_price.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_work_price.js) |  |  |  |
 | [jd_work_validate.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_work_validate.js) |  |  |  |
 | [jd_wxFans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_wxFans.js) | 粉丝互动 |  |  |
 | [jd_zqfl.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_zqfl.js) | 早起福利 | 京东APP ==> 首页领京豆 ==> 早起福利 |  |
