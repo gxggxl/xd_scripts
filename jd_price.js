@@ -61,7 +61,7 @@ const JD_API_HOST = 'https://api.m.jd.com/';
         continue
       }
       await price()
-      await $.wait(2000)
+      if (i != cookiesArr.length-1) await $.wait(30000)
     }
   }
   if (allMessage) {
@@ -140,12 +140,9 @@ async function siteppM_appliedSuccAmount() {
             if (data.flag) {
               console.log(`保价成功：返还${data.succAmount}元`)
               message += `保价成功：返还${data.succAmount}元\n`
-
-              let the_msg = `本次保价成功：返还${data.succAmount}元`
               if ($.isNode()) {
-                await notify.sendNotify(`${$.name}`, `【京东账号${$.index}】${$.nickName || $.UserName}\n${the_msg}`);
+                await notify.sendNotify(`${$.name}`, `【京东账号${$.index}】${$.nickName || $.UserName}\n${message}`);
               }
-
             } else {
               console.log(`保价失败：没有可保价的订单`)
             }
@@ -178,14 +175,16 @@ async function jstoken() {
     pretendToBeVisual: true,
     virtualConsole
   };
-  const { window } = new JSDOM(``, options);
-  const jdPriceJs = await downloadUrl("https://js-nocaptcha.jd.com/statics/js/main.min.js")
+  // const { window } = new JSDOM(``, options);
+  // const jdPriceJs = await downloadUrl("https://js-nocaptcha.jd.com/statics/js/main.min.js")
+  const dom = new JSDOM(`<body><script src="https://js-nocaptcha.jd.com/statics/js/main.min.js"></script></body>`, options);
+  await $.wait(1000)
   try {
-    window.eval(jdPriceJs)
-    window.HTMLCanvasElement.prototype.getContext = () => {
-      return {};
-    };
-    $.jab = new window.JAB({
+    // window.eval(jdPriceJs)
+    // window.HTMLCanvasElement.prototype.getContext = () => {
+    //   return {};
+    // };
+    $.jab = new dom.window.JAB({
       bizId: 'jdjiabao',
       initCaptcha: false
     })
