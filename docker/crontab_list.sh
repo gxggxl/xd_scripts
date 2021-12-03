@@ -92,7 +92,7 @@
 # 幸运大转盘
 10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 # 签到领现金
-5 */4 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
+7 */3 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
 # 领金贴
 3 0,18 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 早起福利
