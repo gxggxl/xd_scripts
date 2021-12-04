@@ -51,7 +51,7 @@
 # 芥末小程序签到领现金 (12.31结束)
 15 9,17 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 # 芥么赚豪礼
-22 1,13 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
+#22 1,13 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 # 京东零食街 活动时间：年底
 11 11,17 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 # 京东金融-天天拼图
