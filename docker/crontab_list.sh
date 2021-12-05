@@ -186,7 +186,7 @@
 12 */6 * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
 
 # 汪汪乐园养joy
-#6 */2 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
+#6 */3 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
 # 汪汪乐园每日任务
 #19 7,9,17,20 * * * node /scripts/jd_joy_park_task.js >> /scripts/logs/jd_joy_park_task.log 2>&1
 
