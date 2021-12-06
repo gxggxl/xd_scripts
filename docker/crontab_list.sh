@@ -71,6 +71,8 @@
 7 0,6,18 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 # 翻牌签到
 3 1,20 * * * node /scripts/jd_fanpai_sign.js >> /scripts/logs/jd_fanpai_sign.log 2>&1
+# 愤怒的锦鲤
+1 0,10 * * * node /scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
 # 积分换话费
 13 6,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 # 升级赚京豆
