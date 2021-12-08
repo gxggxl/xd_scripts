@@ -1,8 +1,9 @@
 /*
   https://st.jingxi.com/fortune_island/index2.html
 
-  18 0,6-23/2 * * * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_wealth_island.js 财富大陆
+18 0,6-23/2 * * * jd_cfd.js
 
+form guagua
 */
 
 const $ = new Env('京喜财富岛');
@@ -78,7 +79,7 @@ async function run() {
     $.Biztask = []
     $.Aggrtask = []
     $.Employtask = []
-
+    
     await GetHomePageInfo()
 
     if($.HomeInfo){
@@ -351,7 +352,7 @@ async function StoryInfo(){
 async function buildList(){
   try{
     await $.wait(2000)
-    console.log(`\n升级房屋、收集金币`)
+    console.log(`\n升级房屋、收集金币\n(升级：需要当前金币大于升级金币的3.5倍)`)
     if($.buildList){
       for(let i in $.buildList){
         let item = $.buildList[i]
@@ -377,7 +378,7 @@ async function buildList(){
           if(item.dwLvl == 0){
             await taskGet(`user/createbuilding`, stk, additional)
           }else{
-            if(GetBuildInfo){
+            if(GetBuildInfo && GetBuildInfo.ddwNextLvlCostCoin * 3.5 < parseInt($.HomeInfo.ddwCoinBalance,10)){
               additional = `&strBuildIndex=${GetBuildInfo.strBuildIndex}&ddwCostCoin=${GetBuildInfo.ddwNextLvlCostCoin}`
               stk = `_cfd_t,bizCode,ddwCostCoin,dwEnv,ptag,source,strBuildIndex,strZone`
               let update = await taskGet(`user/BuildLvlUp`, stk, additional)
@@ -453,7 +454,7 @@ async function sign(){
         }
       }
     }
-
+    
     if($.Aggrtask && $.Aggrtask.Data && $.Aggrtask.Data.Employee && $.Aggrtask.Data.Employee.EmployeeList){
         if($.Aggrtask.Data && $.Aggrtask.Data.Employee && $.Aggrtask.Data.Employee.EmployeeList){
         console.log(`\n领取邀请奖励(${$.Aggrtask.Data.Employee.EmployeeList.length || 0}/${$.Aggrtask.Data.Employee.dwNeedTotalPeople || 0})`)
@@ -642,7 +643,7 @@ async function Guide(){
         }
       }
     }
-
+    
   }catch (e) {
     $.logErr(e);
   }
