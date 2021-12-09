@@ -24,12 +24,10 @@
 #1 0,1 * * * node /scripts/jd_qmqjd.js >> /scripts/logs/jd_qmqjd.log 2>&1
 #美妆馆选品官
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
-# 京东小魔方(9.29 24.00 结束)
-#13 0,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
+# 集魔方 (京东APP - 新品 - 集魔方)
+11 0,12,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 # 魔方兑换 (只兑换5魔方)
 9 1,12,16 * * * node /scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
-# 集魔方 (京东APP - 新品 - 集魔方)
-16 0,12,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 # 明星小店(星店长)9.18-10.9
 5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 # 内容鉴赏官 (9.30 结束，10月继续开启)
@@ -53,7 +51,7 @@
 # 芥末小程序签到领现金 (12.31结束)
 15 9,17 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 # 芥么赚豪礼
-#22 1,13 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
+22 1,13 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 # 京东零食街 活动时间：年底
 11 11,17 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 # 京东金融-天天拼图
@@ -96,7 +94,7 @@
 # 幸运大转盘
 10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 # 签到领现金
-7 */3 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
+7 */2 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
 # 领金贴
 3 0,18 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 早起福利

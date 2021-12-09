@@ -102,3 +102,6 @@
 
 # 电器盲盒抽京豆 (11.20?)
 0 1,8 * * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
+
+# 京东小魔方(9.29 24.00 结束)
+13 0,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
