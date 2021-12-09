@@ -14,8 +14,6 @@
 5 0,5,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-# 发财挖宝help助力 (11.30 结束)
-#5 7 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 金榜年终奖
 3 1,5 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
 # 发财大赢家之翻翻乐
@@ -26,6 +24,8 @@
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 # 集魔方 (京东APP - 新品 - 集魔方)
 11 0,12,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
+# 京东小魔方(9.29 24.00 结束)
+13 1,20 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 魔方兑换 (只兑换5魔方)
 9 1,12,16 * * * node /scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
 # 明星小店(星店长)9.18-10.9
