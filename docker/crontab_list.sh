@@ -27,9 +27,9 @@
 # 京东小魔方(9.29 24.00 结束)
 #13 0,10 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 魔方兑换 (只兑换5魔方)
-#9 1,16 * * * node /scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
+9 1,12,16 * * * node /scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
 # 集魔方 (京东APP - 新品 - 集魔方)
-#16 0,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
+16 0,12,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 # 明星小店(星店长)9.18-10.9
 5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 # 内容鉴赏官 (9.30 结束，10月继续开启)
@@ -190,9 +190,9 @@
 12 */6 * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
 
 # 汪汪乐园养joy
-#6 */3 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
+6 */3 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
 # 汪汪乐园每日任务
-#19 7,9,17,20 * * * node /scripts/jd_joy_park_task.js >> /scripts/logs/jd_joy_park_task.log 2>&1
+19 7,20 * * * node /scripts/jd_joy_park_task.js >> /scripts/logs/jd_joy_park_task.log 2>&1
 
 # 京东到家果园
 08 0,3,8,11,17 * * * node /scripts/jd_dj_fruit.js >> /scripts/logs/jd_dj_fruit.log 2>&1
@@ -206,7 +206,7 @@
 3 * * * * node /scripts/jd_dj_getPoints.js >> /scripts/logs/jd_dj_getPoints.log 2>&1
 
 #美丽研究院
-#6 9,17 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
+15 7,11,20 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东保价
 #5 13 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 27 */8 * * * export jd_work_price=1 && node /scripts/jd_work_price.js >> /scripts/logs/jd_work_price.log 2>&1
