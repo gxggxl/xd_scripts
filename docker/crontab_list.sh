@@ -204,7 +204,7 @@
 3 * * * * node /scripts/jd_dj_getPoints.js >> /scripts/logs/jd_dj_getPoints.log 2>&1
 
 #美丽研究院
-15 7,11,20 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
+15 6,11,20 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东保价
 #5 13 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 27 */8 * * * export jd_work_price=1 && node /scripts/jd_work_price.js >> /scripts/logs/jd_work_price.log 2>&1
