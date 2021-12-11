@@ -1,21 +1,17 @@
 /**
-粉丝互动，尽量自己设置定时，在0点和1点抽奖，白天基本没水
-修改温某的脚本，由于温某不干活，只能自己动手修改了
-注意：脚本会加购，脚本会加购，脚本会加购
-若发现脚本里没有的粉丝互动活动。欢迎反馈给我
-cron 34 5,18 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
-* */
+ 粉丝互动，没啥水
+ 修改温某的脚本，由于温某不干活，只能自己动手修改了
+ 注意：脚本会加购，脚本会加购，脚本会加购
+ 若发现脚本里没有的粉丝互动活动。欢迎反馈给我
+ cron 34 6,18 * * * jd_wxFans.js
+ * */
 const $ = new Env('粉丝互动');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
-const activityList =  [
-    {"actid": "e49fe34c09e3447083992f4867588dd9", "endTime": 1633190398000},
-    {"actid": "5bb3f94bdbca4165ae2af0d85c8e66b2", "endTime": 1632931199000},
-    {"actid": "5dbc609b32bd4edf981a844079a467a9", "endTime": 1632931200000},
-    {"actid": "de0f54a0769a45e0a369f8c6de9a0192", "endTime": 1633622361000},
-    {"actid": "c475acc1f3214c038881abeff5cd6442", "endTime": 1633795200000}
-];
+const activityList = [
+    {'actid': '68cd1c64d3cc4421a992c40d46f0e0d5', 'endTime': 1640015999000},
+]
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -32,10 +28,6 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
         return;
     }
-    if (activityList.length === 0 ){
-      console.log(`未找到活动 溜了溜了`)
-      return;
-    }
     for (let i = 0; i < cookiesArr.length; i++) {
         await getUA();
         $.index = i + 1;
@@ -43,8 +35,8 @@ if ($.isNode()) {
         $.oldcookie = cookiesArr[i];
         $.isLogin = true;
         $.nickName = '';
-        $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
         await TotalBean();
+        $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
         console.log(`\n*****开始【京东账号${$.index}】${$.nickName || $.UserName}*****\n`);
         if (!$.isLogin) {
             $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
