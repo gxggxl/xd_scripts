@@ -61,7 +61,7 @@
 # 特物Z 活动时间：
 5 8,13,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
-11 1,9,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
+11 0,5,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 #京东答题领金豆
 #12 10 * * * node /scripts/jd_dt.js >> /scripts/logs/jd_dt.log 2>&1
 # 星系牧场 #wen
