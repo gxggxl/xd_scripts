@@ -37,7 +37,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
-let cookiesArr = [], cookie = '', message;
+let cookiesArr = [], cookie = '', message = '', sendmsg = '';
 const JD_API_HOST = 'https://api.m.jd.com/api?appid=interCenter_shopSign';
 let activityId=''
 let vender=''
@@ -111,9 +111,10 @@ if ($.isNode()) {
         continue
       }
       await shopSign()
-      await showMsg()
+      if ($.index == 1) sendmsg += `${message}`
     }
   }
+  await showMsg()
 })()
     .catch((e) => {
       $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -323,7 +324,7 @@ function taskUrl(token,venderId) {
 
 async function showMsg() {
   if ($.isNode()) {
-    $.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
+    $.msg(`${$.name}\n\n${sendmsg}`);
     //await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.nickName}\n${message}`);
   }
 }
