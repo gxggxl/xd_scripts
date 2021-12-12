@@ -5,7 +5,7 @@
 const $ = new Env("暖暖红包");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 let cookiesArr = [], cookie;
-let codeList = ["nwhM39l"];
+let codeList = ["nwhM39l","vtio02w"];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item]);
@@ -102,7 +102,7 @@ function getcouponUrl() {
           console.log(`${$.name} getcouponUrl API请求失败，请检查网路重试`);
         } else {
           if (data) {
-            if ($.code === "nwhM39l" || $.code === "nLhu1LP") {
+            if ($.code === "nwhM39l" || $.code === "vtio02w") {
                 $.couponUrl = (data.match(/"value":"(.*)"\}'/) && data.match(/"value":"(.*)"\}'/)[1]) || "";
             } else {
                 $.couponUrl = "";
