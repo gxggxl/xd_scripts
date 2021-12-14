@@ -1561,39 +1561,39 @@ async function requestAlgo() {
       "expandParams": ""
     })
   }
-  new Promise(async resolve => {
+return new Promise(async (resolve) => {
     $.post(options, (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`request_algo 签名参数API请求失败，请检查网路重试`)
-        } else {
-          if (data) {
-            // console.log(data);
-            data = JSON.parse(data);
-            if (data['status'] === 200) {
-              $.token = data.data.result.tk;
-              let enCryptMethodJDString = data.data.result.algo;
-              if (enCryptMethodJDString) $.enCryptMethodJD = new Function(`return ${enCryptMethodJDString}`)();
-              console.log(`获取签名参数成功！`)
-              console.log(`fp: ${$.fingerprint}`)
-              console.log(`token: ${$.token}`)
-              console.log(`enCryptMethodJD: ${enCryptMethodJDString}`)
+        try {
+            if (err) {
+                console.log(`${JSON.stringify(err)}`);
+                console.log(`request_algo 签名参数API请求失败，请检查网路重试`);
             } else {
-              console.log(`fp: ${$.fingerprint}`)
-              console.log('request_algo 签名参数API请求失败:')
+                if (data) {
+                    // console.log(data);
+                    data = JSON.parse(data);
+                    if (data["status"] === 200) {
+                        $.token = data.data.result.tk;
+                        let enCryptMethodJDString = data.data.result.algo;
+                        if (enCryptMethodJDString) $.enCryptMethodJD = new Function(`return ${enCryptMethodJDString}`)();
+                        console.log(`获取签名参数成功！`);
+                        console.log(`fp: ${$.fingerprint}`);
+                        console.log(`token: ${$.token}`);
+                        console.log(`enCryptMethodJD: ${enCryptMethodJDString}`);
+                    } else {
+                        console.log(`fp: ${$.fingerprint}`);
+                        console.log("request_algo 签名参数API请求失败:");
+                    }
+                } else {
+                    console.log(`京东服务器返回空数据`);
+                }
             }
-          } else {
-            console.log(`京东服务器返回空数据`)
-          }
+        } catch (e) {
+            $.logErr(e, resp);
+        } finally {
+            resolve();
         }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
+    });
+});
 }
 function decrypt(time, stk, type, url) {
   stk = stk || (url ? getUrlData(url, '_stk') : '')
