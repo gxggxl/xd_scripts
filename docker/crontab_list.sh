@@ -12,7 +12,7 @@
 #见缝插针
 15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 # 暖暖红包
-2 0,12 * * * node /scripts/jd_redEnvelope.js >> /scripts/logs/jd_redEnvelope.log 2>&1
+2 0 * * * node /scripts/jd_redEnvelope.js >> /scripts/logs/jd_redEnvelope.log 2>&1
 # 农场集勋章
 15 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
 # 京东饭粒
@@ -149,7 +149,7 @@
 # 东东乐园
 8 6,15,21 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 # 东东农场(水果)
-5 6,12,18,21 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+15 6,12,17,21 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 东东萌宠
 10 6,12,18,21 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
 # 东东超市
