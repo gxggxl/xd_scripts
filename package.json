@@ -25,6 +25,7 @@
     "got": "^11.5.1",
     "http-server": "^0.12.3",
     "jsdom": "^18.1.0",
+    "md5": "^2.3.0",
     "png-js": "^1.0.0",
     "puppeteer": "^11.0.0",
     "qrcode-terminal": "^0.12.0",
