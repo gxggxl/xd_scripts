@@ -11,16 +11,12 @@
 ##############短期活动##############
 #见缝插针
 15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
-# 暖暖红包
-2 0 * * * node /scripts/jd_redEnvelope.js >> /scripts/logs/jd_redEnvelope.log 2>&1
 # 农场集勋章
 15 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
 # 京东饭粒
 5 0,5,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-# 金榜年终奖
-3 1,5 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
 # 发财大赢家之翻翻乐
 13 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 全民抢京豆(活动时间：10-29 至 11-11)
