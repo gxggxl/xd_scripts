@@ -58,7 +58,7 @@
 # 京东金融-天天拼图
 9 0,15 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.log 2>&1
 # 特物Z 活动时间：
-5 8,13,18,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+5 22 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
 11 0,5,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 #京东答题领金豆
