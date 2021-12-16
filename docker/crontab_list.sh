@@ -69,6 +69,8 @@
 #12 10 * * * node /scripts/jd_dt.js >> /scripts/logs/jd_dt.log 2>&1
 # 星系牧场 #wen
 0 */3 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
+# 逛京东会场
+0 0 * * * node /scripts/jd_mall_active.js >> /scripts/logs/jd_mall_active.log 2>&1
 ##############长期活动##############
 # 签到
 5 7,21 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -90,6 +92,8 @@
 #25 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
 # 京喜签到
 3 0,6,12 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
+# 京喜签到-喜豆
+10 5,11 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 领京豆额外奖励(每日可获得3京豆)
 23 1,9,21 * * * node /scripts/jd_bean_home.js >> /scripts/logs/jd_bean_home.log 2>&1
 # 京东签到图形验证
