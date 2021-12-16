@@ -105,3 +105,9 @@
 
 # 电器盲盒抽京豆 (11.20?)
 0 1,8 * * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
+
+# 金榜年终奖
+3 1,5 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
+
+# 暖暖红包
+2 0 * * * node /scripts/jd_redEnvelope.js >> /scripts/logs/jd_redEnvelope.log 2>&1

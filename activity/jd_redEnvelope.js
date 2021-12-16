@@ -3,7 +3,7 @@
 0 0,12 * * * jd_redEnvelope.js
 */
 const $ = new Env("暖暖红包");
-const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
+const jdCookieNode = $.isNode() ? require("../jdCookie.js") : "";
 let cookiesArr = [], cookie;
 let codeList = ["nwhM39l","vtio02w"];
 if ($.isNode()) {
@@ -280,7 +280,7 @@ async function getInfo1(cookie) {
 }
 
 const navigator = {
-  userAgent: $.isNode() ? require("./USER_AGENTS").USER_AGENT : $.UA,
+  userAgent: $.isNode() ? require("../USER_AGENTS").USER_AGENT : $.UA,
   plugins: { length: 0 },
   language: "zh-CN",
 };
