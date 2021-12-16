@@ -12,9 +12,9 @@
 #见缝插针
 15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 # 农场集勋章
-15 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
+15 7,16 * 12 * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
 # 京东饭粒
-5 0,5,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
+5 0,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 发财大赢家之翻翻乐
