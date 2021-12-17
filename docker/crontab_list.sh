@@ -9,6 +9,8 @@
 # tag:京东店铺锁y
 # 0 6,12,19,21 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
 ##############短期活动##############
+# 京车会签到
+13 7,19 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
 #见缝插针
 15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 # 农场集勋章
