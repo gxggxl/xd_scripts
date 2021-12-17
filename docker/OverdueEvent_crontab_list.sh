@@ -111,3 +111,6 @@
 
 # 暖暖红包
 2 0 * * * node /scripts/jd_redEnvelope.js >> /scripts/logs/jd_redEnvelope.log 2>&1
+
+# 京喜领88元红包
+3 1,8,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
