@@ -13,8 +13,6 @@
 33 0,6-23 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 # 京车会签到
 13 7,19 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
-#见缝插针
-#15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 # 农场集勋章
 15 7,16 * 12 * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
 # 京东饭粒

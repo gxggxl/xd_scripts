@@ -114,3 +114,6 @@
 
 # 京喜领88元红包
 3 1,8,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
+
+#见缝插针
+#15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1

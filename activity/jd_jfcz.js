@@ -17,8 +17,8 @@ cron "15 10 * * *" script-path=https://raw.githubusercontent.com/LingFeng0918/jd
 见缝插针 = type=cron,script-path=https://raw.githubusercontent.com/LingFeng0918/jd_scripts/master/jd_jfcz.js, cronexpr="15 10 * * *", timeout=3600, enable=true
  */
 const $ = new Env('见缝插针');
-const notify = $.isNode() ? require('./sendNotify') : '';
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [];
 let linkId = 'DYWV0DabsUxdj2FEBIkurg';
@@ -97,7 +97,7 @@ function TotalBean() {
                 Accept: "*/*",
                 Connection: "keep-alive",
                 Cookie: $.cookie,
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
                 "Accept-Language": "zh-cn",
                 "Referer": "https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&",
                 "Accept-Encoding": "gzip, deflate, br"
@@ -147,7 +147,7 @@ function needleMyPrize() {
                 'Accept': `application/json, text/plain, */*`,
                 'Host': `api.m.jd.com`,
                 'X-Requested-With': `com.jingdong.app.mall`,
-                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
                 'Accept-Encoding': `gzip, deflate, br`,
                 'Accept-Language': `zh-CN,zh;q=0.9,en-CN;q=0.8,en;q=0.7,zh-TW;q=0.6,en-US;q=0.5`,
                 'Referer': `https://joypark.jd.com/?activityId=${linkId}&channel=wlfc&sid=a05ade6f8abfce24dbbc74fw&un_area=2`,
@@ -202,7 +202,7 @@ function getNeedleLevelInfo() {
                 'Accept': `application/json, text/plain, */*`,
                 'Host': `api.m.jd.com`,
                 'X-Requested-With': `com.jingdong.app.mall`,
-                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
                 'Accept-Encoding': `gzip, deflate, br`,
                 'Accept-Language': `zh-CN,zh;q=0.9,en-CN;q=0.8,en;q=0.7,zh-TW;q=0.6,en-US;q=0.5`,
                 'Referer': `https://h5platform.jd.com/swm-static/jfcz/index.html?activityId=${linkId}&channel=wlfc&sid=a05ade6f8abfce24dbbc74fw&un_area=2`,
@@ -258,7 +258,7 @@ function saveNeedleLevelInfo(currentLevel) {
                 'Accept': `application/json, text/plain, */*`,
                 'Host': `api.m.jd.com`,
                 'X-Requested-With': `com.jingdong.app.mall`,
-                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
                 'Accept-Encoding': `gzip, deflate, br`,
                 'Accept-Language': `zh-CN,zh;q=0.9,en-CN;q=0.8,en;q=0.7,zh-TW;q=0.6,en-US;q=0.5`,
                 'Referer': `https://h5platform.jd.com/swm-static/jfcz/index.html?activityId=${linkId}&channel=wlfc&sid=a05ade6f8abfce24dbbc74fw&un_area=2`,
@@ -322,7 +322,7 @@ function apCashWithDraw(id, poolBaseId, prizeGroupId, prizeBaseId) {
                 "Content-Type": "application/x-www-form-urlencoded",
                 "Accept": "*/*",
                 "Connection": "keep-alive",
-                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+                'User-Agent':  $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
                 "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hant-CN;q=0.8",
                 'Referer': `https://joypark.jd.com/?activityId=${linkId}&channel=wlfc5`,
                 "Accept-Encoding": "gzip, deflate, br"
