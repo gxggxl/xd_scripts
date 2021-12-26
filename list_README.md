@@ -1,6 +1,6 @@
 # 脚本列表
 
-共有 **112** 个文件
+共有 **110** 个文件
 
 | 文件 | 名称 | 活动入口 | 活动时间 |
 | --- | --- | --- | --- |
@@ -38,11 +38,9 @@
 | [jd_dreamFactory.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dreamFactory.js) | 京喜工厂 | 京东APP-游戏与互动-查看更多-京喜工厂 |  |
 | [jd_dt.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dt.js) | 京东答题领金豆 | 京东APP-》搜索 玩一玩-》瓜分20亿 | 2021-10-21至2021-12-31 |
 | [jd_dwapp.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_dwapp.js) | 积分换话费 |  |  |
-| [jd_evaluation.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_evaluation.js) | 京东评价 |  |  |
 | [jd_exchange_joy.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchange_joy.js) |  |  |  |
 | [jd_exchangejxbeans.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_exchangejxbeans.js) | 京豆兑换为喜豆 |  |  |
 | [jd_family.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_family.js) | 京东家庭号 | 玩一玩-家庭号 |  |
-| [jd_fan.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fan.js) | 粉丝互动 |  |  |
 | [jd_fanli.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fanli.js) | 饭粒 |  |  |
 | [jd_fanpai_sign.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fanpai_sign.js) | 京东翻牌签到 |  |  |
 | [jd_fruit.js](https://github.com/gxggxl/xd_scripts/raw/master/jd_fruit.js) | 东东农场 | 京东APP我的-更多工具-东东农场 |  |
