@@ -13,9 +13,12 @@
 ## 网址、路径、文件、标记信息以及表头
 WorkDir=$(cd "$(dirname "${0}")" && pwd)
 
-# shellcheck disable=SC2207
-# shellcheck disable=SC2010
-JsList=($(cd "$WorkDir" && ls -- *.js | grep -E "j[drx]_" | grep -v jd_cash_ddo.js | perl -ne "{print unless /\.bak/}"))
+cd "$WorkDir" || exit
+echo "执行脚本所在目录 ${WorkDir}"
+JsList=(j[dxr]_*.js)
+#JsList=($(cd "$WorkDir" && ls j[drx]_*.js | perl -ne "{print unless /\.bak/}"))
+#JsList=($(cd "$WorkDir" && ls -- *.js | grep -E "j[drx]_" | grep -v jd_cash_ddo.js | perl -ne "{print unless /\.bak/}"))
+echo "js脚本数量 ${#JsList[@]}"
 FileReadme=$WorkDir/list_README.md
 UrlRaw=https://github.com/gxggxl/xd_scripts/raw/master/
 #SheetHead="# 脚本列表\n\n| 序号 | 文件 | 名称 | 活动入口 |\n| :---: | --- | --- | --- |"
