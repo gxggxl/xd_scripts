@@ -31,6 +31,8 @@
 13 1,20 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 魔方兑换 (只兑换5魔方)
 9 1,12,16 * * * node /scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
+# 京东集魔方
+35 2,10 * * * node /scripts/jd_mofang_j.js >> /scripts/logs/jd_mofang_j.log 2>&1
 # 明星小店(星店长)9.18-10.9
 5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 # 内容鉴赏官 (9.30 结束，10月继续开启)
