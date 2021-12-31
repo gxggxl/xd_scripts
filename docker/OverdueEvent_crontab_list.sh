@@ -117,3 +117,6 @@
 
 #见缝插针
 #15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
+
+# 东东世界
+#13 1,9,15 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1

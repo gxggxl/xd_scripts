@@ -8,8 +8,8 @@
 * DDEXCHANGE="1"只兑换200京豆
 * */
 const $ = new Env('东东世界');
-const notify = $.isNode() ? require('./sendNotify') : '';
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 const exchangeId = $.isNode() ? (process.env.DDEXCHANGE ? process.env.DDEXCHANGE : "999"):"999";
 let cookiesArr = [];
 if ($.isNode()) {
@@ -205,7 +205,7 @@ async function takePostRequest(type) {
             'Connection' : `keep-alive`,
             'Accept' : `application/json, text/plain, */*`,
             'Authorization':`Bearer ${$.accessToken}`,
-            'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+            'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
             'Content-Type':'application/x-www-form-urlencoded',
             'Referer' : `https://ddsj-dz.isvjcloud.com/dd-world/logined_jd/`,
             'Accept-Encoding' : `gzip, deflate`,
@@ -236,7 +236,7 @@ async function takeGetRequest(type) {
             'Connection' : `keep-alive`,
             'Accept' : `application/json, text/plain, */*`,
             'Authorization':`Bearer ${$.accessToken ?? 'undefined'}`,
-            'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+            'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
             'Content-Type':'application/x-www-form-urlencoded',
             'Referer' : `https://ddsj-dz.isvjcloud.com/dd-world/logined_jd/`,
             'Accept-Encoding' : `gzip, deflate`,
@@ -353,7 +353,7 @@ function TotalBean() {
                 "Connection": "keep-alive",
                 "Cookie": $.cookie,
                 "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
             }
         }
         $.post(options, (err, resp, data) => {
