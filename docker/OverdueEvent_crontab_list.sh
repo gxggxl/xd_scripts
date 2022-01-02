@@ -123,3 +123,6 @@
 
 # 农场集勋章
 15 7,16 * 12 * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
+
+# 芥末小程序签到领现金 (12.31结束)
+15 9,17 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
