@@ -9,6 +9,8 @@
 # tag:京东店铺锁y
 # 0 6,12,19,21 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
 ##############短期活动##############
+# 城城领现金
+1 0,9,13,17,22 * 1 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 # 京东通天塔--签到
 5 0,15 * * * node /scripts/jd_m_sign.js >> /scripts/logs/jd_m_sign.log 2>&1
 # 京东特价 翻翻乐
