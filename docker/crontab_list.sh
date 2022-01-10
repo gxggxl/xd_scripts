@@ -114,7 +114,7 @@
 45 8 1 * * node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 #45 22 28-31 * * [ "$(TZ=IST-32 date +%e)" -eq 1 ] && node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 # 京东秒秒币
-10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
+10 6,17 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 京东全民开红包
 #1 2,13,23 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 # 进店领豆
@@ -147,7 +147,7 @@
 # 东东农场(水果)
 15 6,12,17,21 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 东东萌宠
-10 6,12,18,21 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
+10 6,12,18 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
 # 东东超市
 31 0,1-23/2 * * * node /scripts/jd_superMarket.js >> /scripts/logs/jd_superMarket.log 2>&1
 # 东东超市兑换奖品
