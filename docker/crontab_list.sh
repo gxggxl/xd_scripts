@@ -53,8 +53,6 @@
 5 11,15,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
 17 5,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-# 星系牧场 #wen
-#0 5 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
 # 逛京东会场
 0 0 * * * node /scripts/jd_mall_active.js >> /scripts/logs/jd_mall_active.log 2>&1
 ##############长期活动##############
