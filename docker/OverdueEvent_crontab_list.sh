@@ -129,3 +129,6 @@
 
 # 芥末小程序签到领现金 (12.31结束)
 15 9,17 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
+
+# 京车会签到
+13 7,19 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
