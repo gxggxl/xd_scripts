@@ -17,7 +17,7 @@ cron "40 0,2 * * *" script-path=https://raw.githubusercontent.com/Aaron-lv/sync/
 ============小火箭=========
 众筹许愿池 = type=cron,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js, cronexpr="40 0,2 * * *", timeout=3600, enable=true
  */
-const $ = new Env('众筹许愿池');
+const $ = new Env('抽奖机');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -25,8 +25,8 @@ let message = '', allMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let appIdArr = ['1FFVQyqw', "1GVFUx6g", "1E1xZy6s","1GVJWyqg"];
-let appNameArr = ['1111点心动', "JOY年尾之旅","PLUS生活特权","虎娃迎福"];
+let appIdArr = ['1FFVQyqw', "1GVFUx6g", "1E1xZy6s", "1GVJWyqg","1GFRRyqo"];
+let appNameArr = ['1111点心动', "JOY年尾之旅","PLUS生活特权", "虎娃迎福","过新潮年"];
 let appId, appName;
 $.shareCode = [];
 if ($.isNode()) {
