@@ -9,6 +9,8 @@
 # tag:京东店铺锁y
 # 0 6,12,19,21 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
 ##############短期活动##############
+#会场红包
+0 0,12,20,23 * * * node /scripts/jd_nhs_red.js >> /scripts/logs/jd_nhs_red.log 2>&1
 #白条抽奖
 10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 #天天压岁钱
