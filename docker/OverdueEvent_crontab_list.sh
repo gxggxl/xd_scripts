@@ -136,8 +136,7 @@
 # 星系牧场 #wen
 #0 5 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
 
-# 集魔方 (京东APP - 新品 - 集魔方)
-11 0,12,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
+
 # 京东小魔方(9.29 24.00 结束)
 13 1,20 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 魔方兑换 (只兑换5魔方)
