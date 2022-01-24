@@ -1,6 +1,6 @@
 /*
 东东水果:脚本更新地址 jd_fruit.js
-更新时间：2021-11-7
+更新时间：2022-01-24
 活动入口：京东APP我的-更多工具-东东农场
 东东农场活动链接：https://h5.m.jd.com/babelDiy/Zeus/3KSjXqQabiTuD1cJ28QskrpWoBKT/index.html
 已支持IOS双京东账号,Node.js支持N个京东账号
@@ -68,6 +68,7 @@ const urlSchema = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%2
       message = '';
       subTitle = '';
       option = {};
+      $.retry = 0;
       await shareCodesFormat();
       await jdFruit();
     }
@@ -126,7 +127,13 @@ async function jdFruit() {
       await predictionFruit();//预测水果成熟时间
     } else {
       console.log(`初始化农场数据异常, 请登录京东 app查看农场0元水果功能是否正常,农场初始化数据: ${JSON.stringify($.farmInfo)}`);
-      message = `【数据异常】请手动登录京东app查看此账号${$.name}是否正常`;
+      if ($.retry < 3) {
+          $.retry++;
+          console.log(`等待10秒后重试,第:${$.retry}次`);
+          await $.wait(10000);
+          await jdFruit();
+      }
+      //message = `【数据异常】请手动登录京东app查看此账号${$.name}是否正常`;
     }
   } catch (e) {
     console.log(`任务执行异常，请检查执行日志 ‼️‼️`);
@@ -1464,20 +1471,26 @@ function safeGet(data) {
 }
 
 function taskUrl(function_id, body = {}) {
-  return {
+return {
     url: `${JD_API_HOST}?functionId=${function_id}&body=${encodeURIComponent(JSON.stringify(body))}&appid=wh5`,
     headers: {
-      "Host": "api.m.jd.com",
-      "Accept": "*/*",
-      "Origin": "https://carry.m.jd.com",
-      "Accept-Encoding": "gzip, deflate, br",
-      "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
-      "Accept-Language": "zh-CN,zh-Hans;q=0.9",
-      "Referer": "https://carry.m.jd.com/",
-      "Cookie": cookie
+        Host: "api.m.jd.com",
+        Accept: "*/*",
+        Origin: "https://carry.m.jd.com",
+        "Accept-Encoding": "gzip, deflate, br",
+        "User-Agent": $.isNode()
+            ? process.env.JD_USER_AGENT
+                ? process.env.JD_USER_AGENT
+                : require("./USER_AGENTS").USER_AGENT
+            : $.getdata("JDUA")
+            ? $.getdata("JDUA")
+            : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
+        "Accept-Language": "zh-CN,zh-Hans;q=0.9",
+        Referer: "https://carry.m.jd.com/",
+        Cookie: cookie,
     },
-    timeout: 10000
-  }
+    timeout: 10000,
+};
 }
 function jsonParse(str) {
   if (typeof str == "string") {
