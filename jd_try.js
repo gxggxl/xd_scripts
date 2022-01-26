@@ -24,7 +24,6 @@ $.isPush = true;
 $.isLimit = false;
 $.isForbidden = false;
 $.wrong = false;
-$.totalPages = 0;
 $.giveupNum = 0;
 $.successNum = 0;
 $.completeNum = 0;
@@ -47,27 +46,38 @@ $.innerKeyWords =
 //下面很重要，遇到问题请把下面注释看一遍再来问
 let args_xh = {
     /*
+     * 每个Tab页要便遍历的申请页数，由于京东试用又改了，获取不到每一个Tab页的总页数了(显示null)，所以特定增加一个环境变了以控制申请页数
+     * 例如设置 JD_TRY_PRICE 为 30，假如现在正在遍历tab1，那tab1就会被遍历到30页，到31页就会跳到tab2，或下一个预设的tab页继续遍历到30页
+     * 默认为20
+     */
+    totalPages: process.env.JD_TRY_TOTALPAGES * 1 || 20,
+    /*
+     * 由于每个账号每次获取的试用产品都不一样，所以为了保证每个账号都能试用到不同的商品，之前的脚本都不支持采用统一试用组的
+     * 以下环境变量是用于指定是否采用统一试用组的
+     * 例如当 JD_TRY_UNIFIED 为 true时，有3个账号，第一个账号跑脚本的时候，试用组是空的
+     * 而当第一个账号跑完试用组后，第二个，第三个账号所采用的试用组默认采用的第一个账号的试用组
+     * 优点：减少除第一个账号外的所有账号遍历，以减少每个账号的遍历时间
+     * 缺点：A账号能申请的东西，B账号不一定有
+     * 提示：想每个账号独立不同的试用产品的，请设置为false，想减少脚本运行时间的，请设置为true
+     * 默认为false
+     */
+    unified: process.env.JD_TRY_UNIFIED || false,
+    //以上环境变量新增于2022.01.25
+    /*
      * 商品原价，低于这个价格都不会试用，意思是
      * A商品原价49元，试用价1元，如果下面设置为50，那么A商品不会被加入到待提交的试用组
      * B商品原价99元，试用价0元，如果下面设置为50，那么B商品将会被加入到待提交的试用组
      * C商品原价99元，试用价1元，如果下面设置为50，那么C商品将会被加入到待提交的试用组
      * 默认为0
      * */
-    jdPrice: process.env.JD_TRY_PRICE * 1 || 100,
+    jdPrice: process.env.JD_TRY_PRICE * 1 || 50,
     /*
-     * 获取试用商品类型，默认为1，原来不是数组形式，我以为就只有几个tab，结果后面还有我服了
-     * 1 - 精选
-     * 2 - 闪电试
-     * 3 - 家用电器(可能会有变化)
-     * 4 - 手机数码(可能会有变化)
-     * 5 - 电脑办公(可能会有变化)
-     * ...
+     * 获取试用商品类型，默认为1
      * 下面有一个function是可以获取所有tabId的，名为try_tabList
-     * 2021-09-06 12:32:00时获取到 tabId 16个
      * 可设置环境变量：JD_TRY_TABID，用@进行分隔
-     * 默认为 1 到 5
+     * 默认为 1 到 10
      * */
-    tabId: process.env.JD_TRY_TABID && process.env.JD_TRY_TABID.split('@').map(Number) || [1,2,3,4,5,6,7,8,9,10],
+    tabId: process.env.JD_TRY_TABID && process.env.JD_TRY_TABID.split('@').map(Number) || [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     /*
      * 试用商品标题过滤，黑名单，当标题存在关键词时，则不加入试用组
      * 当白名单和黑名单共存时，黑名单会自动失效，优先匹配白名单，匹配完白名单后不会再匹配黑名单，望周知
@@ -185,8 +195,10 @@ let args_xh = {
             $.nowTabIdIndex = 0;
             $.nowPage = 1;
             $.nowItem = 1;
-            trialActivityIdList = []
-            trialActivityTitleList = []
+            if (!args_xh.unified) {
+                trialActivityIdList = []
+                trialActivityTitleList = []
+            }
             $.isLimit = false;
             // 获取tabList的，不知道有哪些的把这里的注释解开跑一遍就行了
             // await try_tabList();
@@ -196,14 +208,14 @@ let args_xh = {
             size = 1
             while(trialActivityIdList.length < args_xh.maxLength && $.isForbidden === false){
                 if($.nowTabIdIndex === args_xh.tabId.length){
-                    console.log(`tabId组已遍历完毕，不在获取商品\n`);
+                    console.log(`tabId组已遍历完毕，不再获取商品\n`);
                     break;
                 } else {
                     await try_feedsList(args_xh.tabId[$.nowTabIdIndex], $.nowPage)  //获取对应tabId的试用页面
                 }
                 if(trialActivityIdList.length < args_xh.maxLength){
-                    console.log(`间隔等待中，请等待 2 秒\n`)
-                    await $.wait(2000);
+                    console.log(`间隔等待中，请等待 3 秒\n`)
+                    await $.wait(3000);
                 }
             }
             if($.isForbidden === false && $.isLimit === false){
@@ -270,11 +282,15 @@ function requireConfig(){
         else args_xh.whiteList = process.env.JD_TRY_WHITELIST === 'true';
         if(typeof process.env.JD_TRY_PLOG === "undefined") args_xh.printLog = false;
         else args_xh.printLog = process.env.JD_TRY_PLOG === 'true';
-        if(typeof process.env.JD_TRY_PASSZC === "undefined") args_xh.passZhongCao = true;
+        if (typeof process.env.JD_TRY_UNIFIED === "undefined") args_xh.unified = false;
+        else args_xh.unified = process.env.JD_TRY_UNIFIED === 'true';
+        if (typeof process.env.JD_TRY_PASSZC === "undefined") args_xh.passZhongCao = true;
         else args_xh.passZhongCao = process.env.JD_TRY_PASSZC === 'true';
         for(let keyWord of $.innerKeyWords) args_xh.titleFilters.push(keyWord)
         console.log(`共${$.cookiesArr.length}个京东账号\n`)
         console.log('=====环境变量配置如下=====')
+        console.log(`totalPages: ${typeof args_xh.totalPages}, ${args_xh.totalPages}`)
+        console.log(`unified: ${typeof args_xh.unified}, ${args_xh.unified}`)
         console.log(`jdPrice: ${typeof args_xh.jdPrice}, ${args_xh.jdPrice}`)
         console.log(`tabId: ${typeof args_xh.tabId}, ${args_xh.tabId}`)
         console.log(`titleFilters: ${typeof args_xh.titleFilters}, ${args_xh.titleFilters}`)
@@ -297,13 +313,14 @@ function try_tabList(){
     return new Promise((resolve, reject) => {
         console.log(`获取tabList中...`)
         const body = JSON.stringify({
+            "version": 2,
             "previewTime": ""
         });
         let option = taskurl_xh('newtry', 'try_tabList', body)
         $.get(option, (err, resp, data) => {
             try{
                 if(err){
-                    if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`){
+                    if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`) {
                         $.isForbidden = true
                         console.log('账号被京东服务器风控，不再请求该帐号')
                     } else {
@@ -333,13 +350,16 @@ function try_feedsList(tabId, page){
         const body = JSON.stringify({
             "tabId": `${tabId}`,
             "page": page,
+            "version": 2,
+            "source": "default",
+            "client": "app",
             "previewTime": ""
         });
         let option = taskurl_xh('newtry', 'try_feedsList', body)
         $.get(option, (err, resp, data) => {
             try{
                 if(err){
-                    if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`){
+                    if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`) {
                         $.isForbidden = true
                         console.log('账号被京东服务器风控，不再请求该帐号')
                     } else {
@@ -349,10 +369,9 @@ function try_feedsList(tabId, page){
                 } else {
                     data = JSON.parse(data)
                     let tempKeyword = ``;
-                    if(data.success){
-                        $.totalPages = data.data.pages
-                        $.nowPage === $.totalPages ? $.nowPage = 1 : $.nowPage++;
-                        console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
+                    if (data.success) {
+                        $.nowPage === args_xh.totalPages ? $.nowPage = 1 : $.nowPage++;
+                        console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${args_xh.totalPages} 页`)
                         console.log(`获取到商品 ${data.data.feedList.length} 条`)
                         for(let item of data.data.feedList){
                             if(item.applyNum === null){
@@ -388,10 +407,10 @@ function try_feedsList(tabId, page){
                                     }
                                 }
                             }
-                            if(item.skuTitle && $.isPush){
-                                args_xh.printLog ? console.log(`检测 tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页 第 ${$.nowItem++ + 1} 个商品\n${item.skuTitle}`) : ''
-                                if(args_xh.whiteList){
-                                    if(args_xh.whiteListKeywords.some(fileter_word => item.skuTitle.includes(fileter_word))){
+                            if (item.skuTitle && $.isPush) {
+                                args_xh.printLog ? console.log(`检测 tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${args_xh.totalPages} 页 第 ${$.nowItem++ + 1} 个商品\n${item.skuTitle}`) : ''
+                                if (args_xh.whiteList) {
+                                    if (args_xh.whiteListKeywords.some(fileter_word => item.skuTitle.includes(fileter_word))) {
                                         args_xh.printLog ? console.log(`商品白名单通过，将加入试用组，trialActivityId为${item.trialActivityId}\n`) : ''
                                         trialActivityIdList.push(item.trialActivityId)
                                         trialActivityTitleList.push(item.skuTitle)
@@ -421,7 +440,7 @@ function try_feedsList(tabId, page){
                         }
                         console.log(`当前试用组长度为：${trialActivityIdList.length}`)
                         args_xh.printLog ? console.log(`${trialActivityIdList}`) : ''
-                        if(page >= $.totalPages && $.nowTabIdIndex < args_xh.tabId.length){
+                        if (page >= args_xh.totalPages && $.nowTabIdIndex < args_xh.tabId.length) {
                             //这个是因为每一个tab都会有对应的页数，获取完如果还不够的话，就获取下一个tab
                             $.nowTabIdIndex++;
                             $.nowPage = 1;
@@ -453,7 +472,7 @@ function try_apply(title, activityId){
         $.get(option, (err, resp, data) => {
             try{
                 if(err){
-                    if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`){
+                    if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`) {
                         $.isForbidden = true
                         console.log('账号被京东服务器风控，不再请求该帐号')
                     } else {
@@ -507,16 +526,19 @@ function try_MyTrials(page, selected){
             default:
                 console.log('selected错误')
         }
-        const body = JSON.stringify({
-            "page": page,
-            "selected": selected,   // 1 - 已申请 2 - 成功列表，3 - 失败列表
-            "previewTime": ""
-        });
-        let option = taskurl_xh('newtry', 'try_MyTrials', body)
-        option.headers.Referer = 'https://pro.m.jd.com/'
-        $.get(option, (err, resp, data) => {
-            try{
-                if(err){
+        let options = {
+            url: URL,
+            body: `appid=newtry&functionId=try_MyTrials&clientVersion=10.3.4&client=wh5&body=%7B%22page%22%3A${page}%2C%22selected%22%3A${selected}%2C%22previewTime%22%3A%22%22%7D`,
+            headers: {
+                'origin': 'https://prodev.m.jd.com',
+                'User-Agent': 'jdapp;iPhone;10.3.4;;;M/5.0;appBuild/167945;jdSupportDarkMode/1;;;Mozilla/5.0 (iPhone; CPU iPhone OS 15_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;',
+                'referer': 'https://prodev.m.jd.com/',
+                'cookie': $.cookie
+            },
+        }
+        $.post(options, (err, resp, data) => {
+            try {
+                if (err) {
                     console.log(`🚫 ${arguments.callee.name.toString()} API请求失败，请检查网路\n${JSON.stringify(err)}`)
                 } else {
                     data = JSON.parse(data)
@@ -550,14 +572,10 @@ function try_MyTrials(page, selected){
 
 function taskurl_xh(appid, functionId, body = JSON.stringify({})){
     return {
-        "url": `${URL}?appid=${appid}&functionId=${functionId}&clientVersion=10.1.2&client=wh5&body=${encodeURIComponent(body)}`,
+        "url": `${URL}?appid=${appid}&functionId=${functionId}&clientVersion=10.3.4&client=wh5&body=${encodeURIComponent(body)}`,
         'headers': {
-            'Host': 'api.m.jd.com',
-            'Accept-Encoding': 'gzip, deflate, br',
             'Cookie': $.cookie,
-            'Connection': 'keep-alive',
             'UserAgent': 'jdapp;iPhone;10.1.2;15.0;ff2caa92a8529e4788a34b3d8d4df66d9573f499;network/wifi;model/iPhone13,4;addressid/2074196292;appBuild/167802;jdSupportDarkMode/1;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
-            'Accept-Language': 'zh-cn',
             'Referer': 'https://prodev.m.jd.com/'
         },
     }
