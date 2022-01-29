@@ -141,3 +141,6 @@
 13 1,20 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 魔方兑换 (只兑换5魔方)
 9 1,12,16 * * * node /scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
+
+#会场红包
+0 0,12,20,23 * * * node /scripts/jd_nhs_red.js >> /scripts/logs/jd_nhs_red.log 2>&1
