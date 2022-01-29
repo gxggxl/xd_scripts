@@ -189,17 +189,6 @@
 # 汪汪乐园每日任务
 19 7,20 * * * node /scripts/jd_joy_park_task.js >> /scripts/logs/jd_joy_park_task.log 2>&1
 
-# 京东到家果园
-#08 0,3,8,11,17 * * * node /scripts/jd_dj_fruit.js >> /scripts/logs/jd_dj_fruit.log 2>&1
-# 京东到家果园水车收水滴
-#3 * * * * node /scripts/jd_dj_fruit_collectWater.js >> /scripts/logs/jd_dj_fruit_collectWater.log 2>&1
-# 京东到家鲜豆庄园
-#11 0 * * * node /scripts/jd_dj_plantBeans.js >> /scripts/logs/jd_dj_plantBeans.log 2>&1
-# 京东到家鲜豆任务
-#11 0 * * * node /scripts/jd_dj_bean.js >> /scripts/logs/jd_dj_bean.log 2>&1
-# 京东到家鲜豆庄园收水滴
-#3 * * * * node /scripts/jd_dj_getPoints.js >> /scripts/logs/jd_dj_getPoints.log 2>&1
-
 #美丽研究院
 15 6,11,20 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东保价
