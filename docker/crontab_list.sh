@@ -149,17 +149,6 @@
 # 京东种豆得豆
 8 6-23/1 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log 2>&1
 
-# 宠汪汪
-#7 */2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
-# 宠汪汪喂食
-#*/20 0-23 * * * node /scripts/jd_joy_feedPets.js >> /scripts/logs/jd_joy_feedPets.log 2>&1
-# 宠汪汪赛跑与邀请助力
-#1 9-19/3 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
-# 宠汪汪偷好友积分与狗粮
-#3 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
-# 宠汪汪积分兑换京豆
-#0 8,16,0 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
-
 # 京喜工厂
 13 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜牧场
@@ -183,16 +172,6 @@
 
 #美丽研究院
 15 6,11,20 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
-#京东保价
-#5 13 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
-#27 */8 * * * export jd_work_price=1 && node /scripts/jd_work_price.js >> /scripts/logs/jd_work_price.log 2>&1
-
-# 京喜购物返红包助力
-1 */6 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
-# 宠汪汪跑验证码
-#58 7,15,23 * * * node /scripts/jd_work_validate.js >> /scripts/logs/jd_work_validate.log 2>&1
-# 宠汪汪兑换
-#0 */8 * * * node /scripts/jd_exchange_joy.js >> /scripts/logs/jd_exchange_joy.log 2>&1
 
 ###################### 敏感操作 ######################
 # 过期京豆兑换喜豆
