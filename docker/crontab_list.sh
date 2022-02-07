@@ -17,8 +17,6 @@
 0 0,2 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 # 京东特价 翻翻乐
 33 0,6-23 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
-# 京东饭粒
-5 0,15 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 发财大赢家之翻翻乐
@@ -68,10 +66,6 @@
 13 6,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 # 升级赚京豆
 9 0,10 * * * node /scripts/jd_sjzjd.js >> /scripts/logs/jd_sjzjd.log 2>&1
-# 东东世界兑换
-#2 0,15 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
-#店铺浏览任务
-#25 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
 # 京喜签到
 3 0,6,12 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 京喜签到-喜豆
@@ -101,7 +95,6 @@
 # 京东日资产变动
 30 22 * * *  node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
 # 京东月资产变动 在每个月最后一天
-#45 8 1 * * node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 #45 22 28-31 * * [ "$(TZ=IST-32 date +%e)" -eq 1 ] && node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 # 京东秒秒币
 10 6,17 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
