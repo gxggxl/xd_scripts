@@ -6,15 +6,11 @@
 3 0 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
 # Cookie检查
 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
-# tag:京东店铺锁y
-# 0 6,12,19,21 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
 ##############短期活动##############
 #白条抽奖
 10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 #天天压岁钱
 50 0,16 * * * node /scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
-# 城城领现金
-#1 0,9,13,17,22 * 1 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 # 京东通天塔--签到
 5 0,15 * * * node /scripts/jd_m_sign.js >> /scripts/logs/jd_m_sign.log 2>&1
 # 通天塔签到共建
@@ -27,8 +23,6 @@
 15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 发财大赢家之翻翻乐
 13 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
-# 全民抢京豆(活动时间：10-29 至 11-11)
-#1 0,1 * * * node /scripts/jd_qmqjd.js >> /scripts/logs/jd_qmqjd.log 2>&1
 #美妆馆选品官
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 # 明星小店(星店长)9.18-10.9
@@ -59,8 +53,6 @@
 #5 15,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
 17 5,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-# 逛京东会场
-#0 0 * * * node /scripts/jd_mall_active.js >> /scripts/logs/jd_mall_active.log 2>&1
 # 集魔方 (京东APP - 新品 - 集魔方)
 19 09,21 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 ##############长期活动##############
