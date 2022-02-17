@@ -11,10 +11,6 @@
 10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 #天天压岁钱
 50 0,16 * * * node /scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
-# 京东通天塔--签到
-5 0,15 * * * node /scripts/jd_m_sign.js >> /scripts/logs/jd_m_sign.log 2>&1
-# 通天塔签到共建
-0 0,2 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 # 京东特价 翻翻乐
 33 0,6-23 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
