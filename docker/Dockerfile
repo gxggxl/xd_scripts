@@ -6,7 +6,7 @@ LABEL AUTHOR="none" \
 ENV DEFAULT_LIST_FILE=crontab_list.sh \
     CUSTOM_LIST_MERGE_TYPE=append \
     COOKIES_LIST="/scripts/logs/cookies.list" \
-    REPO_URL="https://ghproxy.com/https://github.com/gxggxl/xd_scripts.git" \
+    REPO_URL="https://gxggxl-github.gxggxl.workers.dev/gh/https://github.com/gxggxl/xd_scripts.git" \
     REPO_BRANCH="master"
 
 RUN set -ex \
