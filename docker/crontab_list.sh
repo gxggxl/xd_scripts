@@ -14,7 +14,7 @@
 # 京东特价 翻翻乐
 #33 0,6-23 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 # 跳跳乐瓜分京豆(11.01-11.11)
-15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
+#15 */3 1-11 11 * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 发财大赢家之翻翻乐
 #13 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 #美妆馆选品官
@@ -51,9 +51,9 @@
 19 09,21 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 ##############长期活动##############
 # 签到
-5 7,21 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+5 7 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 # 领券中心签到
-7 0,6,18 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
+7 6,18 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 # 翻牌签到
 3 1,20 * * * node /scripts/jd_fanpai_sign.js >> /scripts/logs/jd_fanpai_sign.log 2>&1
 # 愤怒的锦鲤
@@ -75,7 +75,7 @@
 # 幸运大转盘
 10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 # 签到领现金
-7 */2 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
+7 */3 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
 # 领金贴
 3 0,18 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 早起福利
@@ -89,7 +89,7 @@
 # 东东电竞经理
 15 10,16 * * * node /scripts/jd_Elecsport.js >> /scripts/logs/jd_Elecsport.log 2>&1
 # 京东日资产变动
-30 22 * * *  node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
+11 12 * * *  node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
 # 京东月资产变动 在每个月最后一天
 #45 22 28-31 * * [ "$(TZ=IST-32 date +%e)" -eq 1 ] && node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 # 京东秒秒币
@@ -160,7 +160,7 @@
 19 7,20 * * * node /scripts/jd_joy_park_task.js >> /scripts/logs/jd_joy_park_task.log 2>&1
 
 #美丽研究院
-15 6,11,20 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
+15 6,20 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 
 ###################### 敏感操作 ######################
 # 过期京豆兑换喜豆
