@@ -21,15 +21,15 @@ cron "35 1,23 * * *" script-path=https://raw.githubusercontent.com/Aaron-lv/sync
 女装盲盒 = type=cron,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_nzmh.js, cronexpr="35 1,23 * * *", timeout=3600, enable=true
  */
 
-const $ = new Env('女装盲盒抽京豆');
+const $ = new Env('女装盲盒');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 //IOS等用户直接用NobyDa的jd cookie
-const nzmhURL = "https://anmp.jd.com/babelDiy/Zeus/293owQqRtKfS8cuUhk4YzGFYGw2W/index.html"
+const nzmhURL = "https://anmp.jd.com/babelDiy/Zeus/2x36jyruNVDWxUiAiGAgHRrkqVX2/index.html";
 let info = `女装盲盒
-活动时间：2022-01-01至2022-01-31
-活动地址：https://anmp.jd.com/babelDiy/Zeus/293owQqRtKfS8cuUhk4YzGFYGw2W/index.html`;
+活动时间：2022-03-01至2022-03-31
+活动地址：https://anmp.jd.com/babelDiy/Zeus/2x36jyruNVDWxUiAiGAgHRrkqVX2/index.html`;
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
