@@ -20,33 +20,33 @@
 #美妆馆选品官
 23 8,9 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 # 明星小店(星店长)9.18-10.9
-5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+# 5 19 1-9,19-30 9-10 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 # 内容鉴赏官 (9.30 结束，10月继续开启)
-11 8,18 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
+# 11 8,18 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 # 送豆得豆
-15 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
+# 15 2,14 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 小鸽有礼 - 每日抽奖(活动时间：2021-05-01至2021-05-31)
-13 1,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
+# 13 1,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 # 超级粉丝互动 活动时间：XXX结束
-1 0,1 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
+# 1 0,1 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 # 女装盲盒 活动时间：2021-08-05到2021-10-31
-35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
+# 35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 # 京东极速版红包(活动时间：2021-5-5至2021-8-31)
 #21 0,16,21 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 # 金榜创造营 活动时间：2021-05-21至2021-12-31
-0 1,15,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
+# 0 1,15,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 # 5G超级盲盒(活动时间：2021-08-2到2021-10-29)
 0 0,1-23/3 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 # 芥么赚豪礼
-22 1,13 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
+# 22 1,13 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 # 京东零食街 活动时间：年底
 7 9,17 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 # 特物Z 活动时间：
 #5 15,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
-17 5,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
+# 17 5,21 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 # 集魔方 (京东APP - 新品 - 集魔方)
-19 09,21 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
+# 19 09,21 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 ##############长期活动##############
 # 签到
 5 7 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -79,7 +79,7 @@
 # 早起福利
 30 6 * * * node /scripts/jd_zqfl.js >> /scripts/logs/jd_zqfl.log 2>&1
 # 店铺签到
-25 0,23 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
+# 25 0,23 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
 # 摇京豆
 6 0,12,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 天天加速
@@ -172,7 +172,7 @@
 # 取关主播
 15 22 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
 # 取关京东店铺商品
-5 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
+# 5 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京东试用
 03 16 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
