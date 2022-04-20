@@ -40,7 +40,7 @@
 # 芥么赚豪礼
 # 22 1,13 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 # 京东零食街 活动时间：年底
-7 9,17 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
+#7 9,17 * * * node /scripts/jd_lsj.js >> /scripts/logs/jd_lsj.log 2>&1
 # 特物Z 活动时间：
 #5 15,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 众筹许愿池 活动时间：2021-08-01到2021-12-31
@@ -95,9 +95,9 @@
 # 京东全民开红包
 #1 2,13,23 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 # 进店领豆
-0 0,12 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
+#0 0,12 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 # 京东排行榜
-11 0,12 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
+#11 0,12 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
 # 京东快递签到
 32 7 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 # 京东汽车(签到满500赛点可兑换500京豆)
@@ -109,7 +109,7 @@
 # 赚京豆(微信小程序)
 23 1,9,18,23 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 口袋书店
-20 8,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
+#20 8,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
 # 闪购盲盒
 43 8,22 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 #京东直播（又回来了）
@@ -170,7 +170,7 @@
 # 过期京豆兑换喜豆
 #25 22 * * * node /scripts/jd_exchangejxbeans.js >> /scripts/logs/jd_exchangejxbeans.log 2>&1
 # 取关主播
-15 22 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
+#15 22 * * * node /scripts/jd_unsubscriLive.js >> /scripts/logs/jd_unsubscriLive.log 2>&1
 # 取关京东店铺商品
 # 5 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京东试用
