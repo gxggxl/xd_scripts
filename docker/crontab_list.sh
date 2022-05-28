@@ -8,7 +8,7 @@
 # 3 0,12 * * * node /scripts/jd_ckcheck.js >> /scripts/logs/jd_ckcheck.log 2>&1
 ##############短期活动##############
 #白条抽奖
-10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
+#10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 #天天压岁钱
 #50 0,16 * * * node /scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
 # 京东特价 翻翻乐
@@ -99,11 +99,11 @@
 # 京东排行榜
 #11 0,12 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
 # 京东快递签到
-32 7 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
+#32 7 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 # 京东汽车(签到满500赛点可兑换500京豆)
-41 7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
+#41 7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
 # 京东汽车旅程赛点兑换金豆
-59 23 * * * sleep 58 && node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
+#59 23 * * * sleep 58 && node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
 # 京东赚赚(微信小程序)
 6 0-4/1,11,12 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 赚京豆(微信小程序)
@@ -174,7 +174,7 @@
 # 取关京东店铺商品
 # 5 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京东试用
-03 16 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
+#03 16 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
 #家庭号(易黑号，默认注释)
